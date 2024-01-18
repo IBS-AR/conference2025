@@ -13,6 +13,9 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - program.qmd
+      - committee.qmd
+      - contact.qmd
     tools:
       - icon: github
         url: https://github.com/IBS-AR/conference2025
