@@ -3,5 +3,4 @@ title: Contact
 ---
 
 
-To come.
-
+<i class="fas fa-envelope"></i> ibsar.conference@gmail.com
