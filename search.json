@@ -1,23 +1,44 @@
 [
   {
-    "objectID": "committee.html#scientific-and-program-committee",
-    "href": "committee.html#scientific-and-program-committee",
-    "title": "Committee",
+    "objectID": "organisers.html",
+    "href": "organisers.html",
+    "title": "Organisers",
+    "section": "",
+    "text": "Emi Tanaka (Chair)\nWarren Muller\nAlan Welsh"
+  },
+  {
+    "objectID": "organisers.html#local-organising-committee",
+    "href": "organisers.html#local-organising-committee",
+    "title": "Organisers",
+    "section": "",
+    "text": "Emi Tanaka (Chair)\nWarren Muller\nAlan Welsh"
+  },
+  {
+    "objectID": "organisers.html#scientific-and-program-committee",
+    "href": "organisers.html#scientific-and-program-committee",
+    "title": "Organisers",
     "section": "Scientific and program committee",
-    "text": "Scientific and program committee"
+    "text": "Scientific and program committee\n\nDavid Warton (Chair)"
+  },
+  {
+    "objectID": "organisers.html#social-program-committee",
+    "href": "organisers.html#social-program-committee",
+    "title": "Organisers",
+    "section": "Social program committee",
+    "text": "Social program committee\n\nQuan Vu (Chair)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Biometrics at the Bush Captial",
+    "section": "",
+    "text": "Biometrics at the Bush Captial\n24-28th November 2025, Canberra, Australia\nThe Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.\n\nLoading…"
   },
   {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "To come."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome!",
-    "section": "",
-    "text": "Welcome!\nThis website is still in work-in-progress!\nThe Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.\nThe conference is scheduled to be held in 24-28th November 2025 in Canberra, Australia."
+    "text": "ibsar.conference@gmail.com"
   }
 ]
