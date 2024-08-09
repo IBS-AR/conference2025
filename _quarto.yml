@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Biometrics in the Bush Capital 2025"
+  title: "#BIBC2025"
   favicon: favicon.ico
   repo-url: https://github.com/IBS-AR/conference2025
   repo-actions: [edit, issue]
