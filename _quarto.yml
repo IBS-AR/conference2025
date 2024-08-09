@@ -13,7 +13,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - program.qmd
+      #- program.qmd
       - organisers.qmd
       - contact.qmd
     tools:
