@@ -5,4 +5,4 @@ title: Contact
 <br>
 
 
-Please enquiries, please send emails to<i class="fas fa-envelope"></i> [ibsar.conference@gmail.com](mailto:ibsar.conference@gmail.com).
+For enquiries, please send emails to<i class="fas fa-envelope"></i> [ibsar.conference@gmail.com](mailto:ibsar.conference@gmail.com).
