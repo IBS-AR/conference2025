@@ -2,9 +2,12 @@
 
 **24-28th November 2025, Canberra, Australia**
 
+{{< fa map-marker-alt >}} National Film and Sound Archive of Australia
 
 
 The Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
+
+
 
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfF71SnebOSsjxp1ZesWx5qVIORJI5zfdvg0Lu-DJVRKY8F8Q/viewform?embedded=true" width="640" height="554" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
