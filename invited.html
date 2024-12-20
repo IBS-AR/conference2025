@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Organisers – #BIBC2025</title>
+<title>Invited Speakers – #BIBC2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,9 +71,68 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-invited .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-language','listing-title','listing-image','listing-url','listing-linkedin','listing-mastodon','listing-bluesky','listing-description','listing-path','listing-outputHref','listing-author','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-language","listing-title","listing-image","listing-url","listing-linkedin","listing-mastodon","listing-bluesky","listing-description","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-invited'] = new List('listing-invited', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="invited/people.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -122,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Organisers</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Invited Speakers</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -140,23 +201,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#local-organising-committee" id="toc-local-organising-committee" class="nav-link active" data-scroll-target="#local-organising-committee">Local organising committee</a></li>
-  <li><a href="#scientific-and-program-committee" id="toc-scientific-and-program-committee" class="nav-link" data-scroll-target="#scientific-and-program-committee">Scientific and program committee</a></li>
-  <li><a href="#social-program-committee" id="toc-social-program-committee" class="nav-link" data-scroll-target="#social-program-committee">Social program committee</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/IBS-AR/conference2025/edit/main/organisers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/IBS-AR/conference2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Organisers</h1>
+<h1 class="title">Invited Speakers</h1>
 </div>
 
 
@@ -173,30 +226,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="local-organising-committee" class="level2">
-<h2 class="anchored" data-anchor-id="local-organising-committee">Local organising committee</h2>
-<ul>
-<li>Emi Tanaka (Chair)</li>
-<li>Warren Muller</li>
-<li>Alan Welsh</li>
-</ul>
-</section>
-<section id="scientific-and-program-committee" class="level2">
-<h2 class="anchored" data-anchor-id="scientific-and-program-committee">Scientific and program committee</h2>
-<ul>
-<li>David Warton (Chair)</li>
-</ul>
-</section>
-<section id="social-program-committee" class="level2">
-<h2 class="anchored" data-anchor-id="social-program-committee">Social program committee</h2>
-<ul>
-<li>Quan Vu (Chair)</li>
-</ul>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-custom" id="listing-invited">
+<div class="profile-box" style="margin-top:40px;" data-index="0" data-listing-file-modified-sort="1734667736833" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="columns">
+<div class="column" style="width:30%;">
+<center>
+<img class="profile-photo" src="./invited/heather-turner/headshot_500x500.jpg">
+<h3 class="anchored">
+Dr.&nbsp;Heather Turner
+</h3>
+<p>
+
+<a href="https://warwick.ac.uk/heatherturner"><i class="fas fa-link"></i></a>
+
+<a href="https://uk.linkedin.com/in/heathrturnr"><i class="fab fa-linkedin"></i></a>
+
+<a href="https://fosstodon.org/@HeathrTurnr"><i class="fab fa-mastodon"></i></a>
+
+<a href="https://bsky.app/profile/https://bsky.app/profile/HeathrTurnr.fosstodon.org.ap.brid.gy"><i class="fab fa-twitter"></i></a>
+
+</p>
+</center>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:68%;">
+<p>Heather is an Associate Professor and EPSRC Research Software Engineering Fellow in the Statistics Department at the University of Warwick, UK. She has over 20 years of experience in the development of statistical code and software, gained through positions in academia, industry, and as a freelance consultant. In research, she has developed a portfolio of R packages for statistical modelling and collaborated on applications in sports, social science and agriculture. In her work with industry, she has specialised in applications in pharmaceutical R&amp;D, with companies including Pfizer, Johnson &amp; Johnson and Roche. Heather is active in community management and engagement among R users and developers. She is on the board of the R Foundation and chairs the R Contribution Working Group (fostering the community of contributors to the R project) and the R Forwards taskforce (widening the participation of under-represented groups in the R community).</p>
+</div>
+</div>
+</div>
+<div class="profile-box" style="margin-top:40px;" data-index="1" data-listing-file-modified-sort="1734666733412" data-listing-reading-time-sort="1" data-listing-word-count-sort="3">
+<div class="columns">
+<div class="column" style="width:30%;">
+<center>
+<img class="profile-photo" src="./invited/mevin-hooten/Hooten_photo.jpg">
+<h3 class="anchored">
+Prof.&nbsp;Mevin Hooten
+</h3>
+<p>
+
+</p>
+</center>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:68%;">
+<p>Mevin Hooten is a Professor in Statistics and Data Sciences at The University of Texas at Austin. His research focuses on developing statistical methodology for ecological and environmental applications that involve spatial and spatio-temporal data. He is a Fellow of the American Statistical Association (ASA) and received the Distinguished Achievement Award from the ASA section on statistics and the environment. He has authored over 185 papers and 3 textbooks and serves as Associate Editor for Biometrics, Environmetrics, and JABES.</p>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -622,7 +706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Biometrics in the Bush Capital <i class="fa-solid fa-landmark" aria-label="landmark"></i> Canberra, Australia</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/IBS-AR/conference2025/edit/main/organisers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/IBS-AR/conference2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/IBS-AR/conference2025/edit/main/invited.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/IBS-AR/conference2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

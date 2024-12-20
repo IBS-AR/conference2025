@@ -1,0 +1,16 @@
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.profile-box {
+  margin-left: auto;
+  margin-left: right;
+}
+
+.profile-box p {
+  margin-bottom: 0;
+  margin-block-end: 0!important;
+}
