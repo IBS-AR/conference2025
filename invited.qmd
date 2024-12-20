@@ -1,0 +1,12 @@
+---
+title: "Invited Speakers"
+listing:
+  - id: invited 
+    contents: invited/
+    template: invited/person.ejs
+format:
+  html:
+    css: invited/people.css
+---
+
+

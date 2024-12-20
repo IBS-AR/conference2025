@@ -1,0 +1,59 @@
+
+
+<% for (const item of items) { %>
+
+<div class="profile-box" style="margin-top:40px;" <%= metadataAttrs(item) %>>
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+
+<center>
+<img class="profile-photo" src="<%= item.image %>"></a>
+<h3><%= item.title %></h3>
+```{=html}
+<p>
+<% if (item.url) { %>
+<a href="<%= item.url %>"><i class="fas fa-link"></i></a>
+<% } %>
+<% if (item.email) { %>
+<a href="mailto:<%= item.email %>"><i class="fas fa-envelope"></i></a>
+<% } %>
+<% if (item.github) { %>
+<a href="https://github.com/<%= item.github %>"><i class="fab fa-github"></i></a>
+<% } %>
+<% if (item.linkedin) { %>
+<a href="<%= item.linkedin %>"><i class="fab fa-linkedin"></i></a>
+<% } %>
+<% if (item.mastodon) { %>
+<a href="<%= item.mastodon %>"><i class="fab fa-mastodon"></i></a>
+<% } %>
+<% if (item.bluesky) { %>
+<a href="https://bsky.app/profile/<%= item.bluesky %>"><i class="fab fa-twitter"></i></a>
+<% } %>
+</p>
+```
+</center>
+
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="68%"}
+
+<%= item.description %>
+
+
+
+:::
+
+::::
+
+</div>
+
+<% } %>
+
+

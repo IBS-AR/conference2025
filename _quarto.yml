@@ -3,6 +3,8 @@ project:
 
 website:
   title: "#BIBC2025"
+  page-footer: |
+     Biometrics in the Bush Capital {{< fa solid landmark >}} Canberra, Australia
   favicon: favicon.ico
   repo-url: https://github.com/IBS-AR/conference2025
   repo-actions: [edit, issue]
@@ -14,6 +16,7 @@ website:
       - href: index.qmd
         text: Home
       #- program.qmd
+      - invited.qmd
       - organisers.qmd
       - contact.qmd
     tools:

@@ -1,0 +1,10 @@
+---
+title: Dr. Heather Turner
+image: headshot_500x500.jpg
+url: https://warwick.ac.uk/heatherturner
+linkedin: https://uk.linkedin.com/in/heathrturnr
+mastodon: https://fosstodon.org/@HeathrTurnr
+bluesky: https://bsky.app/profile/HeathrTurnr.fosstodon.org.ap.brid.gy
+description: |
+ Heather is an Associate Professor and EPSRC Research Software Engineering Fellow in the Statistics Department at the University of Warwick, UK. She has over 20 years of experience in the development of statistical code and software, gained through positions in academia, industry, and as a freelance consultant. In research, she has developed a portfolio of R packages for statistical modelling and collaborated on applications in sports, social science and agriculture. In her work with industry, she has specialised in applications in pharmaceutical R&D, with companies including Pfizer, Johnson & Johnson and Roche. Heather is active in community management and engagement among R users and developers. She is on the board of the R Foundation and chairs the R Contribution Working Group (fostering the community of contributors to the R project) and the R Forwards taskforce (widening the participation of under-represented groups in the R community).
+---
