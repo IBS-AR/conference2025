@@ -1,0 +1,6 @@
+---
+title: Dr. Jesse Goodman
+image: jesse-goodman.png
+description: |
+ [Details to come.](https://profiles.auckland.ac.nz/jesse-goodman)
+---
