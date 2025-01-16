@@ -1,5 +1,5 @@
 ---
-title: Associate Professor Heather Turner
+title: Heather Turner
 image: headshot_500x500.jpg
 url: https://warwick.ac.uk/heatherturner
 linkedin: https://uk.linkedin.com/in/heathrturnr

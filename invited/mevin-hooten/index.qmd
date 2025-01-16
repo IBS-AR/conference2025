@@ -1,5 +1,5 @@
 ---
-title: Professor Mevin Hooten
+title: Mevin Hooten
 image: Hooten_photo.jpg
 description: |
  Mevin Hooten is a Professor in Statistics and Data Sciences at The University of Texas at Austin.  His research focuses on developing statistical methodology for ecological and environmental applications that involve spatial and spatio-temporal data.  He is a Fellow of the American Statistical Association (ASA) and received the Distinguished Achievement Award from the ASA section on statistics and the environment.  He has authored over 185 papers and 3 textbooks and serves as Associate Editor for Biometrics, Environmetrics, and JABES. 
