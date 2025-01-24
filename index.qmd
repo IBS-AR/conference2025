@@ -7,7 +7,18 @@
 
 The Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
 
+## <i class="fas fa-volume-up"></i> Call for invited sessions and lunchtime discussions 
 
+The organising committee invites expression of interest for invited sessions and lunchtime discussion topics to be held during the conference. Invited sessions aim to bring together experts to discuss emerging trends, present cutting-edge research, and engage in meaningful discussions on specialised topics that will be of interest to the biometrics community, over a 90 minute period. Lunchtime discussions, over the 60 minute lunchtime break, are an opportunity to discuss in parallel forums issues or topics of common interest to attendees, e.g. what skills are needed by modern biometricians, how should we interact with the machine learning and artificial intelligence community, best practices for statistical consulting, emerging research topics and so on.
+
+## Important dates
+
+
+- **Invited session proposals**: email <conference@biometricsociety.org.au> by _28th February 2025_
+- **Lunchtime discussion proposals**: email <conference@biometricsociety.org.au> by _1st August 2025_
+- **Conference**: _24-28th November 2025_
+
+## Registering for updates
 
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfF71SnebOSsjxp1ZesWx5qVIORJI5zfdvg0Lu-DJVRKY8F8Q/viewform?embedded=true" width="640" height="554" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

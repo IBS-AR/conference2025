@@ -5,4 +5,4 @@ title: Contact
 <br>
 
 
-For enquiries, please send emails to <i class="fas fa-envelope"></i>  [ conference@biometricsociety.org.au](mailto: conference@biometricsociety.org.au).
+For enquiries, please send emails to <i class="fas fa-envelope"></i>  [conference@biometricsociety.org.au](mailto: conference@biometricsociety.org.au).
