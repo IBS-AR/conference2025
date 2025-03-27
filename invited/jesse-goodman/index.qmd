@@ -1,6 +1,6 @@
 ---
 title: Jesse Goodman
-image: jesse-goodman.png
+image: jesse-goodman.jpeg
 description: |
- [Details to come.](https://profiles.auckland.ac.nz/jesse-goodman)
+ Jesse Goodman is a Senior Lecturer in Statistics at the University of Auckland. He began his academic career in mathematical probability, using distributional approximations and large deviations techniques to understand random geometric structures, and increasingly looking at statistical models that exhibit probabilistic complexity. His research focuses on asymptotic techniques, particularly when several asymptotic effects interact or compete, in areas from branching processes and spatial structures to approximations for likelihoods and densities. Recent work on saddlepoint approximations has helped to quantify the degree to which approximation techniques can deliver valid inferential conclusiosn, and to extend classes of models to capture real-life complexity in capture-recapture and other settings that feature enigmatic sensor data.
 ---
