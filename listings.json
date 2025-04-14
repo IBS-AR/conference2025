@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/updates.html",
+    "items": [
+      "/news/2025-04-14.html",
+      "/news/2025-02-24.html"
+    ]
+  },
+  {
     "listing": "/invited.html",
     "items": [
       "/invited/charmaine-dean/index.html",
