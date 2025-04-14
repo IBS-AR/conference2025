@@ -1,0 +1,13 @@
+<table>
+
+<% for (const item of items) { %>
+
+<tr>
+<td style="width:20%;vertical-align:top;"><br><i><%= item.date%></i></td>
+<td style="vertical-align:top;">
+<h3><%= item.title %></h3>
+<%= item.description %></td>
+</tr>
+
+<% } %>
+</table>

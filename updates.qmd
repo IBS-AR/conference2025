@@ -1,0 +1,13 @@
+---
+title: Updates
+listing:
+  id: news
+  contents: news
+  template: assets/news.ejs
+date-format: iso
+---
+
+::: {#news}
+
+
+:::

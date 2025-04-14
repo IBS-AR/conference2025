@@ -5,16 +5,22 @@ title: Organisers
 
 ## Local organising committee
 
-- Emi Tanaka (Chair)
-- Warren Muller
-- Alan Welsh
+- Emi Tanaka (ANU, Chair)
+- Warren Muller (CSIRO)
+- Alan Welsh (ANU)
+- Joanne Thandrayen (ANU)
 
 
 ## Scientific and program committee
 
-- David Warton (Chair)
-
+- David Warton (UNSW, Chair)
+- Carolyn Huston (CSIRO)
+- Emi Tanaka (ANU)
+- Jean Yang (USyd)
+- Julian Taylor (UAdelaide)
+- Nicola Armstrong (Curtin)
+- Thomas Lumley (UAuckland)
 
 ## Social program committee
 
-- Quan Vu (Chair)
+- Quan Vu (ANU, Chair)

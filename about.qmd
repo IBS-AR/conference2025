@@ -1,8 +1,11 @@
 ---
-title: Contact
+title: About
 ---
 
-<br>
-
+## <i class="fas fa-envelope"></i> Contact
 
 For enquiries, please send emails to <i class="fas fa-envelope"></i>  [conference@biometricsociety.org.au](mailto: conference@biometricsociety.org.au).
+
+## <i class="fas fa-calendar"></i> Important dates
+
+{{< include _dates.qmd >}}

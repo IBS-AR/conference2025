@@ -1,6 +1,10 @@
-# Biometrics in the Bush Capital
+---
+title: Biometrics in the Bush Capital
+subtitle: 24-28th November 2025, Canberra, Australia
+date-format: iso
+---
 
-**24-28th November 2025, Canberra, Australia**
+
 
 
 ::: aside
@@ -18,17 +22,47 @@
 
 The Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
 
-## <i class="fas fa-volume-up"></i> Call for invited sessions and lunchtime discussions 
 
-The organising committee invites expression of interest for invited sessions and lunchtime discussion topics to be held during the conference. Invited sessions aim to bring together experts to discuss emerging trends, present cutting-edge research, and engage in meaningful discussions on specialised topics that will be of interest to the biometrics community, over a 90 minute period. Lunchtime discussions, over the 60 minute lunchtime break, are an opportunity to discuss in parallel forums issues or topics of common interest to attendees, e.g. what skills are needed by modern biometricians, how should we interact with the machine learning and artificial intelligence community, best practices for statistical consulting, emerging research topics and so on.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis
+library(tidyverse)
+library(glue)
+files <- fs::dir_ls("news")
+news <- map(rev(files), ~yaml::read_yaml(.x))
+for(anews in news) {
+  if("hide" %in% names(anews) && anews$hide) {
+  } else {
+    cat(glue("<h2>{anews$title}</h2>"))
+    cat(glue("<i>{anews$date}</i><br><Br>"))
+    cat(glue("<p>{anews$description}</p>"))
+  }
+}
+```
+
+---
+
+For past updates, see [**here**](/updates.html).
+
+<br>
+
 
 ## <i class="fas fa-calendar"></i> Important dates
 
+{{< include _dates.qmd >}}
 
-- **Invited session proposals**: email <conference@biometricsociety.org.au> by _28th February 2025_
-- **Lunchtime discussion proposals**: email <conference@biometricsociety.org.au> by _1st August 2025_
-- **Conference**: _24-28th November 2025_
-- [**OceaniaR Hackathon**](https://statsocaus.github.io/oceaniaR-hack/): _23rd November 2025_ -- co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.
+<br>
+
+
+## <i class="fas fa-certificate"></i> Sponsors
+
+We are currently seeking sponsorship partners. Please contact <conference@biometricsociety.org.au> if you can sponsor our upcoming conference.
+
+<br>
+
 
 ## <i class="fas fa-envelope"></i> Registering for updates
 
