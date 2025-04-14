@@ -23,6 +23,10 @@ date-format: iso
 The Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
 
 
+<div class="button-wrapper-cta">
+  <a class="button-cta cta-button" href="https://forms.gle/3v5BtosfjP3335Nc9">Submit Abstract</a>
+</div>
+
 
 ```{r}
 #| echo: false
