@@ -2,7 +2,7 @@
 title: '<i class="fas fa-paper-plane"></i> Open for abstract submissions'
 date: 2025-04-14
 description: |
- We are pleased to invite submissions for abstracts for the Biometrics in the Bush Captial, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences. <Br><br>
+ We are pleased to invite submissions for abstracts for the Biometrics in the Bush Capital, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences. <Br><br>
  <b>Key themes and topics</b><Br>
  We welcome abstracts addressing, but not limited to, the following areas:<br>
  <li>Agricultural Statistics</li>
