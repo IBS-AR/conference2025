@@ -19,6 +19,7 @@ date-format: iso
 
 {{< fa map-marker-alt >}} National Film and Sound Archive of Australia
 
+![](/images/Canberra social tile - rectangle - Lake Burley Griffin.jpg)
 
 The Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
 
@@ -26,6 +27,7 @@ The Australasian Region Biometrics conference is a biannual conference sponsored
 <div class="button-wrapper-cta">
   <a class="button-cta cta-button" href="https://forms.gle/3v5BtosfjP3335Nc9">Submit Abstract</a>
 </div>
+
 
 
 ```{r}
@@ -53,6 +55,14 @@ For past updates, see [**here**](/updates.html).
 
 <br>
 
+<div>
+<video width="100%" height="400" controls>
+  <source src="images/Canberra Means Business Events - 2023.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<br>
 
 ## <i class="fas fa-calendar"></i> Important dates
 
