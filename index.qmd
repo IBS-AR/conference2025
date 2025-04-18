@@ -64,6 +64,20 @@ Your browser does not support the video tag.
 
 <br>
 
+::: aside
+
+Follow [@biometricsociety.org.au on Bluesky](https://bsky.app/profile/biometricsociety.org.au) for the latest updates!
+
+<script src="/assets/bsky-embed.es.js" async></script>
+<bsky-embed  
+  username="biometricsociety.org.au"  
+  limit="1"  
+  custom-styles="img.rounded-full { display: none; } .flex > div { max-width: 100%; } .whitespace-pre-wrap { word-wrap: break-word;}"
+>  
+</bsky-embed>
+
+:::
+
 ## <i class="fas fa-calendar"></i> Important dates
 
 {{< include _dates.qmd >}}

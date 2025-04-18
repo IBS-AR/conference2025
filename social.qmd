@@ -2,7 +2,63 @@
 title: Social
 ---
 
+::: aside
+
+Use **#BIBC2025** in your posts to share your experience at the conference!
+
+<Br><br>
+
+
+Follow [@biometricsociety.org.au on Bluesky](https://bsky.app/profile/biometricsociety.org.au) for the latest updates!
+
+<script src="/assets/bsky-embed.es.js" async></script>
+<bsky-embed  
+  username="biometricsociety.org.au"  
+  limit="3"  
+  custom-styles="img.rounded-full { display: none; } .flex > div { max-width: 100%; } .whitespace-pre-wrap { word-wrap: break-word;}"
+>  
+</bsky-embed>
+
+:::
 
 ![](images/Canberra social tile - rectangle - National Arboretum Canberra.jpg)
 
-Social activities. Soon to come.
+
+
+
+Social activities. Details to come.
+
+
+If you take photos during the conference, please share them with us! You can send the photo to [conference@biometricsociety.org.au](mailto:conference@biometricsociety.org.au) or tag us on social media using **#BIBC2025**.
+
+## Organised tours
+
+The following tours are available for conference attendees on **Wednesday afternoon**. Please ensure to register for these tours when you register for the conference.
+
+### Murrumbateman Winery Tour 
+
+
+### Tidbinbilla Nature Reserve
+
+
+### Lake Burley Griffin
+
+
+## Self-guided tours
+
+Canberra has many great attractions, including:
+
+- [Australian War Memorial](https://www.awm.gov.au/)
+- [Australian National Botanic Gardens](https://www.anbg.gov.au/)
+- [Mount Ainslie Lookout](https://visitcanberra.com.au/attractions/56b23b003ed14ca745317ace/mount-ainslie-lookout)
+- [Musuem of Australian Democracy at Old Parliament House](https://moadoph.gov.au/)
+- [National Arboretum](https://www.nationalarboretum.act.gov.au/)
+- [National Gallery of Australia](https://nga.gov.au/)
+- [National Library of Australia](https://www.library.gov.au/)
+- [National Museum of Australia](https://www.nma.gov.au/)
+- [National Portrait Gallery](https://www.portrait.gov.au/)
+- [National Zoo & Aquarium](https://nationalzoo.com.au/)
+- [Parliament House](https://www.aph.gov.au/)
+- [Questacon](https://www.questacon.edu.au/)
+
+
