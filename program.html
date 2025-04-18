@@ -134,7 +134,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -155,11 +155,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./program.html"> 
+    <a class="nav-link active" href="./program.html" aria-current="page"> 
 <span class="menu-text">Program</span></a>
   </li>  
   <li class="nav-item">
@@ -186,10 +186,6 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./travel.html">
  <span class="dropdown-text">Travel</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./accommodation.html">
- <span class="dropdown-text">Accommodation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./sponsorship.html">
@@ -231,20 +227,10 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Program</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
     <div class="quarto-title column-body">
       <h1 class="title">Program</h1>
                       </div>
@@ -259,36 +245,43 @@ window.Quarto = {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logo-ibs-ar.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-      </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<div class="page-layout-custo">
 <p>Please note that this is a draft program and is subject to change.</p>
 <div class="cell">
 <style type="text/css">
 .schedule-container {
   height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 10% 45% 45%;
+  grid-template-columns: 14% 43% 43%;
   grid-gap: 13px;
   grid-template-rows: 50px auto 50px;
+}
+.title, p {
+  padding-left: 10px;
+}
+.schedule-container-all {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+}
+
+.schedule-day {
+  min-width: 335px;
+  padding-left: 10px;
+  padding-top: 100px;
+  padding-right: 30px;
+  margin-right: 10px;
+  100%;
 }
 .track, .break, .track1, .track2 {
   color: #fff;
@@ -310,10 +303,22 @@ window.Quarto = {
 </style>
 </div>
 <div id="listing-schedule" class="quarto-listing quarto-listing-container-custom">
+<div class="schedule-container-all">
 
-<h2 class="anchored">Monday</h2>
+<div class="schedule-day">
+
+<h2>Monday</h2>
 
 <div class="schedule-container">
+
+<div style="text-align:right;grid-row: span 8;">
+
+9.00am
+</div>
+
+<div class="break" style="grid-row: span 8;">
+Workshop
+</div>
 
 <div style="text-align:right;grid-row: span 2;">
 
@@ -335,7 +340,11 @@ Welcome reception
 
 </div>
 
-<h2 class="anchored">Tuesday</h2>
+</div>
+
+<div class="schedule-day">
+
+<h2>Tuesday</h2>
 
 <div class="schedule-container">
 
@@ -427,7 +436,11 @@ Poster session
 
 </div>
 
-<h2 class="anchored">Wednesday</h2>
+</div>
+
+<div class="schedule-day">
+
+<h2>Wednesday</h2>
 
 <div class="schedule-container">
 
@@ -488,7 +501,11 @@ Session 3B
 
 </div>
 
-<h2 class="anchored">Thursday</h2>
+</div>
+
+<div class="schedule-day">
+
+<h2>Thursday</h2>
 
 <div class="schedule-container">
 
@@ -576,7 +593,11 @@ Conference dinner
 
 </div>
 
-<h2 class="anchored">Friday</h2>
+</div>
+
+<div class="schedule-day">
+
+<h2>Friday</h2>
 
 <div class="schedule-container">
 
@@ -637,15 +658,20 @@ Session 5B
 
 </div>
 
+</div>
+
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
 </div>
+</div>
+<p><br><br><br></p>
 
 
 
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
