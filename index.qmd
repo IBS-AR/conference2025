@@ -87,7 +87,11 @@ Follow [@biometricsociety.org.au on Bluesky](https://bsky.app/profile/biometrics
 
 ## <i class="fas fa-certificate"></i> Sponsors
 
-We are currently seeking sponsorship partners. Please contact <conference@biometricsociety.org.au> if you can sponsor our upcoming conference.
+We are currently seeking sponsorship partners. Please contact <conference@biometricsociety.org.au> if you can sponsor our upcoming conference or go below for more informaton.
+
+<div class="button-wrapper-cta">
+  <a class="button-cta cta-button" href="	https://membership.biometricsociety.org.au/event-6161571 ">Sponsorship Information</a>
+</div>
 
 <br>
 
