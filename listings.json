@@ -1,23 +1,23 @@
 [
   {
-    "listing": "/program.html",
+    "listing": "/schedule.html",
     "items": []
+  },
+  {
+    "listing": "/keynote.html",
+    "items": [
+      "/keynote/charmaine-dean/index.html",
+      "/keynote/cheng-soon-ong/index.html",
+      "/keynote/heather-turner/index.html",
+      "/keynote/jesse-goodman/index.html",
+      "/keynote/mevin-hooten/index.html"
+    ]
   },
   {
     "listing": "/updates.html",
     "items": [
       "/news/2025-04-14.html",
       "/news/2025-02-24.html"
-    ]
-  },
-  {
-    "listing": "/invited.html",
-    "items": [
-      "/invited/charmaine-dean/index.html",
-      "/invited/cheng-soon-ong/index.html",
-      "/invited/heather-turner/index.html",
-      "/invited/jesse-goodman/index.html",
-      "/invited/mevin-hooten/index.html"
     ]
   }
 ]
