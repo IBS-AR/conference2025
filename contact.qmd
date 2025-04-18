@@ -1,5 +1,6 @@
 ---
-title: Call for abstract
+title: Contact
 ---
 
 
+For enquiries, please send emails to <i class="fas fa-envelope"></i>  [conference@biometricsociety.org.au](mailto: conference@biometricsociety.org.au).
