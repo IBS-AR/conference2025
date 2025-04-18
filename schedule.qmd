@@ -1,5 +1,5 @@
 ---
-title: Program
+title: Schedule
 listing: 
   - id: schedule
     template: schedule.ejs

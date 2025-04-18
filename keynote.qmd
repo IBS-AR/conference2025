@@ -1,0 +1,12 @@
+---
+title: "Keynote Speakers"
+listing:
+  - id: keynote 
+    contents: keynote/
+    template: keynote/person.ejs
+format:
+  html:
+    css: keynote/people.css
+---
+
+

@@ -21,9 +21,11 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - program.qmd
+      - text: Program
+        menu:
+          - href: schedule.qmd
+          - href: keynote.qmd
       - social.qmd
-      - invited.qmd
       - text: Participation
         menu:
           - href: abstract.qmd
