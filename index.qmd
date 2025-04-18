@@ -1,6 +1,7 @@
 ---
 title: Biometrics in the Bush Capital
 subtitle: 24-28th November 2025, Canberra, Australia
+description: "{{< fa map-marker-alt >}} National Film and Sound Archive of Australia"
 date-format: iso
 ---
 
@@ -17,7 +18,6 @@ date-format: iso
 
 :::
 
-{{< fa map-marker-alt >}} National Film and Sound Archive of Australia
 
 ![](/images/Canberra social tile - rectangle - Lake Burley Griffin.jpg)
 

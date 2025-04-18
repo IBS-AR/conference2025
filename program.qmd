@@ -1,5 +1,45 @@
 ---
 title: Program
+listing: 
+  - id: schedule
+    template: schedule.ejs
+    contents: program.yml
+knitr: true
 ---
 
-To come. 
+Please note that this is a draft program and is subject to change. 
+
+
+```{css, echo = FALSE}
+.schedule-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 10% 45% 45%;
+  grid-gap: 13px;
+  grid-template-rows: 50px auto 50px;
+}
+.track, .break, .track1, .track2 {
+  color: #fff;
+  padding: 10px;
+  box-shadow: rgba(255, 255, 255, 0.6) 1px 1px 0, rgba(0, 0, 0, 0.3) 4px 4px 0;
+  grid-column: span 1;
+}
+.track, .break {
+  grid-column: span 2;
+  background-color: #c35500;
+}
+.track1, .track {
+  background-color: #1259B2;
+}
+.track2 {
+  background-color: #544D69;
+}
+
+```
+
+
+
+::: {#schedule}
+
+
+:::

@@ -1,0 +1,99 @@
+- day: Monday
+  schedule:
+    - time: 4.00pm
+      break: Registration
+      rowspan: 2
+    - time: 6.00pm
+      break: Welcome reception
+      rowspan: 4
+- day: Tuesday
+  schedule:
+    - time: 8.00am
+      break: Registration
+    - time: 8.45am
+      track: Housekeeping
+    - time: 9.15am
+      track: Keynote 1
+    - time: 10.00am
+      break: Morning tea
+    - time: 10.30am
+      track1: Session 1A
+      track2: Session 1B
+      rowspan: 3
+    - time: 12.30pm
+      break: Lunch
+    - time: 1.30pm
+      track: Invited session
+      rowspan: 3
+    - time: 3.00pm
+      break: Afternoon tea
+    - time: 3.30pm
+      track1: Session 2A
+      track2: Session 2B
+      rowspan: 3
+    - time: 5.30pm
+      break: Poster session
+      rowspan: 3
+- day: Wednesday
+  schedule:
+    - time: 8.00am
+      break: Registration
+    - time: 8.45am
+      track: Housekeeping
+    - time: 9.15am
+      track: Keynote 2
+    - time: 10.00am
+      break: Morning tea
+    - time: 10.30am
+      track1: Session 3A
+      track2: Session 3B
+      rowspan: 3
+    - time: 12.30pm
+      break: Lunch
+    - time: 1.30pm
+      break: Social activities
+- day: Thursday
+  schedule:
+    - time: 8.00am
+      break: Registration
+    - time: 8.45am
+      track: Housekeeping
+    - time: 9.15am
+      track: Keynote 3
+    - time: 10.00am
+      break: Morning tea
+    - time: 10.30am
+      track: Invited session 2
+      rowspan: 3
+    - time: 12.30pm
+      break: Lunch
+    - time: 1.30pm
+      track1: Session 4A
+      track2: Session 4B
+      rowspan: 3
+    - time: 3.15pm
+      break: Afternoon tea
+    - time: 3.45pm
+      track: Keynote 4
+      rowspan: 3
+    - time: 6.00pm
+      break: Conference dinner
+      rowspan: 4
+- day: Friday
+  schedule:
+    - time: 8.00am
+      break: Registration
+    - time: 8.45am
+      track: Housekeeping
+    - time: 9.15am
+      track: Keynote 5
+    - time: 10.00am
+      break: Morning tea
+    - time: 10.30am
+      track1: Session 5A
+      track2: Session 5B
+      rowspan: 3
+    - time: 12.30pm
+      track: Closing ceremony
+    - time: 12.45pm
+      break: Lunch

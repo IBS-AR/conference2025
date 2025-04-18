@@ -1,0 +1,54 @@
+```{=html}
+<% for (let day of items) { %>
+<h2><%= day.day %></h2>
+
+<div class="schedule-container">
+<% for (const item of day.schedule) { %>
+<%if (item.rowspan) { %>
+<div style="text-align:right;grid-row: span <%= item.rowspan %>;">
+<% } else {%>
+<div style="text-align:right;">
+<% } %>
+<%= item.time %>
+</div>
+<%if (item.break) { %>
+<%if (item.rowspan) { %>
+<div class="break" style="grid-row: span <%= item.rowspan %>;">
+<%= item.break %>
+</div>
+<% } else {%>
+<div class="break"><%= item.break %></div>
+<% } %>
+<% } %>
+<%if (item.track) { %>
+<%if (item.rowspan) { %>
+<div class="track" style="grid-row: span <%= item.rowspan %>;">
+<%= item.track %>
+</div>
+<% } else {%>
+<div class="track"><%= item.track %></div>
+<% } %>
+<% } %>
+<%if (item.track1) { %>
+<%if (item.rowspan) { %>
+<div class="track1" style="grid-row: span <%= item.rowspan %>;">
+<%= item.track1 %>
+</div>
+<% } else {%>
+<div class="track1"><%= item.track1 %></div>
+<% } %>
+<% } %>
+<%if (item.track2) { %>
+<%if (item.rowspan) { %>
+<div class="track2" style="grid-row: span <%= item.rowspan %>;">
+<%= item.track2 %>
+</div>
+<% } else {%>
+<div class="track2"><%= item.track2 %></div>
+<% } %>
+<% } %>
+<% } %>
+</div>
+
+<% } %>
+```

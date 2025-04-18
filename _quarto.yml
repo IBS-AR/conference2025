@@ -15,10 +15,23 @@ website:
     left:
       - href: index.qmd
         text: Home
-      #- program.qmd
+      - program.qmd
+      - social.qmd
       - invited.qmd
-      - organisers.qmd
-      - about.qmd
+      - text: Participation
+        menu:
+          - href: abstract.qmd
+          - href: registration.qmd
+          - href: travel.qmd
+          - href: accommodation.qmd
+          - href: sponsorship.qmd
+          - href: coc.qmd
+      - text: About
+        menu:
+        - organisers.qmd
+        - contact.qmd
+        - dates.qmd
+        - history.qmd
     tools:
       - icon: github
         url: https://github.com/IBS-AR/conference2025
@@ -27,3 +40,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    title-block-banner: true

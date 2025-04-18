@@ -1,36 +1,7 @@
 ---
-title: About
+title: Contact
 ---
 
-## <i class="fas fa-envelope"></i> Contact
 
 For enquiries, please send emails to <i class="fas fa-envelope"></i>  [conference@biometricsociety.org.au](mailto: conference@biometricsociety.org.au).
-
-## Why come?
-
-Australasian region of the International Biometric Society has existed since 1948 with its flagship regional conference held biannually. The regional conference is the prime destination for Australasian statistics and data science in the biosciences. Society has a rich history rooted in statistical theory, methodology and practice. More recent advancements attract diverse skills that span into data science.
-
-With only a maximum of two parallel sessions, the conference offers an intimate gathering of biometricians, statisticians, data scientists and alike in the Australasian region. The conference gives a prime opportunity to network with the regional biometrics community. 
-
-Below are photos from past conferences. Photo credit: Hans Hockey. 
-
-```{css, echo = FALSE}
-.img-fluid {
-  margin: 5px!important;
-  width: 45%;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-}
-```
-
-
-```{r}
-#| echo: false
-#| results: asis
-files <- fs::dir_ls("images/") |> 
-  stringr::str_subset("images/49.*")
-glue::glue("![]({files}){{.lightbox group='c2019'}}")
-```
-
 

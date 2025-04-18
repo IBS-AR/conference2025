@@ -1,0 +1,40 @@
+---
+title: Call for abstracts
+---
+
+We are pleased to invite submissions for abstracts for the Biometrics in the Bush Capital, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences. 
+
+
+<div class="button-wrapper-cta">
+  <a class="button-cta cta-button" href="https://forms.gle/3v5BtosfjP3335Nc9">Submit Abstract</a>
+</div>
+
+<br>
+
+## Key themes and topics
+
+We welcome abstracts addressing, but not limited to, the following areas:
+
+-  Agricultural Statistics
+-  Bayesian Statistics
+-  Data Science and Artificial Intelligence
+-  Design or Surveys
+-  Demographic or Population Modelling
+-  Ecological or Environmental Statistics
+-  Generalised Linear Mixed Modelling
+-  Machine Learning or Deep Learning
+-  Medical or Health Statistics
+-  Multivariate Statistics
+-  Spatial/Temporal Modelling
+-  Statistical Consulting/Workflow/Practice
+-  Statistical Genetics/Omics/Bioinformatics<br><br>
+
+## Submission guidelines
+
+Abstracts should be a maximum of 250 words written in English presented either as a talk or a poster. Abstract submission is due by **14th July 2025**.
+
+<div class="button-wrapper-cta">
+  <a class="button-cta cta-button" href="https://forms.gle/3v5BtosfjP3335Nc9">Submit Abstract</a>
+</div>
+
+For questions or further information, please contact conference@biometricsociety.org.au.
