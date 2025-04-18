@@ -2,4 +2,20 @@
 title: Accommodation
 ---
 
-Soon to come.
+The conference venue, **National Film and Sound Archive of Australia** (NFSA), is within walking distance to CBD, so any CBD hotel is generally suitable.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.833971568854!2d149.118880076434!3d-35.283190172718356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164d413ae340f9%3A0x1c7341ae4d3e2e31!2sNational%20Film%20and%20Sound%20Archive%20of%20Australia%20(NFSA)!5e0!3m2!1sen!2sau!4v1744955618889!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+## Accommodation Options
+
+
+- [Ovolo Nishi](https://ovolohotels.com/ovolo/nishi/) [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#d98b19;"} (~5 minutes walk)
+- [Peppers Gallery Hotel Canberra](https://all.accor.com/hotel/B3T5/index.en.shtml)  [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#fdb73e;"} (~5 minutes walk)
+- [QT Canberra](https://www.qthotels.com/canberra)   [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#fdb73e;"} (~7 minutes walk)
+- [BreakFree Capital Tower Canberra](https://all.accor.com/hotel/B3I4/index.en.shtml)   [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#fdb73e;"} (~7 minutes walk)
+- [Quest Canberra (Apartments)](https://www.questapartments.com.au/properties/act/canberra/quest-canberra) [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#fdb73e;"} (~12 minutes walk)
+- [Novotel Canberra](https://all.accor.com/hotel/2796/index.en.shtml) [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#fdb73e;"} (~14 minutes walk)
+- [Adina Serviced Apartments Canberra James Court](https://www.adinahotels.com/en/serviced-apartments/canberra-james-court) [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#fdb73e;"} (~20 minutes walk)
+- [A by Adina Canberra](https://reservations.abyadina.com/?adult=2&arrive=2025-11-24&chain=14687&child=0&config=meta&currency=AUD&depart=2025-11-28&dsclid=69413572027887616&filter=META&hotel=31228&level=hotel&locale=en-US&productcurrency=AUD&rooms=1&src=goog&theme=ABASBE&utm_campaign=google-hpa-31228&utm_content=mapresults_24-11-2025_4_31228_AU_desktop_unknown_22335507826_unknown_standard&utm_medium=channel_connect&utm_source=google-hpa)  (~15 minutes walk)
+- [Avenue Hotel Canberra](https://avenuehotel.com.au/) [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#d98b19;"} (~21 minutes walk)
+- [Meriton Suites Canberra](https://be.synxis.com/?adult=2&arrive=2025-11-24&chain=12196&child=0&config=meta&currency=AUD&depart=2025-11-28&dsclid=69413605124362240&filter=META&gclid=Cj0KCQjwzYLABhD4ARIsALySuCQRYvfqFI9MVDYHj4Mx_XEub2NmDmRwXbiZfPcQjD_vBLXREkkgH1oaAouxEALw_wcB&hotel=40899&level=hotel&locale=en-US&productcurrency=AUD&rooms=1&src=goog&start=availresults&utm_campaign=google-hpa-40899&utm_content=mapresults_24-11-2025_4_40899_AU_desktop_unknown_21058686159_unknown_standard&utm_medium=channel_connect&utm_source=google-hpa) [<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>]{style="color:#d98b19;"}  (~22 minutes walk)

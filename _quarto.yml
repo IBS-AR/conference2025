@@ -23,7 +23,7 @@ website:
           - href: abstract.qmd
           - href: registration.qmd
           - href: travel.qmd
-          - href: accommodation.qmd
+          #- href: accommodation.qmd
           - href: sponsorship.qmd
           - href: coc.qmd
       - text: About
