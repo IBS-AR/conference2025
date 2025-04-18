@@ -5,7 +5,12 @@ listing:
     template: schedule.ejs
     contents: program.yml
 knitr: true
+format:
+  html:
+    page-layout: custom
 ---
+
+::::: page-layout-custo
 
 Please note that this is a draft program and is subject to change. 
 
@@ -13,10 +18,28 @@ Please note that this is a draft program and is subject to change.
 ```{css, echo = FALSE}
 .schedule-container {
   height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 10% 45% 45%;
+  grid-template-columns: 14% 43% 43%;
   grid-gap: 13px;
   grid-template-rows: 50px auto 50px;
+}
+.title, p {
+  padding-left: 10px;
+}
+.schedule-container-all {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+}
+
+.schedule-day {
+  min-width: 335px;
+  padding-left: 10px;
+  padding-top: 100px;
+  padding-right: 30px;
+  margin-right: 10px;
+  100%;
 }
 .track, .break, .track1, .track2 {
   color: #fff;
@@ -43,3 +66,10 @@ Please note that this is a draft program and is subject to change.
 
 
 :::
+
+
+
+::::: 
+
+
+<br><br><Br>

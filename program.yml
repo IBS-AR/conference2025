@@ -1,5 +1,8 @@
 - day: Monday
   schedule:
+    - time: 9.00am
+      break: Workshop
+      rowspan: 8
     - time: 4.00pm
       break: Registration
       rowspan: 2
