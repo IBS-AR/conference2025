@@ -88,21 +88,28 @@
     "href": "workshop.html",
     "title": "Workshop",
     "section": "",
-    "text": "By Heather Turner\n24th November 2025, 9AM-5PM\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs."
+    "text": "By Heather Turner\n\nDate and Time: 24th November 2025, 9AM-5PM\nLocation: National Film and Sound Archive\n\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs."
   },
   {
     "objectID": "workshop.html#generalized-nonlinear-models-in-r",
     "href": "workshop.html#generalized-nonlinear-models-in-r",
     "title": "Workshop",
     "section": "",
-    "text": "By Heather Turner\n24th November 2025, 9AM-5PM\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs."
+    "text": "By Heather Turner\n\nDate and Time: 24th November 2025, 9AM-5PM\nLocation: National Film and Sound Archive\n\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs."
   },
   {
     "objectID": "workshop.html#requirements",
     "href": "workshop.html#requirements",
     "title": "Workshop",
     "section": "Requirements",
-    "text": "Requirements\nParticipants should bring a laptop with R installed, along with the gnm, logmult and vcdExtra packages."
+    "text": "Requirements\nParticipants should\n\nbring a laptop with R installed, along with the gnm, logmult and vcdExtra packages.\nhave basic R knowledge (e.g. you have used R to load data, create simple visualisations, perform basic analyses and write simple functions or more specifically, you are familiar with concepts in Cookbook for R by Winston Chang)\nknow basic statistics (e.g. simple linear regression, hypothesis testing, basic summary statistics and plots)"
+  },
+  {
+    "objectID": "workshop.html#desirable",
+    "href": "workshop.html#desirable",
+    "title": "Workshop",
+    "section": "Desirable",
+    "text": "Desirable\nFamiliarity with:\n\ngeneralized linear models and/or\nnonlinear least squares models\n\nwould be beneficial but not essential."
   },
   {
     "objectID": "workshop.html#registration",
