@@ -70,6 +70,13 @@
     "text": "Date\n \n\n\n\n\nFeb 28\nInvited session proposals: email conference@biometricsociety.org.au\n\n\nApr 14\nOpen for abstract submission\n\n\nJun 1\nOpen for registration\n\n\nJul 14\nClosing date for abstract submission\n\n\nAug 1\nLunchtime discussion proposals: email conference@biometricsociety.org.au\n\n\nAug 15\nInform acceptance of the abstract\n\n\nSep 1\nClose for early bird registration\n\n\nNov 23\nOceaniaR Hackathon co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.\n\n\nNov 24\nWorkshop\n\n\nNov 24-28\nConference"
   },
   {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "For enquiries, please send emails to  conference@biometricsociety.org.au."
+  },
+  {
     "objectID": "coc.html",
     "href": "coc.html",
     "title": "Code of Conduct",
@@ -77,11 +84,32 @@
     "text": "The International Biometrics Society Australasian Region (IBS-AR) is dedicated to providing a welcoming and harassment-free experience for everyone. We do not tolerate unprofessional or inappropriate conduct, which includes discrimination and harassment, sexual or otherwise. Conference participants should always work towards maintaining an environment free of harassment and discrimination. At the discretion of the IBS-AR conference organisers and/or IBS-AR council, any participants violating these rules may be asked to leave the conference, without any fee refund.\nParticipants agree to:\n\nBe considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of fellow attendees at all times.\nRefrain from demeaning, discriminatory, or harassing behaviour and speech.\nAlert a member of the IBS-AR council or conference organisers if they notice a dangerous situation, someone in distress, or violation of this code of conduct.\n\nHarassment is demeaning or threatening behaviour directed at an individual or a group of people. Harassment includes, but is not limited to,\n\nOffensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, person’s lifestyle choices and practices, physical appearance, age, race, religion (or lack thereof) or beliefs;\nUnwelcome sexual attention and behaviour including inappropriate sexual propositions; unnecessary touching; verbal or written comments or physical actions of a sexual nature; sexually degrading words used to describe an individual; a display of sexually suggestive objects or pictures; or sexually explicit jokes; and\nThreatening behaviour including bullying, threat of violence, deliberate intimidation, stalking or incitement of violence. Reporting\n\nIf you are being harassed by a member/guest/participant of/at the IBS-AR Conference, or notice that someone else is being harassed, or have any other concerns, please contact the designated safety officers in the conference team. The current safety officers can be found at TBD. If the person who is harassing you is one of the safety officers, they will recuse themselves from handling your incident and will not be given any information without your explicit consent. We will respond as promptly as we can."
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
+    "objectID": "workshop.html",
+    "href": "workshop.html",
+    "title": "Workshop",
     "section": "",
-    "text": "For enquiries, please send emails to  conference@biometricsociety.org.au."
+    "text": "By Heather Turner\n24th November 2025, 9AM-5PM\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs."
+  },
+  {
+    "objectID": "workshop.html#generalized-nonlinear-models-in-r",
+    "href": "workshop.html#generalized-nonlinear-models-in-r",
+    "title": "Workshop",
+    "section": "",
+    "text": "By Heather Turner\n24th November 2025, 9AM-5PM\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs."
+  },
+  {
+    "objectID": "workshop.html#requirements",
+    "href": "workshop.html#requirements",
+    "title": "Workshop",
+    "section": "Requirements",
+    "text": "Requirements\nParticipants should bring a laptop with R installed, along with the gnm, logmult and vcdExtra packages."
+  },
+  {
+    "objectID": "workshop.html#registration",
+    "href": "workshop.html#registration",
+    "title": "Workshop",
+    "section": "Registration",
+    "text": "Registration\nThe registration for the workshop will open in June. The workshop is limited in space so please register early to secure your spot."
   },
   {
     "objectID": "abstract.html",
