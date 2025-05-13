@@ -7,6 +7,6 @@
 | Aug 1 | [**Lunchtime discussion proposals**](updates.html#call-for-invited-sessions-and-lunchtime-discussions): email <conference@biometricsociety.org.au>
 | Aug 15 | **Inform acceptance of the abstract**
 | Sep 1 | **Close for early bird registration**
-| Nov 23 | [**OceaniaR Hackathon**](https://statsocaus.github.io/oceaniaR-hack/) co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.
+| Nov 23 | [**OceaniaR Hackathon**](https://statsocaus.github.io/oceaniar-hack-2025/) co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.
 | Nov 24 | **Workshop**
 | Nov 24-28 | **Conference**
