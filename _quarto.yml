@@ -33,7 +33,7 @@ website:
           - href: https://membership.biometricsociety.org.au/event-6157046
             text: Registration
           - href: travel.qmd
-          #- href: accommodation.qmd
+          - href: accommodation.qmd
           - href: sponsorship.qmd
           - href: coc.qmd
       - text: About
