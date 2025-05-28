@@ -5,7 +5,7 @@ website:
   title: "#BIBC2025"
   announcement:
     dismissable: true
-    content: "**Call for abstract** - submit your abstract [here](https://forms.gle/3v5BtosfjP3335Nc9) by 14th July 2025."
+    content: "**Call for abstract** - submit your abstract [here](https://forms.gle/3v5BtosfjP3335Nc9) by 14th July 2025.<Br>[**Early-bird registration**](https://membership.biometricsociety.org.au/event-6157046) available until 1st September 2025."
     type: primary
     position: below-navbar
     icon: info-circle
