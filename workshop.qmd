@@ -24,12 +24,15 @@ Participants should
 
 Familiarity with:
 
-- generalized linear models and/or 
-- nonlinear least squares models 
+- generalized linear models and/or
+- nonlinear least squares models
 
 would be beneficial but not essential.
 
 
-## Registration 
+## Registration
 
-The registration for the workshop will open in June. The workshop is limited in space so please register early to secure your spot.
+The workshop is limited in space so please register early to secure your spot.
+
+The registration for the workshop can be found [**here**](https://membership.biometricsociety.org.au/event-6207949).
+
