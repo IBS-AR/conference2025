@@ -1,0 +1,32 @@
+---
+title: "Invited Sessions"
+---
+
+Invited sessions aim to bring together experts to discuss emerging trends, present cutting-edge research, and engage in meaningful discussions on specialised topics that will be of interest to the biometrics community, over a 90 minute period. 
+
+## Statistics for Biosecurity Surveillance
+
+_Organiser and Chair: A/Prof Robert Clark_
+
+- **Prof Andrew Robinson**<br>_University of Melbourne, CEO of CEBRA_<br> Surveillance for counterfactual scenarios of invasive species - why it's useful and a convenient  way to do it
+- **Dr Mahdi Parsa** and **Dr Belinda Barnes**<Br>_Department of Agriculture, Fisheries and Forestry_<br>Optimising control and surveillance strategies under uncertainty in complex eradication programs
+- **Dr Sumon Das** and **A/Prof Robert Clark**<br>_Australian National University_<br>Infererring the rate of undetected contamination using random effects modelling of biosecurity screening histories
+- **Dr Raphael Trouvé**<br>_University of Melbourne, Senior Research Fellow in Forest Dynamics_<br>Optimal sampling in border biosecurity
+
+
+## A cluster of modern clustering methods for Biometrics
+
+_Organiser and Chair: A/Prof Francis Hui_
+
+- **Dr Skipton Wolley**<br>_CSIRO Data 61_<br>Species archetype models for presence-only data 
+- **Dr Louise McMillian**<br>_School of Mathematics and Statistics, Victoria University of Wellington_<br>The difficulties of clustering categorical or mixed data
+- **Dr Shonosuke Sugusawa**<br>_Faculty of Economics, Keio University_<br>Bayesian clustered ensemble prediction for multivariate time series
+
+## Methods and Practice in Agricultural Analytics
+
+_Organiser and Chair: Dr Emi Tanaka_
+
+- **Dr Shuwen Hu**<br>_RMIT University_<br>Leveraging Statistical Modelling and Machine Learning in Animal Science
+- **A/Prof Gota Morota**<br>_Univeristy of Tokyo_<br>Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes
+- **Dr Elle Saber**<br>_Australian National University_<br>Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field
+
