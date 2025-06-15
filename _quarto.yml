@@ -25,6 +25,7 @@ website:
         menu:
           - href: schedule.qmd
           - href: keynote.qmd
+          - href: invited.qmd
           - href: workshop.qmd
       - social.qmd
       - text: Participation
