@@ -28,5 +28,5 @@ _Organiser and Chair: Dr Emi Tanaka_
 
 - **Dr Shuwen Hu**<br>_RMIT University_<br>Leveraging Statistical Modelling and Machine Learning in Animal Science
 - **A/Prof Gota Morota**<br>_Univeristy of Tokyo_<br>Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes
-- **Dr Elle Saber**<br>_Australian National University_<br>Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field
+- **Ms Elle Saber**<br>_Australian National University_<br>Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field
 
