@@ -18,7 +18,7 @@ By **Heather Turner**
 
 ::: button-wrapper-cta
 
-[Register for<br>Generalized Nonlinear Models in R](https://membership.biometricsociety.org.au/event-6207949){.button-cta .cta-button}
+[Register](https://membership.biometricsociety.org.au/event-6207949){.button-cta .cta-button}
 
 :::
 
@@ -60,12 +60,12 @@ By **Thomas Lumley**
 
 ::: button-wrapper-cta
 
-[Register for<br>Analysing Complex Survey and Subsample Data (with R)](https://membership.biometricsociety.org.au/event-6244472){.button-cta .cta-button}
+[Register](https://membership.biometricsociety.org.au/event-6244472){.button-cta .cta-button}
 
 :::
 
 
-	 
+
 
 <details>
 
@@ -104,7 +104,7 @@ By **Peter Humburg** and **Eve Slavich**
 
 ::: button-wrapper-cta
 
-[Register for<br>Lost in Translation: Speaking Statistician in a Multi-Lingual World](https://membership.biometricsociety.org.au/event-6244474){.button-cta .cta-button}
+[Register](https://membership.biometricsociety.org.au/event-6244474){.button-cta .cta-button}
 
 :::
 
@@ -123,5 +123,55 @@ Effective communication is a crucial skill for working successfully with individ
 Eve Slavich is a Statistical Consultant at UNSW Stats Central with 7 years experience consulting, spanning over 400 researchers and students, with a particular focus on ecology.
 
 Peter Humburg is a Biostatistician at UNSW Stats Central. He has over ten years of experience consulting for researchers from many different fields, with a focus on medical research.
+
+</details>
+
+
+
+### Deep Learning and Computer Vision in R: A Practical Introduction
+
+By **Patrick (Weihao) Li**
+
+
+::: button-wrapper-cta
+
+[Register](https://membership.biometricsociety.org.au/event-6245149){.button-cta .cta-button}
+
+:::
+
+<details>
+
+- **Date and Time**: 24th November 2025, 9AM-5PM
+
+- **Location**: Haydon-Allen Building, Australian National University
+
+Deep learning has transformed how we extract insights from images, powering applications such as cell classification, disease detection in scans, and tissue segmentation. While these techniques are increasingly relevant in modern research, many applied statisticians are unfamiliar with the core concepts and tools behind them.
+
+This hands-on workshop introduces the fundamentals of deep learning and its applications in computer vision, with a focus on accessibility for R users. We will begin with a high-level overview of deep learning and neural networks, then build intuition for the anatomy of a neural network, covering layers, activation functions, model training, and key components for image analysis such as convolutional and pooling layers. Practical applications will include:
+
+- **Image classification** (e.g. distinguishing image types or categories)
+- **Object detection** (e.g. locating objects within images)
+- **Image segmentation** (time permitting)
+
+All work will be done in R using the reticulate package to access Python-based deep learning tools. To streamline the experience, participants will use a pre-configured Posit Cloud workspace, accessible entirely through a web browser.
+
+#### Requirements
+
+Participants should:
+
+- Create a free Posit Cloud account (details and project link will be provided)
+- Be comfortable with basic R tasks (e.g. loading data, using functions, navigating RStudio)
+- Have a working knowledge of basic statistical concepts (e.g. regression, classification, model accuracy)
+
+#### Desirable
+
+- No prior experience with deep learning, computer vision, or Python is required
+- Some familiarity with matrices or linear algebra may help conceptual understanding, but is not necessary
+
+#### Biography
+
+Dr Patrick (Weihao) Li is a Postdoctoral Research Fellow at the Australian National University, where his research centers on applying machine learning and computer vision techniques to the
+grains industry. For his PhD, he developed computer vision models to automate the assessment of
+residual plots in regression diagnostics. An award-winning software developer, Patrick has published multiple R packages on CRAN and GitHub, contributing to the open-source ecosystem for data analysis and visualization.
 
 </details>
