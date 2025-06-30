@@ -102,6 +102,8 @@ Thomas Lumley is a Professor in the Statistics Department at the University of A
 
 By **Peter Humburg** and **Eve Slavich**
 
+Note: this is a half-day workshop
+
 ::: button-wrapper-cta
 
 [Register](https://membership.biometricsociety.org.au/event-6244474){.button-cta .cta-button}
