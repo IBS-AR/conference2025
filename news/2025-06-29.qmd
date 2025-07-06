@@ -1,0 +1,13 @@
+---
+title: 'Workshops'
+date: 2025-06-29
+description: |
+ Pre-conference workshops are now open for registration:
+ <ul>
+ <li><b>Generalized Nonlinear Models in R</b> by Heather Turner</li>
+ <li><b>Analysing Complex Survey and Subsample Data (with R)</b> by Thomas Lumley</li>
+ <li><b>Lost in Translation: Speaking Statistician in a Multi-Lingual World</b> by Peter Humburg and Eve Slavich</li>
+ <li><b>Deep Learning and Computer Vision in R: A Practical Introduction</b> by Patrick (Weihao) Li</li>
+ </ul>
+ <p>See more details <a href="https://biometricsociety.org.au/conference2025/workshop.html">here</a>. As places are limited, please register early to secure your spot. </p>
+---
