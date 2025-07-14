@@ -4,6 +4,7 @@ listing:
   id: news
   contents: news
   template: assets/news.ejs
+  sort: date desc
 date-format: iso
 ---
 

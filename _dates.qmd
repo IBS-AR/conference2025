@@ -1,12 +1,12 @@
 | Date | &nbsp; |
 | --- | --- |
 | ~~Feb 28~~ | ~~**Invited session proposals**: email <conference@biometricsociety.org.au>~~ |
-| Apr 14  | **Open for abstract submission**
-| Jun 1 | **Open for registration**
-| Jul 14 | **Closing date for abstract submission**
-| Aug 1 | [**Lunchtime discussion proposals**](updates.html#call-for-invited-sessions-and-lunchtime-discussions): email <conference@biometricsociety.org.au>
+| ~~Apr 14~~  | ~~**Open for abstract submission**~~
+| ~~Jun 1~~ | ~~**Open for registration**~~
+| ~~Jul 14~~ Jul 21 | **Closing date for abstract submission** (extended for one week)
 | Aug 15 | **Inform acceptance of the abstract**
 | Sep 1 | **Close for early bird registration**
+| ~~Aug 1~~ Sep 1 | [**Lunchtime discussion proposals**](updates.html#call-for-invited-sessions-and-lunchtime-discussions): email <conference@biometricsociety.org.au> (extended by one month)
 | Nov 23 | [**OceaniaR Hackathon**](https://statsocaus.github.io/oceaniar-hack-2025/) co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.
 | Nov 24 | **Workshop**
 | Nov 24-28 | **Conference**
