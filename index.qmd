@@ -25,7 +25,7 @@ The Australasian Region Biometrics conference is a biannual conference sponsored
 
 
 <div class="button-wrapper-cta">
-  <a class="button-cta cta-button" href="https://forms.gle/3v5BtosfjP3335Nc9">Submit Abstract</a>
+  <a class="button-cta cta-button" href="https://membership.biometricsociety.org.au/event-6157046">Register for the conference</a>
 </div>
 
 
