@@ -8,8 +8,6 @@ Monday:
     location: "Main Hall"
     abstract: "Hands-on interactive workshop introducing key themes of the conference."
     description: "Engage in a collaborative learning environment as we explore the foundational topics of the conference through discussion, exercises, and group work."
-    equipment: "Projector, notepads, pens"
-    level: "All levels"
 
   - name: "Registration"
     id: "registration-mon"
@@ -20,8 +18,6 @@ Monday:
     location: "Foyer"
     abstract: "Conference registration and badge pickup."
     description: "Drop in to collect your materials and meet fellow attendees."
-    equipment: "Badge printer, welcome packs"
-    level: "N/A"
 
   - name: "Welcome Reception"
     id: "welcome-reception"
@@ -32,8 +28,6 @@ Monday:
     location: "Garden Terrace"
     abstract: "Opening reception with drinks and light refreshments."
     description: "Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference."
-    equipment: "Name tags, catering"
-    level: "All levels"
 
 Tuesday:
   - name: "Registration"
@@ -45,8 +39,6 @@ Tuesday:
     location: "Foyer"
     abstract: "Morning registration and info desk."
     description: "Final registration opportunity and general assistance available."
-    equipment: "Brochures, badges"
-    level: "N/A"
 
   - name: "Housekeeping"
     id: "housekeeping-tue"
@@ -57,20 +49,16 @@ Tuesday:
     location: "Main Auditorium"
     abstract: "Conference housekeeping announcements."
     description: "Overview of the day, rooms, and key information for attendees."
-    equipment: "Slides, microphone"
-    level: "N/A"
 
   - name: "Keynote 1"
     id: "keynote-1"
-    type: "keynote"
+    type: "talk"
     start: "09:15"
     end: "10:00"
     speaker: "Prof. John Smith"
     location: "Main Auditorium"
     abstract: "Exploring the future of interdisciplinary research."
     description: "A forward-looking keynote on how collaboration across disciplines is shaping innovation."
-    equipment: "Projector, laser pointer"
-    level: "All levels"
 
   - name: "Morning Tea"
     id: "morning-tea-tue"
@@ -81,8 +69,6 @@ Tuesday:
     location: "Café Area"
     abstract: "Light refreshments and beverages."
     description: "Take a break and enjoy some tea or coffee while networking with peers."
-    equipment: "Catering"
-    level: "N/A"
 
   - name: "Session 1A"
     id: "session-1a"
@@ -93,8 +79,6 @@ Tuesday:
     location: "Room A"
     abstract: "Parallel session on Topic A"
     description: "Academic presentations and discussion focused on Topic A."
-    equipment: "Projector, microphones"
-    level: "Advanced"
     par_id: 1
     par_total: 2
 
@@ -107,8 +91,6 @@ Tuesday:
     location: "Room B"
     abstract: "Parallel session on Topic B"
     description: "Academic presentations and discussion focused on Topic B."
-    equipment: "Projector, microphones"
-    level: "Advanced"
     par_id: 2
     par_total: 2
 
@@ -121,20 +103,16 @@ Tuesday:
     location: "Dining Area"
     abstract: "Buffet lunch served."
     description: "Recharge and enjoy a variety of meals with other delegates."
-    equipment: "Buffet setup"
-    level: "N/A"
 
   - name: "Invited Session"
     id: "invited-1"
-    type: "invited"
+    type: "talk"
     start: "13:30"
     end: "15:00"
     speaker: "Dr. Maya Patel"
     location: "Main Auditorium"
     abstract: "Invited talk on sustainability in science."
     description: "A thought-provoking session led by an expert in sustainable scientific practices."
-    equipment: "Slides, whiteboard"
-    level: "All levels"
 
   - name: "Afternoon Tea"
     id: "afternoon-tea-tue"
@@ -145,8 +123,6 @@ Tuesday:
     location: "Café Area"
     abstract: "Afternoon refreshments."
     description: "Light snacks and drinks served."
-    equipment: "Catering"
-    level: "N/A"
 
   - name: "Session 2A"
     id: "session-2a"
@@ -157,8 +133,6 @@ Tuesday:
     location: "Room A"
     abstract: "Parallel session on Topic C"
     description: "Academic presentations and discussion focused on Topic C."
-    equipment: "Projector, microphones"
-    level: "Intermediate"
     par_id: 1
     par_total: 2
 
@@ -171,8 +145,6 @@ Tuesday:
     location: "Room B"
     abstract: "Parallel session on Topic D"
     description: "Academic presentations and discussion focused on Topic D."
-    equipment: "Projector, microphones"
-    level: "Intermediate"
     par_id: 2
     par_total: 2
 
@@ -185,8 +157,6 @@ Tuesday:
     location: "Exhibit Hall"
     abstract: "Poster presentations and discussions."
     description: "Explore a wide range of research topics during this informal poster session."
-    equipment: "Posters, display boards"
-    level: "All levels"
 
 Wednesday:
   - name: "Registration"
@@ -198,8 +168,6 @@ Wednesday:
     location: "Foyer"
     abstract: "Morning registration and help desk."
     description: "Assistance for late arrivals and info services."
-    equipment: "Name tags, help desk materials"
-    level: "N/A"
 
   - name: "Housekeeping"
     id: "housekeeping-wed"
@@ -210,20 +178,16 @@ Wednesday:
     location: "Main Auditorium"
     abstract: "Announcements for the day."
     description: "Overview of the day’s schedule and room info."
-    equipment: "Slides, mic"
-    level: "N/A"
 
   - name: "Keynote 2"
     id: "keynote-2"
-    type: "keynote"
+    type: "talk"
     start: "09:15"
     end: "10:00"
     speaker: "Prof. Linda Zhao"
     location: "Main Auditorium"
     abstract: "The power of data in public decision-making."
     description: "An inspiring keynote on how data science is transforming policy and public welfare."
-    equipment: "Slides, laser pointer"
-    level: "All levels"
 
   - name: "Morning Tea"
     id: "morning-tea-wed"
@@ -234,8 +198,6 @@ Wednesday:
     location: "Café Area"
     abstract: "Tea, coffee, snacks."
     description: "A mid-morning refreshment break."
-    equipment: "Catering"
-    level: "N/A"
 
   - name: "Session 3A"
     id: "session-3a"
@@ -246,8 +208,6 @@ Wednesday:
     location: "Room A"
     abstract: "Topic E"
     description: "Talks and discussion on Topic E."
-    equipment: "AV system"
-    level: "Advanced"
     par_id: 1
     par_total: 2
 
@@ -260,8 +220,6 @@ Wednesday:
     location: "Room B"
     abstract: "Topic F"
     description: "Talks and discussion on Topic F."
-    equipment: "AV system"
-    level: "Advanced"
     par_id: 2
     par_total: 2
 
@@ -273,9 +231,6 @@ Wednesday:
     speaker: ""
     location: "Dining Hall"
     abstract: "Lunch service."
-    description: "Network with peers over lunch."
-    equipment: "Buffet"
-    level: "N/A"
 
   - name: "Social Activities"
     id: "social-wed"
@@ -286,8 +241,6 @@ Wednesday:
     location: "Outdoor Grounds"
     abstract: "Networking games and tours."
     description: "Fun and informal activities for relaxing and networking."
-    equipment: "Games, transport"
-    level: "All levels"
 
 Thursday:
   - name: "Registration"
@@ -299,8 +252,6 @@ Thursday:
     location: "Foyer"
     abstract: "Help desk open for attendees."
     description: "Conference staff available to assist attendees."
-    equipment: "Brochures, materials"
-    level: "N/A"
 
   - name: "Housekeeping"
     id: "housekeeping-thu"
@@ -311,20 +262,16 @@ Thursday:
     location: "Main Auditorium"
     abstract: "Morning announcements."
     description: "Day briefing and session reminders."
-    equipment: "Microphone"
-    level: "N/A"
 
   - name: "Keynote 3"
     id: "keynote-3"
-    type: "keynote"
+    type: "talk"
     start: "09:15"
     end: "10:00"
     speaker: "Prof. Yuki Tanaka"
     location: "Main Auditorium"
     abstract: "AI and Society: Balancing innovation and ethics."
     description: "Insightful keynote on the societal impacts of AI."
-    equipment: "Projector, screen"
-    level: "All levels"
 
   - name: "Morning Tea"
     id: "morning-tea-thu"
@@ -335,20 +282,16 @@ Thursday:
     location: "Café Area"
     abstract: "Refreshments and networking."
     description: "Tea and coffee served."
-    equipment: "Catering"
-    level: "N/A"
 
   - name: "Invited Session 2"
     id: "invited-2"
-    type: "invited"
+    type: "talk"
     start: "10:30"
     end: "12:30"
     speaker: "Dr. Amir Khalil"
     location: "Main Auditorium"
     abstract: "Technology and climate resilience."
     description: "Session on innovation for environmental sustainability."
-    equipment: "Slides, microphone"
-    level: "All levels"
 
   - name: "Lunch"
     id: "lunch-thu"
@@ -359,8 +302,6 @@ Thursday:
     location: "Dining Hall"
     abstract: "Lunch served."
     description: "Buffet and vegetarian options available."
-    equipment: "Buffet"
-    level: "N/A"
 
   - name: "Session 4A"
     id: "session-4a"
@@ -371,8 +312,6 @@ Thursday:
     location: "Room A"
     abstract: "Topic G"
     description: "Focused discussions and papers on Topic G."
-    equipment: "Projector"
-    level: "Advanced"
     par_id: 1
     par_total: 2
 
@@ -385,8 +324,6 @@ Thursday:
     location: "Room B"
     abstract: "Topic H"
     description: "Presentations related to Topic H."
-    equipment: "Projector"
-    level: "Advanced"
     par_id: 2
     par_total: 2
 
@@ -399,20 +336,16 @@ Thursday:
     location: "Café Area"
     abstract: "Afternoon refreshments."
     description: "Snacks and coffee available."
-    equipment: "Catering"
-    level: "N/A"
 
   - name: "Keynote 4"
     id: "keynote-4"
-    type: "keynote"
+    type: "talk"
     start: "15:45"
     end: "17:30"
     speaker: "Dr. Elena Rossi"
     location: "Main Auditorium"
     abstract: "Global science collaboration challenges."
     description: "Exploring barriers and breakthroughs in international research networks."
-    equipment: "Slides"
-    level: "All levels"
 
   - name: "Conference Dinner"
     id: "dinner"
@@ -423,8 +356,6 @@ Thursday:
     location: "Banquet Hall"
     abstract: "Celebratory closing dinner."
     description: "Enjoy an evening of fine dining, speeches, and socializing."
-    equipment: "Dining service"
-    level: "All levels"
 
 Friday:
   - name: "Registration"
@@ -436,8 +367,6 @@ Friday:
     location: "Foyer"
     abstract: "Final day check-in."
     description: "Help desk open for any last-day questions."
-    equipment: "Stationery"
-    level: "N/A"
 
   - name: "Housekeeping"
     id: "housekeeping-fri"
@@ -448,20 +377,16 @@ Friday:
     location: "Main Auditorium"
     abstract: "Final announcements and updates."
     description: "Reminders for final sessions and feedback collection."
-    equipment: "Slides"
-    level: "N/A"
 
   - name: "Keynote 5"
     id: "keynote-5"
-    type: "keynote"
+    type: "talk"
     start: "09:15"
     end: "10:00"
     speaker: "Prof. Michael Green"
     location: "Main Auditorium"
     abstract: "The next decade of quantum computing."
     description: "An exploration of future challenges and potentials in quantum research."
-    equipment: "Projector"
-    level: "All levels"
 
   - name: "Morning Tea"
     id: "morning-tea-fri"
@@ -472,8 +397,6 @@ Friday:
     location: "Café Area"
     abstract: "Morning refreshments."
     description: "Tea, coffee, and light snacks."
-    equipment: "Catering"
-    level: "N/A"
 
   - name: "Session 5A"
     id: "session-5a"
@@ -484,8 +407,6 @@ Friday:
     location: "Room A"
     abstract: "Topic I"
     description: "Talks related to Topic I."
-    equipment: "Projector"
-    level: "Intermediate"
     par_id: 1
     par_total: 2
 
@@ -498,8 +419,6 @@ Friday:
     location: "Room B"
     abstract: "Topic J"
     description: "Talks related to Topic J."
-    equipment: "Projector"
-    level: "Intermediate"
     par_id: 2
     par_total: 2
 
@@ -512,8 +431,7 @@ Friday:
     location: "Main Auditorium"
     abstract: "Wrap-up and acknowledgements."
     description: "Thanks to participants, sponsors, and staff. Final remarks and farewell."
-    equipment: "Slides"
-    level: "All levels"
+
 
   - name: "Lunch"
     id: "lunch-fri"
@@ -524,5 +442,4 @@ Friday:
     location: "Dining Hall"
     abstract: "Farewell lunch."
     description: "Join peers one last time over lunch."
-    equipment: "Buffet"
-    level: "N/A"
+
