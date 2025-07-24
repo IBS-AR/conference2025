@@ -420,40 +420,34 @@ tags$script(paste0("const eventData = {\n",
     function openModal(eventId) {
         const event = eventData[eventId];
         if (!event) return;
-
-        document.getElementById('modal-name').textContent = event.name;
-        document.getElementById('modal-time').textContent = event.time;
-        
+    
+        document.getElementById('modal-name').textContent = event.name || '';
+        document.getElementById('modal-time').textContent = event.time || '';
+    
         const modalBody = document.getElementById('modal-body');
-        modalBody.innerHTML = `
-            <div class="modal-section">
-                <div class="modal-section-name">Instructor</div>
-                <div class="modal-section-content">${event.speaker}</div>
-            </div>
-            <div class="modal-section">
-                <div class="modal-section-name">Location</div>
-                <div class="modal-section-content">${event.location}</div>
-            </div>
-            <div class="modal-section">
-                <div class="modal-section-name">Level</div>
-                <div class="modal-section-content">${event.level}</div>
-            </div>
-            <div class="modal-section">
-                <div class="modal-section-name">Abstract</div>
-                <div class="modal-section-content">${event.abstract}</div>
-            </div>
-            <div class="modal-section">
-                <div class="modal-section-name">Description</div>
-                <div class="modal-section-content">${event.description}</div>
-            </div>
-            <div class="modal-section">
-                <div class="modal-section-name">Equipment</div>
-                <div class="modal-section-content">${event.equipment}</div>
-            </div>
-        `;
-        
+        modalBody.innerHTML = ''; // Clear previous content
+    
+        // Optional: fields you want to skip or already used at the top
+        const excludeKeys = new Set(['name', 'time', 'id', 'type', 'par_id', 'par_total']);
+    
+        for (const key in event) {
+            if (!event[key] || excludeKeys.has(key)) continue;
+    
+            // Capitalize key for section name
+            const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
+    
+            const section = document.createElement('div');
+            section.className = 'modal-section';
+            section.innerHTML = `
+                <div class="modal-section-name">${sectionTitle}</div>
+                <div class="modal-section-content">${event[key]}</div>
+            `;
+            modalBody.appendChild(section);
+        }
+    
         document.getElementById('modal').style.display = 'flex';
     }
+
 
     function closeModal(event) {
         if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
