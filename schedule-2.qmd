@@ -1,10 +1,11 @@
 ---
-name: Schedule-2
+title: Schedule-2
 knitr: true
 format:
   html:
     page-layout: custom
 ---
+
 
 ```{css, echo = FALSE}
 * {
@@ -364,16 +365,19 @@ events <- lapply(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"),
                        day_column()
                      })
 
-div(class = "container",
+div(class = "scroll-wrapper",
+    div(class = "container",
     div(class = "timeline-container",
         header(),
         div(class = "grid-container",
             time_column(),
             events)
         ),
-    legend(types = c("fitness", "cardio", "yoga", "restorative"),
-           labels = c("Fitness", "Cardio", "Yoga", "Restorative"))
+    legend(types = c("general", "social", "keynote", "invited", "poster", "talk", "workshop"),
+           labels = c("General", "Social", "Keynote", "Invited", "Poster", "Talk", "Workshop"))
     )
+)
+
 ```
 
 ```{r, results = "asis", echo = FALSE}
