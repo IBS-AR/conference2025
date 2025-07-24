@@ -287,7 +287,12 @@ Please note that this is a draft program and is subject to change.
 library(htmltools)
 
 header <- function() {
-  cells <- c("Time", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+  cells <- list(" ", 
+                HTML("Monday<br>Nov. 24th"), 
+                HTML("Tuesday<br>Nov. 25th"), 
+                HTML("Wednesday<br>Nov. 26th"), 
+                HTML("Thursday<br>Nov. 27th"), 
+                HTML("Friday<br>Nov. 28th"))
   lapply(cells, \(cell) div(class = "header-cell", cell)) |>
     div(class = "header")
 }
