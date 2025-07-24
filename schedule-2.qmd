@@ -20,8 +20,14 @@ body {
     line-height: 1.4;
 }
 
+.scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .container {
-    max-width: 1400px;
+    min-width: 700px;
+    max-width: 2000px;
     margin: 0 auto;
 }
 
@@ -42,7 +48,7 @@ h1 {
 
 .header {
     display: grid;
-    grid-template-columns: 80px repeat(5, 1fr);
+    grid-template-columns: 40px repeat(5, 1fr);
     border-bottom: 2px solid #e5e7eb;
     background: #f9fafb;
 }
@@ -61,7 +67,7 @@ h1 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 80px repeat(5, 1fr);
+    grid-template-columns: 40px repeat(5, 1fr);
     position: relative;
 }
 
@@ -71,7 +77,7 @@ h1 {
 }
 
 .time-slot {
-    height: 90px;
+    height: 120px;
     padding: 8px;
     display: flex;
     align-items: center;
@@ -93,7 +99,7 @@ h1 {
 
 <!-- Change .grid-line height and .time-slot height together -->
 .grid-line {
-    height: 90px;
+    height: 120px;
     border-bottom: 1px solid #f3f4f6;
 }
 
@@ -118,32 +124,44 @@ h1 {
 }
 
 .event-time {
-    font-size: 9px;
+    font-size: 12px;
     opacity: 0.9;
     margin-bottom: 2px;
 }
 
 .event-name {
     font-weight: 700;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.2;
 }
 
 /* Event type colors */
-.fitness {
-    background: linear-gradient(135deg, #64748b, #475569);
+.general {
+    background: linear-gradient(135deg, #6b7280, #4b5563); /* slate */
 }
 
-.cardio {
-    background: linear-gradient(135deg, #581c87, #3b0764);
+.keynote {
+    background: linear-gradient(135deg, #d97706, #b45309); /* warm amber/gold */
 }
 
-.yoga {
-    background: linear-gradient(135deg, #0d9488, #0f766e);
+.social {
+    background: linear-gradient(135deg, #f472b6, #ec4899); /* soft magenta */
 }
 
-.restorative {
-    background: linear-gradient(135deg, #ea580c, #c2410c);
+.invited {
+    background: linear-gradient(135deg, #f87171, #ef4444); /* coral red */
+}
+
+.talk {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6); /* soft blue */
+}
+
+.poster {
+    background: linear-gradient(135deg, #10b981, #059669); /* teal green */
+}
+
+.workshop {
+    background: linear-gradient(135deg, #c084fc, #a855f7); /* soft purple */
 }
 
 /* Modal styles */
