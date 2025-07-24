@@ -154,7 +154,7 @@ h1 {
 }
 
 .talk {
-    background: linear-gradient(135deg, #60a5fa, #3b82f6); /* soft blue */
+    background: linear-gradient(135deg, #d97706, #d97706); /* soft blue */
 }
 
 .poster {
@@ -373,8 +373,8 @@ div(class = "scroll-wrapper",
             time_column(),
             events)
         ),
-    legend(types = c("general", "social", "keynote", "invited", "poster", "talk", "workshop"),
-           labels = c("General", "Social", "Keynote", "Invited", "Poster", "Talk", "Workshop"))
+    legend(types = c("general", "social", "keynote", "workshop"),
+           labels = c("General", "Social", "Talks", "Workshop"))
     )
 )
 
