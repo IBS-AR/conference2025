@@ -10,6 +10,17 @@ website:
     position: below-navbar
     icon: info-circle
   page-footer: |
+     Sponsored by<br><br>
+     <table style="width:100%">
+     <tr><th>PLATINUM</th><th>GOLD</th><th>SUPPORTER</th></tr>
+     <tr>
+     <td>![](/images/sponsors/ANU_Primary_Horizontal_GoldBlack.png){fig-alt="Australian National University" height="4em"}</td>
+     <td>![](/images/sponsors/GRDC_Logo_Primary_Default.jpg){fig-alt="Grains Research and Development Corporation" height="4em"}</td>
+     <td>![ACT Branch](/images/sponsors/SSA_Logotype_MAIN USE.jpg){fig-alt="Statistical Society of Australia ACT Branch" height="4em"}</td>
+     </tr>
+     </table>
+
+       <br><br>
      Biometrics in the Bush Capital {{< fa solid landmark >}} Canberra, Australia
   favicon: favicon.ico
   repo-url: https://github.com/IBS-AR/conference2025

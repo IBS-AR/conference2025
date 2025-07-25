@@ -2,8 +2,40 @@
 title: Sponsorship
 ---
 
-We are currently seeking sponsorship partners. Please contact <conference@biometricsociety.org.au> if you can sponsor our upcoming conference or go below for more informaton.
+If you would like to sponsor the conference, please contact <conference@biometricsociety.org.au> or go below for more informaton.
 
 <div class="button-wrapper-cta">
   <a class="button-cta cta-button" href="	https://membership.biometricsociety.org.au/event-6161571 ">Sponsorship Information</a>
 </div>
+
+
+We gratefully acknowledge our sponsors for their generous support, which has made this conference possible.  
+
+
+## Platinum sponsor
+
+<center>
+
+
+![](/images/sponsors/ANU_Primary_Horizontal_GoldBlack.png){fig-alt="Australian National University" height="8em"}
+
+</center>
+
+
+## Gold sponsor
+
+<center>
+
+
+![](/images/sponsors/GRDC_Logo_Primary_Default.jpg){fig-alt="Grains Research and Development Corporation" height="8em"}
+
+</center>
+
+
+## Supporter
+
+<center>
+
+![ACT Branch](/images/sponsors/SSA_Logotype_MAIN USE.jpg){fig-alt="Statistical Society of Australia ACT Branch" height="8em"}
+
+</center>
