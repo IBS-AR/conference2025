@@ -1,75 +1,492 @@
 ---
 title: Schedule
-listing: 
-  - id: schedule
-    template: schedule.ejs
-    contents: program.yml
 knitr: true
 format:
   html:
     page-layout: custom
 ---
 
-::::: page-layout-custo
+
+```{css, echo = FALSE}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    <!-- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -->
+    background-color: #f8fafc;
+    padding: 20px;
+    line-height: 1.4;
+}
+
+.scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.container {
+    min-width: 700px;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #1f2937;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.timeline-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 40px repeat(5, 1fr);
+    border-bottom: 2px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.header-cell {
+    padding: 15px 10px;
+    font-weight: 600;
+    text-align: center;
+    border-right: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.header-cell:last-child {
+    border-right: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 40px repeat(5, 1fr);
+    position: relative;
+}
+
+.time-column {
+    border-right: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.time-slot {
+    height: 120px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.day-column {
+    border-right: 1px solid #e5e7eb;
+    position: relative;
+    background: white;
+}
+
+.day-column:last-child {
+    border-right: none;
+}
+
+<!-- Change .grid-line height and .time-slot height together -->
+.grid-line {
+    height: 120px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.event {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: normal;
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.event:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.event-time {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+.event-name {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+/* Event type colors */
+.general {
+    background: linear-gradient(135deg, #e3e3e3, #e3e3e3); /* slate */
+}
+
+.keynote {
+    background: linear-gradient(135deg, #faf3dd, #faf3dd); /* warm amber/gold */
+}
+
+.social {
+    background: linear-gradient(135deg, #ffa69e, #ffa69e); /* soft magenta */
+}
+
+.invited {
+    background: linear-gradient(135deg, #f87171, #ef4444); /* coral red */
+}
+
+.talk {
+    background: linear-gradient(135deg, #faf3dd, #faf3dd); /* soft blue */
+}
+
+.poster {
+    background: linear-gradient(135deg, #b8f2e6, #b8f2e6); /* teal green */
+}
+
+.workshop {
+    background: linear-gradient(135deg, #aed9e0, #aed9e0); /* soft purple */
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.modal-time {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section-name {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.modal-section-content {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.close-button {
+    position: absolute;
+    top: 6px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 4px;
+}
+
+.close-button:hover {
+    color: #374151;
+}
+
+.legend {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.legend h3 {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #374151;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.legend-label {
+    font-size: 14px;
+    color: #4b5563;
+    text-transform: capitalize;
+}
+```
 
 Please note that this is a draft program and is subject to change. 
 
+```{r, results = 'asis', echo = FALSE}
+library(htmltools)
 
-```{css, echo = FALSE}
-.schedule-container {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 14% 43% 43%;
-  grid-gap: 13px;
-  grid-template-rows: 50px auto 50px;
-}
-.title, p {
-  padding-left: 10px;
-}
-.schedule-container-all {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.8em;
+header <- function() {
+  cells <- list(" ", 
+                HTML("Monday<br>Nov. 24th"), 
+                HTML("Tuesday<br>Nov. 25th"), 
+                HTML("Wednesday<br>Nov. 26th"), 
+                HTML("Thursday<br>Nov. 27th"), 
+                HTML("Friday<br>Nov. 28th"))
+  lapply(cells, \(cell) div(class = "header-cell", cell)) |>
+    div(class = "header")
 }
 
-.schedule-day {
-  min-width: 335px;
-  padding-left: 10px;
-  padding-top: 100px;
-  padding-right: 30px;
-  margin-right: 10px;
-  100%;
+time_column <- function() {
+  slots <- c("08:30", "09:30", "10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30")
+  lapply(slots, \(slot) div(class = "time-slot", slot)) |>
+    div(class = "time-column")
 }
-.track, .break, .track1, .track2 {
-  color: #fff;
-  padding: 10px;
-  box-shadow: rgba(255, 255, 255, 0.6) 1px 1px 0, rgba(0, 0, 0, 0.3) 4px 4px 0;
-  grid-column: span 1;
+
+event <- function(name, id, type, start_time, end_time, par_id = 1, par_total = 1) {
+  if (is.null(par_id)) par_id <- 1
+  if (is.null(par_total)) par_total <- 1
+  top <- difftime(hms::as_hms(paste0(start_time, ":00")),
+                  hms::as_hms("08:00:00"),
+                  units = "hours") |>
+    as.numeric()
+  top <- glue::glue("calc({top}/11*100%)")
+  height <- difftime(hms::as_hms(paste0(end_time, ":00")),
+                     hms::as_hms(paste0(start_time, ":00")),
+                     units = "hours") |>
+    as.numeric()
+  height <- glue::glue("calc({height}/11*100%)")
+  
+  left <- glue::glue("calc(1/{par_total}*{par_id - 1}*100%)")
+  width <- glue::glue("calc(1/{par_total}*100%)")
+
+  div(class = glue::glue("event {type}"),
+      style = glue::glue("top: {top}; height: {height}; width: {width}; left: {left}"),
+      onclick = glue::glue("openModal('{id}')"),
+      div(class = "event-time",
+          glue::glue("{start_time} - {end_time}")),
+      div(class = "event-name",
+          name))
 }
-.track, .break {
-  grid-column: span 2;
-  background-color: #c35500;
+
+day_column <- function(events) {
+  div(class = "day-column",
+      lapply(1:10, \(i) div(class = "grid-line")),
+      events)
 }
-.track1, .track {
-  background-color: #1259B2;
+
+legend_item <- function(type, label) {
+  div(class = "legend-item",
+      div(class = glue::glue("legend-color {type}")),
+      div(class = "legend-label", label))
 }
-.track2 {
-  background-color: #544D69;
+
+legend <- function(types, labels) {
+  div(class = "legend",
+      h3("Event Types"),
+      div(class = "legend-items", 
+          lapply(1:length(types), \(i) legend_item(types[i],labels[i]))
+          )
+      )
 }
+
+schedule <- yaml::read_yaml("schedule.yml")
+events <- lapply(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"),
+                   function(day) {
+                     lapply(schedule[[day]], 
+                            \(e) event(e$name, 
+                                       e$id, 
+                                       e$type, 
+                                       e$start, 
+                                       e$end, 
+                                       e$par_id, 
+                                       e$par_total)) |> 
+                       day_column()
+                     })
+
+div(class = "scroll-wrapper",
+    div(class = "container",
+    div(class = "timeline-container",
+        header(),
+        div(class = "grid-container",
+            time_column(),
+            events)
+        ),
+    legend(types = c("general", "social", "keynote", "workshop"),
+           labels = c("General", "Social", "Talks", "Workshop"))
+    )
+)
 
 ```
 
+```{r, results = "asis", echo = FALSE}
+modal <- function() {
+  div(id = "modal",
+      class = "modal-overlay",
+      onclick = "closeModal(event)",
+      div(class = "modal-content",
+          tags$button(class = "close-button",
+                      onclick = "closeModal()",
+                      "x"),
+          div(class = "modal-header",
+              div(class = "modal-name", id = "modal-name"),
+              div(class = "modal-time", id = "modal-time")),
+          div(id = "modal-body")
+          )
+      )
+}
+
+modal()
+```
+
+```{r results = 'asis', echo = FALSE}
+
+# Escape double quotes for JS
+escape_js <- function(x) {
+  x <- ifelse(is.null(x), "", x)
+  stringr::str_replace_all(x, '"', '\\\\"')  # escape only double quotes
+}
+
+# Flatten and transform
+events <- purrr::imap_dfr(schedule, function(day_events, day_name) {
+  purrr::map_dfr(day_events, function(e) {
+    time_str <- glue::glue("{day_name}, {e$start} - {e$end}")
+    
+    e$start <- NULL
+    e$end <- NULL
+    e$time <- time_str
+    
+    lapply(e, \(x) escape_js(x)) |>
+      tibble::as_tibble()
+  })
+})
+
+# Construct JS object string
+event_lines <- purrr::map_chr(events$id, function(event_id) {
+  e <- events[events$id == event_id, ]
+  result <- glue::glue("\"{event_id}\": {{\n")
+  for (i in 1:length(e)) {
+    result <- paste0(result, glue::glue("\"{names(e)[i]}\": \"{e[i]}\", \n"))
+  }
+  result <- paste0(result, "}")
+  return(result)
+})
+
+# Combine into final JS variable
+tags$script(paste0("const eventData = {\n", 
+                   paste(event_lines, collapse = ",\n\n"), 
+                   "\n};"))
+```
 
 
-::: {#schedule}
+```{=html}
+
+<!-- Modify the modal section to fit your need -->
+<script>
+    function openModal(eventId) {
+        const event = eventData[eventId];
+        if (!event) return;
+    
+        document.getElementById('modal-name').textContent = event.name || '';
+        document.getElementById('modal-time').textContent = event.time || '';
+    
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = ''; // Clear previous content
+    
+        // Optional: fields you want to skip or already used at the top
+        const excludeKeys = new Set(['name', 'time', 'id', 'type', 'par_id', 'par_total']);
+    
+        for (const key in event) {
+            if (!event[key] || excludeKeys.has(key)) continue;
+    
+            // Capitalize key for section name
+            const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
+    
+            const section = document.createElement('div');
+            section.className = 'modal-section';
+            section.innerHTML = `
+                <div class="modal-section-name">${sectionTitle}</div>
+                <div class="modal-section-content">${event[key]}</div>
+            `;
+            modalBody.appendChild(section);
+        }
+    
+        document.getElementById('modal').style.display = 'flex';
+    }
 
 
-:::
+    function closeModal(event) {
+        if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
+            document.getElementById('modal').style.display = 'none';
+        }
+    }
 
-
-
-::::: 
-
-
-<br><br><Br>
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
+```
