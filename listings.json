@@ -1,9 +1,5 @@
 [
   {
-    "listing": "/schedule.html",
-    "items": []
-  },
-  {
     "listing": "/updates.html",
     "items": [
       "/news/2025-07-14.html",
@@ -11,6 +7,10 @@
       "/news/2025-04-14.html",
       "/news/2025-02-24.html"
     ]
+  },
+  {
+    "listing": "/schedule-old.html",
+    "items": []
   },
   {
     "listing": "/keynote.html",

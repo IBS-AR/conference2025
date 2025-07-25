@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,65 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-schedule .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-day','listing-schedule',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-day","listing-schedule"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-schedule'] = new List('listing-schedule', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -277,418 +217,752 @@ window.Quarto = {
 
 
 
-<div class="page-layout-custo">
-<p>Please note that this is a draft program and is subject to change.</p>
 <div class="cell">
 <style type="text/css">
-.schedule-container {
-  height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    <!-- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -->
+    background-color: #f8fafc;
+    padding: 20px;
+    line-height: 1.4;
+}
+
+.scroll-wrapper {
   width: 100%;
-  display: grid;
-  grid-template-columns: 14% 43% 43%;
-  grid-gap: 13px;
-  grid-template-rows: 50px auto 50px;
-}
-.title, p {
-  padding-left: 10px;
-}
-.schedule-container-all {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.8em;
+  overflow-x: auto;
 }
 
-.schedule-day {
-  min-width: 335px;
-  padding-left: 10px;
-  padding-top: 100px;
-  padding-right: 30px;
-  margin-right: 10px;
-  100%;
-}
-.track, .break, .track1, .track2 {
-  color: #fff;
-  padding: 10px;
-  box-shadow: rgba(255, 255, 255, 0.6) 1px 1px 0, rgba(0, 0, 0, 0.3) 4px 4px 0;
-  grid-column: span 1;
-}
-.track, .break {
-  grid-column: span 2;
-  background-color: #c35500;
-}
-.track1, .track {
-  background-color: #1259B2;
-}
-.track2 {
-  background-color: #544D69;
+.container {
+    min-width: 700px;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
+h1 {
+    color: #1f2937;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.timeline-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 40px repeat(5, 1fr);
+    border-bottom: 2px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.header-cell {
+    padding: 15px 10px;
+    font-weight: 600;
+    text-align: center;
+    border-right: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.header-cell:last-child {
+    border-right: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 40px repeat(5, 1fr);
+    position: relative;
+}
+
+.time-column {
+    border-right: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.time-slot {
+    height: 120px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.day-column {
+    border-right: 1px solid #e5e7eb;
+    position: relative;
+    background: white;
+}
+
+.day-column:last-child {
+    border-right: none;
+}
+
+<!-- Change .grid-line height and .time-slot height together -->
+.grid-line {
+    height: 120px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.event {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: normal;
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.event:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.event-time {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+.event-name {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+/* Event type colors */
+.general {
+    background: linear-gradient(135deg, #e3e3e3, #e3e3e3); /* slate */
+}
+
+.keynote {
+    background: linear-gradient(135deg, #faf3dd, #faf3dd); /* warm amber/gold */
+}
+
+.social {
+    background: linear-gradient(135deg, #ffa69e, #ffa69e); /* soft magenta */
+}
+
+.invited {
+    background: linear-gradient(135deg, #f87171, #ef4444); /* coral red */
+}
+
+.talk {
+    background: linear-gradient(135deg, #faf3dd, #faf3dd); /* soft blue */
+}
+
+.poster {
+    background: linear-gradient(135deg, #b8f2e6, #b8f2e6); /* teal green */
+}
+
+.workshop {
+    background: linear-gradient(135deg, #aed9e0, #aed9e0); /* soft purple */
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.modal-time {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section-name {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.modal-section-content {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.close-button {
+    position: absolute;
+    top: 6px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 4px;
+}
+
+.close-button:hover {
+    color: #374151;
+}
+
+.legend {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.legend h3 {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #374151;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.legend-label {
+    font-size: 14px;
+    color: #4b5563;
+    text-transform: capitalize;
+}
 </style>
 </div>
-<div id="listing-schedule" class="quarto-listing quarto-listing-container-custom">
-<div class="schedule-container-all">
-
-<div class="schedule-day">
-
-<h2>Monday</h2>
-
-<div class="schedule-container">
-
-<div style="text-align:right;grid-row: span 8;">
-
-9.00am
-</div>
-
-<div class="break" style="grid-row: span 8;">
-Workshop
-</div>
-
-<div style="text-align:right;grid-row: span 2;">
-
-4.00pm
-</div>
-
-<div class="break" style="grid-row: span 2;">
-Registration
-</div>
-
-<div style="text-align:right;grid-row: span 4;">
-
-6.00pm
-</div>
-
-<div class="break" style="grid-row: span 4;">
-Welcome reception
-</div>
-
-</div>
-
-</div>
-
-<div class="schedule-day">
-
-<h2>Tuesday</h2>
-
-<div class="schedule-container">
-
-<div style="text-align:right;">
-
-8.00am
-</div>
-
-<div class="break">Registration</div>
-
-<div style="text-align:right;">
-
-8.45am
-</div>
-
-<div class="track">Housekeeping</div>
-
-<div style="text-align:right;">
-
-9.15am
-</div>
-
-<div class="track">Keynote 1</div>
-
-<div style="text-align:right;">
-
-10.00am
-</div>
-
-<div class="break">Morning tea</div>
-
-<div style="text-align:right;grid-row: span 3;">
-
-10.30am
+<p>Please note that this is a draft program and is subject to change.</p>
+<div class="scroll-wrapper">
+<div class="container">
+<div class="timeline-container">
+<div class="header">
+<div class="header-cell"> </div>
+<div class="header-cell">Monday<br>Nov. 24th</div>
+<div class="header-cell">Tuesday<br>Nov. 25th</div>
+<div class="header-cell">Wednesday<br>Nov. 26th</div>
+<div class="header-cell">Thursday<br>Nov. 27th</div>
+<div class="header-cell">Friday<br>Nov. 28th</div>
+</div>
+<div class="grid-container">
+<div class="time-column">
+<div class="time-slot">08:30</div>
+<div class="time-slot">09:30</div>
+<div class="time-slot">10:30</div>
+<div class="time-slot">11:30</div>
+<div class="time-slot">12:30</div>
+<div class="time-slot">13:30</div>
+<div class="time-slot">14:30</div>
+<div class="time-slot">15:30</div>
+<div class="time-slot">16:30</div>
+<div class="time-slot">17:30</div>
+<div class="time-slot">18:30</div>
+</div>
+<div class="day-column">
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="event workshop" style="top: calc(0.5/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('registration-mon')">
+<div class="event-time">08:30 - 9:00</div>
+<div class="event-name">Registration</div>
+</div>
+<div class="event workshop" style="top: calc(1/11*100%); height: calc(8/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('workshop-mon')">
+<div class="event-time">09:00 - 17:00</div>
+<div class="event-name">Workshop</div>
+</div>
+<div class="event general" style="top: calc(9/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('registration-mon')">
+<div class="event-time">17:00 - 18:00</div>
+<div class="event-name">Registration</div>
+</div>
+<div class="event social" style="top: calc(10/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('welcome-reception')">
+<div class="event-time">18:00 - 19:00</div>
+<div class="event-name">Welcome Reception</div>
+</div>
+</div>
+<div class="day-column">
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="event general" style="top: calc(0.5/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('registration-tue')">
+<div class="event-time">08:30 - 09:00</div>
+<div class="event-name">Registration</div>
+</div>
+<div class="event talk" style="top: calc(1/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('keynote-1')">
+<div class="event-time">09:00 - 10:00</div>
+<div class="event-name">Keynote 1</div>
+</div>
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-1a')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 1A</div>
+</div>
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-1b')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 1B</div>
+</div>
+<div class="event social" style="top: calc(2.75/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('morning-tea-tue')">
+<div class="event-time">10:45 - 11:15</div>
+<div class="event-name">Morning Tea</div>
+</div>
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(1.5/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('invited-1')">
+<div class="event-time">11:15 - 12:45</div>
+<div class="event-name">Invited Session</div>
+</div>
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(1.5/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-2')">
+<div class="event-time">11:15 - 12:45</div>
+<div class="event-name">Session 2</div>
+</div>
+<div class="event social" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('lunch-tue')">
+<div class="event-time">12:45 - 13:45</div>
+<div class="event-name">Lunch</div>
+</div>
+<div class="event talk" style="top: calc(5.75/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-3a')">
+<div class="event-time">13:45 - 15:00</div>
+<div class="event-name">Session 3A</div>
+</div>
+<div class="event talk" style="top: calc(5.75/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-3b')">
+<div class="event-time">13:45 - 15:00</div>
+<div class="event-name">Session 3B</div>
+</div>
+<div class="event social" style="top: calc(7/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('afternoon-tea-tue')">
+<div class="event-time">15:00 - 15:30</div>
+<div class="event-name">Afternoon Tea</div>
+</div>
+<div class="event talk" style="top: calc(7.5/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-4a')">
+<div class="event-time">15:30 - 16:45</div>
+<div class="event-name">Session 4A</div>
+</div>
+<div class="event talk" style="top: calc(7.5/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-4b')">
+<div class="event-time">15:30 - 16:45</div>
+<div class="event-name">Session 4B</div>
+</div>
+<div class="event poster" style="top: calc(9/11*100%); height: calc(2/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('poster-tue')">
+<div class="event-time">17:00 - 19:00</div>
+<div class="event-name">Poster Session</div>
+</div>
+</div>
+<div class="day-column">
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="event general" style="top: calc(0.5/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('registration-wed')">
+<div class="event-time">08:30 - 09:00</div>
+<div class="event-name">Registration</div>
+</div>
+<div class="event talk" style="top: calc(1/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('keynote-2')">
+<div class="event-time">09:00 - 10:00</div>
+<div class="event-name">Keynote 2</div>
+</div>
+<div class="event social" style="top: calc(2/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('morning-tea-wed')">
+<div class="event-time">10:00 - 10:30</div>
+<div class="event-name">Morning Tea</div>
+</div>
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-5a')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 5A</div>
+</div>
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-5b')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 5B</div>
+</div>
+<div class="event social" style="top: calc(2.75/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('morning-tea-wed')">
+<div class="event-time">10:45 - 11:15</div>
+<div class="event-name">Morning Tea</div>
+</div>
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(1.5/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('invited-2')">
+<div class="event-time">11:15 - 12:45</div>
+<div class="event-name">Invited Session</div>
+</div>
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(1.5/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-6')">
+<div class="event-time">11:15 - 12:45</div>
+<div class="event-name">Session 6</div>
+</div>
+<div class="event social" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('lunch-wed')">
+<div class="event-time">12:45 - 13:45</div>
+<div class="event-name">Lunch</div>
+</div>
+<div class="event social" style="top: calc(5.75/11*100%); height: calc(3.25/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('social-wed')">
+<div class="event-time">13:45 - 17:00</div>
+<div class="event-name">Social Activities</div>
+</div>
+</div>
+<div class="day-column">
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="event general" style="top: calc(0.5/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('registration-thu')">
+<div class="event-time">08:30 - 09:00</div>
+<div class="event-name">Registration</div>
+</div>
+<div class="event talk" style="top: calc(1/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('keynote-3')">
+<div class="event-time">09:00 - 10:00</div>
+<div class="event-name">Keynote 3</div>
+</div>
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-7a')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 7A</div>
+</div>
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-7b')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 7B</div>
+</div>
+<div class="event social" style="top: calc(2.75/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('morning-tea-thu')">
+<div class="event-time">10:45 - 11:15</div>
+<div class="event-name">Morning Tea</div>
+</div>
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(1.5/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('invited-3')">
+<div class="event-time">11:15 - 12:45</div>
+<div class="event-name">Invited Session</div>
+</div>
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(1.5/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-8')">
+<div class="event-time">11:15 - 12:45</div>
+<div class="event-name">Session 8</div>
+</div>
+<div class="event social" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('lunch-thu')">
+<div class="event-time">12:45 - 13:45</div>
+<div class="event-name">Lunch</div>
+</div>
+<div class="event talk" style="top: calc(5.75/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-9a')">
+<div class="event-time">13:45 - 15:00</div>
+<div class="event-name">Session 9A</div>
+</div>
+<div class="event talk" style="top: calc(5.75/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-9b')">
+<div class="event-time">13:45 - 15:00</div>
+<div class="event-name">Session 9B</div>
 </div>
-
-<div class="track1" style="grid-row: span 3;">
-Session 1A
+<div class="event social" style="top: calc(7/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('afternoon-tea-thu')">
+<div class="event-time">15:00 - 15:30</div>
+<div class="event-name">Afternoon Tea</div>
 </div>
-
-<div class="track2" style="grid-row: span 3;">
-Session 1B
+<div class="event talk" style="top: calc(7.5/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-10a')">
+<div class="event-time">15:30 - 16:45</div>
+<div class="event-name">Session 10A</div>
 </div>
-
-<div style="text-align:right;">
-
-12.30pm
+<div class="event talk" style="top: calc(7.5/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-10b')">
+<div class="event-time">15:30 - 16:45</div>
+<div class="event-name">Session 10B</div>
 </div>
-
-<div class="break">Lunch</div>
-
-<div style="text-align:right;grid-row: span 3;">
-
-1.30pm
+<div class="event social" style="top: calc(10/11*100%); height: calc(2/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('dinner')">
+<div class="event-time">18:00 - 20:00</div>
+<div class="event-name">Conference Dinner</div>
 </div>
-
-<div class="track" style="grid-row: span 3;">
-Invited session
 </div>
-
-<div style="text-align:right;">
-
-3.00pm
+<div class="day-column">
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="grid-line"></div>
+<div class="event general" style="top: calc(0.5/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('registration-fri')">
+<div class="event-time">08:30 - 09:00</div>
+<div class="event-name">Registration</div>
 </div>
-
-<div class="break">Afternoon tea</div>
-
-<div style="text-align:right;grid-row: span 3;">
-
-3.30pm
+<div class="event talk" style="top: calc(1/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('keynote-4')">
+<div class="event-time">09:00 - 10:00</div>
+<div class="event-name">Keynote 4</div>
 </div>
-
-<div class="track1" style="grid-row: span 3;">
-Session 2A
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-11a')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 11A</div>
 </div>
-
-<div class="track2" style="grid-row: span 3;">
-Session 2B
+<div class="event talk" style="top: calc(2/11*100%); height: calc(0.75/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('session-11b')">
+<div class="event-time">10:00 - 10:45</div>
+<div class="event-name">Session 11B</div>
 </div>
-
-<div style="text-align:right;grid-row: span 3;">
-
-5.30pm
+<div class="event social" style="top: calc(2.75/11*100%); height: calc(0.5/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('morning-tea-fri')">
+<div class="event-time">10:45 - 11:15</div>
+<div class="event-name">Morning Tea</div>
 </div>
-
-<div class="break" style="grid-row: span 3;">
-Poster session
+<div class="event talk" style="top: calc(3.25/11*100%); height: calc(0.75/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('keynote-5')">
+<div class="event-time">11:15 - 12:00</div>
+<div class="event-name">Keynote 5</div>
 </div>
-
+<div class="event general" style="top: calc(4/11*100%); height: calc(0.75/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('closing')">
+<div class="event-time">12:00 - 12:45</div>
+<div class="event-name">Closing Ceremony</div>
 </div>
-
+<div class="event social" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('lunch-fri')">
+<div class="event-time">12:45 - 13:45</div>
+<div class="event-name">Lunch</div>
 </div>
-
-<div class="schedule-day">
-
-<h2>Wednesday</h2>
-
-<div class="schedule-container">
-
-<div style="text-align:right;">
-
-8.00am
 </div>
-
-<div class="break">Registration</div>
-
-<div style="text-align:right;">
-
-8.45am
 </div>
-
-<div class="track">Housekeeping</div>
-
-<div style="text-align:right;">
-
-9.15am
 </div>
-
-<div class="track">Keynote 2</div>
-
-<div style="text-align:right;">
-
-10.00am
+<div class="legend">
+<h3>Event Types</h3>
+<div class="legend-items">
+<div class="legend-item">
+<div class="legend-color general"></div>
+<div class="legend-label">General</div>
 </div>
-
-<div class="break">Morning tea</div>
-
-<div style="text-align:right;grid-row: span 3;">
-
-10.30am
+<div class="legend-item">
+<div class="legend-color social"></div>
+<div class="legend-label">Social</div>
 </div>
-
-<div class="track1" style="grid-row: span 3;">
-Session 3A
+<div class="legend-item">
+<div class="legend-color keynote"></div>
+<div class="legend-label">Talks</div>
 </div>
-
-<div class="track2" style="grid-row: span 3;">
-Session 3B
+<div class="legend-item">
+<div class="legend-color workshop"></div>
+<div class="legend-label">Workshop</div>
 </div>
-
-<div style="text-align:right;">
-
-12.30pm
 </div>
-
-<div class="break">Lunch</div>
-
-<div style="text-align:right;">
-
-1.30pm
 </div>
-
-<div class="break">Social activities</div>
-
 </div>
-
 </div>
-
-<div class="schedule-day">
-
-<h2>Thursday</h2>
-
-<div class="schedule-container">
-
-<div style="text-align:right;">
-
-8.00am
+<div id="modal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-content">
+<button class="close-button" onclick="closeModal()">x</button>
+<div class="modal-header">
+<div class="modal-name" id="modal-name"></div>
+<div class="modal-time" id="modal-time"></div>
 </div>
-
-<div class="break">Registration</div>
-
-<div style="text-align:right;">
-
-8.45am
+<div id="modal-body"></div>
 </div>
-
-<div class="track">Housekeeping</div>
-
-<div style="text-align:right;">
-
-9.15am
 </div>
+<script>const eventData = {
+"registration-mon": {"name": "c("Registration", "Registration")", "id": "c("registration-mon", "registration-mon")", "type": "c("workshop", "general")", "location": "c("Emailed to participants", "TBA")", "time": "c("Monday, 08:30 - 9:00", "Monday, 17:00 - 18:00")", "speaker": "c(NA, "Conference Staff")", "abstract": "c(NA, "Conference registration and badge pickup.")", "description": "c(NA, "Drop in to collect your materials and meet fellow attendees.")", "par_id": "c(NA, NA)", "par_total": "c(NA, NA)", },
 
-<div class="track">Keynote 3</div>
+"workshop-mon": {"name": "Workshop", "id": "workshop-mon", "type": "workshop", "location": "Emailed to participants", "time": "Monday, 09:00 - 17:00", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
 
-<div style="text-align:right;">
+"registration-mon": {"name": "c("Registration", "Registration")", "id": "c("registration-mon", "registration-mon")", "type": "c("workshop", "general")", "location": "c("Emailed to participants", "TBA")", "time": "c("Monday, 08:30 - 9:00", "Monday, 17:00 - 18:00")", "speaker": "c(NA, "Conference Staff")", "abstract": "c(NA, "Conference registration and badge pickup.")", "description": "c(NA, "Drop in to collect your materials and meet fellow attendees.")", "par_id": "c(NA, NA)", "par_total": "c(NA, NA)", },
 
-10.00am
-</div>
-
-<div class="break">Morning tea</div>
+"welcome-reception": {"name": "Welcome Reception", "id": "welcome-reception", "type": "social", "location": "Garden Terrace", "time": "Monday, 18:00 - 19:00", "speaker": "Host Committee", "abstract": "Opening reception with drinks and light refreshments.", "description": "Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference.", "par_id": "NA", "par_total": "NA", },
 
-<div style="text-align:right;grid-row: span 3;">
+"registration-tue": {"name": "Registration", "id": "registration-tue", "type": "general", "location": "Foyer", "time": "Tuesday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and info desk.", "description": "Final registration opportunity and general assistance available.", "par_id": "NA", "par_total": "NA", },
 
-10.30am
-</div>
+"keynote-1": {"name": "Keynote 1", "id": "keynote-1", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
 
-<div class="track" style="grid-row: span 3;">
-Invited session 2
-</div>
+"session-1a": {"name": "Session 1A", "id": "session-1a", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div style="text-align:right;">
+"session-1b": {"name": "Session 1B", "id": "session-1b", "type": "talk", "location": "Theatrette", "time": "Tuesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-12.30pm
-</div>
+"morning-tea-tue": {"name": "Morning Tea", "id": "morning-tea-tue", "type": "social", "location": "Gallery", "time": "Tuesday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
 
-<div class="break">Lunch</div>
+"invited-1": {"name": "Invited Session", "id": "invited-1", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div style="text-align:right;grid-row: span 3;">
+"session-2": {"name": "Session 2", "id": "session-2", "type": "talk", "location": "Theatrette", "time": "Tuesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-1.30pm
-</div>
+"lunch-tue": {"name": "Lunch", "id": "lunch-tue", "type": "social", "location": "Gallery", "time": "Tuesday, 12:45 - 13:45", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
 
-<div class="track1" style="grid-row: span 3;">
-Session 4A
-</div>
+"session-3a": {"name": "Session 3A", "id": "session-3a", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div class="track2" style="grid-row: span 3;">
-Session 4B
-</div>
+"session-3b": {"name": "Session 3B", "id": "session-3b", "type": "talk", "location": "Theatrette", "time": "Tuesday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-<div style="text-align:right;">
+"afternoon-tea-tue": {"name": "Afternoon Tea", "id": "afternoon-tea-tue", "type": "social", "location": "Gallery", "time": "Tuesday, 15:00 - 15:30", "speaker": "NA", "abstract": "Afternoon refreshments.", "description": "Light snacks and drinks served.", "par_id": "NA", "par_total": "NA", },
 
-3.15pm
-</div>
+"session-4a": {"name": "Session 4A", "id": "session-4a", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div class="break">Afternoon tea</div>
+"session-4b": {"name": "Session 4B", "id": "session-4b", "type": "talk", "location": "Theaterette", "time": "Tuesday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-<div style="text-align:right;grid-row: span 3;">
+"poster-tue": {"name": "Poster Session", "id": "poster-tue", "type": "poster", "location": "Gallery", "time": "Tuesday, 17:00 - 19:00", "speaker": "Multiple Presenters", "abstract": "Poster presentations and discussions.", "description": "Explore a wide range of research topics during this informal poster session.", "par_id": "NA", "par_total": "NA", },
 
-3.45pm
-</div>
+"registration-wed": {"name": "Registration", "id": "registration-wed", "type": "general", "location": "Foyer", "time": "Wednesday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and help desk.", "description": "Assistance for late arrivals and info services.", "par_id": "NA", "par_total": "NA", },
 
-<div class="track" style="grid-row: span 3;">
-Keynote 4
-</div>
+"keynote-2": {"name": "Keynote 2", "id": "keynote-2", "type": "talk", "location": "Arc Cinema", "time": "Wednesday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
 
-<div style="text-align:right;grid-row: span 4;">
+"morning-tea-wed": {"name": "c("Morning Tea", "Morning Tea")", "id": "c("morning-tea-wed", "morning-tea-wed")", "type": "c("social", "social")", "location": "c("Café Area", "Gallery")", "time": "c("Wednesday, 10:00 - 10:30", "Wednesday, 10:45 - 11:15")", "speaker": "c("", "")", "abstract": "c("Tea, coffee, snacks.", "Light refreshments and beverages.")", "description": "c("A mid-morning refreshment break.", "Take a break and enjoy some tea or coffee while networking with peers.")", "par_id": "c(NA, NA)", "par_total": "c(NA, NA)", },
 
-6.00pm
-</div>
+"session-5a": {"name": "Session 5A", "id": "session-5a", "type": "talk", "location": "Arc Cinema", "time": "Wednesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div class="break" style="grid-row: span 4;">
-Conference dinner
-</div>
+"session-5b": {"name": "Session 5B", "id": "session-5b", "type": "talk", "location": "Theatrette", "time": "Wednesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-</div>
+"morning-tea-wed": {"name": "c("Morning Tea", "Morning Tea")", "id": "c("morning-tea-wed", "morning-tea-wed")", "type": "c("social", "social")", "location": "c("Café Area", "Gallery")", "time": "c("Wednesday, 10:00 - 10:30", "Wednesday, 10:45 - 11:15")", "speaker": "c("", "")", "abstract": "c("Tea, coffee, snacks.", "Light refreshments and beverages.")", "description": "c("A mid-morning refreshment break.", "Take a break and enjoy some tea or coffee while networking with peers.")", "par_id": "c(NA, NA)", "par_total": "c(NA, NA)", },
 
-</div>
+"invited-2": {"name": "Invited Session", "id": "invited-2", "type": "talk", "location": "Arc Cinema", "time": "Wednesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div class="schedule-day">
+"session-6": {"name": "Session 6", "id": "session-6", "type": "talk", "location": "Theatrette", "time": "Wednesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-<h2>Friday</h2>
+"lunch-wed": {"name": "Lunch", "id": "lunch-wed", "type": "social", "location": "Gallery", "time": "Wednesday, 12:45 - 13:45", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
 
-<div class="schedule-container">
+"social-wed": {"name": "Social Activities", "id": "social-wed", "type": "social", "location": "Outdoor Grounds", "time": "Wednesday, 13:45 - 17:00", "speaker": "Organizing Committee", "abstract": "Networking games and tours.", "description": "Fun and informal activities for relaxing and networking.", "par_id": "NA", "par_total": "NA", },
 
-<div style="text-align:right;">
+"registration-thu": {"name": "Registration", "id": "registration-thu", "type": "general", "location": "Foyer", "time": "Thursday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and info desk.", "description": "Final registration opportunity and general assistance available.", "par_id": "NA", "par_total": "NA", },
 
-8.00am
-</div>
+"keynote-3": {"name": "Keynote 3", "id": "keynote-3", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
 
-<div class="break">Registration</div>
+"session-7a": {"name": "Session 7A", "id": "session-7a", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div style="text-align:right;">
+"session-7b": {"name": "Session 7B", "id": "session-7b", "type": "talk", "location": "Theatrette", "time": "Thursday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-8.45am
-</div>
+"morning-tea-thu": {"name": "Morning Tea", "id": "morning-tea-thu", "type": "social", "location": "Gallery", "time": "Thursday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
 
-<div class="track">Housekeeping</div>
+"invited-3": {"name": "Invited Session", "id": "invited-3", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div style="text-align:right;">
+"session-8": {"name": "Session 8", "id": "session-8", "type": "talk", "location": "Theatrette", "time": "Thursday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-9.15am
-</div>
+"lunch-thu": {"name": "Lunch", "id": "lunch-thu", "type": "social", "location": "Gallery", "time": "Thursday, 12:45 - 13:45", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
 
-<div class="track">Keynote 5</div>
+"session-9a": {"name": "Session 9A", "id": "session-9a", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div style="text-align:right;">
+"session-9b": {"name": "Session 9B", "id": "session-9b", "type": "talk", "location": "Theatrette", "time": "Thursday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-10.00am
-</div>
+"afternoon-tea-thu": {"name": "Afternoon Tea", "id": "afternoon-tea-thu", "type": "social", "location": "Gallery", "time": "Thursday, 15:00 - 15:30", "speaker": "NA", "abstract": "Afternoon refreshments.", "description": "Light snacks and drinks served.", "par_id": "NA", "par_total": "NA", },
 
-<div class="break">Morning tea</div>
+"session-10a": {"name": "Session 10A", "id": "session-10a", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-<div style="text-align:right;grid-row: span 3;">
+"session-10b": {"name": "Session 10B", "id": "session-10b", "type": "talk", "location": "Theaterette", "time": "Thursday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-10.30am
-</div>
+"dinner": {"name": "Conference Dinner", "id": "dinner", "type": "social", "location": "Banquet Hall", "time": "Thursday, 18:00 - 20:00", "speaker": "Dinner Host", "abstract": "Celebratory closing dinner.", "description": "Enjoy an evening of fine dining, speeches, and socializing.", "par_id": "NA", "par_total": "NA", },
 
-<div class="track1" style="grid-row: span 3;">
-Session 5A
-</div>
+"registration-fri": {"name": "Registration", "id": "registration-fri", "type": "general", "location": "Foyer", "time": "Friday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and info desk.", "description": "Final registration opportunity and general assistance available.", "par_id": "NA", "par_total": "NA", },
 
-<div class="track2" style="grid-row: span 3;">
-Session 5B
-</div>
+"keynote-4": {"name": "Keynote 4", "id": "keynote-4", "type": "talk", "location": "Arc Cinema", "time": "Friday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
 
-<div style="text-align:right;">
+"session-11a": {"name": "Session 11A", "id": "session-11a", "type": "talk", "location": "Arc Cinema", "time": "Friday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
 
-12.30pm
-</div>
+"session-11b": {"name": "Session 11B", "id": "session-11b", "type": "talk", "location": "Theatrette", "time": "Friday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
 
-<div class="track">Closing ceremony</div>
+"morning-tea-fri": {"name": "Morning Tea", "id": "morning-tea-fri", "type": "social", "location": "Gallery", "time": "Friday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
 
-<div style="text-align:right;">
+"keynote-5": {"name": "Keynote 5", "id": "keynote-5", "type": "talk", "location": "Arc Cinema", "time": "Friday, 11:15 - 12:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
 
-12.45pm
-</div>
+"closing": {"name": "Closing Ceremony", "id": "closing", "type": "general", "location": "Arc Cinema", "time": "Friday, 12:00 - 12:45", "speaker": "Organizing Committee", "abstract": "Wrap-up and acknowledgements.", "description": "Thanks to participants, sponsors, and staff. Final remarks and farewell.", "par_id": "NA", "par_total": "NA", },
 
-<div class="break">Lunch</div>
+"lunch-fri": {"name": "Lunch", "id": "lunch-fri", "type": "social", "location": "Dining Hall", "time": "Friday, 12:45 - 13:45", "speaker": "", "abstract": "Farewell lunch.", "description": "Join peers one last time over lunch.", "par_id": "NA", "par_total": "NA", }
+};</script>
 
-</div>
+<!-- Modify the modal section to fit your need -->
+<script>
+    function openModal(eventId) {
+        const event = eventData[eventId];
+        if (!event) return;
+    
+        document.getElementById('modal-name').textContent = event.name || '';
+        document.getElementById('modal-time').textContent = event.time || '';
+    
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = ''; // Clear previous content
+    
+        // Optional: fields you want to skip or already used at the top
+        const excludeKeys = new Set(['name', 'time', 'id', 'type', 'par_id', 'par_total']);
+    
+        for (const key in event) {
+            if (!event[key] || excludeKeys.has(key)) continue;
+    
+            // Capitalize key for section name
+            const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
+    
+            const section = document.createElement('div');
+            section.className = 'modal-section';
+            section.innerHTML = `
+                <div class="modal-section-name">${sectionTitle}</div>
+                <div class="modal-section-content">${event[key]}</div>
+            `;
+            modalBody.appendChild(section);
+        }
+    
+        document.getElementById('modal').style.display = 'flex';
+    }
 
-</div>
 
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-</div>
-<p><br><br><br></p>
+    function closeModal(event) {
+        if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
+            document.getElementById('modal').style.display = 'none';
+        }
+    }
 
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
 
 
 
