@@ -11,11 +11,11 @@ website:
     icon: info-circle
   page-footer: |
      Sponsored by<br><br>
-     <table style="width:100%">
-     <tr><th>PLATINUM</th><th>GOLD</th><th>SUPPORTER</th></tr>
+     <table style="width:100%!important;">
+     <tr><th>PLATINUM</th><th style="width:50%!important;">GOLD</th><th>SUPPORTER</th></tr>
      <tr>
      <td>![](/images/sponsors/ANU_Primary_Horizontal_GoldBlack.png){fig-alt="Australian National University" height="4em"}</td>
-     <td>![](/images/sponsors/GRDC_Logo_Primary_Default.jpg){fig-alt="Grains Research and Development Corporation" height="4em"}</td>
+     <td>![](/images/sponsors/GRDC_Logo_Primary_Default.jpg){fig-alt="Grains Research and Development Corporation" height="4em"}![](/images/sponsors/UoA-Logo-Primary-RGB-Large.png){fig-alt="University of Auckland" height="4em"}</td>
      <td>![ACT Branch](/images/sponsors/SSA_Logotype_MAIN USE.jpg){fig-alt="Statistical Society of Australia ACT Branch" height="4em"}</td>
      </tr>
      </table>

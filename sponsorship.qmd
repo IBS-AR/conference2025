@@ -27,7 +27,9 @@ We gratefully acknowledge our sponsors for their generous support, which has mad
 <center>
 
 
-![](/images/sponsors/GRDC_Logo_Primary_Default.jpg){fig-alt="Grains Research and Development Corporation" height="8em"}
+![](/images/sponsors/GRDC_Logo_Primary_Default.jpg){fig-alt="Grains Research and Development Corporation" height="8em"} ![](/images/sponsors/UoA-Logo-Primary-RGB-Large.png){fig-alt="University of Auckland" height="8em"}
+
+
 
 </center>
 
