@@ -9,6 +9,9 @@ title: Organisers
 - Warren Muller (CSIRO)
 - Alan Welsh (ANU)
 - Joanne Thandrayen (ANU)
+- Patrick Li (ANU)
+- Fonti Kar (ANU)
+- Yidi Deng (ANU)
 
 
 ## Scientific and program committee
