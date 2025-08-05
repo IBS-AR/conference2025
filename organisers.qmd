@@ -27,3 +27,9 @@ title: Organisers
 ## Social program committee
 
 - Quan Vu (ANU, Chair)
+
+## Conference allies
+
+- Fonti Kar (ANU)
+- Louise McMillan(VUW)
+- Scott Foster (CSIRO)
