@@ -31,5 +31,5 @@ title: Organisers
 ## Conference allies
 
 - Fonti Kar (ANU)
-- Louise McMillan(VUW)
-- Scott Foster (CSIRO)
+<!-- - Louise McMillan(VUW)
+- Scott Foster (CSIRO) -->
