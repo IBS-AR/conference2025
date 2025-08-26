@@ -380,6 +380,17 @@ Thursday:
     start: "12:45"
     end: "13:45"
     location: "Gallery"
+    par_id: 1
+    par_total: 2
+
+  - name: "AGM"
+    id: "agm"
+    type: "general"
+    start: "12:45"
+    end: "13:45"
+    location: "Gallery"
+    par_id: 2
+    par_total: 2
 
   - name: "Session 9A"
     id: "session-9a"
