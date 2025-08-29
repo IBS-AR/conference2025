@@ -4,6 +4,9 @@ knitr: true
 format:
   html:
     page-layout: custom
+include-in-header: 
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 ---
 
 
@@ -27,7 +30,7 @@ body {
 }
 
 .container {
-    min-width: 700px;
+    min-width: 1000px;
     max-width: 2000px;
     margin: 0 auto;
 }
@@ -427,6 +430,7 @@ event_lines <- purrr::map_chr(events$id, function(event_id) {
   e <- events[events$id == event_id, ]
   result <- glue::glue("\"{event_id}\": {{\n")
   for (i in 1:length(e)) {
+    if (is.na(e[i])) next
     result <- paste0(result, glue::glue("\"{names(e)[i]}\": \"{e[i]}\", \n"))
   }
   result <- paste0(result, "}")
@@ -467,7 +471,7 @@ tags$script(paste0("const eventData = {\n",
             section.className = 'modal-section';
             section.innerHTML = `
                 <div class="modal-section-name">${sectionTitle}</div>
-                <div class="modal-section-content">${event[key]}</div>
+                <div class="modal-section-content">${marked.parse(event[key])}</div>
             `;
             modalBody.appendChild(section);
         }
