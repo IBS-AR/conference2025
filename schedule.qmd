@@ -245,6 +245,48 @@ h1 {
     color: #374151;
 }
 
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;          /* don't shrink */
+}
+
+/* Hide image completely if not provided */
+.profile-img[src=""] {
+  display: none;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.profile-organization {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Hide org if empty */
+.profile-organization:empty {
+  display: none;
+}
+
+
 .legend {
     background: white;
     border-radius: 8px;
@@ -407,8 +449,9 @@ modal()
 
 # Escape double quotes for JS
 escape_js <- function(x) {
-  x <- ifelse(is.null(x), "", x)
-  stringr::str_replace_all(x, '"', '\\\\"')  # escape only double quotes
+  if (is.null(x)) return("")
+  x <- stringr::str_replace_all(x, '"', '\\\\"')  # escape double quotes
+  stringr::str_replace_all(x, '`', '\\\\`')  # escape back ticks
 }
 
 # Flatten and transform
@@ -420,8 +463,10 @@ events <- purrr::imap_dfr(schedule, function(day_events, day_name) {
     e$end <- NULL
     e$time <- time_str
     
-    lapply(e, \(x) escape_js(x)) |>
-      tibble::as_tibble()
+    e <- lapply(e, escape_js) |>
+      tibble::enframe()
+    e$value <- lapply(e$value, \(x) x)
+    tidyr::pivot_wider(e, names_from = name, values_from = value)
   })
 })
 
@@ -429,10 +474,17 @@ events <- purrr::imap_dfr(schedule, function(day_events, day_name) {
 event_lines <- purrr::map_chr(events$id, function(event_id) {
   e <- events[events$id == event_id, ]
   result <- glue::glue("\"{event_id}\": {{\n")
+  
   for (i in 1:length(e)) {
-    if (is.na(e[i])) next
-    result <- paste0(result, glue::glue("\"{names(e)[i]}\": \"{e[i]}\", \n"))
+    if (length(e[[i]][[1]]) == 0) next
+    
+    field_name <- names(e)[i]
+    
+    field_content <- paste0("[", paste(glue::glue("`{e[[i]][[1]]}`"), collapse = ", "), "]")
+    
+    result <- paste0(result, glue::glue("\"{field_name}\": {field_content}, \n"))
   }
+  
   result <- paste0(result, "}")
   return(result)
 })
@@ -454,12 +506,39 @@ tags$script(paste0("const eventData = {\n",
     
         document.getElementById('modal-name').textContent = event.name || '';
         document.getElementById('modal-time').textContent = event.time || '';
-    
+        
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = ''; // Clear previous content
+        
+        // Handle speakers
+        if (event['speakers']) {
+          const speaker_section = document.createElement('div');
+          speaker_section.className = 'modal-section';
+          speaker_section.innerHTML = `
+            <div class="modal-section-name">Speakers</div>
+            <div class="modal-section-content">`;
+                
+          for (let i = 0; i < event['speakers'].length; i++) {
+            const speakers_div = `
+              <div class="profile-card">
+                <img src="${event['speaker_imgs']?.[i] || ''}" alt="Avatar" class="profile-img">
+                <div class="profile-info">
+                  <div class="profile-name">${event['speakers'][i]}</div>
+                  <div class="profile-organization">${event['speaker_orgs']?.[i] || ''}</div>
+                </div>
+              </div>`;
+            speaker_section.innerHTML += speakers_div;
+          }
+          
+          speaker_section.innerHTML += `</div>`;        
+          modalBody.appendChild(speaker_section);
+        }
+    
     
         // Optional: fields you want to skip or already used at the top
-        const excludeKeys = new Set(['name', 'time', 'id', 'type', 'par_id', 'par_total']);
+        const excludeKeys = new Set(['name', 'time', 'id', 
+                                     'type', 'speakers', 'speaker_imgs', 'speaker_orgs', 
+                                     'par_id', 'par_total']);
     
         for (const key in event) {
             if (!event[key] || excludeKeys.has(key)) continue;
@@ -469,9 +548,10 @@ tags$script(paste0("const eventData = {\n",
     
             const section = document.createElement('div');
             section.className = 'modal-section';
+            
             section.innerHTML = `
                 <div class="modal-section-name">${sectionTitle}</div>
-                <div class="modal-section-content">${marked.parse(event[key])}</div>
+                <div class="modal-section-content">${marked.parse(event[key][0])}</div>
             `;
             modalBody.appendChild(section);
         }
