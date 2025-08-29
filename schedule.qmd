@@ -479,9 +479,7 @@ event_lines <- purrr::map_chr(events$id, function(event_id) {
     if (length(e[[i]][[1]]) == 0) next
     
     field_name <- names(e)[i]
-    
     field_content <- paste0("[", paste(glue::glue("`{e[[i]][[1]]}`"), collapse = ", "), "]")
-    
     result <- paste0(result, glue::glue("\"{field_name}\": {field_content}, \n"))
   }
   
