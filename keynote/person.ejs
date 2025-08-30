@@ -1,19 +1,14 @@
-
-
 <% for (const item of items) { %>
-
-<div class="profile-box" style="margin-top:40px;" <%= metadataAttrs(item) %>>
-
+<div class="profile-box" <%= metadataAttrs(item) %>>
+<!-- Desktop Layout -->
+<div class="desktop-layout">
 :::: {.columns}
-
-::: {.column width="30%"}
-
-
+::: {.column width="40%"}
 <center>
 <img class="profile-photo" src="<%= item.image %>"></a>
 <h3><%= item.title %></h3>
 ```{=html}
-<p>
+<p class="profile-links">
 <% if (item.url) { %>
 <a href="<%= item.url %>"><i class="fas fa-link"></i></a>
 <% } %>
@@ -36,24 +31,71 @@
 ```
 </center>
 
-:::
-
-::: {.column width="2%"}
-
-:::
-
-::: {.column width="68%"}
-
+<div class="person-info">
 <%= item.description %>
-
-
-
+</div>
 :::
-
+::: {.column width="2%"}
+:::
+::: {.column width="58%"}
+<% if (item['keynote-title']) { %>
+<div class="keynote-section">
+<h4 class="keynote-title"><%= item['keynote-title'] %></h4>
+<% if (item['keynote-abstract']) { %>
+<div class="keynote-abstract">
+<%= item['keynote-abstract'] %>
+</div>
+<% } %>
+</div>
+<% } %>
+:::
 ::::
-
 </div>
 
+<!-- Mobile Layout -->
+<div class="mobile-layout">
+<center>
+<img class="profile-photo" src="<%= item.image %>"></a>
+<h3><%= item.title %></h3>
+```{=html}
+<p class="profile-links">
+<% if (item.url) { %>
+<a href="<%= item.url %>"><i class="fas fa-link"></i></a>
 <% } %>
+<% if (item.email) { %>
+<a href="mailto:<%= item.email %>"><i class="fas fa-envelope"></i></a>
+<% } %>
+<% if (item.github) { %>
+<a href="https://github.com/<%= item.github %>"><i class="fab fa-github"></i></a>
+<% } %>
+<% if (item.linkedin) { %>
+<a href="<%= item.linkedin %>"><i class="fab fa-linkedin"></i></a>
+<% } %>
+<% if (item.mastodon) { %>
+<a href="<%= item.mastodon %>"><i class="fab fa-mastodon"></i></a>
+<% } %>
+<% if (item.bluesky) { %>
+<a href="https://bsky.app/profile/<%= item.bluesky %>"><i class="fab fa-twitter"></i></a>
+<% } %>
+</p>
+```
+</center>
 
+<div class="person-info">
+<%= item.description %>
+</div>
 
+<% if (item['keynote-title']) { %>
+<div class="keynote-section">
+<h4 class="keynote-title"><%= item['keynote-title'] %></h4>
+<% if (item['keynote-abstract']) { %>
+<div class="keynote-abstract">
+<%= item['keynote-abstract'] %>
+</div>
+<% } %>
+</div>
+<% } %>
+</div>
+
+</div>
+<% } %>
