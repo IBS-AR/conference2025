@@ -25,3 +25,17 @@
 .button-cta:hover {
   background-color: #6687BA;
 }
+
+.text-col-title {
+  background-color: #d6e5fba8;
+  padding-top: 10px;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.text-col-abstract {
+  background-color: #c8cbcd1b;
+  padding-left: 0px;
+  box-sizing: border-box;
+  margin-top: 0px;
+}
