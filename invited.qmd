@@ -52,7 +52,7 @@ uncertainty can markedly improve the robustness of eradication outcomes with onl
 
 ::: {.column .text-col-title width="100%"}
 **Dr Sumon Das** and **A/Prof Robert Clark**  
-_Department of Agriculture, Fisheries and Forestry_  
+_Australian National University_  
 "Bayesian clustered ensemble prediction for multivariate time series"
 :::
 
@@ -151,7 +151,7 @@ Quantitative genetic analysis of image- or video-derived phenotypes is increasin
 
 ::: {.column .text-col-title width="100%"}
 **Dr Elle Saber**  
-Australian National University  
+_Australian National University_  
 "Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field"
 :::
 
