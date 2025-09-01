@@ -12,13 +12,13 @@ Invited sessions aim to bring together experts to discuss emerging trends, prese
 :::: {.columns}
 
 ::: {.column .text-col-title width="100%"}
-**Prof Andrew Robinson**
-<br>University of Melbourne, CEO of CEBRA
-<br>"Surveillance for counterfactual scenarios of invasive species - why it's useful and a convenient  way to do it"
+**Prof Andrew Robinson**.  
+_University of Melbourne, CEO of CEBRA_  
+"Surveillance for counterfactual scenarios of invasive species - why it's useful and a convenient  way to do it"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
-# Abstract
+## Abstract
 The impact of invasive species is affected by a range of factors, many of which can be anticipated in advance – for example, the prevalence of host material, climate suitability, the size of affected agricultural resources, and so on. One factor that cannot be anticipated in advance is the size of the incursion at the time of its detection. Unfortunately, the impact of an incursion is tightly tied to its maturity at detection, ranging from a single seed, for example, to a 50,000 hectare infestation of plants. 
 
 We propose a simple probability model for the detection of an invasive species that can either capture or integrate out the consequent uncertainty of the maturity of the incursion. We represent the relationship between surveillance and the detection of the organism using survival analysis: the detection of the incursion is analogous to the survival event; it is a binary occurrence that happens at some point in time, and once it has happened it does not happen again.
@@ -33,9 +33,9 @@ In this presentation we will derive and demonstrate the use of the survival-base
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Mahdi Parsa** and **Dr Belinda Barnes**
-<Br> *Department of Agriculture, Fisheries and Forestry*
-<Br> "Surveillance for counterfactual scenarios of invasive species - why it’s useful and a convenient way to do it"
+**Dr Mahdi Parsa** and **Dr Belinda Barnes**  
+*Department of Agriculture, Fisheries and Forestry*  
+"Surveillance for counterfactual scenarios of invasive species - why it’s useful and a convenient way to do it"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -51,9 +51,9 @@ uncertainty can markedly improve the robustness of eradication outcomes with onl
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Sumon Das** and **A/Prof Robert Clark**
-<Br>Department of Agriculture, Fisheries and Forestry
-<Br>"Bayesian clustered ensemble prediction for multivariate time series"
+**Dr Sumon Das** and **A/Prof Robert Clark**  
+_Department of Agriculture, Fisheries and Forestry_  
+"Bayesian clustered ensemble prediction for multivariate time series"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -66,9 +66,9 @@ Finally, we use model-based simulations to communicate risk levels, providing ke
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Raphael Trouvé**
-<Br>University of Melbourne, Senior Research Fellow in Forest Dynamics
-<Br>"Optimal sampling in border biosecurity"
+**Dr Raphael Trouvé**  
+_University of Melbourne, Senior Research Fellow in Forest Dynamics_  
+"Optimal sampling in border biosecurity"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -87,9 +87,9 @@ We developed a propagule pressure equation for SLS in overdispersed pathways and
 :::: {.columns}
 
 ::: {.column .text-col-title width="100%"}
-**Dr Skipton Wolley**
-<br>CSIRO Data 61
-<br>"Species archetype models for presence-only data"
+**Dr Skipton Wolley**  
+_CSIRO Data 61_  
+"Species archetype models for presence-only data"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -98,9 +98,9 @@ Joint species distribution modelling is a recently emerged and potentially power
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Louise McMillian**
-<br>School of Mathematics and Statistics, Victoria University of Wellington
-<br>"The difficulties of clustering categorical or mixed data"
+**Dr Louise McMillian**  
+_School of Mathematics and Statistics, Victoria University of Wellington_  
+"The difficulties of clustering categorical or mixed data"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -109,9 +109,9 @@ I will discuss techniques for clustering categorical data that go beyond treatin
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Shonosuke Sugusawa**
-<br>Faculty of Economics, Keio University
-<br>"Bayesian clustered ensemble prediction for multivariate time series"
+**Dr Shonosuke Sugusawa**  
+_Faculty of Economics, Keio University_   
+"Bayesian clustered ensemble prediction for multivariate time series"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -128,9 +128,9 @@ We propose a novel methodology called the mixture of Bayesian predictive synthes
 :::: {.columns}
 
 ::: {.column .text-col-title width="100%"}
-**Dr Shuwen Hu**
-<br>RMIT University
-<br>"Leveraging Statistical Modelling and Machine Learning in Animal Science"
+**Dr Shuwen Hu**  
+_RMIT University_  
+"Leveraging Statistical Modelling and Machine Learning in Animal Science"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -139,9 +139,9 @@ Live body weight gain is an important measurement of animal performance. In this
 :::
 
 ::: {.column .text-col-title width="100%"}
-**A/Prof Gota Morota**
-<br>Univeristy of Tokyo
-<br>"Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes"
+**A/Prof Gota Morota**  
+_Univeristy of Tokyo_  
+"Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
@@ -150,9 +150,9 @@ Quantitative genetic analysis of image- or video-derived phenotypes is increasin
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Elle Saber**
-<br>Australian National University
-<br>"Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field"
+**Dr Elle Saber**  
+Australian National University  
+"Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
