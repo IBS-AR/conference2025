@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -250,30 +279,221 @@ ul.task-list li input[type="checkbox"] {
 <section id="statistics-for-biosecurity-surveillance" class="level2">
 <h2 class="anchored" data-anchor-id="statistics-for-biosecurity-surveillance">Statistics for Biosecurity Surveillance</h2>
 <p><em>Organiser and Chair: A/Prof Robert Clark</em></p>
-<ul>
-<li><strong>Prof Andrew Robinson</strong><br><em>University of Melbourne, CEO of CEBRA</em><br> Surveillance for counterfactual scenarios of invasive species - why it’s useful and a convenient way to do it</li>
-<li><strong>Dr Mahdi Parsa</strong> and <strong>Dr Belinda Barnes</strong><br><em>Department of Agriculture, Fisheries and Forestry</em><br>Optimising control and surveillance strategies under uncertainty in complex eradication programs</li>
-<li><strong>Dr Sumon Das</strong> and <strong>A/Prof Robert Clark</strong><br><em>Australian National University</em><br>Infererring the rate of undetected contamination using random effects modelling of biosecurity screening histories</li>
-<li><strong>Dr Raphael Trouvé</strong><br><em>University of Melbourne, Senior Research Fellow in Forest Dynamics</em><br>Optimal sampling in border biosecurity</li>
-</ul>
+<div class="columns">
+<div class="column text-col-title" style="width:100%;">
+<p><strong>Prof Andrew Robinson</strong>.<br>
+<em>University of Melbourne, CEO of CEBRA</em><br>
+“Surveillance for counterfactual scenarios of invasive species - why it’s useful and a convenient way to do it”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The impact of invasive species is affected by a range of factors, many of which can be anticipated in advance – for example, the prevalence of host material, climate suitability, the size of affected agricultural resources, and so on. One factor that cannot be anticipated in advance is the size of the incursion at the time of its detection. Unfortunately, the impact of an incursion is tightly tied to its maturity at detection, ranging from a single seed, for example, to a 50,000 hectare infestation of plants.</p>
+<p>We propose a simple probability model for the detection of an invasive species that can either capture or integrate out the consequent uncertainty of the maturity of the incursion. We represent the relationship between surveillance and the detection of the organism using survival analysis: the detection of the incursion is analogous to the survival event; it is a binary occurrence that happens at some point in time, and once it has happened it does not happen again.</p>
+<p>Under such a model, we can connect the distribution of the size of the infestation at the time to detection to the probability of detecting the incursion given that it has not already been detected, namely, the hazard function. For example, a popular model for the detection of an incursion of size x with number of traps t and probability of detecting a single pest <span class="math inline">\(p\)</span> is:</p>
+<p><span class="math inline">\(h(x,t,p) = 1 - (1 - p)^{tx}\)</span></p>
+<p>Algebra leads us to a size-at-detection pdf. Other corrections are also applied as needed. The outcome is a pdf that is a function of process parameters, enabling straightforward assessment of different surveillance choices. Parameter estimates for the distribution can be derived from first principles, field experiments, or expert elicitation.</p>
+<p>In this presentation we will derive and demonstrate the use of the survival-based incursion size at detection pdf and discuss its implications and challenges.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Mahdi Parsa</strong> and <strong>Dr Belinda Barnes</strong><br>
+<em>Department of Agriculture, Fisheries and Forestry</em><br>
+“Surveillance for counterfactual scenarios of invasive species - why it’s useful and a convenient way to do it”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Effective eradication of invasive species over large areas requires strategic allocation of resources between control measures and surveillance activities. This study presents an analytical Bayesian framework that integrates stochastic modelling and explicit measures of uncertainty to guide decisions in complex eradication scenarios. By applying Shannon entropy to quantify uncertainty and incorporating the expected value of perfect information (EVPI), the framework identifies conditions under which investment into control or surveillance becomes worthwhile. Findings show that strategies which hedge against uncertainty can markedly improve the robustness of eradication outcomes with only marginal increases in expected costs. This approach offers practical tools for designing more cost-effective and reliable eradication programs and for prioritising data collection to reduce uncertainty where it has the greatest impact.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Sumon Das</strong> and <strong>A/Prof Robert Clark</strong><br>
+<em>Department of Agriculture, Fisheries and Forestry</em><br>
+“Bayesian clustered ensemble prediction for multivariate time series”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Group testing plays a vital role in biosecurity operations worldwide, particularly in minimising the risk of introducing exotic pests, contaminants, and pathogens through imported agricultural products. A common screening strategy involves pooling items from consignments and testing each group for contamination presence, with consignments typically rejected if any group tests positive. Although screening designs often target a high probability of detection assuming a fixed minimum prevalence, analysing the historical results of these tests to infer the extent of contamination in non-rejected consignments (referred to as leakage) is less common.</p>
+<p>This study advances censored beta-binomial (BB) models to address contamination risk in frozen seafood imports into Australia, incorporating imperfect tests. Motivated by the characteristics of our case study, we develop a new class of BB models that impose a minimum positive consignment propensity threshold, capturing scenarios where contamination is either absent or exceeds a known minimum level. To fit these models, we propose a Metropolis-Hastings (MH) algorithm conditioned on prior distributions for sensitivity and specificity, allowing efficient estimation of quantities related to contamination levels. We analyse historical testing data under multiple scenarios using the proposed MH algorithm, yielding novel insights into both contamination risk and leakage.</p>
+<p>Finally, we use model-based simulations to communicate risk levels, providing key insights into potential undetected contamination.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Raphael Trouvé</strong><br>
+<em>University of Melbourne, Senior Research Fellow in Forest Dynamics</em><br>
+“Optimal sampling in border biosecurity”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Border biosecurity faces mounting pressure from increasing global trade, requiring cost-effective inspection strategies to reduce the risk of importing pest and diseases. Current international standards recommend inspecting all incoming consignments (full census) with fixed sample sizes (e.g., 600 units) for high-risk pathways, but this may be overkill for lower-risk pathways with established compliance records. When should agencies use skip-lot sampling (SLS, sometimes called continuous sampling plan), which adaptively reduces inspections based on recent compliance history, over full census inspection?</p>
+<p>We developed a propagule pressure equation for SLS in overdispersed pathways and used Lagrange multipliers to derive a solution. Results show the choice depends on pathway overdispersion, sampling costs, and budget constraints. Optimal sample sizes are typically smaller than current recommendations, with better returns from inspecting a larger proportion of consignments rather than larger samples per consignment. This framework provides biosecurity agencies with data-driven guidance for implementing adaptive sampling strategies.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="a-cluster-of-modern-clustering-methods-for-biometrics" class="level2">
 <h2 class="anchored" data-anchor-id="a-cluster-of-modern-clustering-methods-for-biometrics">A cluster of modern clustering methods for Biometrics</h2>
 <p><em>Organiser and Chair: A/Prof Francis Hui</em></p>
-<ul>
-<li><strong>Dr Skipton Wolley</strong><br><em>CSIRO Data 61</em><br>Species archetype models for presence-only data</li>
-<li><strong>Dr Louise McMillian</strong><br><em>School of Mathematics and Statistics, Victoria University of Wellington</em><br>The difficulties of clustering categorical or mixed data</li>
-<li><strong>Dr Shonosuke Sugusawa</strong><br><em>Faculty of Economics, Keio University</em><br>Bayesian clustered ensemble prediction for multivariate time series</li>
-</ul>
+<div class="columns">
+<div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Skipton Wolley</strong><br>
+<em>CSIRO Data 61</em><br>
+“Species archetype models for presence-only data”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Joint species distribution modelling is a recently emerged and potentially powerful statistical method for analysing biodiversity data. Despite the plethora of presence-only occurrence data available for biodiversity analysis, there remain few examples of presence-only multiple-species modelling approaches. We present a mixture-of-regressions model for understanding how groups of species are distributed based on presence-only data. Our approach extends Species Archetype Models using a point process framework and incorporates joint estimation of sighting bias based on all species occurrences included in the model. We demonstrate that our method can accurately recapture mean and variance of parameters from simulated data sets and provide better estimates than those generated from multiple single species presence-only species distribution models. We apply our approach to a Myrtaceae presence-only occurrence dataset from New South Wales, Australia. We show that presence-only Species Archetype Models allow for the propagation of variance and uncertainty from the data through predictions, improving inference made on presence-only biodiversity data for multiple species.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Louise McMillian</strong><br>
+<em>School of Mathematics and Statistics, Victoria University of Wellington</em><br>
+“The difficulties of clustering categorical or mixed data”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I will discuss techniques for clustering categorical data that go beyond treating the data as numerical or converting the categories to dummy variables. I will talk about a range of approaches to clustering categorical data, including the R package for clustering ordinal data, which uses model-based clustering via likelihoods and the EM algorithm. Then I will discuss a Bayesian approach from population genetics that may be extendable to general mixed datasets and is the subject of my latest research.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Shonosuke Sugusawa</strong><br>
+<em>Faculty of Economics, Keio University</em><br>
+“Bayesian clustered ensemble prediction for multivariate time series”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We propose a novel methodology called the mixture of Bayesian predictive syntheses (MBPS) for multiple time series count data and apply the methodology to predict the numbers of COVID-19 inpatients and isolated cases in Japan and Korea at the subnational level. MBPS combines a set of predictive models and partitions the multiple time series into clusters based on their contribution to predicting the outcome. In this way MBPS leverages the shared information within each cluster and avoids using a multivariate count model, which is generally cumbersome to develop and implement. Our data analyses demonstrate that the proposed MBPS methodology has improved predictive accuracy and uncertainty quantification.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="methods-and-practice-in-agricultural-analytics" class="level2">
 <h2 class="anchored" data-anchor-id="methods-and-practice-in-agricultural-analytics">Methods and Practice in Agricultural Analytics</h2>
 <p><em>Organiser and Chair: Dr Emi Tanaka</em></p>
-<ul>
-<li><strong>Dr Shuwen Hu</strong><br><em>RMIT University</em><br>Leveraging Statistical Modelling and Machine Learning in Animal Science</li>
-<li><strong>A/Prof Gota Morota</strong><br><em>Univeristy of Tokyo</em><br>Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes</li>
-<li><strong>Ms Elle Saber</strong><br><em>Australian National University</em><br>Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field</li>
-</ul>
+<div class="columns">
+<div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Shuwen Hu</strong><br>
+<em>RMIT University</em><br>
+“Leveraging Statistical Modelling and Machine Learning in Animal Science”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Live body weight gain is an important measurement of animal performance. In this study, we predict the cattle’s daily weight gain from five core cattle behaviours and a measure of total daily activity based on accelerometer data. To collect data, we conducted an experiment equipping a herd of 60 Brahman steers with research collars containing triaxial accelerometers over nearly one month in Australia. We used the accelerometer data, which represents the intensity of animal movement, to compute an activity metric within a five-minute window. In addition, we use pre-trained accelerometer-based machine learning models to classify cattle behaviour into grazing, ruminating, resting, walking, drinking or other classes over five-second time windows. Daily behaviour profiles were constructed for each animal and experiment day by aggregating the behaviour predictions over every calendar day. Our objective was to explore how to use behaviours and activity metrics to predict the cattle’s daily weight gain. The daily activity values ranging from 5.44g to 23.69g. The average daily time spent grazing, ruminating, resting, walking and drinking was 8.97±1.12, 7.78 ±1.03, 5.83±1.05, 1.00±0.4, and 0.18±0.12 hours, respectively. Some weather information data are combined in the model to predict the cattle live-weight gain. The best R-squared value is 0.467, with a minimum root mean square error (RMSE) of 0.867 from the linear regression model. The live-weight gain could not be fully explained by measurements taken in this study, but we showed how these factors can influence the variability in cattle performance.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>A/Prof Gota Morota</strong><br>
+<em>Univeristy of Tokyo</em><br>
+“Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Quantitative genetic analysis of image- or video-derived phenotypes is increasingly being performed for a wide range of traits. Pig body weight values estimated by a conventional approach or a computer vision system can be considered as two different measurements of the same trait, but with different sources of phenotyping error. Previous studies have shown that trait measurement error, defined as the difference between manually collected phenotypes and image-derived phenotypes, can be influenced by genetics, suggesting that the error is systematic rather than random and is more likely to lead to misleading quantitative genetic analysis results. Therefore, we investigated the effect of trait measurement error on genetic analysis of pig body weight (BW). Calibrated scale-based and image-based BW showed high coefficients of determination and goodness of fit. Genomic heritability estimates for scale-based and image-based BW were mostly identical across growth periods. Genomic heritability estimates for trait measurement error were consistently negligible, regardless of the choice of computer vision algorithm. In addition, genome-wide association analysis revealed no overlap between the top markers identified for scale-based BW and those associated with trait measurement error. Overall, the deep learning-based regressions outperformed the adaptive thresholding segmentation methods. This study showed that manually measured scale-based and image-based BW phenotypes yielded the same quantitative genetic results. We found no evidence that BW trait measurement error could be influenced, at least in part, by genetic factors. This suggests that trait measurement error in pig BW does not contain systematic errors that could bias downstream genetic analysis.</p>
+</div>
+</div>
+</div><div class="column text-col-title" style="width:100%;">
+<p><strong>Dr Elle Saber</strong><br>
+Australian National University<br>
+“Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field”</p>
+</div><div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Host‐associated microbiomes are increasingly recognised as integral to health, yet the extent to which host genetics shapes these communities remains unclear. While heritable components of gut and skin microbiomes have been documented in several vertebrates, evidence for the gill microbiome of fish is scarce. This exploratory study sampled the gill microbiome of Atlantic salmon within a Tasmanian breeding program to investigate potential genetic influences. Despite careful planning, study participants did not always behave, and the practical constraints of a commercial operation prevented complete data capture. Having participated in the data collection I was better prepared to understand the limitations of the dataset when doing the downstream analysis. The take home message is that, even if we feel like a fish out of water, time spent among the data can be just as valuable as time spent our desks.</p>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>

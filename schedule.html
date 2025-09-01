@@ -69,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -237,7 +238,7 @@ body {
 }
 
 .container {
-    min-width: 700px;
+    min-width: 1000px;
     max-width: 2000px;
     margin: 0 auto;
 }
@@ -451,6 +452,48 @@ h1 {
 .close-button:hover {
     color: #374151;
 }
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;          /* don't shrink */
+}
+
+/* Hide image completely if not provided */
+.profile-img[src=""] {
+  display: none;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.profile-organization {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Hide org if empty */
+.profile-organization:empty {
+  display: none;
+}
+
 
 .legend {
     background: white;
@@ -701,9 +744,13 @@ h1 {
 <div class="event-time">11:15 - 12:45</div>
 <div class="event-name">Session 8</div>
 </div>
-<div class="event social" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/1*100%); left: calc(1/1*0*100%)" onclick="openModal('lunch-thu')">
+<div class="event social" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('lunch-thu')">
 <div class="event-time">12:45 - 13:45</div>
 <div class="event-name">Lunch</div>
+</div>
+<div class="event general" style="top: calc(4.75/11*100%); height: calc(1/11*100%); width: calc(1/2*100%); left: calc(1/2*1*100%)" onclick="openModal('agm')">
+<div class="event-time">12:45 - 13:45</div>
+<div class="event-name">AGM</div>
 </div>
 <div class="event talk" style="top: calc(5.75/11*100%); height: calc(1.25/11*100%); width: calc(1/2*100%); left: calc(1/2*0*100%)" onclick="openModal('session-9a')">
 <div class="event-time">13:45 - 15:00</div>
@@ -810,103 +857,105 @@ h1 {
 </div>
 </div>
 <script>const eventData = {
-"registration-mon-1": {"name": "Registration", "id": "registration-mon-1", "type": "workshop", "location": "Emailed to participants", "time": "Monday, 08:30 - 9:00", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
+"registration-mon-1": {"name": [`Registration`], "id": [`registration-mon-1`], "type": [`workshop`], "location": [`Emailed to participants`], "time": [`Monday, 08:30 - 9:00`], },
 
-"workshop-mon": {"name": "Workshop", "id": "workshop-mon", "type": "workshop", "location": "Emailed to participants", "time": "Monday, 09:00 - 17:00", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
+"workshop-mon": {"name": [`Workshop`], "id": [`workshop-mon`], "type": [`workshop`], "location": [`Emailed to participants`], "time": [`Monday, 09:00 - 17:00`], },
 
-"registration-mon-2": {"name": "Registration", "id": "registration-mon-2", "type": "general", "location": "TBA", "time": "Monday, 17:00 - 18:00", "speaker": "Conference Staff", "abstract": "Conference registration and badge pickup.", "description": "Drop in to collect your materials and meet fellow attendees.", "par_id": "NA", "par_total": "NA", },
+"registration-mon-2": {"name": [`Registration`], "id": [`registration-mon-2`], "type": [`general`], "location": [`TBA`], "time": [`Monday, 17:00 - 18:00`], "speaker": [`Conference Staff`], "abstract": [`Conference registration and badge pickup.`], "description": [`Drop in to collect your materials and meet fellow attendees.`], },
 
-"welcome-reception": {"name": "Welcome Reception", "id": "welcome-reception", "type": "social", "location": "Garden Terrace", "time": "Monday, 18:00 - 19:00", "speaker": "Host Committee", "abstract": "Opening reception with drinks and light refreshments.", "description": "Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference.", "par_id": "NA", "par_total": "NA", },
+"welcome-reception": {"name": [`Welcome Reception`], "id": [`welcome-reception`], "type": [`social`], "location": [`Garden Terrace`], "time": [`Monday, 18:00 - 19:00`], "speaker": [`Host Committee`], "abstract": [`Opening reception with drinks and light refreshments.`], "description": [`Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference.`], },
 
-"registration-tue": {"name": "Registration", "id": "registration-tue", "type": "general", "location": "Foyer", "time": "Tuesday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and info desk.", "description": "Final registration opportunity and general assistance available.", "par_id": "NA", "par_total": "NA", },
+"registration-tue": {"name": [`Registration`], "id": [`registration-tue`], "type": [`general`], "location": [`Foyer`], "time": [`Tuesday, 08:30 - 09:00`], "speaker": [`Conference Staff`], "abstract": [`Morning registration and info desk.`], "description": [`Final registration opportunity and general assistance available.`], },
 
-"keynote-1": {"name": "Keynote 1", "id": "keynote-1", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
+"keynote-1": {"name": [`Keynote 1`], "id": [`keynote-1`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 09:00 - 10:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], },
 
-"session-1a": {"name": "Session 1A", "id": "session-1a", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"session-1a": {"name": [`Session 1A`], "id": [`session-1a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-1b": {"name": "Session 1B", "id": "session-1b", "type": "talk", "location": "Theatrette", "time": "Tuesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-1b": {"name": [`Session 1B`], "id": [`session-1b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Tuesday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"morning-tea-tue": {"name": "Morning Tea", "id": "morning-tea-tue", "type": "social", "location": "Gallery", "time": "Tuesday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
+"morning-tea-tue": {"name": [`Morning Tea`], "id": [`morning-tea-tue`], "type": [`social`], "location": [`Gallery`], "time": [`Tuesday, 10:45 - 11:15`], "speaker": [``], "abstract": [`Light refreshments and beverages.`], "description": [`Take a break and enjoy some tea or coffee while networking with peers.`], },
 
-"invited-1": {"name": "Invited Session", "id": "invited-1", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"invited-1": {"name": [`Invited Session`], "id": [`invited-1`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 11:15 - 12:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-2": {"name": "Session 2", "id": "session-2", "type": "talk", "location": "Theatrette", "time": "Tuesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-2": {"name": [`Session 2`], "id": [`session-2`], "type": [`talk`], "location": [`Theatrette`], "time": [`Tuesday, 11:15 - 12:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"lunch-tue": {"name": "Lunch", "id": "lunch-tue", "type": "social", "location": "Gallery", "time": "Tuesday, 12:45 - 13:45", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
+"lunch-tue": {"name": [`Lunch`], "id": [`lunch-tue`], "type": [`social`], "location": [`Gallery`], "time": [`Tuesday, 12:45 - 13:45`], },
 
-"session-3a": {"name": "Session 3A", "id": "session-3a", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"session-3a": {"name": [`Session 3A`], "id": [`session-3a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 13:45 - 15:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-3b": {"name": "Session 3B", "id": "session-3b", "type": "talk", "location": "Theatrette", "time": "Tuesday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-3b": {"name": [`Session 3B`], "id": [`session-3b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Tuesday, 13:45 - 15:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"afternoon-tea-tue": {"name": "Afternoon Tea", "id": "afternoon-tea-tue", "type": "social", "location": "Gallery", "time": "Tuesday, 15:00 - 15:30", "speaker": "NA", "abstract": "Afternoon refreshments.", "description": "Light snacks and drinks served.", "par_id": "NA", "par_total": "NA", },
+"afternoon-tea-tue": {"name": [`Afternoon Tea`], "id": [`afternoon-tea-tue`], "type": [`social`], "location": [`Gallery`], "time": [`Tuesday, 15:00 - 15:30`], "abstract": [`Afternoon refreshments.`], "description": [`Light snacks and drinks served.`], },
 
-"session-4a": {"name": "Session 4A", "id": "session-4a", "type": "talk", "location": "Arc Cinema", "time": "Tuesday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"session-4a": {"name": [`Session 4A`], "id": [`session-4a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 15:30 - 16:45`], "speaker": [`Various`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-4b": {"name": "Session 4B", "id": "session-4b", "type": "talk", "location": "Theaterette", "time": "Tuesday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-4b": {"name": [`Session 4B`], "id": [`session-4b`], "type": [`talk`], "location": [`Theaterette`], "time": [`Tuesday, 15:30 - 16:45`], "speaker": [`Various`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"poster-tue": {"name": "Poster Session", "id": "poster-tue", "type": "poster", "location": "Gallery", "time": "Tuesday, 17:00 - 19:00", "speaker": "Multiple Presenters", "abstract": "Poster presentations and discussions.", "description": "Explore a wide range of research topics during this informal poster session.", "par_id": "NA", "par_total": "NA", },
+"poster-tue": {"name": [`Poster Session`], "id": [`poster-tue`], "type": [`poster`], "location": [`Gallery`], "time": [`Tuesday, 17:00 - 19:00`], "speaker": [`Multiple Presenters`], "abstract": [`Poster presentations and discussions.`], "description": [`Explore a wide range of research topics during this informal poster session.`], },
 
-"registration-wed": {"name": "Registration", "id": "registration-wed", "type": "general", "location": "Foyer", "time": "Wednesday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and help desk.", "description": "Assistance for late arrivals and info services.", "par_id": "NA", "par_total": "NA", },
+"registration-wed": {"name": [`Registration`], "id": [`registration-wed`], "type": [`general`], "location": [`Foyer`], "time": [`Wednesday, 08:30 - 09:00`], "speaker": [`Conference Staff`], "abstract": [`Morning registration and help desk.`], "description": [`Assistance for late arrivals and info services.`], },
 
-"keynote-2": {"name": "Keynote 2", "id": "keynote-2", "type": "talk", "location": "Arc Cinema", "time": "Wednesday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
+"keynote-2": {"name": [`Keynote 2`], "id": [`keynote-2`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Wednesday, 09:00 - 10:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], },
 
-"session-5a": {"name": "Session 5A", "id": "session-5a", "type": "talk", "location": "Arc Cinema", "time": "Wednesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"session-5a": {"name": [`Session 5A`], "id": [`session-5a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Wednesday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-5b": {"name": "Session 5B", "id": "session-5b", "type": "talk", "location": "Theatrette", "time": "Wednesday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-5b": {"name": [`Session 5B`], "id": [`session-5b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Wednesday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"morning-tea-wed": {"name": "Morning Tea", "id": "morning-tea-wed", "type": "social", "location": "Gallery", "time": "Wednesday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
+"morning-tea-wed": {"name": [`Morning Tea`], "id": [`morning-tea-wed`], "type": [`social`], "location": [`Gallery`], "time": [`Wednesday, 10:45 - 11:15`], "speaker": [``], "abstract": [`Light refreshments and beverages.`], "description": [`Take a break and enjoy some tea or coffee while networking with peers.`], },
 
-"invited-2": {"name": "Invited Session", "id": "invited-2", "type": "talk", "location": "Arc Cinema", "time": "Wednesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"invited-2": {"name": [`Invited Session`], "id": [`invited-2`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Wednesday, 11:15 - 12:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-6": {"name": "Session 6", "id": "session-6", "type": "talk", "location": "Theatrette", "time": "Wednesday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-6": {"name": [`Session 6`], "id": [`session-6`], "type": [`talk`], "location": [`Theatrette`], "time": [`Wednesday, 11:15 - 12:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"lunch-wed": {"name": "Lunch", "id": "lunch-wed", "type": "social", "location": "Gallery", "time": "Wednesday, 12:45 - 13:45", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
+"lunch-wed": {"name": [`Lunch`], "id": [`lunch-wed`], "type": [`social`], "location": [`Gallery`], "time": [`Wednesday, 12:45 - 13:45`], },
 
-"social-wed": {"name": "Social Activities", "id": "social-wed", "type": "social", "location": "Outdoor Grounds", "time": "Wednesday, 13:45 - 17:00", "speaker": "Organizing Committee", "abstract": "Networking games and tours.", "description": "Fun and informal activities for relaxing and networking.", "par_id": "NA", "par_total": "NA", },
+"social-wed": {"name": [`Social Activities`], "id": [`social-wed`], "type": [`social`], "location": [`Outdoor Grounds`], "time": [`Wednesday, 13:45 - 17:00`], "speaker": [`Organizing Committee`], "abstract": [`Networking games and tours.`], "description": [`Fun and informal activities for relaxing and networking.`], },
 
-"registration-thu": {"name": "Registration", "id": "registration-thu", "type": "general", "location": "Foyer", "time": "Thursday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and info desk.", "description": "Final registration opportunity and general assistance available.", "par_id": "NA", "par_total": "NA", },
+"registration-thu": {"name": [`Registration`], "id": [`registration-thu`], "type": [`general`], "location": [`Foyer`], "time": [`Thursday, 08:30 - 09:00`], "speaker": [`Conference Staff`], "abstract": [`Morning registration and info desk.`], "description": [`Final registration opportunity and general assistance available.`], },
 
-"keynote-3": {"name": "Keynote 3", "id": "keynote-3", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
+"keynote-3": {"name": [`Keynote 3`], "id": [`keynote-3`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Thursday, 09:00 - 10:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], },
 
-"session-7a": {"name": "Session 7A", "id": "session-7a", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"session-7a": {"name": [`Session 7A`], "id": [`session-7a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Thursday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-7b": {"name": "Session 7B", "id": "session-7b", "type": "talk", "location": "Theatrette", "time": "Thursday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-7b": {"name": [`Session 7B`], "id": [`session-7b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Thursday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"morning-tea-thu": {"name": "Morning Tea", "id": "morning-tea-thu", "type": "social", "location": "Gallery", "time": "Thursday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
+"morning-tea-thu": {"name": [`Morning Tea`], "id": [`morning-tea-thu`], "type": [`social`], "location": [`Gallery`], "time": [`Thursday, 10:45 - 11:15`], "speaker": [``], "abstract": [`Light refreshments and beverages.`], "description": [`Take a break and enjoy some tea or coffee while networking with peers.`], },
 
-"invited-3": {"name": "Invited Session", "id": "invited-3", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"invited-3": {"name": [`Invited Session`], "id": [`invited-3`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Thursday, 11:15 - 12:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-8": {"name": "Session 8", "id": "session-8", "type": "talk", "location": "Theatrette", "time": "Thursday, 11:15 - 12:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-8": {"name": [`Session 8`], "id": [`session-8`], "type": [`talk`], "location": [`Theatrette`], "time": [`Thursday, 11:15 - 12:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"lunch-thu": {"name": "Lunch", "id": "lunch-thu", "type": "social", "location": "Gallery", "time": "Thursday, 12:45 - 13:45", "speaker": "NA", "abstract": "NA", "description": "NA", "par_id": "NA", "par_total": "NA", },
+"lunch-thu": {"name": [`Lunch`], "id": [`lunch-thu`], "type": [`social`], "location": [`Gallery`], "time": [`Thursday, 12:45 - 13:45`], "par_id": [`1`], "par_total": [`2`], },
 
-"session-9a": {"name": "Session 9A", "id": "session-9a", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"agm": {"name": [`AGM`], "id": [`agm`], "type": [`general`], "location": [`Gallery`], "time": [`Thursday, 12:45 - 13:45`], "par_id": [`2`], "par_total": [`2`], },
 
-"session-9b": {"name": "Session 9B", "id": "session-9b", "type": "talk", "location": "Theatrette", "time": "Thursday, 13:45 - 15:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-9a": {"name": [`Session 9A`], "id": [`session-9a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Thursday, 13:45 - 15:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"afternoon-tea-thu": {"name": "Afternoon Tea", "id": "afternoon-tea-thu", "type": "social", "location": "Gallery", "time": "Thursday, 15:00 - 15:30", "speaker": "NA", "abstract": "Afternoon refreshments.", "description": "Light snacks and drinks served.", "par_id": "NA", "par_total": "NA", },
+"session-9b": {"name": [`Session 9B`], "id": [`session-9b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Thursday, 13:45 - 15:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"session-10a": {"name": "Session 10A", "id": "session-10a", "type": "talk", "location": "Arc Cinema", "time": "Thursday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"afternoon-tea-thu": {"name": [`Afternoon Tea`], "id": [`afternoon-tea-thu`], "type": [`social`], "location": [`Gallery`], "time": [`Thursday, 15:00 - 15:30`], "abstract": [`Afternoon refreshments.`], "description": [`Light snacks and drinks served.`], },
 
-"session-10b": {"name": "Session 10B", "id": "session-10b", "type": "talk", "location": "Theaterette", "time": "Thursday, 15:30 - 16:45", "speaker": "Various", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-10a": {"name": [`Session 10A`], "id": [`session-10a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Thursday, 15:30 - 16:45`], "speaker": [`Various`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"dinner": {"name": "Conference Dinner", "id": "dinner", "type": "social", "location": "Banquet Hall", "time": "Thursday, 18:00 - 20:00", "speaker": "Dinner Host", "abstract": "Celebratory closing dinner.", "description": "Enjoy an evening of fine dining, speeches, and socializing.", "par_id": "NA", "par_total": "NA", },
+"session-10b": {"name": [`Session 10B`], "id": [`session-10b`], "type": [`talk`], "location": [`Theaterette`], "time": [`Thursday, 15:30 - 16:45`], "speaker": [`Various`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"registration-fri": {"name": "Registration", "id": "registration-fri", "type": "general", "location": "Foyer", "time": "Friday, 08:30 - 09:00", "speaker": "Conference Staff", "abstract": "Morning registration and info desk.", "description": "Final registration opportunity and general assistance available.", "par_id": "NA", "par_total": "NA", },
+"dinner": {"name": [`Conference Dinner`], "id": [`dinner`], "type": [`social`], "location": [`Banquet Hall`], "time": [`Thursday, 18:00 - 20:00`], "speaker": [`Dinner Host`], "abstract": [`Celebratory closing dinner.`], "description": [`Enjoy an evening of fine dining, speeches, and socializing.`], },
 
-"keynote-4": {"name": "Keynote 4", "id": "keynote-4", "type": "talk", "location": "Arc Cinema", "time": "Friday, 09:00 - 10:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
+"registration-fri": {"name": [`Registration`], "id": [`registration-fri`], "type": [`general`], "location": [`Foyer`], "time": [`Friday, 08:30 - 09:00`], "speaker": [`Conference Staff`], "abstract": [`Morning registration and info desk.`], "description": [`Final registration opportunity and general assistance available.`], },
 
-"session-11a": {"name": "Session 11A", "id": "session-11a", "type": "talk", "location": "Arc Cinema", "time": "Friday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "1", "par_total": "2", },
+"keynote-4": {"name": [`Keynote 4`], "id": [`keynote-4`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Friday, 09:00 - 10:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], },
 
-"session-11b": {"name": "Session 11B", "id": "session-11b", "type": "talk", "location": "Theatrette", "time": "Friday, 10:00 - 10:45", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "2", "par_total": "2", },
+"session-11a": {"name": [`Session 11A`], "id": [`session-11a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Friday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`1`], "par_total": [`2`], },
 
-"morning-tea-fri": {"name": "Morning Tea", "id": "morning-tea-fri", "type": "social", "location": "Gallery", "time": "Friday, 10:45 - 11:15", "speaker": "", "abstract": "Light refreshments and beverages.", "description": "Take a break and enjoy some tea or coffee while networking with peers.", "par_id": "NA", "par_total": "NA", },
+"session-11b": {"name": [`Session 11B`], "id": [`session-11b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Friday, 10:00 - 10:45`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], "par_id": [`2`], "par_total": [`2`], },
 
-"keynote-5": {"name": "Keynote 5", "id": "keynote-5", "type": "talk", "location": "Arc Cinema", "time": "Friday, 11:15 - 12:00", "speaker": "TBA", "abstract": "TBA", "description": "TBA", "par_id": "NA", "par_total": "NA", },
+"morning-tea-fri": {"name": [`Morning Tea`], "id": [`morning-tea-fri`], "type": [`social`], "location": [`Gallery`], "time": [`Friday, 10:45 - 11:15`], "speaker": [``], "abstract": [`Light refreshments and beverages.`], "description": [`Take a break and enjoy some tea or coffee while networking with peers.`], },
 
-"closing": {"name": "Closing Ceremony", "id": "closing", "type": "general", "location": "Arc Cinema", "time": "Friday, 12:00 - 12:45", "speaker": "Organizing Committee", "abstract": "Wrap-up and acknowledgements.", "description": "Thanks to participants, sponsors, and staff. Final remarks and farewell.", "par_id": "NA", "par_total": "NA", },
+"keynote-5": {"name": [`Keynote 5`], "id": [`keynote-5`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Friday, 11:15 - 12:00`], "speaker": [`TBA`], "abstract": [`TBA`], "description": [`TBA`], },
 
-"lunch-fri": {"name": "Lunch", "id": "lunch-fri", "type": "social", "location": "Dining Hall", "time": "Friday, 12:45 - 13:45", "speaker": "", "abstract": "Farewell lunch.", "description": "Join peers one last time over lunch.", "par_id": "NA", "par_total": "NA", }
+"closing": {"name": [`Closing Ceremony`], "id": [`closing`], "type": [`general`], "location": [`Arc Cinema`], "time": [`Friday, 12:00 - 12:45`], "speaker": [`Organizing Committee`], "abstract": [`Wrap-up and acknowledgements.`], "description": [`Thanks to participants, sponsors, and staff. Final remarks and farewell.`], },
+
+"lunch-fri": {"name": [`Lunch`], "id": [`lunch-fri`], "type": [`social`], "location": [`Dining Hall`], "time": [`Friday, 12:45 - 13:45`], "speaker": [``], "abstract": [`Farewell lunch.`], "description": [`Join peers one last time over lunch.`], }
 };</script>
 
 <!-- Modify the modal section to fit your need -->
@@ -917,12 +966,39 @@ h1 {
     
         document.getElementById('modal-name').textContent = event.name || '';
         document.getElementById('modal-time').textContent = event.time || '';
-    
+        
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = ''; // Clear previous content
+        
+        // Handle speakers
+        if (event['speakers']) {
+          const speaker_section = document.createElement('div');
+          speaker_section.className = 'modal-section';
+          speaker_section.innerHTML = `
+            <div class="modal-section-name">Speakers</div>
+            <div class="modal-section-content">`;
+                
+          for (let i = 0; i < event['speakers'].length; i++) {
+            const speakers_div = `
+              <div class="profile-card">
+                <img src="${event['speaker_imgs']?.[i] || ''}" alt="Avatar" class="profile-img">
+                <div class="profile-info">
+                  <div class="profile-name">${event['speakers'][i]}</div>
+                  <div class="profile-organization">${event['speaker_orgs']?.[i] || ''}</div>
+                </div>
+              </div>`;
+            speaker_section.innerHTML += speakers_div;
+          }
+          
+          speaker_section.innerHTML += `</div>`;        
+          modalBody.appendChild(speaker_section);
+        }
+    
     
         // Optional: fields you want to skip or already used at the top
-        const excludeKeys = new Set(['name', 'time', 'id', 'type', 'par_id', 'par_total']);
+        const excludeKeys = new Set(['name', 'time', 'id', 
+                                     'type', 'speakers', 'speaker_imgs', 'speaker_orgs', 
+                                     'par_id', 'par_total']);
     
         for (const key in event) {
             if (!event[key] || excludeKeys.has(key)) continue;
@@ -932,9 +1008,10 @@ h1 {
     
             const section = document.createElement('div');
             section.className = 'modal-section';
+            
             section.innerHTML = `
                 <div class="modal-section-name">${sectionTitle}</div>
-                <div class="modal-section-content">${event[key]}</div>
+                <div class="modal-section-content">${marked.parse(event[key][0])}</div>
             `;
             modalBody.appendChild(section);
         }
