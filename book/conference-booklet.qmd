@@ -1,0 +1,302 @@
+---
+title: Biometrics in the Bush Capital
+subtitle: "24-28th November 2025"
+author: International Biometrics Society Australasian Region
+logo: assets/sponsors/logo.jpg
+output-file: "conference-booklet" 
+platinum-sponsors:
+  - assets/sponsors/ANU_Primary_Horizontal_GoldBlack.png
+gold-sponsors:
+  - assets/sponsors/GRDC_Logo_Primary_Default_transparency.png
+  - assets/sponsors/UoA-Logo-Primary-RGB-Large.png
+supporters:
+  - assets/sponsors/SSA_Logotype_MAIN USE.png
+format: 
+  pdf:
+    documentclass: scrreprt
+    mainfont: Avenir
+    sansfont: Arial Rounded MT Bold
+    toc: true
+    toc-depth: 2
+    template-partials: 
+      - assets/before-body.tex
+      - assets/after-body.tex
+    front-cover-image: assets/front-cover.png
+    front-cover-location: "UL"
+    front-cover-size: 1.1
+    back-cover-image: assets/back-cover.png
+    back-cover-location: "UL"
+    back-cover-size: 1.1
+    include-in-header:
+        - assets/header.tex
+        - assess/draft.tex
+    include-after-body: 
+      text: |
+        \printindex
+keep-tex: true
+execute:
+  echo: false
+filters:
+   - latex-environment
+environments: [minipage]
+---
+
+# About 
+
+\begin{wrapfigure}{L}{2.5cm}
+\includegraphics[width=2.5cm]{`r rmarkdown::metadata$logo`}
+\end{wrapfigure}
+
+
+
+The [International Biometric Society (IBS)](https://www.biometricsociety.org/) is devoted to the development and application of statistical and mathematical theory and methods in the Biosciences, including agriculture, biomedical science and public health, ecology, environmental sciences, forestry, and allied disciplines. It welcomes as members statisticians, mathematicians, biological scientists, and others devoted to interdisciplinary efforts in advancing the collection and interpretation of information in the biosciences.
+
+The IBS is organised into geographically-defined regions, each with at least 50 members. [The Australasian Region (IBS-AR)](https://biometricsociety.org.au/) is one of over 30 regions under the IBS umbrella. It provides to members of the IBS who reside in Australia, New Zealand and nearby countries a local focus and support for biometrics undertaken in this region.
+
+The Australasian Region Biometrics conference is a biannual conference sponsored by the IBS-AR. The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
+
+\Large Conference website: [biometricsociety.org.au/conference2025](https://biometricsociety.org.au/conference2025)
+
+\normalsize
+
+## IBS-AR Council
+
+- **Alison Kelly** (University of Queensland) as President
+- **James Curran** (University of Auckland) as Vice-President
+- **Louise McMillan** (Victoria University of Wellington) as Secretary
+- **Ian Renner** (University of Newcastle) as Treasurer
+- **Sam Rogers** (University of Adelaide) as Membership Officer
+- **Emi Tanaka** (Australian National University) as Social Media Officer
+- **Warren Muller** (CSIRO) as Public Officer
+- **Charley Budgeon** (University of Western Australia) as Biometric Bulletin Correspondent
+- **Peter Green** (AgResearch Ltd) as Website manager
+- **Samuel Muller** (Macquarie University) as IBS Council Member
+- **Kevin Murray** (University of Western Australia) as IBS Council Member
+- **Chris Triggs** (University of Auckland) as IBS Executive Board
+
+\vfill 
+
+_Conference booklet compiled by Emi Tanaka_  
+_Last updated: `r format(Sys.time())`_
+
+
+# Organisers
+
+
+## Local Organising Committee
+
+- **Emi Tanaka** (Australian National University) as Chair
+- **Alan Welsh** (Australian National University)
+- **Fonti Kar** (Australian National University)
+- **Joanne Thandrayen**
+- **Warren Muller** (CSIRO)
+- **Weihao (Patrick) Li** (Australian National University)
+- **Yidi Deng** (Australian National University)
+
+## Social Program Committee
+
+- **Quan Vu** (Australian National University) as Chair
+
+## Scientific and Program Committee
+
+- **David Warton** (UNSW Sydney) as Chair
+- **Carolyn Huston** (CSIRO)
+- **Emi Tanaka** (Australian National University)
+- **Jean Yang** (University of Sydney)
+- **Julian Taylor** (Adelaide University)
+- **Nicola Armstrong** (Curtin University)
+- **Thomas Lumley** (University of Auckland)
+
+
+## Conference Allies {#sec-allies}
+
+- **Fonti Kar** (Australian National University)
+- **Louise McMillan** (Victoria University of Wellington) 
+- **Scott Foster** (CSIRO)
+
+
+```{r}
+#| message: false
+library(tidyverse)
+contributed <- readRDS("data/contributed.rds")
+invited <- readRDS("data/invited.rds")
+keynote <- readRDS("data/keynote.rds")
+```
+
+# Sponsors
+
+
+
+We gratefully acknowledge our sponsors for their generous support, which has made this conference possible.  
+
+
+\vfill
+
+```{=latex}
+\begin{center}
+
+{\Large Platinum  }
+
+\includegraphics[width=50mm]{`r rmarkdown::metadata[["platinum-sponsors"]]`}  
+
+
+\vfill
+  
+
+{\Large Gold}
+
+
+\includegraphics[width=50mm]{`r rmarkdown::metadata[["gold-sponsors"]][1]`}  \includegraphics[width=50mm]{`r rmarkdown::metadata[["gold-sponsors"]][2]`}  
+
+
+\vfill
+
+
+{\Large Supporters}
+
+\includegraphics[width=50mm]{`r rmarkdown::metadata[["supporters"]][1]`}
+
+ACT Branch
+
+\end{center}
+```
+
+
+
+
+
+
+
+# Schedule
+
+\pagestyle{empty}
+
+\begin{tikzpicture}
+
+\draw [draw=black] (0.0,0.0) rectangle (15.0,20.0);
+
+\def\fin{\fpeval{\Dh-1}};
+\foreach \i in {1,...,\fin}{
+\def\y{\fpeval{\i*\dh}} ;
+\def\heure{\fpeval{(\hf-\i)}};
+\def\x{\fpeval{\d/2.0}}
+\node at (\x,\y)  {\heure: 00};
+\draw[dashed](\d, \y)--(\D, \y);
+};
+
+\foreach \j [count=\i] in \Days{
+\def\y{\fpeval{\H-0.5*\h}};
+\def\x{\fpeval{2*\d + (\i - 1) * \dd - 0.05}};
+\node at (\x , \y)  {\j};
+};
+
+\event[Registration][][1][8.30][0.30][Foyer];
+\event[Registration][][2][8.30][0.30][Foyer];
+\event[Registration][][3][8.30][0.30][Foyer];
+\event[Registration][][4][8.30][0.30][Foyer];
+\event[Registration][][5][8.30][0.30][Foyer];
+
+\event[Workshop][][1][9.00][8][];
+
+
+\end{tikzpicture}
+
+\pagestyle{fancy}
+
+
+```{r}
+display_abstract <- function(data) {
+  data |> 
+    select(first, last, org, coauthors, title, abstract) |> 
+    pwalk(function(first, last, org, coauthors, title, abstract) {
+       #cat("\\smallskip\n")
+       #cat("::: {.minipage arguments='\\textwidth'}\n\n")
+       #cat("\\nopagebreak\n\n")
+       cat(str_c("### ", title, "\n\n"))
+       cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
+       cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
+       if(!is.na(coauthors)) cat(str_c("*Co-authors: ", coauthors, "*\n\n"))
+       #cat("\\vspace{1.2em}\n\n")
+       cat("\\setlength{\\parskip}{0.5em}\n\n")
+       #cat("\\setlength{\\parindent}{1em}\n\n\\noindent ")
+       cat(abstract, "\n\n")
+       #cat(":::\n\n")
+     }) 
+}
+```
+
+# Keynote talks
+
+```{r}
+#| output: asis
+keynote |> 
+  arrange(last) |> 
+  display_abstract()
+```
+
+
+# Invited talks
+
+```{r}
+#| output: asis
+invited |> 
+  arrange(last) |> 
+  display_abstract()
+```
+
+
+# Contributed talks
+
+
+
+```{r}
+#| output: asis
+contributed |> 
+ arrange(last) |> 
+ filter(type == "talk") |> 
+ #slice(1:30) |> 
+ display_abstract()
+```
+
+
+## Tuesday
+
+## Wednesday
+
+
+## Thursday
+
+
+## Friday
+
+
+# Posters
+
+```{r}
+#| output: asis
+contributed |> 
+ arrange(last) |> 
+ filter(type == "poster") |> 
+ display_abstract()
+```
+
+# Code of Conduct
+
+
+The International Biometrics Society Australasian Region (IBS-AR) is dedicated to providing a welcoming and harassment-free experience for everyone. We do not tolerate unprofessional or inappropriate conduct, which includes discrimination and harassment, sexual or otherwise. Conference participants should always work towards maintaining an environment free of harassment and discrimination. At the discretion of the IBS-AR conference organisers and/or IBS-AR council, any participants violating these rules may be asked to leave the conference, without any fee refund.
+
+Participants agree to:
+
+- Be considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of fellow attendees at all times.
+- Refrain from demeaning, discriminatory, or harassing behaviour and speech. 
+- Alert a member of the IBS-AR council or conference organisers if they notice a dangerous situation, someone in distress, or violation of this code of conduct.
+
+Harassment is demeaning or threatening behaviour directed at an individual or a group of people. Harassment includes, but is not limited to,
+
+- Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, person's lifestyle choices and practices, physical appearance, age, race, religion (or lack thereof) or beliefs;
+- Unwelcome sexual attention and behaviour including inappropriate sexual propositions; unnecessary touching; verbal or written comments or physical actions of a sexual nature; sexually degrading words used to describe an individual; a display of sexually suggestive objects or pictures; or sexually explicit jokes; and 
+- Threatening behaviour including bullying, threat of violence, deliberate intimidation, stalking or incitement of violence.
+Reporting
+
+
+If you are being harassed by a member/guest/participant of/at the IBS-AR Conference, or notice that someone else is being harassed, or have any other concerns, please contact the designated conference allies in the conference team. The current conference allies can be found on page 4. If the person who is harassing you is one of the conference allies, they will recuse themselves from handling your incident and will not be given any information without your explicit consent. We will respond as promptly as we can.

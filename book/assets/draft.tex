@@ -1,0 +1,6 @@
+\usepackage{tikz}
+\AddToHook{shipout/foreground}{
+  \begin{tikzpicture}[overlay, remember picture]
+  \node[opacity=0.3, text=red, rotate=45, scale=6] at (current page) {DRAFT};
+  \end{tikzpicture}
+}
