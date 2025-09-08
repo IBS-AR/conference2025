@@ -1,18 +1,5 @@
 [
   {
-    "listing": "/updates.html",
-    "items": [
-      "/news/2025-07-14.html",
-      "/news/2025-06-29.html",
-      "/news/2025-04-14.html",
-      "/news/2025-02-24.html"
-    ]
-  },
-  {
-    "listing": "/schedule-old.html",
-    "items": []
-  },
-  {
     "listing": "/keynote.html",
     "items": [
       "/keynote/charmaine-dean/index.html",
@@ -20,6 +7,19 @@
       "/keynote/heather-turner/index.html",
       "/keynote/jesse-goodman/index.html",
       "/keynote/mevin-hooten/index.html"
+    ]
+  },
+  {
+    "listing": "/schedule-old.html",
+    "items": []
+  },
+  {
+    "listing": "/updates.html",
+    "items": [
+      "/news/2025-07-14.html",
+      "/news/2025-06-29.html",
+      "/news/2025-04-14.html",
+      "/news/2025-02-24.html"
     ]
   }
 ]
