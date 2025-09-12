@@ -29,11 +29,11 @@ format:
     back-cover-size: 1.1
     include-in-header:
         - assets/header.tex
-        - assess/draft.tex
+        - assets/draft.tex
     include-after-body: 
       text: |
         \printindex
-keep-tex: true
+#keep-tex: true
 execute:
   echo: false
 filters:
