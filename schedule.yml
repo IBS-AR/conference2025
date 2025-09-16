@@ -1,5 +1,5 @@
 Monday:
-  - name: "Registration"
+  - name: "Workshop Registration"
     id: "registration-mon-1"
     type: "workshop"
     start: "08:30"
@@ -11,37 +11,15 @@ Monday:
     type: "workshop"
     start: "09:00"
     end: "17:00"
-    Generalized Nonlinear Models in R: |
-      - Speaker: **Heather Turner**
-      - Building: Haydon-Allen Building, Australian National University
-      - Room: Emailed to participants
-      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#generalized-nonlinear-models-in-r)
-    Analysing Complex Survey and Subsample Data (with R): |
-      - Speaker: **Thomas lumley**
-      - Building: Haydon-Allen Building, Australian National University
-      - Room: Emailed to participants
-      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#analysing-complex-survey-and-subsample-data-with-r)
-    "Lost in Translation: Speaking Statistician in a Multi-Lingual World": |
-      - Speaker: **Peter Humburg** and **Eve Slavich**
-      - Building: National Film and Sound Archive of Australia
-      - Room: Emailed to participants
-      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#lost-in-translation-speaking-statistician-in-a-multi-lingual-world)
-      - Note: This is a half-day workshop (13:30 - 17:00)
-    "Deep Learning and Computer Vision in R: A Practical Introduction": |
-      - Speaker: **Patrick (Weihao) Li**
-      - Building: Haydon-Allen Building, Australian National University
-      - Room: Emailed to participants
-      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#deep-learning-and-computer-vision-in-r-a-practical-introduction)
+    location: "Emailed to participants"
 
-  - name: "Registration"
+  - name: "Conference Registration"
     id: "registration-mon-2"
     type: "general"
     start: "17:00"
     end: "18:00"
-    speaker: "Conference Staff"
     location: "TBA"
-    abstract: "Conference registration and badge pickup."
-    description: "Drop in to collect your materials and meet fellow attendees."
+    description: "Conference registration and badge pickup. Drop in to collect your materials and meet fellow attendees."
 
   - name: "Welcome Reception"
     id: "welcome-reception"
@@ -54,15 +32,13 @@ Monday:
     description: "Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference."
 
 Tuesday:
-  - name: "Registration"
+  - name: "Conference Registration"
     id: "registration-tue"
     type: "general"
     start: "08:30"
     end: "09:00"
-    speaker: "Conference Staff"
     location: "Foyer"
-    abstract: "Morning registration and info desk."
-    description: "Final registration opportunity and general assistance available."
+    description: "Morning registration and info desk. Final registration opportunity and general assistance available."
 
   - name: "Keynote 1"
     id: "keynote-1"
@@ -208,15 +184,13 @@ Tuesday:
     description: "Explore a wide range of research topics during this informal poster session."
 
 Wednesday:
-  - name: "Registration"
+  - name: "Conference Registration"
     id: "registration-wed"
     type: "general"
     start: "08:30"
     end: "09:00"
-    speaker: "Conference Staff"
     location: "Foyer"
-    abstract: "Morning registration and help desk."
-    description: "Assistance for late arrivals and info services."
+    description: "Morning registration and help desk. Assistance for late arrivals and info services."
 
   - name: "Keynote 2"
     id: "keynote-2"
@@ -315,15 +289,13 @@ Wednesday:
     description: "Fun and informal activities for relaxing and networking."
 
 Thursday:
-  - name: "Registration"
+  - name: "Conference Registration"
     id: "registration-thu"
     type: "general"
     start: "08:30"
     end: "09:00"
-    speaker: "Conference Staff"
     location: "Foyer"
-    abstract: "Morning registration and info desk."
-    description: "Final registration opportunity and general assistance available."
+    description: "Morning registration and info desk. Final registration opportunity and general assistance available."
 
   - name: "Keynote 3"
     id: "keynote-3"
@@ -480,15 +452,13 @@ Thursday:
     description: "Enjoy an evening of fine dining, speeches, and socializing."
 
 Friday:
-  - name: "Registration"
+  - name: "Conference Registration"
     id: "registration-fri"
     type: "general"
     start: "08:30"
     end: "09:00"
-    speaker: "Conference Staff"
     location: "Foyer"
-    abstract: "Morning registration and info desk."
-    description: "Final registration opportunity and general assistance available."
+    description: "Morning registration and info desk. Final registration opportunity and general assistance available."
 
   - name: "Keynote 4"
     id: "keynote-4"
