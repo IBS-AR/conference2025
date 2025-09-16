@@ -690,37 +690,48 @@ tags$script(paste0("const eventData = {\n",
 
 <script>
     function updateCurrentTimeLine() {
-        const grid = document.querySelector('.grid-container');
-        if (!grid) return;
-      
-        document.querySelectorAll('.current-time-line').forEach(l => l.remove());
-      
-        const now = new Date();
-
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-      
-        // 11 total slots in your timeline
-        const startHour = 8; // 08:00
-        const endHour = 18.5;  // 18:30
-        const totalSlots = 11;
-      
-        // fraction along timeline, exact minutes included
-        const slotFraction = ((hours + minutes/60) - startHour) / totalSlots;
-        const topPercent = slotFraction * 100;
-      
-        grid.querySelectorAll('.day-column').forEach(col => {
-          const line = document.createElement('div');
-          line.className = 'current-time-line';
-          line.style.top = `calc(${topPercent}% )`;
-          line.style.left = '0';
-          line.style.right = '0';
-          col.appendChild(line);
-        });
-      }
+      const grid = document.querySelector('.grid-container');
+      if (!grid) return;
     
-    // update every minute
-    setInterval(updateCurrentTimeLine, 60*1000);
+      // Remove old lines
+      document.querySelectorAll('.current-time-line').forEach(l => l.remove());
+    
+      // Get current Canberra time
+      const now = new Date();
+      const canberraTime = new Intl.DateTimeFormat('en-AU', {
+        timeZone: 'Australia/Sydney',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false
+      }).formatToParts(now);
+    
+      let hours = 0, minutes = 0;
+      canberraTime.forEach(part => {
+        if (part.type === 'hour') hours = parseInt(part.value, 10);
+        if (part.type === 'minute') minutes = parseInt(part.value, 10);
+      });
+    
+      // Timeline parameters
+      const startHour = 8;       // 08:00
+      const totalSlots = 11;     // number of divisions
+      const endHour = 18.5;      // 18:30
+    
+      // Fraction along timeline including minutes
+      const slotFraction = ((hours + minutes/60) - startHour) / totalSlots;
+      const topPercent = slotFraction * 100;
+    
+      grid.querySelectorAll('.day-column').forEach(col => {
+        const line = document.createElement('div');
+        line.className = 'current-time-line';
+        line.style.top = `calc(${topPercent}%)`;
+        line.style.left = '0';
+        line.style.right = '0';
+        col.appendChild(line);
+      });
+    }
+    
+    // Update every minute
+    setInterval(updateCurrentTimeLine, 60 * 1000);
     updateCurrentTimeLine();
 </script>
 
