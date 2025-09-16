@@ -190,6 +190,7 @@ h1 {
     padding: 24px;
     max-width: 500px;
     width: 90%;
+    line-height: 1.5;
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -215,7 +216,7 @@ h1 {
 }
 
 .modal-section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .modal-section-name {
@@ -227,8 +228,12 @@ h1 {
 
 .modal-section-content {
     color: #4b5563;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 1.6;
+}
+
+.modal-section-content p {
+    margin-top: 10px;
 }
 
 .close-button {
@@ -241,6 +246,8 @@ h1 {
     cursor: pointer;
     color: #9ca3af;
     padding: 4px;
+    font-weight: bold;
+    border-radius: 50%;
 }
 
 .close-button:hover {
@@ -252,6 +259,9 @@ h1 {
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
+  background: #d6e5fba8;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .profile-img {
@@ -279,8 +289,8 @@ h1 {
 }
 
 .profile-organization {
-  font-size: 14px;
-  color: gray;
+  font-size: 0.85rem;
+  color: #555;
 }
 
 /* Hide org if empty */
@@ -326,6 +336,19 @@ h1 {
     font-size: 14px;
     color: #4b5563;
     text-transform: capitalize;
+}
+
+.talk-abstract {
+    font-size: 0.9rem;
+}
+
+.current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #1E90FF;
+  z-index: 1000; /* on top of events */
 }
 ```
 
