@@ -46,10 +46,9 @@ Monday:
     type: "social"
     start: "18:00"
     end: "19:00"
-    speaker: "Host Committee"
+    organizer: "Host Committee"
     location: "Garden Terrace"
-    abstract: "Opening reception with drinks and light refreshments."
-    description: "Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference."
+    description: "Opening reception with drinks and light refreshments. Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference."
 
 Tuesday:
   - name: "Conference Registration"
