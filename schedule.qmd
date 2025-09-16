@@ -588,11 +588,29 @@ tags$script(paste0("const eventData = {\n",
         
             // Add abstract after speakers
             if (talkAbstract) {
-              contentHTML += `
-                <div class="talk-abstract">
-                  ${render(talkAbstract)}
-                </div>`;
-            }
+                contentHTML += `
+                  <div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+                    <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target="#talk-${i}-abstract-body" aria-controls="talk-${i}-abstract-body" aria-expanded="false" aria-label="Toggle callout">
+                      <div class="callout-icon-container">
+                        <i class="callout-icon no-icon"></i>
+                      </div>
+                      <div class="callout-title-container flex-fill">
+                        Abstract
+                      </div>
+                      <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end">
+                        <i class="callout-toggle"></i>
+                      </div>
+                    </div>
+                    <div id="talk-${i}-abstract-body" class="callout-collapse collapse">
+                      <div class="talk-abstract callout-body-container callout-body">
+                        ${render(talkAbstract)}
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }
+
+
         
             // Assign everything into modal-section-content at once
             talk_section.innerHTML = `
