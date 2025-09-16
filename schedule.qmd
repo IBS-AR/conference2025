@@ -7,6 +7,8 @@ format:
 include-in-header: 
   text: |
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" rel="stylesheet">
 ---
 
 
@@ -220,7 +222,7 @@ h1 {
     font-weight: 600;
     color: #374151;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .modal-section-content {
@@ -273,7 +275,7 @@ h1 {
 
 .profile-name {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.9rem;
 }
 
 .profile-organization {
@@ -532,14 +534,13 @@ tags$script(paste0("const eventData = {\n",
           modalBody.appendChild(speaker_section);
         }
     
-    
         // Optional: fields you want to skip or already used at the top
         const excludeKeys = new Set(['name', 'time', 'id', 
                                      'type', 'speakers', 'speaker_imgs', 'speaker_orgs', 
                                      'par_id', 'par_total']);
     
         for (const key in event) {
-            if (!event[key] || excludeKeys.has(key)) continue;
+            if (!event[key] || excludeKeys.has(key) || key.match(/^talk_\d/)) continue;
     
             // Capitalize key for section name
             const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
@@ -549,10 +550,62 @@ tags$script(paste0("const eventData = {\n",
             
             section.innerHTML = `
                 <div class="modal-section-name">${sectionTitle}</div>
-                <div class="modal-section-content">${marked.parse(event[key][0])}</div>
+                <div class="modal-section-content">${render(event[key][0])}</div>
             `;
             modalBody.appendChild(section);
         }
+        
+        // Handle multiple talks in one session
+        for (const key in event) {
+          // detect keys like "talk_1", "talk_2", etc.
+          const match = key.match(/^talk_(\d+)$/);
+          if (match) {
+            const i = match[1]; // the number part
+        
+            const talkTitle = event[key];
+            const talkSpeakers = event[`talk_${i}_speakers`] || [];
+            const talkOrgs = event[`talk_${i}_orgs`] || [];
+            const talkImgs = event[`talk_${i}_imgs`] || [];
+            const talkAbstract = event[`talk_${i}_abstract`]?.[0] || '';
+        
+            const talk_section = document.createElement('div');
+            talk_section.className = 'modal-section';
+        
+            // Build all content inside a single string
+            let contentHTML = '';
+        
+            // Add speaker cards
+            for (let j = 0; j < talkSpeakers.length; j++) {
+              contentHTML += `
+                <div class="profile-card">
+                  <img src="${talkImgs?.[j] || ''}" alt="Avatar" class="profile-img">
+                  <div class="profile-info">
+                    <div class="profile-name">${talkSpeakers[j]}</div>
+                    <div class="profile-organization">${talkOrgs?.[j] || ''}</div>
+                  </div>
+                </div>`;
+            }
+        
+            // Add abstract after speakers
+            if (talkAbstract) {
+              contentHTML += `
+                <div class="talk-abstract">
+                  ${render(talkAbstract)}
+                </div>`;
+            }
+        
+            // Assign everything into modal-section-content at once
+            talk_section.innerHTML = `
+              <div class="modal-section-name">${talkTitle}</div>
+              <div class="modal-section-content">
+                ${contentHTML}
+              </div>
+            `;
+        
+            modalBody.appendChild(talk_section);
+          }
+        }
+
     
         document.getElementById('modal').style.display = 'flex';
     }
@@ -570,5 +623,27 @@ tags$script(paste0("const eventData = {\n",
             closeModal();
         }
     });
+</script>
+
+<script>
+    // Simple math renderer
+    function renderMathInText(md) {
+      // Display math $$...$$
+      md = md.replace(/\$\$([\s\S]+?)\$\$/g, (_, expr) =>
+        katex.renderToString(expr, { displayMode: true })
+      );
+    
+      // Inline math $...$
+      md = md.replace(/\$([^\$]+?)\$/g, (_, expr) =>
+        katex.renderToString(expr, { displayMode: false })
+      );
+    
+      return md;
+    }
+    
+    function render(text) {
+      return marked.parse(renderMathInText(text));
+    }
+
 </script>
 ```
