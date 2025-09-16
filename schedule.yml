@@ -11,7 +11,27 @@ Monday:
     type: "workshop"
     start: "09:00"
     end: "17:00"
-    location: "Emailed to participants"
+    Generalized Nonlinear Models in R: |
+      - Speaker: **Heather Turner**
+      - Building: Haydon-Allen Building, Australian National University
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#generalized-nonlinear-models-in-r)
+    Analysing Complex Survey and Subsample Data (with R): |
+      - Speaker: **Thomas lumley**
+      - Building: Haydon-Allen Building, Australian National University
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#analysing-complex-survey-and-subsample-data-with-r)
+    "Lost in Translation: Speaking Statistician in a Multi-Lingual World": |
+      - Speaker: **Peter Humburg** and **Eve Slavich**
+      - Building: National Film and Sound Archive of Australia
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#lost-in-translation-speaking-statistician-in-a-multi-lingual-world)
+      - Note: This is a half-day workshop (13:30 - 17:00)
+    "Deep Learning and Computer Vision in R: A Practical Introduction": |
+      - Speaker: **Patrick (Weihao) Li**
+      - Building: Haydon-Allen Building, Australian National University
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#deep-learning-and-computer-vision-in-r-a-practical-introduction)
 
   - name: "Conference Registration"
     id: "registration-mon-2"
@@ -194,15 +214,25 @@ Wednesday:
     location: "Foyer"
     description: "Morning registration and help desk. Assistance for late arrivals and info services."
 
-  - name: "Keynote 2"
+  - name: "Keynote: Uses of gnm for Generalized (Non)linear Modelling"
     id: "keynote-2"
     type: "talk"
     start: "09:00"
     end: "10:00"
-    speaker: "TBA"
+    speaker_imgs: "keynote/heather-turner/headshot_500x500.jpg"
+    speakers: "Heather L. Turner"
+    speaker_orgs: "University of Warwick"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    abstract: |
+      The R package {gnm} was designed as a unified interface to fit Generalized Nonlinear Models: _generalized_ to handle responses with restricted range and/or a variance that depends on the mean, and _nonlinear_ to allow the predictor for the mean to be nonlinear in its parameters. This framework covers several models that were proposed in the literature and adopted in practice before {gnm} was released, but used to require a mixed bag of specialised software to fit.
+
+      With {gnm} celebrating its 20th birthday this year, it's a good time to review how the package is being used. I'll highlight some of the applications we were aware of when {gnm} was first developed, that remain in common use, and explore more recent applications, particularly in the field of biometrics.
+
+      We'll discover one motivation for using {gnm}, is for the "eliminate" feature that efficiently estimates stratification parameters. This can be useful even when the predictor is linear, as in the case of using conditional Poisson models to analyse case-crossover studies in epidemiology.  We'll also look at two of the packages that have built on {gnm}. The first, {multgee}, uses {gnm} to fit multiplicative interactions for certain correlation structures when modelling categorical data, with applications in public health, agriculture, and psychology. The second, {VFP}, is a more specialised package that uses {gnm} to model the mean-variance relationship for in-vitro diagnostic assays.
+
+      Through these use cases we'll see how different features of {gnm} can be applied, demonstrating the versatility of this software.
+    biography: "**Heather L. Turner** is an Associate Professor and EPSRC Research Software Engineering Fellow in the Statistics Department at the University of Warwick, UK. She has over 20 years of experience in the development of statistical code and software, gained through positions in academia, industry, and as a freelance consultant. In research, she has developed a portfolio of R packages for statistical modelling and collaborated on applications in sports, social science and agriculture. In her work with industry, she has specialised in applications in pharmaceutical R&D, with companies including Pfizer, Johnson & Johnson and Roche. Heather is active in community management and engagement among R users and developers. She is on the board of the R Foundation and chairs the R Contribution Working Group (fostering the community of contributors to the R project) and the R Forwards taskforce (widening the participation of under-represented groups in the R community)."
+
 
   # - name: "Morning Tea"
   #   id: "morning-tea-wed"
