@@ -21,7 +21,7 @@ date-format: iso
 
 ![](/images/Canberra social tile - rectangle - Lake Burley Griffin.jpg)
 
-The Australasian Region Biometrics conference is a biannual conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
+The Australasian Region Biometrics conference is a biennial conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
 
 
 <div class="button-wrapper-cta">
