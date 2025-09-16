@@ -11,7 +11,27 @@ Monday:
     type: "workshop"
     start: "09:00"
     end: "17:00"
-    location: "Emailed to participants"
+    Generalized Nonlinear Models in R: |
+      - Speaker: **Heather Turner**
+      - Building: Haydon-Allen Building, Australian National University
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#generalized-nonlinear-models-in-r)
+    Analysing Complex Survey and Subsample Data (with R): |
+      - Speaker: **Thomas lumley**
+      - Building: Haydon-Allen Building, Australian National University
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#analysing-complex-survey-and-subsample-data-with-r)
+    "Lost in Translation: Speaking Statistician in a Multi-Lingual World": |
+      - Speaker: **Peter Humburg** and **Eve Slavich**
+      - Building: National Film and Sound Archive of Australia
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#lost-in-translation-speaking-statistician-in-a-multi-lingual-world)
+      - Note: This is a half-day workshop (13:30 - 17:00)
+    "Deep Learning and Computer Vision in R: A Practical Introduction": |
+      - Speaker: **Patrick (Weihao) Li**
+      - Building: Haydon-Allen Building, Australian National University
+      - Room: Emailed to participants
+      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#deep-learning-and-computer-vision-in-r-a-practical-introduction)
 
   - name: "Registration"
     id: "registration-mon-2"
