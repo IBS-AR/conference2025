@@ -254,14 +254,26 @@ h1 {
     color: #374151;
 }
 
+/* Collection wrapper gets the background, radius, padding, and gap */
+.profile-card-collection {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 12px;              /* spacing between cards */
+  background: #d6e5fba8;  /* moved from individual card */
+  padding: 10px;           /* moved from individual card */
+  border-radius: 8px;      /* moved from individual card */
+  margin-bottom: 12px;     /* spacing to other objects */
+}
+
+/* Individual cards become simple flex containers */
 .profile-card {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  background: #d6e5fba8;
-  padding: 10px;
-  border-radius: 8px;
+  gap: 12px;              /* space between image and info */
+  margin: 0;               /* remove bottom margin */
+  background: none;        /* remove background */
+  padding: 0;              /* remove padding */
+  border-radius: 0;        /* remove radius */
 }
 
 .profile-img {
@@ -297,6 +309,7 @@ h1 {
 .profile-organization:empty {
   display: none;
 }
+
 
 
 .legend {
@@ -537,9 +550,11 @@ tags$script(paste0("const eventData = {\n",
         if (event['speakers']) {
           const speaker_section = document.createElement('div');
           speaker_section.className = 'modal-section';
-          speaker_section.innerHTML = `
+          
+          let innerHTML = `
             <div class="modal-section-name">Speakers</div>
-            <div class="modal-section-content">`;
+            <div class="modal-section-content">
+                <div class="profile-card-collection">`;
                 
           for (let i = 0; i < event['speakers'].length; i++) {
             const speakers_div = `
@@ -550,10 +565,11 @@ tags$script(paste0("const eventData = {\n",
                   <div class="profile-organization">${event['speaker_orgs']?.[i] || ''}</div>
                 </div>
               </div>`;
-            speaker_section.innerHTML += speakers_div;
+            innerHTML += speakers_div;
           }
           
-          speaker_section.innerHTML += `</div>`;        
+          innerHTML += `</div></div>`;        
+          speaker_section.innerHTML = innerHTML;
           modalBody.appendChild(speaker_section);
         }
     
@@ -595,7 +611,7 @@ tags$script(paste0("const eventData = {\n",
             talk_section.className = 'modal-section';
         
             // Build all content inside a single string
-            let contentHTML = '';
+            let contentHTML = '<div class="profile-card-collection">';
         
             // Add speaker cards
             for (let j = 0; j < talkSpeakers.length; j++) {
@@ -608,6 +624,8 @@ tags$script(paste0("const eventData = {\n",
                   </div>
                 </div>`;
             }
+            
+            contentHTML += `</div>`;
         
             // Add abstract after speakers
             if (talkAbstract) {
@@ -733,6 +751,7 @@ tags$script(paste0("const eventData = {\n",
     // Update every minute
     setInterval(updateCurrentTimeLine, 60 * 1000);
     updateCurrentTimeLine();
+
 </script>
 
 ```

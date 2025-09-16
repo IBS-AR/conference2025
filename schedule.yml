@@ -12,23 +12,23 @@ Monday:
     start: "09:00"
     end: "17:00"
     Generalized Nonlinear Models in R: |
-      - Speaker: **Heather Turner**
+      - Speakers: **Heather Turner**
       - Building: Haydon-Allen Building, Australian National University
       - Room: Emailed to participants
       - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#generalized-nonlinear-models-in-r)
     Analysing Complex Survey and Subsample Data (with R): |
-      - Speaker: **Thomas lumley**
+      - Speakers: **Thomas lumley**
       - Building: Haydon-Allen Building, Australian National University
       - Room: Emailed to participants
       - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#analysing-complex-survey-and-subsample-data-with-r)
     "Lost in Translation: Speaking Statistician in a Multi-Lingual World": |
-      - Speaker: **Peter Humburg** and **Eve Slavich**
+      - Speakers: **Peter Humburg** and **Eve Slavich**
       - Building: National Film and Sound Archive of Australia
       - Room: Emailed to participants
       - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#lost-in-translation-speaking-statistician-in-a-multi-lingual-world)
       - Note: This is a half-day workshop (13:30 - 17:00)
     "Deep Learning and Computer Vision in R: A Practical Introduction": |
-      - Speaker: **Patrick (Weihao) Li**
+      - Speakers: **Patrick (Weihao) Li**
       - Building: Haydon-Allen Building, Australian National University
       - Room: Emailed to participants
       - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#deep-learning-and-computer-vision-in-r-a-practical-introduction)
@@ -78,7 +78,7 @@ Tuesday:
     end: "10:45"
     location: "Arc Cinema"
     talk_1: "Data-Adaptive Automatic Threshold Calibration for Stability Selection"
-    talk_1_speakers: Martin Huang
+    talk_1_speakers: [Martin Huang (speaker), Samuel Muller, Garth Tarr]
     talk_1_orgs: The University of Sydney
     talk_1_abstract: |
       Stability selection has gained popularity as a method for enhancing the performance of variable selection algorithms while controlling false discovery rates. However, achieving these desirable properties depends on correctly specifying the stable threshold parameter, which can be challenging. An arbitrary choice of this parameter can substantially alter the set of selected variables, as the variables' selection probabilities are inherently data-dependent. To address this issue, we propose Exclusion Automatic Threshold Selection (EATS), a data-adaptive algorithm that streamlines stability selection by automating the threshold specification process. EATS initially filters out potential noise variables using an exclusion probability threshold, derived from applying stability selection to a randomly shuffled version of the dataset. Following this, EATS selects the stable threshold parameter using the elbow method, balancing the marginal utility of including additional variables against the risk of selecting superfluous variables. We evaluate our approach through an extensive simulation study, benchmarking across commonly used variable selection algorithms and static stable threshold values.
