@@ -228,7 +228,6 @@ ul.task-list li input[type="checkbox"] {
 }
 
 body {
-    <!-- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -->
     background-color: #f8fafc;
     padding: 20px;
     line-height: 1.4;
@@ -240,7 +239,7 @@ body {
 }
 
 .container {
-    min-width: 1000px;
+    min-width: 1200px;
     max-width: 2000px;
     margin: 0 auto;
 }
@@ -248,7 +247,6 @@ body {
 h1 {
     color: #1f2937;
     margin-bottom: 30px;
-    font-size: 28px;
     font-weight: 700;
 }
 
@@ -262,7 +260,7 @@ h1 {
 
 .header {
     display: grid;
-    grid-template-columns: 40px repeat(5, 1fr);
+    grid-template-columns: 45px repeat(5, 1fr);
     border-bottom: 2px solid #e5e7eb;
     background: #f9fafb;
 }
@@ -273,6 +271,7 @@ h1 {
     text-align: center;
     border-right: 1px solid #e5e7eb;
     color: #374151;
+    font-size: 1.2rem;
 }
 
 .header-cell:last-child {
@@ -281,7 +280,7 @@ h1 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 40px repeat(5, 1fr);
+    grid-template-columns: 45px repeat(5, 1fr);
     position: relative;
 }
 
@@ -295,7 +294,7 @@ h1 {
     padding: 8px;
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #6b7280;
     font-weight: 500;
     border-bottom: 1px solid #f3f4f6;
@@ -311,7 +310,6 @@ h1 {
     border-right: none;
 }
 
-<!-- Change .grid-line height and .time-slot height together -->
 .grid-line {
     height: 120px;
     border-bottom: 1px solid #f3f4f6;
@@ -324,7 +322,6 @@ h1 {
     border-radius: 4px;
     padding: 8px;
     cursor: pointer;
-    font-size: 11px;
     font-weight: normal;
     color: black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -338,14 +335,14 @@ h1 {
 }
 
 .event-time {
-    font-size: 12px;
+    font-size: 0.8rem;
     opacity: 0.9;
     margin-bottom: 2px;
 }
 
 .event-name {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.2;
 }
 
@@ -396,7 +393,7 @@ h1 {
     background: white;
     border-radius: 12px;
     padding: 24px;
-    max-width: 500px;
+    max-width: 700px;
     width: 90%;
     line-height: 1.5;
     max-height: 80vh;
@@ -411,7 +408,7 @@ h1 {
 }
 
 .modal-name {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 8px;
@@ -419,7 +416,7 @@ h1 {
 
 .modal-time {
     color: #6b7280;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -431,12 +428,12 @@ h1 {
     font-weight: 600;
     color: #374151;
     margin-bottom: 8px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .modal-section-content {
     color: #4b5563;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -450,7 +447,7 @@ h1 {
     right: 16px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #9ca3af;
     padding: 4px;
@@ -462,14 +459,51 @@ h1 {
     color: #374151;
 }
 
+/* Collection wrapper gets the background, radius, padding, and gap */
+.profile-card-collection {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 12px;              /* spacing between cards */
+  background: #d6e5fba8;  /* moved from individual card */
+  padding: 10px;           /* moved from individual card */
+  border-radius: 8px;      /* moved from individual card */
+  margin-bottom: 12px;     /* spacing to other objects */
+}
+
+/* For multiple talks */
+.callout-title-container p{
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0rem;
+}
+
+/* For multiple talks */
+.callout-title-container hr{
+  margin: 0.8rem auto;
+  background-color: #aed9e0;
+  color: #aed9e0;
+  height: 3px;
+  opacity: 0.5;
+}
+
+/* For multiple talks */
+.callout-title-container .profile-card-collection {
+  background: white;
+  row-gap: 0.5rem;
+  margin-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+/* Individual cards become simple flex containers */
 .profile-card {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  background: #d6e5fba8;
-  padding: 10px;
-  border-radius: 8px;
+  gap: 12px;              /* space between image and info */
+  margin: 0;               /* remove bottom margin */
+  background: none;        /* remove background */
+  padding: 0;              /* remove padding */
+  border-radius: 0;        /* remove radius */
 }
 
 .profile-img {
@@ -493,11 +527,16 @@ h1 {
 
 .profile-name {
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
+}
+
+/* For multiple talks */
+.callout-title-container .profile-name {
+  font-weight: 600;
 }
 
 .profile-organization {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #555;
 }
 
@@ -506,6 +545,22 @@ h1 {
   display: none;
 }
 
+/* For multiple talks */
+.callout-title-container .profile-organization {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* For multiple talks */
+div.toggle-talk.callout.callout-note {
+  border-left-color: #aed9e0;
+  border-left-width: 6px;
+}
+
+/* For multiple talks */
+.talk-abstract p{
+    font-size: 1rem;
+}
 
 .legend {
     background: white;
@@ -546,9 +601,7 @@ h1 {
     text-transform: capitalize;
 }
 
-.talk-abstract {
-    font-size: 0.9rem;
-}
+
 
 .current-time-line {
   position: absolute;
@@ -884,20 +937,20 @@ h1 {
 <script>const eventData = {
 "registration-mon-1": {"name": [`Workshop Registration`], "id": [`registration-mon-1`], "type": [`workshop`], "location": [`Emailed to participants`], "time": [`Monday, 08:30 - 9:00`], },
 
-"workshop-mon": {"name": [`Workshop`], "id": [`workshop-mon`], "type": [`workshop`], "time": [`Monday, 09:00 - 17:00`], "Generalized Nonlinear Models in R": [`- Speaker: **Heather Turner**
+"workshop-mon": {"name": [`Workshop`], "id": [`workshop-mon`], "type": [`workshop`], "time": [`Monday, 09:00 - 17:00`], "Generalized Nonlinear Models in R": [`- Speakers: **Heather Turner**
 - Building: Haydon-Allen Building, Australian National University
 - Room: Emailed to participants
 - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#generalized-nonlinear-models-in-r)
-`], "Analysing Complex Survey and Subsample Data (with R)": [`- Speaker: **Thomas lumley**
+`], "Analysing Complex Survey and Subsample Data (with R)": [`- Speakers: **Thomas lumley**
 - Building: Haydon-Allen Building, Australian National University
 - Room: Emailed to participants
 - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#analysing-complex-survey-and-subsample-data-with-r)
-`], "Lost in Translation: Speaking Statistician in a Multi-Lingual World": [`- Speaker: **Peter Humburg** and **Eve Slavich**
+`], "Lost in Translation: Speaking Statistician in a Multi-Lingual World": [`- Speakers: **Peter Humburg** and **Eve Slavich**
 - Building: National Film and Sound Archive of Australia
 - Room: Emailed to participants
 - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#lost-in-translation-speaking-statistician-in-a-multi-lingual-world)
 - Note: This is a half-day workshop (13:30 - 17:00)
-`], "Deep Learning and Computer Vision in R: A Practical Introduction": [`- Speaker: **Patrick (Weihao) Li**
+`], "Deep Learning and Computer Vision in R: A Practical Introduction": [`- Speakers: **Patrick (Weihao) Li**
 - Building: Haydon-Allen Building, Australian National University
 - Room: Emailed to participants
 - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#deep-learning-and-computer-vision-in-r-a-practical-introduction)
@@ -911,9 +964,28 @@ h1 {
 
 "keynote-1": {"name": [`Keynote: On Finding Good Experiments`], "id": [`keynote-1`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 09:00 - 10:00`], "speakers": [`Cheng Soon Ong`], "speaker_imgs": [`keynote/cheng-soon-ong/chengpic-2023-small.jpg`], "speaker_orgs": [`CSIRO and ANU`], "abstract": [`One of the key choices we have as scientists is to design informative experiments. With computational methods like AI promising accurate predictions, we revisit the question of adaptively designing new measurements that take previous data into account. Using examples from genomics, we illustrate some recent ideas on using machine learning to recommend experiments. Then we discuss potential impacts on choosing measurements in spatiotemporal problems. We conclude by outlining some opportunities and challenges of including machine learning in the scientific discovery process.`], "biography": [`**Cheng Soon Ong** is an Associate Science Director at [Data61, CSIRO](https://www.csiro.au/en/research/technology-space?start=0&amp;count=12) and a senior principal research scientist at the Statistical Machine Learning Group. He works on extending machine learning methods and enabling new approaches to scientific discovery, and has led the [machine learning and artificial intelligence future science platform](https://research.csiro.au/mlai-fsp/) at CSIRO. He supervises and mentors many junior scientists, collaborates with scientists on problems in genomics and astronomy, advocates for open science, and is an adjunct Associate Professor at the [Australian National University](https://www.anu.edu.au/). He is co-author of the textbook Mathematics for Machine Learning, and his career has spanned multiple roles in Malaysia, Germany, Switzerland, and Australia.`], },
 
-"session-1a": {"name": [`Session 1A`], "id": [`session-1a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 10:00 - 10:45`], "talk_1": [`Data-Adaptive Automatic Threshold Calibration for Stability Selection`], "talk_1_speakers": [`Martin Huang`], "talk_1_orgs": [`The University of Sydney`], "talk_1_abstract": [`Stability selection has gained popularity as a method for enhancing the performance of variable selection algorithms while controlling false discovery rates. However, achieving these desirable properties depends on correctly specifying the stable threshold parameter, which can be challenging. An arbitrary choice of this parameter can substantially alter the set of selected variables, as the variables' selection probabilities are inherently data-dependent. To address this issue, we propose Exclusion Automatic Threshold Selection (EATS), a data-adaptive algorithm that streamlines stability selection by automating the threshold specification process. EATS initially filters out potential noise variables using an exclusion probability threshold, derived from applying stability selection to a randomly shuffled version of the dataset. Following this, EATS selects the stable threshold parameter using the elbow method, balancing the marginal utility of including additional variables against the risk of selecting superfluous variables. We evaluate our approach through an extensive simulation study, benchmarking across commonly used variable selection algorithms and static stable threshold values.
-`], "talk_2": [`Variable Selection in a Joint Model for Huntingtons Disease Data`], "talk_2_speakers": [`Rajan Shankar`], "talk_2_orgs": [`The University of Sydney`], "talk_2_abstract": [`Huntington's disease is a neurodegenerative disease caused by a defective Huntingtin gene, with symptoms that progressively worsen and eventually lead to a clinical diagnosis. Identifying the clinical and demographic factors that influence symptom severity and time-to-diagnosis is critical for understanding disease progression so that early-intervention strategies can be timely implemented. We propose a joint model to relate symptom severity $y$ and time-to-diagnosis $x$, conditional on clinical and demographic predictor variables $\\mathbf{z}$. However, it may be that certain predictor variables are important for $y$ but not for $x$ and vice-versa, so we use regularisation techniques to select different sets of predictor variables for $y$ and $x$. Since $x$ is a time-to-event variable, there is the added challenge that many of its values are right-censored due to individuals who did not develop the disease during the study. Therefore, to fit the joint model, we apply the expectation-maximisation (EM) algorithm to alternate between parameter estimation and imputation of the right-censored values until convergence. We demonstrate our method on Huntington's disease patient data, showcasing how users can choose appropriate values for the regularisation tuning parameters.
-`], "talk_3": [`StableMate: a regression framework for selecting stable predictors across heterogeneous data environments`], "talk_3_speakers": [`Yidi Deng`], "talk_3_orgs": [`Melbourne Integrative Genomics; Department of Anatomy and Physiology, The University of Melbourne; Research School of Finance, Actuarial Studies and Statistics, The Australian National University`], "talk_3_abstract": [`Inferring reproducible relationships between biological variables remains a challenge in the statistical analysis of omics data where p &gt; 10,000 and n &lt; 500. Methods that identify statistical associations lack interpretability or reproducibility. We can address these limitations by inferring stable associations that are robust to external perturbation on the data. Stable associations can be an implication in causality since causal relationships are necessarily stable in some sense (Pearl et al. 2009). Unstable associations can also be of interests in certain biological applications to study functional heterogeneity in a biological system.\r\n\r\nWe developed a new regression framework, StableMate based on the concept of stabilised regression (SR), which utilise heterogenous data to enforce stability (Pfister et al. 2021). Given datasets generated from different environments, such as experiments or disease states, StableMate 1. identifies stable predictors with consistent functional dependency with the response across environments. 2. builds a robust regression model with stable predictors to enforce generalisable prediction in unseen environments. The ultimate aim is to build selection ensembles. However, unlike SR that selects stable predictors by performing stability tests on every possible predictor subset, StableMate optimizes efficiency with a greedy search based on our improved stochastic stepwise selection algorithm. In a simulation study, we show that StableMate outperformed SR for both variable selection and prediction and significantly reduces running time. In three case studies of cancer with different omics data types, we show that StableMate can also address a wide range of biological questions.\r\n
+"session-1a": {"name": [`Session 1A`], "id": [`session-1a`], "type": [`talk`], "location": [`Arc Cinema`], "time": [`Tuesday, 10:00 - 10:45`], "talk_1": [`Data-Adaptive Automatic Threshold Calibration for Stability Selection`], "talk_1_speakers": [`Martin Huang 👤`, `Samuel Muller`, `Garth Tarr`], "talk_1_orgs": [`The University of Sydney`], "talk_1_abstract": [`Stability selection has gained popularity as a method for enhancing the performance of variable selection algorithms while controlling false discovery rates. However, achieving these desirable properties depends on correctly specifying the stable threshold parameter, which can be challenging. An arbitrary choice of this parameter can substantially alter the set of selected variables, as the variables' selection probabilities are inherently data-dependent. To address this issue, we propose Exclusion Automatic Threshold Selection (EATS), a data-adaptive algorithm that streamlines stability selection by automating the threshold specification process. EATS initially filters out potential noise variables using an exclusion probability threshold, derived from applying stability selection to a randomly shuffled version of the dataset. Following this, EATS selects the stable threshold parameter using the elbow method, balancing the marginal utility of including additional variables against the risk of selecting superfluous variables. We evaluate our approach through an extensive simulation study, benchmarking across commonly used variable selection algorithms and static stable threshold values.`], "talk_2": [`Variable Selection in a Joint Model for Huntington's Disease Data`], "talk_2_speakers": [`Rajan Shankar 👤`, `Tanya Garcia`, `Garth Tarr`], "talk_2_orgs": [`The University of Sydney`], "talk_2_abstract": [`Huntington's disease is a neurodegenerative disease caused by
+a defective Huntingtin gene, with symptoms that progressively worsen and eventually
+lead to a clinical diagnosis. Identifying the clinical and demographic factors
+that influence symptom severity and time-to-diagnosis is critical for understanding
+disease progression so that early-intervention strategies can be timely implemented.
+We propose a joint model to relate symptom severity $y$ and time-to-diagnosis
+$x$, conditional on clinical and demographic predictor variables $\\mathbf{z}$.
+However, it may be that certain predictor variables are important for $y$ but
+not for $x$ and vice-versa, so we use regularisation techniques to select different
+sets of predictor variables for $y$ and $x$. Since $x$ is a time-to-event variable,
+there is the added challenge that many of its values are right-censored due
+to individuals who did not develop the disease during the study. Therefore,
+to fit the joint model, we apply the expectation-maximisation (EM) algorithm
+to alternate between parameter estimation and imputation of the right-censored
+values until convergence. We demonstrate our method on Huntington's disease
+patient data, showcasing how users can choose appropriate values for the regularisation
+tuning parameters.
+`], "talk_3": [`StableMate: a regression framework for selecting stable predictors across heterogeneous data environments
+
+`], "talk_3_speakers": [`Yidi Deng 👤`, `Jiadong Mao`, `Jarny Choi`, `Kim-Anh Le Cao`], "talk_3_orgs": [`Melbourne Integrative Genomics; Department of Anatomy and Physiology, The University of Melbourne; Research School of Finance, Actuarial Studies and Statistics, The Australian National University`], "talk_3_abstract": [`Inferring reproducible relationships between biological variables remains a challenge in the statistical analysis of omics data where p &gt; 10,000 and n &lt; 500. Methods that identify statistical associations lack interpretability or reproducibility. We can address these limitations by inferring stable associations that are robust to external perturbation on the data. Stable associations can be an implication in causality since causal relationships are necessarily stable in some sense (Pearl et al. 2009). Unstable associations can also be of interests in certain biological applications to study functional heterogeneity in a biological system.
+
+We developed a new regression framework, StableMate based on the concept of stabilised regression (SR), which utilise heterogenous data to enforce stability (Pfister et al. 2021). Given datasets generated from different environments, such as experiments or disease states, StableMate 1. identifies stable predictors with consistent functional dependency with the response across environments. 2. builds a robust regression model with stable predictors to enforce generalisable prediction in unseen environments. The ultimate aim is to build selection ensembles. However, unlike SR that selects stable predictors by performing stability tests on every possible predictor subset, StableMate optimizes efficiency with a greedy search based on our improved stochastic stepwise selection algorithm. In a simulation study, we show that StableMate outperformed SR for both variable selection and prediction and significantly reduces running time. In three case studies of cancer with different omics data types, we show that StableMate can also address a wide range of biological questions.
 `], "par_id": [`1`], "par_total": [`2`], },
 
 "session-1b": {"name": [`Session 1B`], "id": [`session-1b`], "type": [`talk`], "location": [`Theatrette`], "time": [`Tuesday, 10:00 - 10:45`], "description": [`TBA`], "abstract": [`TBA`], "par_id": [`2`], "par_total": [`2`], "speaker": [`TBA`], },
@@ -1013,145 +1085,147 @@ Through these use cases we'll see how different features of {gnm} can be applied
 <!-- Modify the modal section to fit your need -->
 <script>
     function openModal(eventId) {
-        const event = eventData[eventId];
-        if (!event) return;
+      const event = eventData[eventId];
+      if (!event) return;
     
-        document.getElementById('modal-name').textContent = event.name || '';
-        document.getElementById('modal-time').textContent = event.time || '';
-        
-        const modalBody = document.getElementById('modal-body');
-        modalBody.innerHTML = ''; // Clear previous content
-        
-        // Handle speakers
-        if (event['speakers']) {
-          const speaker_section = document.createElement('div');
-          speaker_section.className = 'modal-section';
-          speaker_section.innerHTML = `
-            <div class="modal-section-name">Speakers</div>
-            <div class="modal-section-content">`;
-                
-          for (let i = 0; i < event['speakers'].length; i++) {
-            const speakers_div = `
+      // Set header fields
+      document.getElementById('modal-name').textContent = event.name || '';
+      document.getElementById('modal-time').textContent = event.time || '';
+    
+      const modalBody = document.getElementById('modal-body');
+      modalBody.innerHTML = ''; // Clear previous content
+    
+      // ==== Speakers section ====
+      if (event.speakers) {
+        const speakerSection = document.createElement('div');
+        speakerSection.className = 'modal-section';
+    
+        let html = `
+          <div class="modal-section-name">Speakers</div>
+          <div class="modal-section-content">
+            <div class="profile-card-collection">`;
+    
+        for (let i = 0; i < event.speakers.length; i++) {
+          html += `
+            <div class="profile-card">
+              <img src="${event.speaker_imgs?.[i] || ''}" alt="Avatar" class="profile-img">
+              <div class="profile-info">
+                <div class="profile-name">${event.speakers[i]}</div>
+                <div class="profile-organization">${event.speaker_orgs?.[i] || ''}</div>
+              </div>
+            </div>`;
+        }
+    
+        html += `</div></div>`;
+        speakerSection.innerHTML = html;
+        modalBody.appendChild(speakerSection);
+      }
+    
+      // ==== Generic fields ====
+      const excludeKeys = new Set([
+        'name', 'time', 'id',
+        'type', 'speakers', 'speaker_imgs', 'speaker_orgs',
+        'par_id', 'par_total'
+      ]);
+    
+      for (const key in event) {
+        if (!event[key] || excludeKeys.has(key) || /^talk_\d/.test(key)) continue;
+    
+        const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
+    
+        const section = document.createElement('div');
+        section.className = 'modal-section';
+        section.innerHTML = `
+          <div class="modal-section-name">${sectionTitle}</div>
+          <div class="modal-section-content">${render(event[key][0])}</div>
+        `;
+        modalBody.appendChild(section);
+      }
+    
+      // ==== Talks ====
+      const talkKeys = Object.keys(event).filter(k => /^talk_\d+$/.test(k));
+      if (talkKeys.length > 0) {
+        // Wrap all talks in one section with title
+        const talksSection = document.createElement('div');
+        talksSection.className = 'modal-section';
+    
+        let talksHTML = `
+          <div class="modal-section-name">Talks</div>
+          <div class="modal-section-content">`;
+    
+        for (const key of talkKeys) {
+          const i = key.match(/^talk_(\d+)$/)[1];
+          const talkTitle = event[key];
+          const talkSpeakers = event[`talk_${i}_speakers`] || [];
+          const talkOrgs = event[`talk_${i}_orgs`] || [];
+          const talkImgs = event[`talk_${i}_imgs`] || [];
+          const talkAbstract = event[`talk_${i}_abstract`]?.[0] || '';
+    
+          // Build speaker cards
+          let cardsHTML = '<div class="profile-card-collection">';
+          for (let j = 0; j < talkSpeakers.length; j++) {
+            cardsHTML += `
               <div class="profile-card">
-                <img src="${event['speaker_imgs']?.[i] || ''}" alt="Avatar" class="profile-img">
+                <img src="${talkImgs?.[j] || ''}" alt="Avatar" class="profile-img">
                 <div class="profile-info">
-                  <div class="profile-name">${event['speakers'][i]}</div>
-                  <div class="profile-organization">${event['speaker_orgs']?.[i] || ''}</div>
+                  <div class="profile-name">${talkSpeakers[j]}</div>
+                  <div class="profile-organization">${talkOrgs?.[j] || ''}</div>
                 </div>
               </div>`;
-            speaker_section.innerHTML += speakers_div;
           }
-          
-          speaker_section.innerHTML += `</div>`;        
-          modalBody.appendChild(speaker_section);
-        }
+          cardsHTML += '</div>';
     
-        // Optional: fields you want to skip or already used at the top
-        const excludeKeys = new Set(['name', 'time', 'id', 
-                                     'type', 'speakers', 'speaker_imgs', 'speaker_orgs', 
-                                     'par_id', 'par_total']);
-    
-        for (const key in event) {
-            if (!event[key] || excludeKeys.has(key) || key.match(/^talk_\d/)) continue;
-    
-            // Capitalize key for section name
-            const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
-    
-            const section = document.createElement('div');
-            section.className = 'modal-section';
-            
-            section.innerHTML = `
-                <div class="modal-section-name">${sectionTitle}</div>
-                <div class="modal-section-content">${render(event[key][0])}</div>
-            `;
-            modalBody.appendChild(section);
-        }
-        
-        // Handle multiple talks in one session
-        for (const key in event) {
-          // detect keys like "talk_1", "talk_2", etc.
-          const match = key.match(/^talk_(\d+)$/);
-          if (match) {
-            const i = match[1]; // the number part
-        
-            const talkTitle = event[key];
-            const talkSpeakers = event[`talk_${i}_speakers`] || [];
-            const talkOrgs = event[`talk_${i}_orgs`] || [];
-            const talkImgs = event[`talk_${i}_imgs`] || [];
-            const talkAbstract = event[`talk_${i}_abstract`]?.[0] || '';
-        
-            const talk_section = document.createElement('div');
-            talk_section.className = 'modal-section';
-        
-            // Build all content inside a single string
-            let contentHTML = '';
-        
-            // Add speaker cards
-            for (let j = 0; j < talkSpeakers.length; j++) {
-              contentHTML += `
-                <div class="profile-card">
-                  <img src="${talkImgs?.[j] || ''}" alt="Avatar" class="profile-img">
-                  <div class="profile-info">
-                    <div class="profile-name">${talkSpeakers[j]}</div>
-                    <div class="profile-organization">${talkOrgs?.[j] || ''}</div>
+          // Add abstract if available
+          if (talkAbstract) {
+            talksHTML += `
+              <div class="toggle-talk callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+                <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target="#talk-${i}-abstract-body" aria-controls="talk-${i}-abstract-body" aria-expanded="false" aria-label="Toggle callout">
+                  <div class="callout-icon-container">
+                    <i class="callout-icon no-icon"></i>
                   </div>
-                </div>`;
-            }
-        
-            // Add abstract after speakers
-            if (talkAbstract) {
-                contentHTML += `
-                  <div class="text-col-abstract callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
-                    <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target="#talk-${i}-abstract-body" aria-controls="talk-${i}-abstract-body" aria-expanded="false" aria-label="Toggle callout">
-                      <div class="callout-icon-container">
-                        <i class="callout-icon no-icon"></i>
-                      </div>
-                      <div class="callout-title-container flex-fill">
-                        Abstract
-                      </div>
-                      <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end">
-                        <i class="callout-toggle"></i>
-                      </div>
-                    </div>
-                    <div id="talk-${i}-abstract-body" class="callout-collapse collapse">
-                      <div class="talk-abstract callout-body-container callout-body">
-                        ${render(talkAbstract)}
-                      </div>
-                    </div>
+                  <div class="callout-title-container flex-fill">
+                    <p>${talkTitle}</p>
+                    <hr>
+                    ${cardsHTML}
                   </div>
-                `;
-              }
-
-
-        
-            // Assign everything into modal-section-content at once
-            talk_section.innerHTML = `
-              <div class="modal-section-name">${talkTitle}</div>
-              <div class="modal-section-content">
-                ${contentHTML}
-              </div>
-            `;
-        
-            modalBody.appendChild(talk_section);
+                  <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end">
+                    <i class="callout-toggle"></i>
+                  </div>
+                </div>
+                <div id="talk-${i}-abstract-body" class="callout-collapse collapse">
+                  <div class="talk-abstract callout-body-container callout-body">
+                    ${render(talkAbstract)}
+                  </div>
+                </div>
+              </div>`;
+          } else {
+            // If no abstract, show title + speakers only
+            talksHTML += `
+              <div class="talk-entry">
+                <div class="talk-title">${talkTitle}</div>
+                ${cardsHTML}
+              </div>`;
           }
         }
-
     
-        document.getElementById('modal').style.display = 'flex';
+        talksHTML += '</div>'; // close modal-section-content
+        talksSection.innerHTML = talksHTML;
+        modalBody.appendChild(talksSection);
+      }
+    
+      // Show modal
+      document.getElementById('modal').style.display = 'flex';
     }
-
-
+    
     function closeModal(event) {
-        if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
-            document.getElementById('modal').style.display = 'none';
-        }
+      if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
+        document.getElementById('modal').style.display = 'none';
+      }
     }
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
+    
+    // Escape key closes modal
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
     });
 </script>
 
@@ -1222,6 +1296,7 @@ Through these use cases we'll see how different features of {gnm} can be applied
     // Update every minute
     setInterval(updateCurrentTimeLine, 60 * 1000);
     updateCurrentTimeLine();
+
 </script>
 
 
