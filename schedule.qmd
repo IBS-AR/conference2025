@@ -488,6 +488,7 @@ modal()
 # Escape double quotes for JS
 escape_js <- function(x) {
   if (is.null(x)) return("")
+  x <- stringr::str_replace_all(x, "\\\\", "\\\\\\\\") # escape slash
   x <- stringr::str_replace_all(x, '"', '\\\\"')  # escape double quotes
   stringr::str_replace_all(x, '`', '\\\\`')  # escape back ticks
 }
