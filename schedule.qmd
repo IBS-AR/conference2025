@@ -275,7 +275,7 @@ h1 {
   margin: 0.8rem auto;
   background-color: #aed9e0;
   color: #aed9e0;
-  height: 3px;
+  height: 2px;
   opacity: 0.5;
 }
 
@@ -352,6 +352,14 @@ div.toggle-talk.callout.callout-note {
 /* For multiple talks */
 .talk-abstract p{
     font-size: 1rem;
+}
+
+.talk-abstract hr{
+  margin: 0.8rem auto;
+  background-color: #aed9e0;
+  color: #aed9e0;
+  height: 2px;
+  opacity: 0.5;
 }
 
 .legend {
@@ -687,6 +695,7 @@ tags$script(paste0("const eventData = {\n",
                 </div>
                 <div id="talk-${i}-abstract-body" class="callout-collapse collapse">
                   <div class="talk-abstract callout-body-container callout-body">
+                    <hr>
                     ${render(talkAbstract)}
                   </div>
                 </div>
