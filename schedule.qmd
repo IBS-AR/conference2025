@@ -221,6 +221,7 @@ h1 {
     color: #374151;
     margin-bottom: 8px;
     font-size: 1.2rem;
+    text-transform: capitalize;
 }
 
 .modal-section-content {
@@ -651,7 +652,7 @@ tags$script(paste0("const eventData = {\n",
         talksSection.className = 'modal-section';
     
         let talksHTML = `
-          <div class="modal-section-name">Talks</div>
+          <div class="modal-section-name">${event["type"]}s</div>
           <div class="modal-section-content">`;
     
         for (const key of talkKeys) {

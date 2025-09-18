@@ -241,34 +241,225 @@ Tuesday:
     type: "social"
     start: "10:45"
     end: "11:15"
-    speaker: ""
     location: "Gallery"
-    abstract: "Light refreshments and beverages."
-    description: "Take a break and enjoy some tea or coffee while networking with peers."
+    description: "Light refreshments and beverages. Take a break and enjoy some tea or coffee while networking with peers."
 
-  - name: "Invited Session"
-    id: "invited-1"
+  - name: "Session 2A"
+    id: "session-2a"
     type: "talk"
     start: "11:15"
     end: "12:45"
-    speaker: "TBA"
     location: "Arc Cinema"
+    talk_1: Extending Spatial Capture-Recapture with the Hawkes Process
+    talk_1_speakers:
+    - "Alec B. M. van Helsdingen \U0001F464"
+    - Charlotte M. Jones-Todd
+    talk_1_orgs: University of Auckland
+    talk_1_abstract: "Spatial capture-recapture (SCR) is a well-established method
+      used to estimate animal population size from animal sighting or trapping data.
+      Standard SCR methods assume animal movements are independent and consequently
+      cannot incorporate site fidelity (attachment to a particular region) nor the
+      temporal correlation of an animal’s location. Recent work has sought to solve
+      these issues by explicitly modelling animal movement.\r\n\r\nIn this talk we
+      propose an alternative solution for camera trapping surveys based on a multivariate
+      self-exciting Hawkes process. Here the rates of detection of a given animal
+      at a given camera are a function of not only the location and its proximity
+      to the animal’s activity center, but also where and when the animal was most
+      recently detected.\r\n\r\nThrough a mixture of Gaussian distributions, our model
+      expects more detections closer in space to the last detection, and reduces to
+      SCR when an animal is yet to be detected. This formulation, we believe, better
+      reflects animal behaviour because shortly after detection, we expect to see
+      an individual close to where it was last seen. Thus, our model allows us to
+      account for both site fidelity and the inherent temporal correlation in detections
+      that have not previously been accounted for in SCR-type models.\r\n\r\nIn this
+      talk, I will 1) give an overview of Self-Exciting Spatial Capture-Recapture
+      (SESCR) models, and 2) demonstrate the additional inference that can be drawn
+      from such models and 3) apply the framework using a few case studies to compare
+      traditional SCR and SESCR."
+    talk_2: A Test for Detecting Multiple Clusters with Hotspot Spatial Properties
+    talk_2_speakers:
+    - "Kunihiko Takahashi \U0001F464"
+    - Hideyasu Shimadzu
+    talk_2_orgs: Institute of Science Tokyo
+    talk_2_abstract: Various statistical tests have been widely used in spatial epidemiology
+      to investigate regional patterns in disease occurrence, particularly to assess
+      whether disease risk is significantly elevated in specific areas compared to
+      neighboring regions or adjacent time periods. One such method is the cluster
+      detection test (CDT), which identifies non-random spatial distributions of diseases
+      and highlights high-prevalence regions without prior assumptions. Among CDT
+      methods, scan statistics are compelling and use a maximum likelihood framework
+      to search across spatial and/or temporal windows for potential clusters. Examples
+      include Kulldorff’s circular scan statistic and the flexibly shaped scan statistic
+      by Tango and Takahashi. More recently, Takahashi and Shimadzu proposed a scan-based
+      method that simultaneously detects multiple clusters by integrating generalized
+      linear models and an information criterion to determine the optimal number of
+      clusters. Traditional scan-based tests often assume that disease risk is uniformly
+      elevated within a single cluster. However, they may mistakenly combine multiple
+      adjacent hotspots—each with potentially different risk levels—into one, thereby
+      masking meaningful spatial heterogeneity. In this study, we propose a new test
+      procedure that more accurately identifies adjacent hotspot clusters as distinct
+      entities. Our approach enhances the scan statistic framework by incorporating
+      Cochran’s Q-statistic to assess heterogeneity within clusters. We demonstrate
+      the effectiveness of the proposed method through real-world applications and
+      compare its performance with conventional scan-based tests.
+    talk_3: Outlier-robust estimation of state-space models using a penalised approach
+    talk_3_speakers:
+    - "Garth Tarr \U0001F464"
+    - Rajan Shankar
+    - Ines Wilms
+    - Jakob Raymaekers
+    talk_3_orgs: The University of Sydney
+    talk_3_abstract: State-space models are a broad class of statistical models for
+      time-varying data. The Gaussian distributional assumption on the disturbances
+      in the model leads to poor parameter estimates in the presence of additive outliers.
+      Whilst there are ways to mitigate the influence of outliers via traditional
+      robust estimation methods such as M-estimation, this issue is approached from
+      a more modern perspective that utilises penalisation. A shift parameter is introduced
+      at each timepoint, with the goal being that outliers receive a non-zero shift
+      parameter while clean timepoints receive a zero shift parameter after estimation.
+      The vector of shift parameters is penalised to ensure that not all shift parameters
+      are trivially non-zero. Apart from making it feasible to fit accurate and reliable
+      time series models in the presence of additive outliers, other benefits of this
+      approach include automatic outlier flagging and visual diagnostics to provide
+      researchers and practitioners with better insights into the outlier structure
+      of their data. We will demonstrate the utility of this method on animal tracking
+      data.
+    talk_4: Disease cluster detection via functional additive models incorporating
+      spatial correlation
+    talk_4_speakers:
+    - "Michio Yamamoto \U0001F464"
+    - Tatsuhiko Anzai
+    - Kunihiko Takahashi
+    talk_4_orgs: The University of Osaka / RIKEN AIP / Shiga University
+    talk_4_abstract: Detecting spatial clusters of diseases is crucial for understanding
+      disease patterns and developing effective prevention and treatment strategies.
+      Spatial scan statistics are powerful tools for detecting spatial clusters with
+      a variable scanning window size. If covariates are related to an outcome and
+      not geographically randomly distributed, searching for spatial clusters may
+      require adjusting for the covariates. In addition, spatial correlation in the
+      outcome, which is often overlooked during cluster detection, can affect the
+      results. In this study, we propose a new spatial scan statistic that handles
+      multiple functional covariates indicating past information over time and the
+      spatial correlation of the outcome. Our method flexibly models these factors
+      in the framework of functional additive models. We develop an optimization algorithm
+      to estimate the model parameters for the normal outcome case. A simulation study
+      and real data analysis indicate that the proposed method can detect disease
+      clusters despite longitudinal covariates and spatial correlations compared to
+      existing methods.
     par_id: 1
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
 
-  - name: "Session 2"
-    id: "session-2"
+
+  - name: "Session 2B"
+    id: "session-2b"
     type: "talk"
     start: "11:15"
     end: "12:45"
-    speaker: "TBA"
     location: "Theatrette"
     par_id: 2
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Group Sampling with Imperfect Testing for Biosecurity Applications
+    talk_1_speakers:
+    - "Adele Jackson \U0001F464"
+    - Belinda Barnes
+    - Mahdi Parsa
+    talk_1_orgs: ABARES
+    talk_1_abstract: Group sampling, also known as pooled or batch sampling, is a
+      standard technique in biological sciences and the health sector to use limited
+      resources efficiently. Common objectives include detecting pest species and
+      inferring prevalence of disease in communities, livestock or wildlife. The purpose
+      of this paper is to support the design of robust group sampling strategies when
+      testing processes are imperfect. We formulate analytical distributions and statistics
+      for grouped hypergeometric sampling and its binomial approximation that incorporate
+      a variety of types of imperfect test. These include tests that respond to the
+      presence or absence of contaminated material in a group, as well as PCR and
+      serological testing processes where sensitivity depends on the number of contaminated
+      items in each group. We also formulate the Hellinger information of a sampling
+      scheme, which allows us to develop group sampling design strategies that increase
+      the accuracy of inferred prevalence. This is an essential component in decision-making
+      during outbreaks of disease and in operational biosecurity applications. Based
+      on this work, we estimate leakage through a grouped sampling scheme and show
+      how accounting for leakage can alter sampling strategies and improve risk management
+      decisions.
+    talk_2: Koala Distirbution and Abundance
+    talk_2_speakers:
+    - "Scott D. Foster \U0001F464"
+    - Scott D. Foster
+    - Wen-Hsi Yang
+    - Peter Caley
+    - John McEvoy
+    - David Ramsey
+    - Drew Terasaki Hart
+    - David E. Uribe-Rivera
+    - Romane H. Cristescu
+    - Eric Vanderdys
+    - Adam McKeown
+    - Corey J. A. Bradshaw
+    - Emma Lawrence
+    - Andrew Hoskins
+    talk_2_orgs: Data61, CSIRO
+    talk_2_abstract: The koala (*Phascolarctos cinereus*) is a well-known and studied
+      Australian marsupial, but the species presents a complex case for conservation.
+      Currently, most koala conservation efforts focus on local-scale population estimates,
+      which are often based on expert opinion or anecdotal evidence, and either precede
+      or ignore most (or all) available data. In contrast, conservation listing advice
+      and associated recovery plans require population estimates at the species-range
+      scale. A data-driven, national-scale population estimate including all available
+      information will therefore guide effective management of koala populations by
+      providing high-quality and objective information. To this end, we have designed
+      nationally consistent survey, implemented it (with the aid of partners) and
+      analysed the resulting data (and others). The design uses recently developed
+      techniques (clustered spatially-balanced designs) whilst the analysis uses emerging
+      models that incorporate multiple data types (e.g. point process, binary and
+      count) that are often-enough collected using different equipment, protocols
+      and staff. Integrated species distribution models (ISDMs) have, at their heart,
+      a simple point process but this simplicity still allows for some complexity
+      in terms of how different types of data can inform the point process. The model,
+      when fitted to koala data, indicates that the distribution of koalas is patchy
+      throughout much of eastern Australia. It also infers that there are more koalas
+      than previously guessed. Our estimates provide unprecedented evidence to support
+      nationally consistent and spatially explicit decision-making for koala conservation,
+      and do so with relevant measures of uncertainty. 
+    talk_3: 'Speed: An R package for Spatially Efficient Experimental Designs'
+    talk_3_speakers:
+    - "Sam Rogers \U0001F464"
+    - Wasin Pipattungsakul
+    - Julian Taylor
+    talk_3_orgs: University of Adelaide
+    talk_3_abstract: "Agricultural field trials are typically designed using robust
+      statistical randomisation, and best practice agricultural field trials also
+      consider the spatial layouts of the experiment, and how that interacts with
+      the treatments of interest. However, software providing access to spatially
+      optimised experimental designs for field trials is not readily available and
+      can be difficult for new users to get started with due to sparse documentation.\r\n\r\nIn
+      this talk, we discuss the newly developed *speed* R package which provides easy
+      access to a fully open-source package with comprehensive documentation to enable
+      the design of spatially optimal experiments. The package offers model-free spatially
+      optimal designs via a simulated annealing optimisation algorithm. It can produce
+      a spatially optimal version of many types of experimental designs commonly used
+      in agricultural research as well as many more complex designs such as incomplete
+      block designs and partially replicated designs. It provides multiple objective
+      functions out of the box, with the additional flexibility to choose or enable
+      custom optimisation metrics, depending on the objective of the researcher. It
+      also provides some helper functions for plotting and evaluating experimental
+      designs either produced via *speed* or alternative design packages.\r\n\r\nTo
+      demonstrate the package's capabilities, we present spatially optimal designs
+      for challenging scenarios including two-dimensional blocking and partially replicated
+      designs. We also show that speed is significantly faster compared to alternative
+      software."
+    talk_4: Running Human Subject Experiments via Online Crowdsourcing
+    talk_4_speakers: "Patrick Li \U0001F464"
+    talk_4_orgs: Australian National University
+    talk_4_abstract: Crowdsourcing platforms such as Amazon Mechanical Turk and Prolific
+      provide scalable and accessible tools for running online human subject experiments.
+      This talk offers an overview of how to design, set up, and manage such studies
+      effectively. Drawing on experience from multiple projects, I will walk through
+      the key steps for obtaining ethics approval, compare platform workflows, and
+      discuss considerations for participant recruitment, screening, task design,
+      quality control, cost estimation, and common pitfalls. This session is intended
+      for researchers planning to conduct behavioural, perceptual, or decision-making
+      experiments, as well as those developing data annotation pipelines for machine
+      learning or applied research.
 
 
   - name: "Lunch"
@@ -283,24 +474,164 @@ Tuesday:
     type: "talk"
     start: "13:45"
     end: "15:00"
-    speaker: "TBA"
     location: "Arc Cinema"
     par_id: 1
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Bayesian clustered ensemble prediction for multivariate time series
+    talk_1_speakers: "Shonosuke Sugasawa \U0001F464"
+    talk_1_orgs: Keio University
+    talk_1_abstract: We propose a novel methodology called the mixture of Bayesian
+      predictive syntheses (MBPS) for multiple time series count data and apply the
+      methodology to predict the numbers of COVID-19 inpatients and isolated cases
+      in Japan and Korea at the subnational level. MBPS combines a set of predictive
+      models and partitions the multiple time series into clusters based on their
+      contribution to predicting the outcome. In this way MBPS leverages the shared
+      information within each cluster and avoids using a multivariate count model,
+      which is generally cumbersome to develop and implement. Our data analyses demonstrate
+      that the proposed MBPS methodology has improved predictive accuracy and uncertainty
+      quantification.
+    talk_2: The difficulties of clustering categorical or mixed data
+    talk_2_speakers:
+    - "Louise McMillan \U0001F464"
+    - Daniel Fernández
+    - Shirley Pledger
+    - Richard Arnold
+    - Ivy Liu
+    - Eleni Matechou
+    - Adam Glucksman
+    talk_2_orgs: Victoria University of Wellington
+    talk_2_abstract: I will discuss techniques for clustering categorical data that
+      go beyond treating the data as numerical or converting the categories to dummy
+      variables. I will talk about a range of approaches to clustering categorical
+      data, including the \texttt{clustord} R package for clustering ordinal data,
+      which uses model-based clustering via likelihoods and the EM algorithm. Then
+      I will discuss a Bayesian approach from population genetics that may be extendable
+      to general mixed datasets and is the subject of my latest research.
+    talk_3: Species archetype models for presence-only data
+    talk_3_speakers:
+    - "Skipton N.C. Woolley \U0001F464"
+    - "Scott Woolley \U0001F464"
+    - David Warton
+    - Piers Dunstan
+    talk_3_orgs: CSIRO
+    talk_3_abstract: Joint species distribution modelling is a recently emerged and
+      potentially powerful statistical method for analysing biodiversity data. Despite
+      the plethora of presence-only occurrence data available for biodiversity analysis,
+      there remain few examples of presence-only multiple-species modelling approaches.
+      We present a mixture-of-regressions model for understanding how groups of species
+      are distributed based on presence-only data. Our approach extends Species Archetype
+      Models using a point process framework and incorporates joint estimation of
+      sighting bias based on all species occurrences included in the model. We demonstrate
+      that our method can accurately recapture mean and variance of parameters from
+      simulated data sets and provide better estimates than those generated from multiple
+      single species presence-only species distribution models. We apply our approach
+      to a Myrtaceae presence-only occurrence dataset from New South Wales, Australia.
+      We show that presence-only Species Archetype Models allow for the propagation
+      of variance and uncertainty from the data through predictions, improving inference
+      made on presence-only biodiversity data for multiple species.
 
   - name: "Session 3B"
     id: "session-3b"
     type: "talk"
     start: "13:45"
     end: "15:00"
-    speaker: "TBA"
     location: "Theatrette"
     par_id: 2
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: 'Building Trust Without Peer Review: Establishing Reproducibility Standards
+      in Industrial Statistical Consulting'
+    talk_1_speakers: "Dean Marchiori \U0001F464"
+    talk_1_orgs: Wave Data Labs
+    talk_1_abstract: "In academic research, peer review serves as a cornerstone for
+      ensuring the credibility and reproducibility of findings. However, in industry,
+      statistical consultants often operate without the formal structures of peer
+      review, posing gaps in ensuring the reproducibility and trustworthiness of their
+      analyses. \r\n\r\nThis talk explores how statistical consultants for industry
+      can proactively establish and adhere to standards that promote reproducibility
+      and foster trust, even in the absence of traditional peer review mechanisms.
+      \r\n\r\nResearchers, data scientists and statisticians often engage with and
+      provide expertise to government, industry and other groups outside of academia.
+      This expertise is often trusted implicitly and relied on to make important decisions.
+      On the other hand, there are many well known criticisms of conventional peer
+      review systems both in academic publishing and in commercial work. \r\n\r\nDrawing
+      on practices from various industries, we will propose a pragmatic framework
+      for the development and implementation of standardized reporting formats, the
+      use of open-source tools for reproducible analysis, and the adoption of best
+      practices for documentation and code sharing. We will also examine the role
+      of professional organizations and industry consortia in setting guidelines that
+      encourage transparency and accountability.\r\n\r\nAttendees will gain insights
+      into practical strategies for implementing reproducibility standards in their
+      own consulting and research practices and contribute to a broader movement towards
+      transparency and accountability in industrial statistics."
+    talk_2: Teaching Meta-Analysis for Systematic Reviewers with Mixed Statistical
+      Training
+    talk_2_speakers:
+    - "Xu Ning \U0001F464"
+    - David K E Chan
+    - Coralie Williams
+    - ''
+    - Peter Humburg
+    talk_2_orgs: University of New South Wales
+    talk_2_abstract: Higher-degree research (HDR) students often consider conducting
+      a systematic review of their research domain, with the goal of synthesising
+      their findings with a meta-analysis. However, the statistical training of HDR
+      students and their supervisors can range from little to comprehensive. Consequently,
+      we found in our consultations with these students that they may struggle in
+      specifying their meta-analytical model, misinterpret their model outputs and
+      diagnostics, or both, especially with complex meta-analytical models. Hence,
+      we have developed a short course on meta-analysis to address these knowledge
+      gaps. The course aims to develop students’ mastery in meta-analytical methods.
+      We will present empirical findings on whether the course’s aim was met and discuss
+      the pedagogical considerations made to accommodate the range of statistical
+      training in our target cohort.
+    talk_3: 'Tales from the jungle: a personal perspective of statistical consulting
+      since COVID'
+    talk_3_speakers: "Alice Richardson \U0001F464"
+    talk_3_orgs: Australian National University
+    talk_3_abstract: "The period since COVID-19 has brought unique challenges to statistical
+      consulting, with researchers venturing into unfamiliar statistical territory.
+      The activities of an academic statistical consulting practice have therefore
+      very much taken on the feel of a journey through a statistical jungle.\r\n\r\nIn
+      this talk I will describe some of the more alarming encounters I have experienced
+      in this jungle over the last five years. Examples will be selected from my client
+      interactions within the broad biometric research field. Names and topics will
+      be altered to protect the participants, but not so much as to alter the key
+      learnings from the encounters.\r\n\r\nThese examples will cover the entire range
+      of statistical endeavour. From power and sample size calculation through data
+      collection to modelling, presentation of results and visualisation, no area
+      of statistical activity is untouched by surprising methodological suggestions
+      from researchers. The simultaneous emergence of large language models has also
+      brought unexpected consequences in consulting practice, as researchers increasingly
+      turn to AI tools for statistical guidance. I’ll draw out the patterns of common
+      traps and highlight how the biometric community can assist and advise.\r\n\r\nI
+      will also discuss some of the practical strategies I have developed to carve
+      out a safe path. These strategies can be used for navigating similar consulting
+      challenges and for fostering better statistical practices in other collaborative
+      research environments beyond academia.\r\n"
+    talk_4: 'Better Conversations, Better Support: Strengthening Consulting through
+      Practical Education and Community'
+    talk_4_speakers:
+    - "Sharon  G. Nielsen \U0001F464"
+    - Sam Rogers
+    - Annie Conway
+    talk_4_orgs: Adelaide University
+    talk_4_abstract: "Effective statistical consulting in agriculture depends not
+      just on technical expertise, but on shared understanding, clear communication,
+      and the confidence of those seeking advice. Through its series of practical
+      agronomic workshops and the linked Community of Practice, the Biometry Hub has
+      shown how targeted education can transform the way consulting support is delivered
+      and received.\r\n\r\nThe workshops, typically four core sessions delivered over
+      five days, cover the design of robust experiments, sound data collection, practical
+      analysis, and clear interpretation of results. By equipping researchers and
+      industry staff with these practical skills, the workshops lay the groundwork
+      for more productive conversations between statisticians and collaborators.\r\n\r\nThe
+      Community of Practice then extends this support beyond the workshop room. Monthly
+      meetings held over Zoom create an informal space for participants to revisit
+      concepts, tackle real-world questions, and build confidence alongside peers
+      and mentors.\r\nThis talk will share how combining hands-on training, tailored
+      tools like the biometryassist R package, and an ongoing network of support strengthens
+      the consulting relationship, helping ensure that good statistical practice is
+      not only taught, but actively put into practice across the grains industry."
 
   - name: "Afternoon Tea"
     id: "afternoon-tea-tue"
@@ -308,18 +639,87 @@ Tuesday:
     start: "15:00"
     end: "15:30"
     location: "Gallery"
-    abstract: "Afternoon refreshments."
-    description: "Light snacks and drinks served."
+    description: "Afternoon refreshments. Light snacks and drinks served."
 
   - name: "Session 4A"
     id: "session-4a"
     type: "talk"
     start: "15:30"
     end: "16:45"
-    speaker: "Various"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: 'Nested-factorial treatment models: types, their uses and examples'
+    talk_1_speakers: "Chris Brien \U0001F464"
+    talk_1_orgs: The Plant Accelerator, University of Adelaide
+    talk_1_abstract: Most commonly factorial experiments involve several crossed treatment
+      factors and the treatment model includes terms for all possible combinations
+      of the treatment factors. However, treatment models that employ nested treatment
+      factors are beneficial in a number of situations and could be used more often.
+      Applicable situations include those in which (i) treatment factors are intrinsically
+      nested, (ii) treatments involve one or more factors plus a control and (iii)
+      treatments have been systematically allocated and/or are pseudoreplicated. Four
+      basic types of nested factors that start with a single nesting factor are (i)
+      one nested factor, (ii) multiple, crossed, nested factors, (iii) multiple, independent,
+      nested factors, and (iv) a hierarchy of multiple, nested factors. Examples involving
+      the different situations and types of nesting will be presented. Constructing
+      the factors using the `R` package `dae` (Brien, 2025, <https://cran.r-project.org/package=dae>)
+      will be described and the properties of the models discussed for the examples
+      via their anatomies produced using `dae`.
+    talk_2: Integrating Spatial Data and On-Farm Experimentation to Understand Wheat
+      Variety Performance Across Western Australia
+    talk_2_speakers: "Sandra K. Tanz \U0001F464"
+    talk_2_orgs: Centre for Crop and Disease Management, Curtin University
+    talk_2_abstract: "Understanding spatial variability in crop performance is critical
+      to improving the statistical design and interpretation of variety trials at
+      the farm scale. This pilot study investigates the integration of large-scale
+      on-farm experimentation (OFE) with spatial data analysis to better understand
+      genotype-by-environment interactions in wheat. The trial spans five grower-managed
+      sites across Western Australia, incorporating two core wheat varieties—Scepter
+      (a widely grown commercial line) and IGW6993 (a near-release InterGrain line)—with
+      some growers also including Rockstar and Tomahawk CL Plus based on local relevance.\r\n\r\nEach
+      trial is embedded within commercial paddocks and implemented using strip trial
+      designs aligned with paddock production zones identified from historical yield
+      maps. This design allows statistical comparisons of varietal performance across
+      contrasting spatial zones defined by environmental variation in soil, topography,
+      and management history. The study aims to (1) develop robust methods for spatially
+      aware experimental design in commercial cropping systems, and (2) assess the
+      potential for OFE to complement small-plot trials in supporting variety selection
+      and agronomic decision-making.\r\n\r\nWhile the trial was only recently seeded
+      (May 2025), preliminary outputs include trial design validation and early NDVI
+      imagery from emergence. Future analyses will incorporate additional covariates
+      such as soil electrical conductivity (EM mapping), NDVI time series, and topographic
+      indices to model spatial responses. This work highlights the value of integrating
+      spatial data into trial workflows and explores the role of predictive breeding
+      tools in commercial agriculture."
+    talk_3: Multi-environment trial analysis of count data with complex variance structures
+      using generalised linear mixed models
+    talk_3_speakers:
+    - "Michael H. Mumford \U0001F464"
+    - Alan Huang
+    - Alison M. Kelly
+    talk_3_orgs: Queensland Department of Primary Industries
+    talk_3_abstract: "The analysis of response data from agricultural field experiments
+      conducted in multi-environment trials (METs) is typically performed using linear
+      mixed models (LMMs). The strength of the LMM framework is in the ability to
+      seamlessly model experimental design terms and to include complex variance structures,
+      especially for unbalanced data. When the response variable is count data, the
+      assumptions underpinning the LMM are violated and it is necessary to extend
+      to a generalised linear mixed model (GLMM) approach. Statistical modelling using
+      GLMMs introduces additional complexities arising from a combination of (i) susceptibility
+      to large estimation biases due to approximations of the marginal likelihood,
+      (ii) accounting for heterogeneity of variance/dispersion, and (iii) the increase
+      in computational resources required.\r\nIn this talk, a statistical methodology
+      is proposed for the MET analysis of count data. The analysis approach uses a
+      GLMM framework, assuming an underlying mean-parameterised Conway-Maxwell Poisson
+      distribution, that can account for arbitrarily under and over-dispersed count
+      data. This framework enables partitioning of residual variation from genetic
+      and other extraneous sources of variation, and adopts a factor-analytic model
+      for the genotype by environment interaction effects. The proposed methodology
+      is applied to a series of common bean trials, where the aim is genotype selection
+      for the response variable pod count per plant. The analysis is implemented using
+      the `glmmTMB R`-package, which uses automatic differentiation to enhance computational
+      speed, the Laplace approximation estimation method to reduce estimation biases,
+      and a residual maximum likelihood (REML)-like correction to further reduce estimation
+      biases for variance components.\r\n"
     par_id: 1
     par_total: 2
 
@@ -328,10 +728,92 @@ Tuesday:
     type: "talk"
     start: "15:30"
     end: "16:45"
-    speaker: "Various"
     location: "Theaterette"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: 'Enhancing Fraud Detection in Banking through Random Survival Forests:
+      Addressing Data Imbalance and Model Transparency'
+    talk_1_speakers:
+    - "Arjun Sekhar \U0001F464"
+    - Samuel Muller
+    - Maurizio Manuguerra
+    talk_1_orgs: Macquarie University
+    talk_1_abstract: "With the rise in financial fraud amid growing transaction volumes,
+      in this presentation we share our insights from the use of Random Survival Forests
+      (RSFs) for enhancing fraud detection in banking systems. While many machine
+      learning techniques prioritise accuracy, they overlook two crucial issues: the
+      imbalance of fraud versus legitimate transaction data, and the transparency
+      of the model decision-making process. \r\n\r\nWe position RSFs as a potential
+      solution, leveraging their time-to-event structure to enable dynamic fraud prediction
+      and their ensemble nature to handle high-dimensional, skewed datasets. Using
+      real-world transactional data, the presentation addresses model imbalance through
+      resampling strategies and evaluates the model’s ability to detect minority-class
+      fraud events without inflating false positives. \r\n\r\nFurthermore, the interpretability
+      of RSFs is explored through explainable AI frameworks, offering transparency
+      essential for regulatory compliance and institutional trust. By investigating
+      RSFs to deliver fraud detection that is both accurate and accountable, this
+      presentation bridges algorithmic robustness with transparency, advancing a practical
+      and governance-aligned solution for responsible AI deployment in today’s increasingly
+      regulated financial services landscape."
+    talk_2: Using point cloud data to discover genomic regions associated with dynamic
+      height
+    talk_2_speakers:
+    - "Colleen H Hunt \U0001F464"
+    - David R. Jordan
+    - Emma S. Mace
+    talk_2_orgs: University of Queensland
+    talk_2_abstract: "Plant height in grain sorghum (*Sorghum bicolor L. Moench*),
+      influences yield, lodging resistance, and harvestability, yet conventional methods
+      usually measure plant height at maturity, but this single-time-point measurement
+      misses the growth dynamics across the season. Tracking and analysing height
+      over time can reveal more about the genetic factors controlling development
+      rate and pattern. \r\nData from 881 sorghum lines from a diverse population
+      were planted in a partially replicated design with 1190 plots. UAV-based high-throughput
+      phenotyping was used to generate weekly plant height measurements from emergence
+      to flowering. These aerial images were collected and processed using photogrammetric
+      software to create dense point clouds and canopy height models for each plot.
+      \r\nA logistic regression model within a linear mixed model framework was applied
+      to effectively depict the sigmoidal growth pattern typical of sorghum, with
+      parameters indicating maximum height, growth rate, and inflection point. These
+      biologically relevant parameters offered a straightforward, quantitative summary
+      of each genotype’s growth trajectory. The logistic growth parameters were then
+      used in a genome-wide association study (GWAS) to identify loci linked to the
+      dynamic aspects of height development, with several significant associations
+      detected. \r\nThis is among the first studies to combine logistic growth modelling
+      of high-throughput UAV data with GWAS to dissect the genetic control of growth
+      dynamics in sorghum. Our findings underline the usefulness of logistic regression
+      for modelling crop growth and showcase the effectiveness of combining UAV phenotyping,
+      statistical growth modelling, and GWAS to identify genomic regions that influence
+      developmental trajectories in sorghum.\r\n"
+    talk_3: 'Automatic debiased machine learning (autoDML) for causal inference: implementation
+      and evaluation in real-world observational studies'
+    talk_3_speakers:
+    - "Tong Chen \U0001F464"
+    - Stijn Vansteelandt
+    - Margarita Moreno-Betancur
+    talk_3_orgs: Murdoch Children's Research Institute
+    talk_3_abstract: "The estimation of average treatment effect (ATE) is a central
+      goal of observational health research. Causal machine learning (CML) methods
+      are increasingly popular for ATE estimation, as they leverage data-adaptive
+      algorithms to account for complex relationships amongst confounders, exposure
+      and outcome while ensuring valid inference. Major CML methods, such as double
+      machine learning and targeted maximum likelihood estimation, offer robustness
+      and efficiency advantages but they require first estimating the propensity score
+      and then calculating treatment divided by the propensity score, known as the
+      Riesz representer. Standard machine learning algorithms for the propensity score
+      estimation are suboptimal as they are designed to minimise prediction error,
+      ignoring that equally large estimation errors in small and large propensity
+      scores propagate very differently into the ATE estimates upon taking the reciprocal.
+      Automatic debiased machine learning (autoDML), introduced by Chernozhukov et
+      al. (2021), addresses this issue by directly estimating the Riesz representer
+      using machine learning methods, yielding a more stable alternative to standard
+      CML methods. Despite its theoretical advances, autoDML remains largely unknown
+      in biostatistical research and has not been compared to standard CML methods
+      in realistic simulation studies. \r\nIn this talk, we bridge these gaps by introducing
+      autoDML and highlighting its advantages. We describe a practical, step-by-step
+      guide for implementing autoDML, and compare autoDML with standard CML methods
+      using comprehensive, realistic simulation studies. We further illustrate the
+      utility of autoDML using data from the Longitudinal Study of Australian Children
+      to evaluate the impact of overweight or obesity on cardiovascular outcomes in
+      adolescence."
     par_id: 2
     par_total: 2
 
@@ -340,10 +822,326 @@ Tuesday:
     type: "poster"
     start: "17:00"
     end: "19:00"
-    speaker: "Multiple Presenters"
     location: "Gallery"
-    abstract: "Poster presentations and discussions."
-    description: "Explore a wide range of research topics during this informal poster session."
+    description: "Poster presentations and discussions. Explore a wide range of research topics during this informal poster session."
+    talk_1: Using atmospheric transport models to predict species incursions in northern
+      Australia
+    talk_1_speakers: "Zhenhua (Iris) Hao Dr \U0001F464"
+    talk_1_orgs: Department of Agriculture, Fisheries and Forestry
+    talk_1_abstract: "Predicting the arrival of invasive species is critical for strengthening
+      biosecurity, particularly in regions like northern Australia that are vulnerable
+      to aerial incursions. This ongoing study compares atmospheric modelling with
+      detection patterns from long-term field surveillance to evaluate how different
+      models can be integrated to increase confidence in identifying likely source
+      regions, arrival pathways and periods of elevated risk. We apply three complementary
+      models: HYSPLIT (Hybrid Single-Particle Lagrangian Integrated Trajectory), FLEXPART
+      (FLEXible PARTicle dispersion model), and Lagrangian Coherent Structures (LCS).
+      These models range in complexity - from simulating basic wind trajectories to
+      identifying hidden transport patterns within the atmosphere.\r\nA rich empirical
+      foundation is provided by two decades of fruit fly trapping data collected through
+      the Northern Australia Quarantine Strategy (NAQS) in the Torres Strait. By identifying
+      likely incursion windows for Oriental Fruit Fly (Bactrocera dorsalis) arrivals
+      from Papua New Guinea, we evaluate and compare model performance and gain insights
+      into potential dispersal mechanisms. While model implementation and case analysis
+      are still underway, preliminary results suggest that combining outputs from
+      different models improves the detection and interpretation of likely incursion
+      events.\r\nFuture work will focus on integrating these model outputs with additional
+      environmental and biological datasets to produce dynamic risk maps. These maps
+      aim to support NAQS surveillance planning and resource prioritisation. This
+      framework can also be extended to other high-risk species to enhance predictive
+      capacity and improve biosecurity strategies for Australia's north."
+    talk_2: Visualisation of multinomial multilevel time-series modelling with application
+      to current smoking status
+    talk_2_speakers:
+    - "Alice Richardson \U0001F464"
+    - Sumonkanti Das
+    - Ashis Talukder
+    - Mu Li
+    - ''
+    - Bernard Baffour
+    talk_2_orgs: Australian National University
+    talk_2_abstract: "In Australia, tobacco smoking has declined overall over the
+      last 25 years, yet substantial disparities exist across age, sex and state.
+      In this talk we will present the results of multilevel multinomial time series
+      modelling to estimate trends in smoking status (current, former and never) across
+      small domains defined by seven age groups, two genders, and eight states and
+      territories from 2001–2022.\r\n\r\nThe model is developed using ex-smokers as
+      the reference category, as their proportion remains relatively stable over time.
+      Statistically significant random intercepts and random slopes for linear time
+      trends are identified at the state-age-sex level. The spatio-temporal extension
+      of the multinomial multilevel logistic model yields detailed estimates, helping
+      to uncover disparities in the trends of smoking decline. Temporal random effects
+      at the state-sex and age-sex levels also substantially contribute to achieving
+      numerically consistent trend estimates. \r\n\r\nVisualisations of these models
+      are especially important for conveying results in a compelling manner to health
+      researchers and policy makers and program implementation teams. We will discuss
+      the process of arriving at our visualisations using R for this particular application."
+    talk_3: 'Paired Comparison with Cyclic Dominance: An Extension of the Bradley–Terry
+      Model'
+    talk_3_speakers:
+    - "Yuki Ohno \U0001F464"
+    - Kouji Tahata
+    talk_3_orgs: Tokyo University of Science
+    talk_3_abstract: "The Bradley–Terry model has become a cornerstone for analyzing
+      paired-comparison data, providing a principled approach to estimating \"strength\"
+      parameters without imposing a latent, continuous ordering on teams, treatments,
+      or evaluators. Its transitivity constraint—each pairwise preference must be
+      consistent with a global ranking—yields excellent performance in many applications,
+      including sports analytics, psychometric scaling, and clinical preference studies.
+      However, empirical datasets sometimes exhibit cyclic dominance, rendering the
+      classical model inadequate and leading to systematic misfit.\r\n\r\nReal-world
+      data often display cyclic patterns, resembling a “rock-paper-scissors” dynamic,
+      which can violate the transitivity constraint typically expected in such analyses.
+      To address this issue, we first review important applications of the Bradley-Terry
+      model and highlight instances where non-transitive outcomes occur. Next, we
+      introduce a minimal extension of the model that preserves the original likelihood
+      but adds a single \"cycle-strength\" parameter. This parameter is designed to
+      capture uniform three-way dominance among any trio of outcomes. When the cycle-strength
+      parameter is set to zero, the model reverts to the classical Bradley-Terry framework.
+      Importantly, we demonstrate that our cycle strength corresponds precisely to
+      the quasi-asymmetry measure proposed by Tahata et al. (2004), establishing a
+      clear quantitative relationship between model fit and deviations from transitivity."
+    talk_4: Cleaning Text Data with Large Language Models
+    talk_4_speakers:
+    - "Jiajia Li \U0001F464"
+    - Emi Tanaka
+    talk_4_orgs: Australian National University
+    talk_4_abstract: "Data cleaning – particularly the standardisation and feature
+      extraction from unstructured text – is a time-consuming and often manual process
+      in data science workflows. Traditional methods, such as approximate string matching,
+      lack semantic understanding and still require inefficient, manual corrections.
+      We leverage the transformative potential of large language models (LLMs) to
+      automate these tedious tasks and significantly accelerate data preparation.\r\n\r\nWe
+      introduce the `emend` R package, which leverages LLMs to perform various data
+      cleaning tasks, including matching categorical variables, reordering ordinal
+      variables, translating languages, and standardising dates and addresses. The
+      package integrates with local LLMs via Ollama as well as cloud-based APIs via
+      the R package ellmer, offering multiple options for using LLMs from different
+      providers. A comprehensive simulation study evaluated emend’s core functionality
+      across 13 LLMs and a baseline string-matching method on real-world datasets
+      of country names, institutional affiliations, and species names. Results demonstrate
+      high accuracy for LLM-based methods in general text standardisation, with GPT-4o-mini
+      and GPT-4o excelling on country names and affiliations, respectively. The `emend`
+      package streamlines data cleaning in R, reducing the need for extensive manual
+      corrections for data analysts. This work highlights LLMs as powerful tools for
+      increasing efficiency of cleaning text data."
+    talk_5: 'ggincerta: An R Package for Uncertainty Visualisation with a Layered
+      Grammar of Graphics'
+    talk_5_speakers:
+    - "Xueqi Ma \U0001F464"
+    - Emi Tanaka
+    - Francis KC Hui
+    - Weihao Li
+    - Quan Vu
+    talk_5_orgs: Australian National University
+    talk_5_abstract: "Uncertainty is inherent in all estimates derived from data.
+      However, when visualising these estimates on spatial maps, uncertainty is often
+      overlooked, leading to decision-making based solely on point estimates. The
+      `Vizumap` R package addresses this gap by integrating both estimates and their
+      uncertainties in areal data, offering four types of visualisations: bivariate
+      choropleth maps, pixel maps, glyph maps, and exceedance probability maps. \r\n\r\nBuilding
+      upon `Vizumap`, we introduce the `ggincerta` R package, a ground-up reimplementation
+      that recreates all of `Vizumap`’s visualisations, but also provides enhanced
+      functionality, within the layered grammar of graphics framework provided by
+      `ggplot2`. By leveraging `ggplot2`, `ggincerta` seamlessly integrates uncertainty
+      visualisation into users’ existing workflows, employing familiar syntax and
+      conventions. This approach not only enhances accessibility for those already
+      comfortable with `ggplot2`, but also exemplifies how existing systems can be
+      extended to new purposes, rather than developing separate, ad-hoc solutions
+      that require learning additional languages or interfaces."
+    talk_6: The “Theory of Sampling” (ToS) - have statisticians missed the boat?
+    talk_6_speakers:
+    - "Damian Collins \U0001F464"
+    - Anne Harris
+    talk_6_orgs: NSW DPIRD
+    talk_6_abstract: "The \"Theory of Sampling\" (ToS) framework originated with chemical
+      engineer Pierre Gy over 50 years ago. It essentially deals with the sampling
+      of materials, particularly soils, composts,and minerals. It enjoys a strong
+      advocacy amongst chemical engineers, geologists and similar professionals. The
+      ToS instructs practitioners to stop and think about the sampling procedure.
+      It encourages them to consider all the sources of variation in the material
+      they wish to sample rather than just choosing to take the most convenient sample
+      such as a “grab sample” from the surface. However, one of its strongest advocates
+      argues that, in order to save on analysis costs, only one “correct” composite
+      sample is necessary. This single sample, deemed to be “representative” of the
+      entire material, is all that is required to characterise a material (Esbenson
+      (2017)). Composting sampling guidelines around the world use the ToS to justify
+      this practice of single sampling. For example, it has currently been recommended
+      in the AS4454 review in Australia (https://www.as4454review.com.au/). However,
+      with only one sample analysed, contributions to measurement uncertainty from
+      either the sampling or analysis processes, cannot be assessed. It is concerning
+      that despite the apparent sophistication of ToS methodology and the breadth
+      of its advocacy network, it perpetuates the scientifically unsound idea of a
+      “representative sample.” .Even the name, “Theory of Sampling”, is a misnomer,
+      suggesting an even broader application than just the sampling of materials.
+      We review the ToS and consider implications to statistical practise and adoption.\r\n\r\nEsbenson,
+      K.H. (2017). Sampling: Theory and Practice. Alchemist 85 pages 3–6.\r\nhttps://www.lbma.org.uk/alchemist/issue-85/sampling-theory-and-practice"
+    talk_7: Evaluating Diagnostic Performance via Bayesian $F_1$ Score Estimation
+      without a Gold Standard
+    talk_7_speakers:
+    - "Jun Tamura \U0001F464"
+    - Yusuke Saigusa
+    - Kouji Yamamoto
+    talk_7_orgs: Yokohama City University
+    talk_7_abstract: "In clinical medicine, diseases are often diagnosed with high
+      accuracy based on characteristic signs and symptoms. However, the gold standard
+      tests used to confirm diagnoses are frequently invasive, expensive, or impractical
+      for population-level screening. This highlights the importance of developing
+      and validating simple, non-invasive screening tests.\r\nDiagnostic performance
+      is typically evaluated using metrics such as accuracy, sensitivity (Se), specificity
+      (Sp), positive predictive value (PPV), and negative predictive value (NPV).
+      However, when disease prevalence is low or class imbalance exists, accuracy
+      and Sp may not adequately reflect test performance. $F_1$ score, which considers
+      both Se and PPV, has been widely adopted in such settings as a balanced measure
+      of diagnostic ability.\r\nA limitation of the $F_1$ score is its reliance on
+      the true disease status defined by a gold standard. In some fields, however,
+      the disease mechanism may be unclear or the definition of clinical signs ambiguous,
+      making it difficult to define a reliable gold standard. This presents challenges
+      for evaluating diagnostic accuracy using conventional methods.\r\nTo address
+      this issue, we propose a Bayesian framework that enables estimation of the $F_1$
+      score without directly observing gold standard outcomes. The approach uses latent
+      class analysis to estimate unobserved disease status and offers a promising
+      method for assessing test performance in settings where the gold standard is
+      unavailable or uncertain\r\n"
+    talk_8: 'Evaluating Remote Monitoring in Automated Peritoneal Dialysis: A Difference-in-Differences
+      Analysis'
+    talk_8_speakers:
+    - "Annie Conway \U0001F464"
+    - Stephen McDonald
+    talk_8_orgs: ANZORRG | ANZDATA | Australia & New Zealand Dialysis and Transplant
+      Registry
+    talk_8_abstract: "During a cholera outbreak in 1850s London, physician John Snow
+      famously traced the source of the outbreak to contaminated water supply. In
+      what could be deemed a \"natural experiment\", he compared cholera mortality
+      rates between areas served by different water companies before and after one
+      company relocated its water intake, using an early form of the method _difference-in-differences_
+      (DiD).\r\n\r\nRecently, DiD has gained renewed popularity in health and epidemiological
+      sciences for testing the effectiveness of technological or policy interventions.
+      However, real-world applications can have complexities such as staggered roll-out
+      of the intervention and heterogeneity between treated units. Additionally, these
+      often involve count outcomes that violate the linear model assumptions underlying
+      existing DiD methods.\r\n\r\nIn this project I consider the impact of a new
+      technology for automated peritoneal dialysis (APD) that allows patients to be
+      remotely monitored by clinicians as they complete dialysis at home. This new
+      APD cycler was rolled out gradually in PD centres across Australia and New Zealand
+      between 2017 and 2023. Using data from the ANZDATA registry, I assess remote
+      monitoring's impact across PD centres, counting the number of deaths, peritonitis
+      infections and technique failures, comparing before and after the roll-out and
+      between treated and untreated centres.\r\n\r\nThis analysis employs various
+      DiD methods to overcome the challenges of staggered adoption and heterogeneous
+      effects, to provide an evaluation of remote monitoring's impact on critical
+      patient outcomes."
+    talk_9: Judgement Post-Stratification for Covariate Adjustment in Pairwise Comparisons
+      in Block Designs
+    talk_9_speakers:
+    - "Sam Rogers \U0001F464"
+    - Omer Ozturk
+    - Olena Y Kravchuk
+    talk_9_orgs: University of Adelaide
+    talk_9_abstract: The randomised complete block design (RCBD) remains one of the
+      most widely used experimental designs in agronomy, agriculture, and controlled-environment
+      research. In this study, we introduce a novel post-experimental method, judgement
+      post-stratification, for improving the efficiency of pairwise treatment comparisons
+      using plot-level covariate information. The method operates within the RCBD
+      framework to focus on generalised designs with multiple replications of treatments
+      within blocks. Using simulations based on uniformity trials, we show that when
+      plots can be consistently ranked according to an expected outcome, independent
+      of treatment assignment, this ranking can be used post-hoc to enhance the precision
+      of estimated treatment differences. This approach offers a practical and flexible
+      tool for incorporating auxiliary information into the analysis of block designs
+      without compromising the integrity of the original randomisation.
+    talk_10: Small Area Estimation of Fertility Rate in the Philippines using DHS
+      and Census Data
+    talk_10_speakers: "George Manapat \U0001F464"
+    talk_10_orgs: University of the Philippines Diliman
+    talk_10_abstract: Accurate and timely estimation of fertility indicators at subnational
+      levels is essential for effective health planning, especially in countries with
+      geographically diverse populations and uneven data availability. In the Philippines,
+      while national and regional fertility rates are routinely measured through national
+      surveys such as the Demographic and Health Survey (DHS), local-level estimates,
+      e.g., at the provincial level, remain sparse and unreliable due to limited sample
+      sizes. Using the data from the 2022 Philippine DHS and auxiliary covariates
+      from the 2020 Census of Population and Housing, small area estimates of fertility
+      rate at the provincial level are obtained using a Bayesian hierarchical model
+      accounting for spatial correlation. Preliminary findings show substantial differences
+      in fertility rates between provinces. Some areas, especially in more remote
+      or underserved regions, have much higher fertility than the national average.
+      The results underscore the necessity for area-specific health programs and policies
+      to address the unique demographic challenges of each locality.
+    talk_11: Bayesian inference for sparse Gaussian copula graphical model
+    talk_11_speakers: "Tomotaka Momozaki \U0001F464"
+    talk_11_orgs: Tokyo University of Science
+    talk_11_abstract: We consider Bayesian inference for sparse dependence structures
+      among variables in multivariate mixed data, which consists of both continuous
+      and discrete variables. Traditional graphical modeling approaches often struggle
+      with mixed-type data, as they typically focus on either purely continuous or
+      purely discrete settings. This limitation becomes particularly problematic in
+      high-dimensional scenarios where identifying relevant variable relationships
+      is crucial for interpretability and prediction accuracy. This study proposes
+      a novel Bayesian approach that combines Gaussian copula graphical models with
+      advanced shrinkage priors, including horseshoe priors and double exponential
+      priors. The Gaussian copula framework enables unified modeling of mixed-type
+      variables by transforming them to a common latent Gaussian scale, while shrinkage
+      priors facilitate automatic variable selection by adaptively shrinking irrelevant
+      dependencies toward zero. This combination addresses both the mixed-data challenge
+      and the high-dimensionality issue simultaneously. We develop an efficient posterior
+      sampling algorithm that maintains the positive definiteness of correlation matrices
+      by employing a block Gibbs sampler with hit-and-run algorithm. Our approach
+      utilizes rank information to handle mixed-type data within the copula framework,
+      enabling unified treatment of continuous and discrete variables. The proposed
+      method is particularly valuable for analyzing complex datasets in genomics,
+      economics, and social sciences, where variables of different types naturally
+      co-occur. We present comprehensive evaluation of our method's effectiveness
+      through extensive simulation studies comparing with existing approaches and
+      real data analysis demonstrating practical applicability.
+    talk_12: Visualization for departures from symmetry with the power-divergence-type
+      measure in square contingency tables
+    talk_12_speakers:
+    - "Wataru Urasaki \U0001F464"
+    - Tomoyuki Nakagawa
+    - Jun Tsuchida
+    - Kouji Tahata
+    talk_12_orgs: Department of Information Sciences, Tokyo University of Science
+    talk_12_abstract: When the row and column variables consist of the same category
+      in a two-way contingency table, it is called a square contingency table. Such
+      tables often have an association structure concentrated along the main diagonal,
+      making the analysis of symmetric relationships and transitions important. Various
+      models and measures have been proposed to analyze these structures to understand
+      the changes between two variables' behavior at two-time points or cohorts. This
+      is necessary for a detailed investigation of individual categories and their
+      interrelationships, such as shifts in brand preferences. We propose a novel
+      correspondence analysis (CA) framework to evaluate departures from symmetry
+      in square contingency tables with nominal scales, using a power-divergence-type
+      measure. This approach ensures that well-known divergences can also be visualized
+      and, regardless of the divergence used, the CA plot consists of two principal
+      axes with equal contribution rates. Our visualization method enables the magnitude
+      of each category’s departure from symmetry to be assessed by its deviation from
+      the origin, while asymmetric relationships between category pairs can be interpreted
+      through corresponding triangle areas. Importantly, the scaling of the departures
+      from symmetry provided by the measure is independent of sample size, allowing
+      for meaningful comparisons and unification of results across different tables.
+      This standardization supports broader applicability in empirical studies. We
+      also present some considerations from the results of the analysis with actual
+      data. Our framework thus offers an effective tool for studying structural shifts
+      in categorical data.
+    talk_13: Performance of Factor Analytic Mixed Models and Plackett–Luce Models
+      for Genotype Ranking in Multi-Environment Trials
+    talk_13_speakers:
+    - "Jiazhe Lin \U0001F464"
+    - Emi Tanaka
+    - Fonti Kar
+    talk_13_orgs: ANU
+    talk_13_abstract: Multi-environment trials are central to plant breeding, providing
+      evaluations of genotype performance across locations and time to capture environmental
+      variability. The resulting data are often heterogeneous and unbalanced, motivating
+      the use of advanced statistical models. The Factor Analytic Linear Mixed Model
+      (FALMM) has become a benchmark approach, offering a parsimonious decomposition
+      of genotype and genotype-by-environment effects and supporting inference on
+      average genotype performance. Alternatively, the Plackett-Luce Model (PLM),
+      originally developed in psychology, allows aggregation of environment-specific
+      rankings into a global ranking that reflects overall genotype performance. We
+      propose a two-stage framework that integrates FALMM and PLM, and through extensive
+      simulation, evaluate conditions under which each method provides optimal inference.
 
 Wednesday:
   - name: "Conference Registration"
