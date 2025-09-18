@@ -4,7 +4,7 @@ for (day_num in 2:5) {
   today <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")[day_num]
   today_list <- list()
 
-  for (order_num in 0:max(today_dat$order)) {
+  for (order_num in as.character(0:max(schedule$order))) {
 
     for (room_num in c("A", "B")) {
       room_dat <- filter(schedule, day == day_num, order == order_num, room == room_num)
