@@ -1171,26 +1171,71 @@ Wednesday:
       Through these use cases we'll see how different features of {gnm} can be applied, demonstrating the versatility of this software.
     biography: "**Heather L. Turner** is an Associate Professor and EPSRC Research Software Engineering Fellow in the Statistics Department at the University of Warwick, UK. She has over 20 years of experience in the development of statistical code and software, gained through positions in academia, industry, and as a freelance consultant. In research, she has developed a portfolio of R packages for statistical modelling and collaborated on applications in sports, social science and agriculture. In her work with industry, she has specialised in applications in pharmaceutical R&D, with companies including Pfizer, Johnson & Johnson and Roche. Heather is active in community management and engagement among R users and developers. She is on the board of the R Foundation and chairs the R Contribution Working Group (fostering the community of contributors to the R project) and the R Forwards taskforce (widening the participation of under-represented groups in the R community)."
 
-
-  # - name: "Morning Tea"
-  #   id: "morning-tea-wed"
-  #   type: "social"
-  #   start: "10:00"
-  #   end: "10:30"
-  #   speaker: ""
-  #   location: "Café Area"
-  #   abstract: "Tea, coffee, snacks."
-  #   description: "A mid-morning refreshment break."
-
   - name: "Session 5A"
     id: "session-5a"
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Scalable finite mixture of regression models for clustering species responses
+      in ecology
+    talk_1_speakers: "Francis KC Hui \U0001F464"
+    talk_1_orgs: The Australian National University
+    talk_1_abstract: "When modeling species assemblages in ecology, clustering species
+      with similar responses to the environment can facilitate a more parsimonious
+      understanding of the assemblage, and improve prediction by borrowing strength
+      across species within the same cluster. One statistical method for achieving
+      the above is species archetype models (SAMs), a type of finite mixture of regression
+      model where species are clustered according to the *shape* of their environmental
+      response. \r\n\r\nIn this talk, we introduce approximate and scalable SAMs or
+      asSAMs, which overcomes some of the current computational drawbacks in fitting
+      SAMs. We show how asSAMs promotes fast uncertainty quantification via bootstrapping,
+      along with fast variable selection on archetypal regression coefficients courtesy
+      of a sparsity-inducing penalty. Simulation studies and an application to presence-absence
+      records of over 230 species from the Great Barrier Reef Seabed biodiversity
+      project demonstrate asSAMs can achieve similar to or better estimation, selection,
+      and predictive performance than several existing methods in the literature."
+    talk_2: 'Elastic Net Regularization for Vector Generalized Linear Models: A Flexible
+      Framework for High-Dimensional Biomedical Data'
+    talk_2_speakers:
+    - "Wenqi Zhao \U0001F464"
+    - Dr.Thomas Yee
+    talk_2_orgs: University of Auckland, Auckland, New Zealand
+    talk_2_abstract: "We introduce a novel implementation of elastic net regularization
+      for vector generalized linear models (VGLMs), capable of fitting over 100 family
+      functions and designed to support complex, high-dimensional modeling tasks commonly
+      encountered in the biosciences. VGLMs extend classical GLMs by accommodating
+      multivariate and multi-parameter responses, making them particularly well-suited
+      for heterogeneous biomedical data.\r\n\r\nOur method integrates sparse estimation
+      techniques—such as lasso, ridge, and their convex combinations—into this broader
+      modeling framework, enhancing model interpretability and stability in high-dimensional
+      settings. The algorithm is implemented in the vglmnet function within the new
+      VGAMplus package for R. It leverages a modified iteratively reweighted least
+      squares (IRLS) procedure, combined with pathwise coordinate descent, Karush-Kuhn-Tucker
+      (KKT) condition checks, and strong rules for variable screening to ensure computational
+      efficiency.\r\n\r\nThis framework supports a wide range of models beyond the
+      exponential family, including ordinal, categorical, and zero-inflated distributions
+      commonly encountered in fields such as epidemiology, genomics, and clinical
+      research. We illustrate the utility of our approach through comparisons with
+      existing tools (glmnet, ordinalNet, mpath) and apply it to real-world datasets
+      involving survival outcomes, count data, and bivariate binary responses. By
+      uniting the structural flexibility of VGLMs with the benefits of regularization,
+      our method provides a powerful and scalable solution for modern statistical
+      modeling in the biosciences.\r\n\r\n"
+    talk_3: Fitting Generalised Linear Mixed Models using Sequential Quadratic Programming
+    talk_3_speakers: "Peter Green \U0001F464"
+    talk_3_orgs: Tadorna Data Science
+    talk_3_abstract: "Finding maximum likelihood estimates in generalised linear mixed
+      models (GLMMs) can be difficult due to the often-intractable integral over the
+      random effects. \r\n\r\nEnsuring convergence can be tricky, especially in binomial
+      GLMMs, and often multiple optimisers and settings need to be tried to get satisfactory
+      results. This is exacerbated if you want to use parametric bootstrap for your
+      inference. \r\n\r\nSequential quadratic programming (SQP) is a method for solving
+      optimisation problems with non-linear constraints. SQP offers an alternative
+      option for maximising the Laplace approximation to the GLMM likelihood, bypassing
+      the need for an inner penalised iterative reweighted least squares (PIRLS) loop.
+      \r\n\r\nThis talk discusses the implementation of SQP for GLMMs and compares
+      its performance to other common approaches."
     par_id: 1
     par_total: 2
 
@@ -1199,10 +1244,78 @@ Wednesday:
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Theatrette"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Using a linear mixed model based wavelet transform to model non-smooth
+      trends arising from designed experiments
+    talk_1_speakers:
+    - "Clayton Forknall \U0001F464"
+    - Alison Kelly
+    - Yoni Nazarathy
+    - Ari Verbyla
+    talk_1_orgs: Queensland Department of Primary Industries
+    talk_1_abstract: The linear mixed model (LMM) representation of the cubic smoothing
+      spline is a powerful tool for modelling smooth trends arising from designed
+      experiments. However, when trends arising from such experiments are non-smooth,
+      meaning that they are characterised by jagged features, spikes and/or regions
+      of rapid change approximating discontinuities, smoothing spline techniques prove
+      ineffective. A technique that has proven useful for the modelling of non-smooth
+      trends is the wavelet transform. Existing methods to incorporate the wavelet
+      transform into the LMM framework are varied, but often share a common limitation;
+      that is, a reliance on classical wavelet approaches that require observations
+      to be equidistant and dyadic ($\log_{2}(n)$ is an integer) in number. More recently,
+      second generation wavelet methods have been developed, which overcome the limiting
+      constraints imposed by classical wavelet approaches, enabling the wavelet transform
+      to be applied to sets of non-equidistant observations, of any number. We present
+      a method for the incorporation of these second generation wavelets, namely second
+      generation B-spline wavelets, into an LMM framework to facilitate the wavelet
+      transform. Furthermore, using the structure implicit in the resulting B-spline
+      wavelet basis, we propose extensions to the LMM framework to enable heterogeneity
+      of the associated wavelet variance across wavelet scales. This provides a new
+      LMM based method which enables the flexible modelling of non-smooth trends arising
+      in the conduct of designed experiments. The proposed method is demonstrated
+      through application to a data set exhibiting non-smooth characteristics, that
+      arises from a designed experiment exploring the proteome of barley malt.
+    talk_2: Functional Data Analysis for the Australian Grains Industry
+    talk_2_speakers:
+    - "Braden J. Thorne \U0001F464"
+    - Adam H. Sparks
+    talk_2_orgs: Curtin University
+    talk_2_abstract: When performing statistical analysis on time series data with
+      regular sampling, it is common to apply filtering or windowing methods to reduce
+      the complexity of the task. While this process enables many classical approaches,
+      it inevitably leads to compression of the full information available. An alternative
+      approach is to treat observations as samples of a continuous mathematical function
+      and focus analysis on the curves these functions produce rather than the samples.
+      This is the underlying idea of functional data analysis, a statistical analysis
+      approach that has seen growing attention in recent years. In this talk I will
+      offer an introduction to functional data analysis and detail our exploration
+      of these methods for application to the grains industry across Australia. Specifically,
+      I will present two case studies; estimating charcoal rot prevalence in sixteen
+      years of data from in-paddock soybean experimental trials using weather data,
+      and analysing frost risk in broadacre crops with varying stubble management
+      practices using sensor data.
+    talk_3: Bayesian Ordinal Regression for Crop Development and Disease Assessment
+    talk_3_speakers:
+    - "Zhanglong Cao \U0001F464"
+    - Rose Megirian
+    - Matthew Nguyen
+    - Adam Sparks
+    talk_3_orgs: Centre for Crop and Disease Management, Curtin University
+    talk_3_abstract: "Accurate assessment of crop development and disease severity
+      is essential for informed agronomic decision-making. This study presents a Bayesian
+      framework for analysing ordinal data from field trials, including growth scale
+      progression and disease ranking scores. Using the brms package in R, we applied
+      cumulative logit models to evaluate the effects of sowing depth and treatment
+      combinations on cereal growth stages, measured via the Zadok’s scale, across
+      two Western Australian sites (Merredin and Wickepin). The same framework is
+      being extended to model disease severity scores, demonstrating its versatility
+      across categorical biological measurements.\r\nOur workflow incorporates rigorous
+      model testing and evaluation, including posterior predictive checks and leave-one-out
+      cross-validation (LOO-CV), to ensure robust inference and model fit. Rather
+      than relying on p-values from linear mixed models, the Bayesian approach provides
+      interpretable probabilities of achieving specific growth stages or disease severity
+      levels. This shift enables more nuanced understanding of treatment effects and
+      supports decision-making under uncertainty."
     par_id: 2
     par_total: 2
 
@@ -1217,28 +1330,174 @@ Wednesday:
     description: "Take a break and enjoy some tea or coffee while networking with peers."
 
   - name: "Invited Session"
-    id: "invited-2"
+    id: "invited-1"
     type: "talk"
     start: "11:15"
     end: "12:45"
-    speaker: "TBA"
+    Organiser and Chair: "A/Prof Robert Clark"
     location: "Arc Cinema"
     par_id: 1
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Surveillance for counterfactual scenarios of invasive species - why it's
+      useful and a convenient  way to do it.
+    talk_1_speakers:
+    - "Andrew P. Robinson \U0001F464"
+    - John Kean
+    - Melissa Welsh
+    - ''
+    - Kuo-Szu Chiang
+    talk_1_orgs: The University of Melbourne
+    talk_1_abstract: "The impact of invasive species is affected by a range of factors,
+      many of which can be anticipated in advance – for example, the prevalence of
+      host material, climate suitability, the size of affected agricultural resources,
+      and so on. One factor that cannot be anticipated in advance is the size of the
+      incursion at the time of its detection. Unfortunately, the impact of an incursion
+      is tightly tied to its maturity at detection, ranging from a single seed, for
+      example, to a 50,000 hectare infestation of plants. \n\nWe propose a simple
+      probability model for the detection of an invasive species that can either capture
+      or integrate out the consequent uncertainty of the maturity of the incursion.
+      We represent the relationship between surveillance and the detection of the
+      organism using survival analysis: the detection of the incursion is analogous
+      to the survival event; it is a binary occurrence that happens at some point
+      in time, and once it has happened it does not happen again.\n\nUnder such a
+      model, we can connect the distribution of the size of the infestation at the
+      time to detection to the probability of detecting the incursion given that it
+      has not already been detected, namely, the hazard function. For example, a popular
+      model for the detection of an incursion of size x with number of traps t and
+      probability of detecting a single pest $p$ is:\n\n$h(x,t,p) = 1 - (1 - p)^{tx}$
+      \n\nAlgebra leads us to a size-at-detection pdf.  Other corrections are also
+      applied as needed. The outcome is a pdf that is a function of process parameters,
+      enabling straightforward assessment of different surveillance choices. Parameter
+      estimates for the distribution can be derived from first principles, field experiments,
+      or expert elicitation.\n\nIn this presentation we will derive and demonstrate
+      the use of the survival-based incursion size at detection pdf and discuss its
+      implications and challenges."
+    talk_2: Optimal allocation of resources between control and surveillance for complex
+      eradication scenarios
+    talk_2_speakers:
+    - "Mahdi Parsa \U0001F464"
+    - "Belinda Parsa \U0001F464"
+    talk_2_orgs: Department of Agriculture, Fisheries and Forestry
+    talk_2_abstract: |-
+      Effective eradication of invasive species over large areas requires strategic
+      allocation of resources between control measures and surveillance activities. This study
+      presents an analytical Bayesian framework that integrates stochastic modelling and explicit
+      measures of uncertainty to guide decisions in complex eradication scenarios. By applying
+      Shannon entropy to quantify uncertainty and incorporating the expected value of perfect
+      information (EVPI), the framework identifies conditions under which investment into control
+      or surveillance becomes worthwhile. Findings show that strategies which hedge against
+      uncertainty can markedly improve the robustness of eradication outcomes with only marginal increases in expected costs. This approach offers practical tools for designing more cost-effective and reliable eradication programs and for prioritising data collection to reduce uncertainty where it has the greatest impact.
+    talk_3: Inferring the rate of undetected contamination using random effects modelling
+      of biosecurity screening histories
+    talk_3_speakers:
+    - "Sumonkanti Das \U0001F464"
+    - "Robert Das \U0001F464"
+    talk_3_orgs: Australian National University
+    talk_3_abstract: |-
+      Group testing plays a vital role in biosecurity operations worldwide, particularly in minimising the risk of introducing exotic pests, contaminants, and pathogens through imported agricultural products. A common screening strategy involves pooling items from consignments and testing each group for contamination presence, with consignments typically rejected if any group tests positive. Although screening designs often target a high probability of detection assuming a fixed minimum prevalence, analysing the historical results of these tests to infer the extent of contamination in non-rejected consignments (referred to as leakage) is less common.
+
+      This study advances censored beta-binomial (BB) models to address contamination risk in frozen seafood imports into Australia, incorporating imperfect tests. Motivated by the characteristics of our case study, we develop a new class of BB models that impose a minimum positive consignment propensity threshold, capturing scenarios where contamination is either absent or exceeds a known minimum level. To fit these models, we propose a Metropolis-Hastings (MH) algorithm conditioned on prior distributions for sensitivity and specificity, allowing efficient estimation of quantities related to contamination levels. We analyse historical testing data under multiple scenarios using the proposed MH algorithm, yielding novel insights into both contamination risk and leakage.
+
+      Finally, we use model-based simulations to communicate risk levels, providing key insights into potential undetected contamination.
+    talk_4: 'Optimal sampling in border biosecurity: Application to skip-lot sampling'
+    talk_4_speakers: "Raphael Trouve \U0001F464"
+    talk_4_orgs: The University of Melbourne
+    talk_4_abstract: |-
+      Border biosecurity faces mounting pressure from increasing global trade, requiring cost-effective inspection strategies to reduce the risk of importing pest and diseases. Current international standards recommend inspecting all incoming consignments (full census) with fixed sample sizes (e.g., 600 units) for high-risk pathways, but this may be overkill for lower-risk pathways with established compliance records. When should agencies use skip-lot sampling (SLS, sometimes called continuous sampling plan), which adaptively reduces inspections based on recent compliance history, over full census inspection?
+
+      We developed a propagule pressure equation for SLS in overdispersed pathways and used Lagrange multipliers to derive a solution. Results show the choice depends on pathway overdispersion, sampling costs, and budget constraints. Optimal sample sizes are typically smaller than current recommendations, with better returns from inspecting a larger proportion of consignments rather than larger samples per consignment. This framework provides biosecurity agencies with data-driven guidance for implementing adaptive sampling strategies.
 
   - name: "Session 6"
     id: "session-6"
     type: "talk"
     start: "11:15"
     end: "12:45"
-    speaker: "TBA"
     location: "Theatrette"
     par_id: 2
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Estimating extinction time from the fossil record using regression inversion
+    talk_1_speakers:
+    - "David I. Warton \U0001F464"
+    - Victor Tsang
+    talk_1_orgs: UNSW Sydney
+    talk_1_abstract: "An important problem in palaeoecology is estimating the extinction
+      or invasion time of a species from the fossil record - whether because this
+      is of interest in and of itself, or in order to understand the causes of extinctions
+      and invasions, for which we need to know when they actually happened. There
+      are two main sources of error to contend with - sampling error (because the
+      last time you see a species need not be the last time it was there) and measurement
+      error (dating specimens, usually well known). The paleobiology literature typically
+      ignores one or other of these sources of error, leading to bias and underestimation
+      of uncertainty to an extent that is often qualitatively important. \r\n\r\nThe
+      problem is surprisingly difficult to address statistically, because while standard
+      regularity conditions are technically satisfied, we are typically close to a
+      boundary where they break down, and hence standard asymptotic approaches to
+      inference typically perform poorly in practice. We propose using a novel method,
+      which we call regression inversion, for exact inference, and we apply this technique
+      to a compound uniform-truncated t (CUTT) model for fossil data. We show via
+      simulation that this approach leads to unbiased estimators, and accurate interval
+      inference, in contrast to its competitors. We show how to check the CUTT assumption
+      visually, and provide software to apply all of the above in the reginv package."
+    talk_2: The performance of Yu and Hoff's confidence intervals for treatment means
+      in a one-way layout
+    talk_2_speakers: "Paul Kabaila \U0001F464"
+    talk_2_orgs: La Trobe University
+    talk_2_abstract: "Consider a one-way layout and suppose that we have uncertain
+      prior information that the treatment population means are equal or close to
+      equal. Yu & Hoff (2018) extended the \"tail method\" for finding a confidence
+      interval for a scalar parameter of interest that has (a) specified coverage
+      probability and (b) relatively small expected length when this parameter takes
+      values in some given set. They used this extension to find confidence intervals
+      for these treatment means that have (a) specified coverage probability individually
+      and (b) relatively small expected lengths when this uncertain prior information
+      happens to be correct. They assessed the expected lengths of these confidence
+      intervals, over the whole parameter space, using a semi-Bayesian analysis. I
+      describe a revealing alternative assessment of these expected lengths using
+      a fully frequentist analysis.\r\n\r\nYu, C. & Hoff, P. (2018) Adaptive multigroup
+      confidence intervals with coverage. *Biometrika*, 105, 319-335."
+    talk_3: Rate-optimal sparse gamma scale mixture detection
+    talk_3_speakers:
+    - "Michael Stewart \U0001F464"
+    - Qikun Chen
+    talk_3_orgs: The University of Sydney
+    talk_3_abstract: We consider a model where observations from a known gamma distribution
+      are possibly contaminated by observations from another gamma distribution with
+      the same shape but a different mean. Such a model has been considered for times
+      between neurotransmitter releases based on a Markov chain with amalgamated indistinguishable
+      states. We focus on the case where the contaminating component occurs rarely,
+      the so-called sparse gamma scale mixture detection problem. Due to the irregularity
+      of such models theoretical results concerning detectability bounds are non-standard.
+      Nonetheless in recent years a body of theory has been developed which covers
+      the case when the mean of the unknown contaminating component is smaller than
+      the null mean, but not when it is larger. We present some recent results filling
+      this gap in the literature. In particular we describe a test which attains the
+      optimal rate of convergence in various local alternative scenarios which is
+      a Bonferroni-type test combining three different tests.
+    talk_4: Extension of the corrected score estimator in a Poisson regression model
+      with a measurement error
+    talk_4_speakers:
+    - "Kentarou Wada \U0001F464"
+    - T. Kurosawa
+    talk_4_orgs: Tokyo University of Science
+    talk_4_abstract: Kukush et al. (2004) discussed the bias of the naive estimator
+      for the regression parameters in a Poisson regression model with a measurement
+      error for the case where the explanatory variable and measurement error follow
+      normal distributions. Wada and Kurosawa (2023) proposed the corrected naive
+      (CN) estimator as a consistent estimator for a Poisson regression model with
+      a measurement error for the case where the explanatory variable and measurement
+      error are general distributions. The CN estimator directly calibrates the bias
+      of the naive estimator. The CN estimator is given by the solution of the estimation
+      equation of the Poisson regression model under the error-in-variables framework.
+      However, the CN estimator does not always have an explicit expression under
+      the condition that the explanatory variable and measurement error follow general
+      distributions. On the other hand, Kukush et al. (2004) considered the corrected
+      score (CS) estimator as a consistent estimator for the true parameter of the
+      Poisson regression model with a measurement error. In this research, we extend
+      the CS estimator to the case where the explanatory variable and measurement
+      error are general distributions. The new estimator can be applied for the condition
+      that the CN estimator does not have an explicit expression. As illustrative
+      examples, we give simulation studies to verify the effectiveness of the new
+      estimator.
 
 
   - name: "Lunch"
@@ -1255,8 +1514,7 @@ Wednesday:
     end: "17:00"
     speaker: "Organizing Committee"
     location: "Outdoor Grounds"
-    abstract: "Networking games and tours."
-    description: "Fun and informal activities for relaxing and networking."
+    description: "Networking games and tours. Fun and informal activities for relaxing and networking."
 
 Thursday:
   - name: "Conference Registration"
@@ -1267,15 +1525,35 @@ Thursday:
     location: "Foyer"
     description: "Morning registration and info desk. Final registration opportunity and general assistance available."
 
-  - name: "Keynote 3"
+  - name: "Keynote: Modularizing Biometric Models Facilitates Multistage Computing"
     id: "keynote-3"
     type: "talk"
     start: "09:00"
     end: "10:00"
-    speaker: "TBA"
+    speakers: Mevin B. Hooten
+    speaker_imgs: "keynote/mevin-hooten/Hooten_photo.jpg"
+    speaker_orgs: "The University of Texas at Austin"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    abstract: Bayesian modeling has become invaluable in biometrics.  It allows
+      us to formally consider unobserved processes while accommodating uncertainty
+      about data collection and our understanding of biological and ecological mechanisms.  Several
+      excellent software packages are available for fitting Bayesian models to data
+      and are being applied every day to analyze biometric data.  These methods allow
+      us to answer questions using data in ways that has never before been possible.  The
+      adoption of Bayesian methods has led to bigger models necessary to answer tough
+      questions using large and varied data sets.  Bigger models and data sets lead
+      to computing bottlenecks.  Fortunately, a solution to Bayesian computing roadblocks
+      sits in plain sight.  The structure of Bayesian models allows us to rearrange
+      them so that we can perform computing in stages.  We can break big models into
+      pieces, fit them separately, and then recombine them in later computing stages.  Recursive
+      Bayesian approaches can save us time by leveraging the parallel architecture
+      of modern computers.  A modular perspective allows us to see Bayesian models
+      in a way that facilitates multistage computing.  I will demonstrate the procedure
+      with a set of biometric examples.  These include geostatistical models in marine
+      science, capture-recapture models for abundance estimation, and spatial point
+      process models for species distributions.
+    biography: |
+      **Mevin Hooten** is a Professor in Statistics and Data Sciences at The University of Texas at Austin. His research focuses on developing statistical methodology for ecological and environmental applications that involve spatial and spatio-temporal data. He is a Fellow of the American Statistical Association (ASA) and received the Distinguished Achievement Award from the ASA section on statistics and the environment. He has authored over 185 papers and 3 textbooks and serves as Associate Editor for Biometrics, Environmetrics, and JABES.
 
   - name: "Session 7A"
     id: "session-7a"

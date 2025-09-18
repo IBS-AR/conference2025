@@ -221,6 +221,9 @@ h1 {
     color: #374151;
     margin-bottom: 8px;
     font-size: 1.2rem;
+}
+
+.modal-section-name:first-letter {
     text-transform: capitalize;
 }
 
@@ -505,8 +508,8 @@ div(class = "scroll-wrapper",
             time_column(),
             events)
         ),
-    legend(types = c("general", "social", "keynote", "workshop"),
-           labels = c("General", "Social", "Talks", "Workshop"))
+    legend(types = c("general", "social", "keynote", "workshop", "poster"),
+           labels = c("General", "Social", "Talks", "Workshop", "Poster"))
     )
 )
 
