@@ -469,12 +469,13 @@ Tuesday:
     end: "13:45"
     location: "Gallery"
 
-  - name: "Session 3A"
-    id: "session-3a"
+  - name: "Invited Session 1"
+    id: "invited-1"
     type: "talk"
     start: "13:45"
     end: "15:00"
     location: "Arc Cinema"
+    Organiser and Chair: "A/Prof Francis Hui"
     par_id: 1
     par_total: 2
     talk_1: Bayesian clustered ensemble prediction for multivariate time series
@@ -1329,8 +1330,8 @@ Wednesday:
     abstract: "Light refreshments and beverages."
     description: "Take a break and enjoy some tea or coffee while networking with peers."
 
-  - name: "Invited Session"
-    id: "invited-1"
+  - name: "Invited Session 2"
+    id: "invited-2"
     type: "talk"
     start: "11:15"
     end: "12:45"
@@ -1560,10 +1561,85 @@ Thursday:
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Visualize your fitted non-linear dimension reduction model in the high-dimensional
+      data space
+    talk_1_speakers:
+    - "P. G. Jayani Lakshika \U0001F464"
+    - Dianne Cook
+    - Paul Harrison
+    - Michael Lydeamore
+    - Thiyanga S. Talagala
+    talk_1_orgs: Monash University, Australia
+    talk_1_abstract: "Non-linear dimension reduction (NLDR) techniques such as t-SNE,
+      UMAP, PHATE,\r\nPaCMAP and TriMAP provide a low-dimensional representation of
+      high-dimensional data\r\nby applying a non-linear transformation. The methods
+      and parameter choices can create wildly different representations, so much so
+      that it is difficult to decide which is best, or whether any or all are accurate
+      or misleading. NLDR often exaggerates random patterns, sometimes due to the
+      samples observed, but NLDR views have an important role in data analysis because,
+      if done well, they provide a concise visual (and conceptual) summary of high-dimensional
+      distributions. To help evaluate the NLDR, we have developed a way to take the
+      fitted model, as represented by the positions of points in 2D, and turn it into
+      a high-dimensional wireframe to overlay on the data, viewing it with a tour.
+      Viewing a model in the data space is an ideal way to examine the fit. One can
+      see whether it fits the points everywhere or fits better in some places, or
+      simply mismatches the pattern. It is used here to help with the difficult decision
+      on which 2D layout is the best representation of the high-dimensional distribution,
+      or whether the 2D layout is displaying mostly random structure. It can also
+      help to see how different layouts made by different methods are effectively
+      the same summary, or how the different methods have some particular quirks.
+      This methodology is available in the R package `quollr`. We will demonstrate
+      the technique using single-cell data, particularly to understand cluster structure."
+    talk_2: 'The geometry of diet: using projections to quantify the similarity between
+      sets of dietary patterns'
+    talk_2_speakers:
+    - "Beatrix Jones \U0001F464"
+    - Shiyu Fan
+    - Karen Mumme
+    - John Thompson
+    talk_2_orgs: University of Auckland
+    talk_2_abstract: "Food consumption is complex and high dimensional. Nutrition
+      researchers measure (or attempt to measure) consumption using food frequency
+      questionnaires, food recalls, or food records. This generates high dimensional
+      data which is frequently summarized using principle components, principle components
+      with rotation, or factor analysis. The resulting linear combinations are called
+      “dietary patterns.” In this talk we consider quantifying how similar two different
+      sets of dietary patterns are, assuming the same set of underlying variables
+      has been collected. We explore using a multivariate extension of Tucker’s congruence
+      coefficient for this purpose. Tucker’s congruence coefficient can be thought
+      of as the length of the projection of one factor direction onto another, or
+      equivalently the (absolute) cosine of the angle between them; thus it ranges
+      from 0 to 1. In (eg) two dimensions, we consider the square root of the area
+      of a unit square projected from one space onto another; this can be generalized
+      for any number of dimensions. The measure is symmetric and invariant to rotation.
+      To contextualize scores on this measure, we compute this measure of agreement
+      for several datasets from the dietary pattern validation literature, where the
+      same food questionnaire is given to the same people a few weeks apart. We also
+      consider the effect of truncating small loadings, as is common when describing
+      dietary patterns. \r\n"
+    talk_3: Multivariate meta-analysis methods for high-dimensional data
+    talk_3_speakers:
+    - "Alysha M. De Livera \U0001F464"
+    - Luke Prendergast
+    - Robert Staudte
+    - ''
+    - Jayamini Liyanage
+    talk_3_orgs: La Trobe University
+    talk_3_abstract: "Multivariate meta-analysis methods for high-dimensional data
+      \r\n\r\nMeta-analysis is a statistical method that combines quantitative results
+      from multiple independent studies on a particular research question or hypothesis,
+      with the goal of making inference about the population effect size of interest.
+      Traditional meta-analysis methods have focused on combining results from multiple
+      independent studies, each of which has measured an effect size associated with
+      a single outcome of interest. Modern studies in evidence synthesis, such as
+      those in biological studies have focused on combining results from studies which
+      have measured multiple effect sizes associated with multiple correlated outcomes.
+      We will present a novel, multivariate meta-analysis method for obtaining summary
+      estimates of the effect sizes of interest for high-dimensional data, with applications
+      to real and simulated high-dimensional data. We will discuss advantages, disadvantages
+      and the statistical challenges, and present a CRAN-based R package for implementation
+      of the methods.\r\n"
     par_id: 1
     par_total: 2
 
@@ -1572,10 +1648,79 @@ Thursday:
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Theatrette"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Reporting Odds Ratios under Fluctuating Reporting Rates in Spontaneous
+      Reporting Systems
+    talk_1_speakers:
+    - "Tatsuhiko Anzai \U0001F464"
+    - Kunihiko Takahashi
+    talk_1_orgs: Institute of Science Tokyo
+    talk_1_abstract: Spontaneous adverse event reporting systems, including the Japanese
+      Adverse Drug Event Report (JADER) database, the FDA Adverse Event Reporting
+      System (FAERS), and VigiBase, play a critical role in post-marketing drug safety
+      surveillance. The reporting odds ratio (ROR) is a commonly used measure for
+      detecting suspected adverse drug reactions as "signals", based on disproportionality
+      in reporting between a specific drug and all others, as summarized in a two-by-two
+      contingency table. However, during events such as the COVID-19 pandemic, reporting
+      rates of adverse drug reactions can fluctuate, potentially introducing bias
+      into ROR. This study proposes a method for deriving the ROR that incorporates
+      four parameters, each corresponding to fluctuations in reporting ratios for
+      the cells in the two-by-two contingency table. These parameters can be estimated
+      using the divergence between observed and predicted values, where the predicted
+      values are derived from a regression model under the assumption that the reporting
+      rates for the drug and the adverse reaction remain stable. We evaluate the properties
+      and performance of the proposed method through both real-world data analysis
+      and simulation studies, demonstrating its effectiveness for signal detection.
+    talk_2: Pooled testing with penalized regression models
+    talk_2_speakers:
+    - "Christopher Bilder \U0001F464"
+    - Pranta Das
+    - Joshua Tebbs
+    - ''
+    - Christopher McMahan
+    talk_2_orgs: University of Nebraska-Lincoln, Department of Statistics
+    talk_2_abstract: Pooled testing (also known as group testing) is a widely used
+      procedure to test individuals for infectious diseases. Rather than testing each
+      specimen separately, multiple specimens are pooled together and tested as one.
+      The pool test outcome, along with further tests as needed, are used to determine
+      which individuals are positive or negative for an infectious pathogen. The COVID-19
+      pandemic especially highlighted the importance of pooled testing, with laboratories
+      adopting it worldwide to increase their testing capacity. Pooled testing traditionally
+      relies on observing the positive/negative test outcomes alone. However, during
+      the pandemic, new pooled testing algorithms were developed that utilize the
+      viral load information from a pool test. These new algorithms use penalized
+      regression models to predict the viral load of each individual, which lead to
+      individual positive/negative predictions. The purpose of our presentation is
+      to provide a comparison of these new algorithms relative to standard ones. Both
+      gains and losses are quantified by applying algorithms under fair comparison
+      settings.
+    talk_3: Handling Missingness in Prevalence Estimates from National Surveys
+    talk_3_speakers:
+    - "Oyelola Adegboye \U0001F464"
+    - Li Siyu
+    - Tomoki Fujii
+    - Denis HY Leung
+    talk_3_orgs: Menzies School of Health Research
+    talk_3_abstract: Population-based surveys, such as the Demographic and Health
+      Surveys (DHS), are pivotal for estimating the prevalence of important diseases,
+      particularly in low-resource settings. However, missing data, such as person
+      non-response, particularly refusals, poses a serious challenge, potentially
+      introducing substantial bias in prevalence estimates. Using HIV data sets from
+      Malawi's 2004 DHS, Antenatal Clinics surveillance, and the Malawi Diffusion
+      and Ideational Change Project (MDICP), this paper evaluates existing estimators
+      and proposes novel approaches to adjust for refusal bias. These include complete
+      case analysis, mean score imputation, inverse propensity score weighting, bounding
+      techniques using longitudinal or sentinel data and Manski’s partial identification
+      approach. The study distinguishes between refusals and non-contacts and examines
+      how prior knowledge of HIV status influences participation. Estimates of HIV
+      prevalence varied notably across methods, with refusal-adjusted approaches generally
+      yielding higher prevalence rates than complete case estimates. The divergence
+      is more pronounced among women, largely due to higher refusal rates among them.
+      Bounding methods provide credible intervals for prevalence under weak assumptions.
+      In the case of HIV estimates, refusal bias, particularly when linked to prior
+      testing knowledge, can significantly distort HIV estimates. Integrating multiple
+      data sources and using methodologically transparent adjustment techniques are
+      critical for robust HIV surveillance in low-resource settings.
     par_id: 2
     par_total: 2
 
@@ -1586,20 +1731,110 @@ Thursday:
     end: "11:15"
     speaker: ""
     location: "Gallery"
-    abstract: "Light refreshments and beverages."
-    description: "Take a break and enjoy some tea or coffee while networking with peers."
+    description: "Light refreshments and beverages. Take a break and enjoy some tea or coffee while networking with peers."
 
-  - name: "Invited Session"
-    id: "invited-3"
+  - name: "Session 8A"
+    id: "session-8a"
     type: "talk"
     start: "11:15"
     end: "12:45"
-    speaker: "TBA"
     location: "Arc Cinema"
     par_id: 1
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: 'Integrated Species Distribution Models: A Single-Index Approach'
+    talk_1_speakers:
+    - "Quan Vu \U0001F464"
+    - Francis Hui
+    - Alan Welsh
+    - Samuel Muller
+    - Eva Cantoni
+    - Chris Haak
+    talk_1_orgs: Australian National University
+    talk_1_abstract: 'In ecology and fisheries, species abundance data are often collected
+      using a number of surveys that have different characteristics. Spatial statistical
+      models can be used to integrate information from these datasets to improve both
+      interpretability and prediction of the abundance. In this talk, we introduce
+      the single-index integrated species distribution model, based on a single index
+      representing the latent spatial distribution of the species abundance, and survey-specific
+      link functions representing the different catchability properties of each survey.
+      We demonstrate the use of the model through an analysis of scallop data collected
+      from two surveys: a bottom trawl survey which covers a wide spatial domain but
+      is less efficient, and a hydraulic dredge survey which is more efficient and
+      spatially targeted. Results show that our model offers meaningful interpretations
+      of covariate effects, spatial distribution, and survey catchability differences,
+      and achieves superior predictive performance compared to contemporary species
+      distribution models.'
+    talk_2: Simultaneous Inference for Latent Variable Predictions in Factor Analytic
+      Models
+    talk_2_speakers:
+    - "Zhining Wang \U0001F464"
+    - Emi Tanaka
+    - Francis K.C. Hui
+    talk_2_orgs: Research School of Finance, Actuarial Studies and Statistics, Australian
+      National University
+    talk_2_abstract: Factor analytic models (also known as latent variable models)
+      are fundamental tools in multivariate statistics, widely applied in fields such
+      as psychology, economics, and social sciences. While considerable attention
+      has been given to estimation and inference on parameters such as the loading
+      matrix and the error variances, relatively less research has been done on how
+      to perform inference on the predicted factors, e.g., how to construct prediction
+      intervals for the latent variables jointly across all the clusters in a given
+      dataset. We explore a framework for the simultaneous inference of the predicted
+      latent variables in factor analytic models. We demonstrate the construction
+      of simultaneous prediction intervals for the predicted factors, examining strategies
+      such as the bootstrap and Monte Carlo simulation, and show how this also facilitates
+      joint/multiple testing across different cluster-level predictions. We examine
+      the practical feasibility and robustness of the proposed simultaneous inference
+      methods with simulation studies and an application in the biosciences.
+    talk_3: Model-based assessment of functional and phylogenetic diversity
+    talk_3_speakers:
+    - "Shaoqian Huang \U0001F464"
+    - David Warton
+    talk_3_orgs: School of Mathematics and Statistics, UNSW
+    talk_3_abstract: "**Topic** \r\nBiodiversity is a quantity of fundamental interest,
+      but measuring it remains challenging. Two key aspects of diversity are functional
+      diversity (FD)—the extent to which species in a community differ in their ecological
+      functions—and phylogenetic diversity (PD)—the extent to which species differ
+      in their evolutionary histories.\r\n\r\n**Limitations** \r\nCommonly used distance-based
+      diversity measures, such as Rao’s Q and Faith's PD, are typically affected by
+      sampling intensity, which refers to the level of effort invested in collecting
+      samples. Specifically, these measures confound true diversity changes with changes
+      in species richness driven by different sampling intensities. In addition, there
+      is no established statistical framework for analyzing how diversity changes
+      along environmental gradients.\r\n\r\n**Our Model**\r\nWe propose a model-based
+      assessment of PD and FD changes along gradients. It is robust to variations
+      in sampling intensity, as the model explicitly captures the main trend in abundance
+      change—namely, changes in species richness—and then isolates the residual variation,
+      the $\\beta$-diversity change. We then measure PD or FD change using linear
+      contrasts of the $\\beta$-diversity parameters, where the contrasts correspond
+      to the main axes of the phylogenetic or functional similarity matrix.\r\n\r\n**Simulation
+      Analysis** \r\nBased on the presence/absence pattern, we conducted simulations
+      in which we designed phylogenetic distance matrices with different numbers of
+      species, modelled on real data. The results show that our approach tends to
+      outperform methods currently used in ecology."
+    talk_4: Fitting integrated species distribution models using mgcv
+    talk_4_speakers:
+    - "Elliot Dovers \U0001F464"
+    - Jakub Stoklosa
+    - David L. Miller
+    - David I. Warton
+    talk_4_orgs: UNSW Sydney
+    talk_4_abstract: "Integrated species distribution models (ISDMs) are a useful
+      tool for ecologists, allowing them to use multiple sources of data to infer
+      the distribution of species across geographic regions. Recent studies have shown
+      that including latent spatial terms to account for dependence structures within
+      and between datasets is often crucial to the performance these models. However,
+      the inclusion of these latent terms can make the ISDMs technically challenging
+      to fit, and often require users to learn/adopt bespoke software.\r\n\r\nWe describe
+      how ISDMs can be fitted using `mgcv` on `R` by using the grouped family feature
+      (`gfam`). This permits multiple likelihoods - and hence multiple data types
+      - to be fitted within the same model by using each dataset to inform the estimation
+      of common parameters. We additionally show how smoothers over the geographic
+      coordinates that approximate Gaussian random fields can be used to incorporate
+      the necessary latent spatial effects. We use presence/absence and presence-only
+      data to demonstrate that ISDMs fitted via `mgcv` have comparable performance
+      to other available software - through both simulations and in application, where
+      we predict the occurrence of a tree species in NSW, Australia."
 
   - name: "Session 8"
     id: "session-8"
