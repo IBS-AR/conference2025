@@ -689,7 +689,7 @@ tags$script(paste0("const eventData = {\n",
                     <i class="callout-icon no-icon"></i>
                   </div>
                   <div class="callout-title-container flex-fill">
-                    <p>${talkTitle}</p>
+                    <p>${render(talkTitle[0])}</p>
                     <hr>
                     ${cardsHTML}
                   </div>
@@ -708,7 +708,7 @@ tags$script(paste0("const eventData = {\n",
             // If no abstract, show title + speakers only
             talksHTML += `
               <div class="talk-entry">
-                <div class="talk-title">${talkTitle}</div>
+                <div class="talk-title"><p>${render(talkTitle[0])}</p></div>
                 ${cardsHTML}
               </div>`;
           }
