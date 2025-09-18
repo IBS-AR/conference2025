@@ -448,7 +448,7 @@ Tuesday:
       designs. We also show that speed is significantly faster compared to alternative
       software."
     talk_4: Running Human Subject Experiments via Online Crowdsourcing
-    talk_4_speakers: "Patrick Li \U0001F464"
+    talk_4_speakers: "Patrick (Weihao) Li \U0001F464"
     talk_4_orgs: Australian National University
     talk_4_abstract: Crowdsourcing platforms such as Amazon Mechanical Turk and Prolific
       provide scalable and accessible tools for running online human subject experiments.
@@ -514,7 +514,9 @@ Tuesday:
     - "Scott Woolley \U0001F464"
     - David Warton
     - Piers Dunstan
-    talk_3_orgs: CSIRO
+    talk_3_orgs:
+    - CSIRO
+    - CSIRO
     talk_3_abstract: Joint species distribution modelling is a recently emerged and
       potentially powerful statistical method for analysing biodiversity data. Despite
       the plethora of presence-only occurrence data available for biodiversity analysis,
@@ -1375,7 +1377,9 @@ Wednesday:
     talk_2_speakers:
     - "Mahdi Parsa \U0001F464"
     - "Belinda Parsa \U0001F464"
-    talk_2_orgs: Department of Agriculture, Fisheries and Forestry
+    talk_2_orgs:
+    - Department of Agriculture, Fisheries and Forestry
+    - Department of Agriculture, Fisheries and Forestry
     talk_2_abstract: |-
       Effective eradication of invasive species over large areas requires strategic
       allocation of resources between control measures and surveillance activities. This study
@@ -1993,7 +1997,9 @@ Thursday:
     - Greg Bishop-Hurley
     - Neil Bagnall
     - Aaron Ingham
-    talk_2_orgs: RMIT
+    talk_2_orgs:
+    - RMIT
+    - CSIRO
     talk_2_abstract: Live body weight gain is an important measurement of animal performance.
       In this study, we predict the cattle's daily weight gain from five core cattle
       behaviours and a measure of total daily activity based on accelerometer data.

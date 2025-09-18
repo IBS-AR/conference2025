@@ -1,3 +1,5 @@
+library(tidyverse)
+
 schedule <- readRDS("book/data/sessions.rds") |> select(first, last, org, coauthors, title, abstract, type, orgc, name2, org2, orgc2, day, order, room)
 total_list <- list()
 for (day_num in 2:5) {
@@ -39,7 +41,12 @@ for (day_num in 2:5) {
 
         }
 
-        session_list[[glue::glue("talk_{i}_orgs")]] <- all_orgs[[i]]
+        if (length(all_org2s[[i]]) == 0 || is.na(all_org2s[[i]])) {
+          session_list[[glue::glue("talk_{i}_orgs")]] <- all_orgs[[i]]
+        } else {
+          session_list[[glue::glue("talk_{i}_orgs")]] <- c(all_orgs[[i]], all_org2s[[i]])
+        }
+
         session_list[[glue::glue("talk_{i}_abstract")]] <- all_abstracts[[i]]
       }
 
