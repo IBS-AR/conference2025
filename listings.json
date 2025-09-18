@@ -1,12 +1,11 @@
 [
   {
-    "listing": "/keynote.html",
+    "listing": "/updates.html",
     "items": [
-      "/keynote/charmaine-dean/index.html",
-      "/keynote/cheng-soon-ong/index.html",
-      "/keynote/heather-turner/index.html",
-      "/keynote/jesse-goodman/index.html",
-      "/keynote/mevin-hooten/index.html"
+      "/news/2025-07-14.html",
+      "/news/2025-06-29.html",
+      "/news/2025-04-14.html",
+      "/news/2025-02-24.html"
     ]
   },
   {
@@ -14,12 +13,13 @@
     "items": []
   },
   {
-    "listing": "/updates.html",
+    "listing": "/keynote.html",
     "items": [
-      "/news/2025-07-14.html",
-      "/news/2025-06-29.html",
-      "/news/2025-04-14.html",
-      "/news/2025-02-24.html"
+      "/keynote/charmaine-dean/index.html",
+      "/keynote/cheng-soon-ong/index.html",
+      "/keynote/heather-turner/index.html",
+      "/keynote/jesse-goodman/index.html",
+      "/keynote/mevin-hooten/index.html"
     ]
   }
 ]
