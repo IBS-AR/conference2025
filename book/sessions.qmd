@@ -1,0 +1,40 @@
+---
+title: Draft Schedule for BIBC2025
+date: today
+format:
+  html:
+    page-layout: full
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+sessions <- readRDS(here::here("book/data/sessions.rds")) |>
+  arrange(day, order, room) |> 
+  mutate(title = str_remove_all(title, fixed("\r\n"))) |> 
+  mutate(content = str_c("<b>", title, "</b><br><i>", paste(first, last), "</i>", sep = "")) |> 
+  mutate(suborder = 1:n(),
+         .by = c(day, order, room))
+days <- c("Mon", "Tue", "Wed", "Thu", "Fri")
+options(knitr.kable.NA = '') 
+```
+
+```{r}
+#| echo: false
+#| output: asis
+sessions |> 
+  select(day, content, order, suborder, room) |> 
+  pivot_wider(names_from = room, values_from = content) |> 
+  #mutate(day = days[day]) |> 
+  rename(session = order) |> 
+  select(-suborder) |> 
+  nest_by(day) |> 
+  pwalk(function(day, data) {
+    cat("## ", days[day[1]], "\n")
+    knitr::kable(data, format = "html", escape = FALSE) |> 
+      kableExtra::kable_styling(bootstrap_options = "striped") |> 
+      cat()
+  })
+  
+```
+
