@@ -64,7 +64,7 @@ Tuesday:
     type: "talk"
     start: "09:00"
     end: "10:00"
-    speakers: "Cheng Soon Ong"
+    speakers: "Cheng Soon Ong \U0001F464"
     speaker_imgs: "keynote/cheng-soon-ong/chengpic-2023-small.jpg"
     speaker_orgs: "CSIRO and ANU"
     location: "Arc Cinema"
@@ -469,7 +469,7 @@ Tuesday:
     end: "13:45"
     location: "Gallery"
 
-  - name: "Invited Session 1"
+  - name: "Invited Session: A Cluster of Modern Clustering Methods for Biometrics"
     id: "invited-1"
     type: "talk"
     start: "13:45"
@@ -531,8 +531,8 @@ Tuesday:
       of variance and uncertainty from the data through predictions, improving inference
       made on presence-only biodiversity data for multiple species.
 
-  - name: "Session 3B"
-    id: "session-3b"
+  - name: "Session 3"
+    id: "session-3"
     type: "talk"
     start: "13:45"
     end: "15:00"
@@ -570,7 +570,6 @@ Tuesday:
     - "Xu Ning \U0001F464"
     - David K E Chan
     - Coralie Williams
-    - ''
     - Peter Humburg
     talk_2_orgs: University of New South Wales
     talk_2_abstract: Higher-degree research (HDR) students often consider conducting
@@ -858,7 +857,6 @@ Tuesday:
     - Sumonkanti Das
     - Ashis Talukder
     - Mu Li
-    - ''
     - Bernard Baffour
     talk_2_orgs: Australian National University
     talk_2_abstract: "In Australia, tobacco smoking has declined overall over the
@@ -1159,7 +1157,7 @@ Wednesday:
     start: "09:00"
     end: "10:00"
     speaker_imgs: "keynote/heather-turner/headshot_500x500.jpg"
-    speakers: "Heather L. Turner"
+    speakers: "Heather L. Turner \U0001F464"
     speaker_orgs: "University of Warwick"
     location: "Arc Cinema"
     abstract: |
@@ -1330,7 +1328,7 @@ Wednesday:
     abstract: "Light refreshments and beverages."
     description: "Take a break and enjoy some tea or coffee while networking with peers."
 
-  - name: "Invited Session 2"
+  - name: "Invited Session: Statistics for Biosecurity Surveillance"
     id: "invited-2"
     type: "talk"
     start: "11:15"
@@ -1345,7 +1343,6 @@ Wednesday:
     - "Andrew P. Robinson \U0001F464"
     - John Kean
     - Melissa Welsh
-    - ''
     - Kuo-Szu Chiang
     talk_1_orgs: The University of Melbourne
     talk_1_abstract: "The impact of invasive species is affected by a range of factors,
@@ -1531,7 +1528,7 @@ Thursday:
     type: "talk"
     start: "09:00"
     end: "10:00"
-    speakers: Mevin B. Hooten
+    speakers: "Mevin B. Hooten \U0001F464"
     speaker_imgs: "keynote/mevin-hooten/Hooten_photo.jpg"
     speaker_orgs: "The University of Texas at Austin"
     location: "Arc Cinema"
@@ -1623,7 +1620,6 @@ Thursday:
     - "Alysha M. De Livera \U0001F464"
     - Luke Prendergast
     - Robert Staudte
-    - ''
     - Jayamini Liyanage
     talk_3_orgs: La Trobe University
     talk_3_abstract: "Multivariate meta-analysis methods for high-dimensional data
@@ -1676,7 +1672,6 @@ Thursday:
     - "Christopher Bilder \U0001F464"
     - Pranta Das
     - Joshua Tebbs
-    - ''
     - Christopher McMahan
     talk_2_orgs: University of Nebraska-Lincoln, Department of Statistics
     talk_2_abstract: Pooled testing (also known as group testing) is a widely used
@@ -1836,17 +1831,103 @@ Thursday:
       to other available software - through both simulations and in application, where
       we predict the occurrence of a tree species in NSW, Australia."
 
-  - name: "Session 8"
-    id: "session-8"
+  - name: "Session 8B"
+    id: "session-8b"
     type: "talk"
     start: "11:15"
     end: "12:45"
-    speaker: "TBA"
     location: "Theatrette"
     par_id: 2
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Crossvalidation for predictive models in complex survey data
+    talk_1_speakers:
+    - "Thomas Lumley \U0001F464"
+    - Amaia Iparragirre
+    talk_1_orgs: University of Auckland
+    talk_1_abstract: Cross-validation is a standard technique for choosing models
+      with good out-of-sample prediction error in statistical learning. Chopping data
+      up at random makes sense for independent observations, but not for observations
+      from a multistage survey. For example, when a single cluster is split between
+      test and training sets there is the potential for data leakage and underestimation
+      of prediction error. I will describe an approach to cross-validation for complex
+      survey data using replicate weights and describe its implementation in the R
+      survey package.
+    talk_2: A Set of Precise Asymptotics for Gaussian Variational Approximation in
+      Generalised Linear Mixed Models
+    talk_2_speakers:
+    - "Nelson J. Y. Chua \U0001F464"
+    - Francis K. C. Hui
+    - Luca Maestrini
+    - A. H. Welsh
+    talk_2_orgs: Australian National University
+    talk_2_abstract: "Generalised linear mixed models (GLMMs) are used to model data
+      with a clustered or hierarchical structure, capturing intra-cluster dependence
+      through the use of (latent) random effects. However, this dependence structure
+      results in a likelihood function that is typically computationally intensive
+      to evaluate, and so approximate likelihood approaches are often used instead
+      for model fitting and inference. One such approach which has grown in popularity
+      over the past decade is Gaussian variational approximation (GVA). In addition
+      to estimates of the model parameters, GVA concurrently produces random effects
+      predictions and associated uncertainty measures.\r\n\r\nIn this talk, we formulate
+      a set of precise asymptotic properties for both the parameter estimates and
+      random effects predictions obtained from GVA, focusing on independent cluster
+      GLMMs. We find that these properties change substantially depending on whether
+      or not the random effects are conditioned on. By comparing GVA's asymptotic
+      properties and empirical finite-sample performance with that of other commonly
+      used approximate likelihood approaches, we highlight situations in which the
+      use of GVA would be advantageous in practice."
+    talk_3: An allometric differential equation model quantifies energy trade-offs
+      between growth and reproduction under temperature variation
+    talk_3_speakers: "Hideyasu Shimadzu \U0001F464"
+    talk_3_orgs: Kitasato University
+    talk_3_abstract: "Individual variation in growth and reproduction is common even
+      within a single\r\nspecies. Such differences play a crucial role in shaping
+      life-history strategies, particularly\r\nin response to environmental factors
+      such as temperature. This talk introduces a novel \r\nsystem of allometric differential
+      equations that models internal energy allocation between\r\ntwo fundamental
+      biological processes, growth and reproduction, under different\r\nthermal regimes.\r\n\r\nClimate
+      change is not only driving increases in mean temperatures but also intensifying\r\ntemperature
+      variability, resulting in greater environmental unpredictability. While\r\ntemperature
+      is known to regulate resource allocation in ectotherms, the consequences\r\nof
+      stochastic thermal fluctuations for life-history traits remain poorly understood.
+      Using\r\n*Daphnia magna* as a model organism, we present a novel allometric
+      growth model\r\nthat characterises energy allocation dynamics in fluctuating
+      thermal environments. Our\r\nframework quantifies the effects of randomly varying
+      temperatures on lifetime patterns\r\nof growth and reproduction. Our model reveals
+      that exposure to unpredictable thermal\r\nregimes can elicit life-history responses
+      similar to those observed under persistently\r\nelevated temperatures. Importantly,
+      our energy-based approach identifies patterns of\r\nreproductive investment
+      that are not discernible from growth data alone, highlighting\r\nthe pivotal
+      role of temperature variability in shaping life-history trajectories. As climate\r\nchange
+      increasingly entails unpredictable environmental conditions, the model\r\nand
+      findings presented here offer valuable tools for anticipating and managing biological\r\nresponses
+      to future climate scenarios."
+    talk_4: A circular hidden Markov model for directional time series data
+    talk_4_speakers:
+    - "A.A.P.N.M. Perera \U0001F464"
+    - Francis K.C. Hui
+    - Carolyn Huston
+    - A. H. Welsh
+    talk_4_orgs: The Australian National University
+    talk_4_abstract: "Modeling directional time series data such as wind or ocean
+      current direction presents several interesting challenges. Standard linear time
+      series techniques do not account for the circularity of the observations, while
+      existing circular modeling approaches typically work best when the data span
+      a small arc.\r\n\r\nMotivated by a series of fire burn experiments collecting
+      wind direction in southeastern Australia, we propose a new method for directional
+      time series data that combines the flexibility of hidden Markov models for capturing
+      different latent states at different periods of time, with a conditional von
+      Mises distribution given the latent state to explicitly account for the circular
+      nature of the responses. The resulting circular hidden Markov model (cHMM) can
+      allow for multimodality and/or varying amounts of circular dispersion over time.\r\n\r\nFurthermore,
+      by utilizing a von Mises distribution whose mean direction depends on previous
+      observations, we can accommodate serial correlations within a specific hidden
+      state. We employ direct maximum likelihood estimation to fit the cHMM, and examine
+      three approaches to perform forecasting based on extrapolating the latent state
+      sequence and then direction observations conditional on this sequence. An application
+      to the motivating wind direction datasets reveals that cHMMs produce similar
+      or better point/probabilistic forecasting performance compared with several
+      established time series methods.\r\n"
 
 
   - name: "Lunch"
@@ -1867,29 +1948,196 @@ Thursday:
     par_id: 2
     par_total: 2
 
-  - name: "Session 9A"
-    id: "session-9a"
+  - name: "Invited Session: Methods and Practice in Agricultural Analytics"
+    id: "invited-3"
     type: "talk"
     start: "13:45"
     end: "15:00"
-    speaker: "TBA"
     location: "Arc Cinema"
+    Organiser and Chair: Dr Emi Tanaka
     par_id: 1
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Evaluating the impact of trait measurement error on genetic analysis of
+      computer vision-based phenotypes
+    talk_1_speakers: "Gota Morota \U0001F464"
+    talk_1_orgs: The University of Tokyo
+    talk_1_abstract: Quantitative genetic analysis of image- or video-derived phenotypes
+      is increasingly being performed for a wide range of traits. Pig body weight
+      values estimated by a conventional approach or a computer vision system can
+      be considered as two different measurements of the same trait, but with different
+      sources of phenotyping error. Previous studies have shown that trait measurement
+      error, defined as the difference between manually collected phenotypes and image-derived
+      phenotypes, can be influenced by genetics, suggesting that the error is systematic
+      rather than random and is more likely to lead to misleading quantitative genetic
+      analysis results. Therefore, we investigated the effect of trait measurement
+      error on genetic analysis of pig body weight (BW). Calibrated scale-based and
+      image-based BW showed high coefficients of determination and goodness of fit.
+      Genomic heritability estimates for scale-based and image-based BW were mostly
+      identical across growth periods. Genomic heritability estimates for trait measurement
+      error were consistently negligible, regardless of the choice of computer vision
+      algorithm. In addition, genome-wide association analysis revealed no overlap
+      between the top markers identified for scale-based BW and those associated with
+      trait measurement error. Overall, the deep learning-based regressions outperformed
+      the adaptive thresholding segmentation methods. This study showed that manually
+      measured scale-based and image-based BW phenotypes yielded the same quantitative
+      genetic results. We found no evidence that BW trait measurement error could
+      be influenced, at least in part, by genetic factors. This suggests that trait
+      measurement error in pig BW does not contain systematic errors that could bias
+      downstream genetic analysis.
+    talk_2: Predication of Daily Weight Gain with Cattle Behaviour and Daily Activity
+      Using Triaxial Accelerometer Data
+    talk_2_speakers:
+    - "Shuwen Hu \U0001F464"
+    - "Antonio Hu \U0001F464"
+    - Reza Arablouei
+    - Greg Bishop-Hurley
+    - Neil Bagnall
+    - Aaron Ingham
+    talk_2_orgs: RMIT
+    talk_2_abstract: Live body weight gain is an important measurement of animal performance.
+      In this study, we predict the cattle's daily weight gain from five core cattle
+      behaviours and a measure of total daily activity based on accelerometer data.
+      To collect data, we conducted an experiment equipping a herd of 60 Brahman steers
+      with research collars containing triaxial accelerometers over nearly one month
+      in Australia. We used the accelerometer data, which represents the intensity
+      of animal movement, to compute an activity metric within a five-minute window.
+      In addition, we use pre-trained accelerometer-based machine learning models
+      to classify cattle behaviour into grazing, ruminating, resting, walking, drinking
+      or other classes over five-second time windows. Daily behaviour profiles were
+      constructed for each animal and experiment day by aggregating the behaviour
+      predictions over every calendar day. Our objective was to explore how to use
+      behaviours and activity metrics to predict the cattle's daily weight gain. The
+      daily activity values ranging from 5.44g to 23.69g. The average daily time spent
+      grazing, ruminating, resting, walking and drinking was 8.97±1.12, 7.78 ±1.03,
+      5.83±1.05, 1.00±0.4, and 0.18±0.12 hours, respectively. Some weather information
+      data are combined in the model to predict the cattle live-weight gain. The best
+      R-squared value is 0.467, with a minimum root mean square error (RMSE) of 0.867
+      from the linear regression model. The live-weight gain could not be fully explained
+      by measurements taken in this study, but we showed how these factors can influence
+      the variability in cattle performance.
+    talk_3: 'Fishing for Heritability in the Gill Microbiome: Why Statisticians Should
+      get out into the field'
+    talk_3_speakers: "Elle Saber \U0001F464"
+    talk_3_orgs: Australian National University
+    talk_3_abstract: Host‐associated microbiomes are increasingly recognised as integral
+      to health, yet the extent to which host genetics shapes these communities remains
+      unclear. While heritable components of gut and skin microbiomes have been documented
+      in several vertebrates, evidence for the gill microbiome of fish is scarce.
+      This exploratory study sampled the gill microbiome of Atlantic salmon within
+      a Tasmanian breeding program to investigate potential genetic influences. Despite
+      careful planning, study participants did not always behave, and the practical
+      constraints of a commercial operation prevented complete data capture. Having
+      participated in the data collection I was better prepared to understand the
+      limitations of the dataset when doing the downstream analysis. The take home
+      message is that, even if we feel like a fish out of water, time spent among
+      the data can be just as valuable as time spent our desks.
 
-  - name: "Session 9B"
-    id: "session-9b"
+  - name: "Session 9"
+    id: "session-9"
     type: "talk"
     start: "13:45"
     end: "15:00"
-    speaker: "TBA"
     location: "Theatrette"
     par_id: 2
     par_total: 2
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Do Mice Matter? The Impact of Mice on a New Zealand Ecosanctuary
+    talk_1_speakers: "Vanessa Cave \U0001F464"
+    talk_1_orgs: VSNi
+    talk_1_abstract: "Mammal-resistant fences have enabled the successful eradication
+      of exotic mammals from ecosanctuaries in New Zealand. However, preventing the
+      re-invasion of mice remains a challenge. Indeed, mice are still present in many
+      fenced ecosanctuaries and can reach high population densities.\r\n\r\nScientists
+      at Manaaki Whenua – Landcare Research have been studying the impact of mice
+      on biodiversity at Sanctuary Mountain Maungatautari. Two independently fenced
+      sites within the sanctuary were managed to create contrasting mouse populations:
+      one with high mouse numbers, and the other with undetectable levels. After two
+      years, management protocols were reversed, with mice eradicated from the first
+      site and allowed to increase at the second. Data on the abundance of invertebrates,
+      seedlings, and fungi were collected throughout the duration of the study.\r\n\r\nTemporal
+      trends in abundance were analysed and compared using linear mixed models with
+      smoothing splines. The findings suggest that mice can have severe impacts on
+      native biodiversity, particularly invertebrates, posing a significant threat
+      to ecological recovery efforts in fenced ecosanctuaries."
+    talk_2: Modelling Species Diversity from Citizen-Science Bird Counts
+    talk_2_speakers:
+    - "Graham Hepworth \U0001F464"
+    - Jeremy Silver
+    - William Steele
+    - Al Danger
+    talk_2_orgs: Statistical Consulting Centre, The University of Melbourne
+    talk_2_abstract: "Bird count data from the Greater Melbourne region over a 25-year
+      period were recorded by volunteer observers, based on 20-minute surveys. Counts
+      for a large range of bird species were reported either as counts or simply as
+      “present”. Our investigation focused on whether there has been an increase in
+      the presence and abundance of noisy miners, an endemic species known for its
+      aggressive and territorial behaviour, and whether this could partly explain
+      apparent declines in other species.\r\n\r\nThe dataset was augmented with weather,
+      geospatial and ecological information, and a mixed-effects modelling framework
+      was adopted. Seasonal effects and long-term trends were accounted for via regression
+      splines. The influence of different observers and locations were represented
+      as random effects. GAMMs were fitted for (a) the presence/absence of noisy miners,
+      (b) the abundance of noisy miners, and (c) species richness for particular groupings
+      of birds. In modelling species richness, noisy miner abundance was included
+      as a predictor; we used multiple imputation to account for the missing data
+      when this species was reported as “present” but no count was recorded.\r\n\r\nThere
+      was a small, positive association found between noisy miner abundance and all-species
+      diversity – a surprising result. A stronger negative association was found for
+      some species groupings. For many species groups, diversity tended to decrease
+      with increasing distance from the nearest native vegetation feature, and with
+      increasing wind speed. The work provided several statistical and computational
+      challenges.\r\n"
+    talk_3: 'Continental-Scale Bayesian Analysis of Acacia Flowering Phenology: A
+      Novel Framework Integrating Phylogenetic Signal and Circular Statistics'
+    talk_3_speakers:
+    - "Owen Forbes \U0001F464"
+    - Peter H. Thrall
+    - Andrew G. Young
+    talk_3_orgs: CSIRO
+    talk_3_abstract: "Climate change is driving widespread shifts in plant phenology
+      globally, with critical implications for ecosystem functioning and species interactions.
+      While most phenological studies focus on temperate deciduous species at local
+      scales, Australia's diverse Acacia genus offers unique opportunities to understand
+      phenological responses to variations in rainfall and temperature across continental
+      gradients. Leveraging digitised herbarium collections, we present the largest
+      phylogenetically-informed analysis of acacia flowering phenology undertaken
+      to date, spanning 548 species across Australia's full climatic spectrum.\r\n\r\nWe
+      developed a novel phenological modelling approach using a Bayesian hierarchical
+      framework that makes several key innovations. First, we extend traditional phylogenetic
+      least squares (PGLS) approaches by incorporating phylogenetic signal as a structured
+      random effect within a fully Bayesian context, enabling simultaneous estimation
+      of phylogenetic covariance alongside spatial and temporal dependencies. Second,
+      we employ von Mises circular distributions to model flowering time, naturally
+      accommodating seasonal cyclicity while avoiding linear boundary artifacts. This
+      modular approach also integrates spatial autocorrelation structure, time-lagged
+      climate covariates, and phylogenetic relationships within a unified probabilistic
+      framework. Our analysis of 20,998 herbarium specimens spans 110 years (1910
+      – 2020) across Australia, using climate observations from the Australian Gridded
+      Climate Data, with Köppen climate zones included in the model to stratify climate-phenology
+      relationships.\r\n\r\nThis framework successfully quantifies species-specific
+      climate sensitivities while accounting for phylogenetic constraints. Expected
+      effect of time-lagged temperature and rainfall effects vary significantly across
+      Köppen climate zones and species. Species vulnerability patterns could help
+      identify taxa which could be potentially at higher risk under projected climate
+      scenarios. This modular Bayesian approach demonstrates the research potential
+      of natural history collections for continental-scale ecological inference, providing
+      a statistical template for global phenological studies addressing critical climate
+      change impacts.\r\n"
+    talk_4: Spatio-Temporal Species Distribution Modelling
+    talk_4_speakers: "Sam Mason \U0001F464"
+    talk_4_orgs: UNSW
+    talk_4_abstract: "Detecting species response to climate change is a critical concern
+      in ecology requiring relevant climatic predictors over long temporal windows
+      and large spatial extents. To date this has been technologically challenging
+      resulting in the widespread use of 30 year averaged datasets which, while readily
+      accessible, actually mask species responses by effectively treating the climate
+      as temporally static.\r\n\r\nRecent advances in data acquisition technology
+      have made it easier to obtain a wide range of environmental predictors at appropriate
+      spatio-temporal scales and at consistent resolutions needed for effective research.\r\n\r\nBy
+      using dynamic predictors and anomalies from their mean values in spatio-temporal
+      species distribution models we see if we can detect species response to climate
+      change and if this yields better predictive performance than current practice.
+      Interestingly, we have not found appreciable spatio-temporal signal, in contrast
+      to expectations and other work which used naïve approaches to analysis."
 
   - name: "Afternoon Tea"
     id: "afternoon-tea-thu"
@@ -1897,18 +2145,97 @@ Thursday:
     start: "15:00"
     end: "15:30"
     location: "Gallery"
-    abstract: "Afternoon refreshments."
-    description: "Light snacks and drinks served."
+    description: "Afternoon refreshments. Light snacks and drinks served."
 
   - name: "Session 10A"
     id: "session-10a"
     type: "talk"
     start: "15:30"
     end: "16:45"
-    speaker: "Various"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: The *equalto* covariance structure for meta-analysis using the `glmmTMB`
+      R package
+    talk_1_speakers:
+    - "Coralie C. Williams \U0001F464"
+    - Maeve McGillycuddy
+    - David I. Warton
+    - Shinichi Nakagawa
+    talk_1_orgs: University of New South Wales
+    talk_1_abstract: Meta-analysis is a widely used statistical method for synthesising
+      quantitative results from related studies, enabling researchers to address broad
+      questions and explore sources of heterogeneity. In R statistical software, several
+      packages support meta-analytic modelling, including the actively maintained
+      `metafor` package which is commonly used across all disciplines. But meta-analysis
+      typically uses a mixed model, with the variance structure of study-level random
+      effects known, so it should be possible to fit such models using standard mixed
+      modelling software. We propose using the `glmmTMB` package for this purpose.
+      In the last decade, `glmmTMB` has developed into a flexible package to fit generalised
+      linear mixed models (GLMMs) via the Template Model Builder (TMB) framework.
+      The package holds a similar interface as the `lme4` package but supports a broader
+      range of distributions and covariance structures using Laplace approximation.
+      Here, we introduce a new covariance structure, called “*equalto*”, to the `glmmTMB`
+      package, so that it can be used to fit meta-analytic models by allowing users
+      to specify a known variance-covariance matrix for the sampling error. This enables
+      explicit modelling of heteroscedasticity or dependence among effect sizes. The
+      new implementation offers an alternative way to do a meta-analysis, convenient
+      for users already familiar with fitting mixed models in `lme4` or `glmmTMB`
+      packages, and capable of handling complex model structures. This novel implementation
+      supports more flexible modelling of meta-analytical data, expanding the R toolkit
+      available for evidence synthesis. We showcase its applicability with illustrative
+      examples in ecology and evolution.
+    talk_2: Simulation-based Inference about Variance Components
+    talk_2_speakers:
+    - "Farwa Saleem \U0001F464"
+    - David Warton
+    talk_2_orgs: School of Mathematics & Statistics, UNSW Sydney
+    talk_2_abstract: "Variance components in generalized linear mixed models (GLMMs)
+      are used to quantify random effects, for example, they can be used in ecological
+      studies to quantify the size of the effect of an environmental variable on species
+      composition. However, constructing accurate confidence intervals for these components
+      remains challenging with small samples or near-boundary estimates, where asymptotic
+      methods (e.g., profile likelihood, Wald intervals) do not perform well. To address
+      this, we propose a novel simulation-based framework using bootstrap test inversion
+      coupled with quantile regression. Our approach efficiently estimates confidence
+      limits by leveraging the continuous distribution of the estimator, eliminating
+      discretization steps inherent in conventional bootstrap procedures. This enhances
+      robustness in low-information scenarios while adapting to boundary constraints.
+      \r\nSimulation studies demonstrate that our method achieves superior coverage
+      accuracy compared to existing asymptotic and bootstrap alternatives under small-sample
+      conditions and near-boundary parameters. We show the application of the technique
+      to an ecological case study analysing response of species composition to environmental
+      gradients. This work delivers a flexible tool for more defensible inference
+      in applications demanding precise uncertainty quantification for random effects.
+      \r\n\r\nKeywords: Variance components, GLMM, bootstrap, quantile regression,
+      confidence intervals, ecological statistics."
+    talk_3: A Proportional Random Effect Block Bootstrap for Highly Unbalanced Clustered
+      Data
+    talk_3_speakers:
+    - "Zhi Yang Tho \U0001F464"
+    - Alan H. Welsh
+    - Raymond Chambers
+    talk_3_orgs: Australian National University
+    talk_3_abstract: Clustered data arise naturally in a wide range of scientific
+      and applied research settings where units are grouped within cluster, and are
+      commonly analyzed using linear mixed model to account for within-cluster correlations.
+      This article focuses on the scenario in which cluster sizes might be highly
+      unbalanced, and proposes a proportional random effect block bootstrap that is
+      applicable in such case and is robust to misspecification of the stochastic
+      assumptions of the linear mixed model. The proposed method is a generalization
+      of the random effect block bootstrap, originally designed for the balanced case,
+      and can be used to perform inferences on parameters of the linear mixed model
+      or functions thereof. We establish asymptotic consistency of the proposed bootstrap
+      under general cluster sizes scenario, showing that the original random effect
+      block bootstrap is only consistent when cluster sizes are balanced. A modified
+      random effect block bootstrap is also proposed which enjoys similar asymptotic
+      consistency properties as the proportional random effect block bootstrap. Simulation
+      study demonstrates the strong finite sample inferential performance of the proposed
+      bootstraps, particularly compared with the random effect block bootstrap and
+      several existing bootstrap methods for clustered data. We apply the proposed
+      bootstraps to the Oman rainfall enhancement trial dataset with cluster sizes
+      ranging from 1 to 58. Results show that the bootstrap confidence intervals based
+      on our proposed bootstraps are more adequate than those of random effect block
+      bootstrap and that the employed ionization technology has a statistically significant
+      effect in increasing the amount of rainfall.
     par_id: 1
     par_total: 2
 
@@ -1917,10 +2244,118 @@ Thursday:
     type: "talk"
     start: "15:30"
     end: "16:45"
-    speaker: "Various"
     location: "Theaterette"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Extending diagnostic validity meta-analysis to several diagnostic guidelines
+    talk_1_speakers:
+    - "Alain C. Vandal \U0001F464"
+    - Henry C. K. Kwok
+    - Fransiska R. M. Falconer
+    - Andrew G. Hill
+    - Andrew D. MacCormick
+    talk_1_orgs: The University of Auckland/Waipapa Taumata Rau
+    talk_1_abstract: Optimal management of acute biliary disease should include an
+      assessment for possible choledocholithiasis (stones in the bile duct). Various
+      diagnostic guidelines have been developed by expert bodies for this purpose,
+      but uncertainties remain about their performance in wider practice. We carried
+      out a meta-analysis to compare three of these guidelines. Each guideline yields
+      a score, for which different thresholds are considered in terms of sensitivity
+      and specificity. Of 1,892 records, thirty-one studies were identified for this
+      meta-analysis. All studies focused on one or more of three international guidelines,
+      namely the ASGE guidelines from 2010, the revised ASGE guidelines from 2019
+      and the ESGE guidelines from 2019. Each study reported on the diagnostic validity
+      of one or more of these guidelines at one or more score cutpoint. The analysis
+      was carried out using the _diagmeta_ R package [Rücker G, Steinhauser S, Kolampally
+      S, Schwarzer G (2022)]. Their approach allows the meta-analytical estimation
+      of the area under the receiver operating curve, a quantity that summarises the
+      performance of a diagnostic tool. The approach consists in fitting transformed
+      values of sensitivity and specificity at various cutpoints, which can differ
+      between studies, accounting for study heterogeneity using linear mixed effects
+      modelling. While the _diagmeta_ approach applies to the meta-analysis of a single
+      diagnostic procedure, we show how its framework can be extended to jointly and
+      severally test for performance similarity between guidelines. We also show how
+      it can be extended to identify outlier studies, for the purpose of carrying
+      out sensitivity analyses.
+    talk_2: 'Risk of Guillain-Barré Syndrome after COVID-19 vaccination and SARS-CoV-2
+      infection: A multinational self-controlled case series study'
+    talk_2_speakers:
+    - "Han Lu \U0001F464"
+    - Sharifa Nasreen
+    - Yannan Jiang
+    - Arier Lee
+    - Helen Petousis-Harris
+    - Jim Buttery
+    - Steve Black
+    - Jeffrey Kwong
+    talk_2_orgs: University of Auckland
+    talk_2_abstract: "Introduction: \r\nThe Global Vaccine Data Network (GVDN) is
+      a multinational collaboration established to conduct globally coordinated epidemiological
+      studies on vaccine safety using health data. This study aimed to assess the
+      risk of Guillain-Barré syndrome (GBS) within 42 days after exposure to any COVID-19
+      vaccines and SARS-CoV-2 infection, combing multisite data using a common GVDN
+      protocol and data model. \r\n\r\nMethods:\r\nWe used a self-controlled case
+      series (SCCS) design and identified GBS cases via electronic data sources (EDS)
+      from 20 GVDN sites globally. Fifteen sites performed medical chart review using
+      Brighton Collaboration case definitions to determine the level of diagnostic
+      certainty (LOC). The relative incidence (RI) between pre-defined risk and control
+      windows was calculated using conditional Poisson regression, controlling for
+      seasonality. De-identified case-level data were combined for individual patient
+      data (IPD) analysis, and the estimates were aggregated with otherwise locally
+      analysed site-level results to calculate the overall RI with 95% confidence
+      interval (95%CI) using random effects meta-analysis. \r\n\r\nResults:\r\nWe
+      identified 2086 GBS cases (4329 vaccine doses) from EDS and 410 cases were chart-reviewed
+      (12% with LOC 1-2). We observed an association between Vaxzevria/Covishield
+      vaccine and GBS among LOC 1-2 cases within 42 days post-exposure (RI 3.10, 95%CI
+      1.12-8.62). No increased risk of GBS was observed with mRNA and other vaccines.
+      Among 489 EDS -identified cases post-infection, significant risk was found between
+      SARS-CoV-2 and GBS (RI 3.35, 95%CI 1.83-6.11). The SCCS method is an efficient
+      approach to collect minimal data for IPD meta-analysis. Full results using different
+      SCCS models will be discussed."
+    talk_3: 'Childhood Risk and Resilience Factors for Pasifika Youth Respiratory
+      Health: Accounting for Attrition and Missingness'
+    talk_3_speakers: "Siwei Zhai \U0001F464"
+    talk_3_orgs: University of Auckland
+    talk_3_abstract: In New Zealand, 7% of deaths are related to respiratory diseases,
+      with Pacific people at higher risk. Our work investigates the causal effects
+      of early-life risks and resilience factors on early-adulthood lung function
+      amongst Pacific Islands Families Study (PIFS) cohort members (n=1,398). 466
+      from the cohort participated in the respiratory study. Primary outcome was forced
+      expiratory volume in 1 second (FEV1) z-score at age 18 years. FEV1 and healthy
+      lung function (HLF), defined as the z-score being larger than -1.64, were secondary
+      outcomes. A previous study had evaluated the effects of early-life nutrition
+      factors on the respiratory health of Pacific youth. The results suggested a
+      positive impact of consuming more fruit and vegetables during childhood on respiratory
+      health later in life. The follow-up study will continue to explore the effects
+      of factors from relevant domains based on the PIFS cohort, where a new integrated
+      model will be applied. A simulation will be conducted to determine this model.
+    talk_4: A missing data detective story – how I navigated through a perfect storm
+      of drop-out’s, COVID and informative missingness.
+    talk_4_speakers:
+    - "Eve Slavich \U0001F464"
+    - Rebecca Young
+    - Anita Pfeiffer
+    - Emmanuel Karantanis
+    talk_4_orgs: University of New South Wales
+    talk_4_abstract: "Real-world clinical studies often present missing data challenges
+      that leave the textbook educated scratching their heads. Through consulting,
+      I become involved in [a study](https://doi.org/10.1016/j.cont.2025.101762) where
+      multiple correlated missing data mechanisms created analytical challenges. \r\nFollowing
+      implementation of new birthing protocols aimed at reducing birth-related injuries,
+      in a Sydney health district, a follow-up study was designed to evaluate incontinence
+      outcomes. However, the missing data pattern proved to be informatively related
+      to both treatment and outcome variables: women who experienced successful outcomes
+      (no incontinence) were systematically less likely to attend follow-up appointments.
+      The situation was further complicated when the COVID-19 pandemic struck mid-study,
+      dramatically reducing attendance rates and introducing an additional layer of
+      correlated missingness that varied by treatment timing and baseline characteristics.
+      Working within the constraints of the study design and the budget for a statistician,
+      I developed a model for missingness which I will outline in this talk.\r\n\r\nWhile
+      missing data complications can severely challenge study validity, thoughtful
+      statistical approaches can still yield meaningful insights when the caveats
+      (caveats galore!) are properly acknowledged and addressed. \r\n\r\nReferences:\r\nYoung,
+      R et al, 2025, Outcomes for obstetric anal sphincter injuries and anal incontinence
+      following introduction of a perineal bundle, Continence, Volume 14\r\n\r\nKeywords:
+      Missing data analysis, informative missingness, multiple imputation, statistical
+      consulting, statistical practice"
     par_id: 2
     par_total: 2
 
@@ -1929,10 +2364,8 @@ Thursday:
     type: "social"
     start: "18:00"
     end: "20:00"
-    speaker: "Dinner Host"
     location: "Banquet Hall"
-    abstract: "Celebratory closing dinner."
-    description: "Enjoy an evening of fine dining, speeches, and socializing."
+    description: "Celebratory closing dinner. Enjoy an evening of fine dining, speeches, and socializing."
 
 Friday:
   - name: "Conference Registration"
@@ -1943,25 +2376,119 @@ Friday:
     location: "Foyer"
     description: "Morning registration and info desk. Final registration opportunity and general assistance available."
 
-  - name: "Keynote 4"
+  - name: "Keynote: Saddlepoint approximations for likelihoods"
     id: "keynote-4"
     type: "talk"
     start: "09:00"
     end: "10:00"
-    speaker: "TBA"
+    speakers: ["Jesse Goodman \U0001F464", Godrick Oketch, Rachel Fewster, Alice Hankin, Sixiang Shan, George Fan]
+    speaker_imgs: ["keynote/jesse-goodman/jesse-goodman.jpeg"]
+    speaker_orgs: [University of Auckland, University of Auckland, University of Auckland]
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    abstract: Classically, the saddlepoint approximation has been used as a
+      systematic method for converting a known generating function into an approximation
+      for an unknown density function. More recently, it has been used instead as
+      an approximation to the *likelihood function*. In this viewpoint, it is the
+      underlying data-generating process whose generating function is used, and the
+      saddlepoint approximation can be maximized to compute an approximate saddlepoint
+      MLE for given observed data. This talk will explain how the saddlepoint approximation
+      can be interpreted with a statistical lens, including common features for those
+      otherwise intractable models where we can compute a generating function but
+      not a likelihood. Many of these models come from statistical ecology, including
+      sitations where we gather population-wide observations only. In addition, the
+      talk will describe a class of models having simple theoretical guarantees for
+      the effect of using the saddlepoint MLE as a substitute for the unknown true
+      MLE, and will demonstrate new tools to visualize the saddlepoint approximation
+      intuitively, to simplify and automate the computation of saddlepoint MLEs, and
+      to quantitatively assess the amount of approximation error introduced by using
+      an approximate likelihood as a substitute for an intractable true likelihood.
+    biography: |
+      **Jesse Goodman** is a Senior Lecturer in Statistics at the University of Auckland. He began his academic career in mathematical probability, using distributional approximations and large deviations techniques to understand random geometric structures, and increasingly looking at statistical models that exhibit probabilistic complexity. His research focuses on asymptotic techniques, particularly when several asymptotic effects interact or compete, in areas from branching processes and spatial structures to approximations for likelihoods and densities. Recent work on saddlepoint approximations has helped to quantify the degree to which approximation techniques can deliver valid inferential conclusiosn, and to extend classes of models to capture real-life complexity in capture-recapture and other settings that feature enigmatic sensor data.
 
   - name: "Session 11A"
     id: "session-11a"
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: False Discovery Rate Controlled Robust Variable Selection under Cellwise
+      Contamination
+    talk_1_speakers:
+    - "Xiaoya Sun \U0001F464"
+    - Houying Zhu
+    - Garth Tarr
+    - Samuel Muller
+    talk_1_orgs: School of Mathematical and Physical Sciences, Macquarie University
+    talk_1_abstract: The increasing complexity and dimensionality of modern datasets
+      make cellwise outliers a frequent and expected phenomenon, complicating tasks
+      such as variable selection. An mRNA-Seq expression profiling data set of human
+      brain tissue for Huntington's Disease (HD) illustrates this practically, where
+      we work to identify key genes involved in HD by comparing affected individuals
+      with neurologically normal controls. Our objective is to obtain reliable results
+      while minimizing the impact of cellwise outliers. While many robust variable
+      selection methods have been developed, few effectively handle high-rate cellwise
+      contamination, and it remains an open problem to what extent such methods can
+      control error rates. We introduce GRALF, the Gaussian-Ranked Adaptive Lasso
+      with False discovery rate (FDR) control, a robust method designed for high-dimensional
+      variable selection under cellwise contamination, taking advantage of FDR control
+      to increase statistical reliability. GRALF builds on the framework of GR-ALasso,
+      an effective robust variable selection method using the Gaussian-Rank estimator
+      in the Adaptive Lasso, and integrates FDR control by generating fake counterparts
+      of the Gaussian-rank transformed variables and estimating the number of false
+      discoveries in the optimization process. Simulation studies demonstrate GRALF's
+      desirable performance in terms of empirical power and FDR control under various
+      conditions. The analysis of the HD data set identified potential gene markers
+      associated with the development of HD, which overlap with findings from previous
+      research, further validating the effectiveness of GRALF.
+    talk_2: A covariate-adaptive test for replicability across multiple studies with
+      false discovery rate control
+    talk_2_speakers:
+    - "Dennis Leung \U0001F464"
+    - Ninh Tran
+    talk_2_orgs: University of Melbourne
+    talk_2_abstract: "Replicability is a gold standard for credible scientific discoveries.
+      The partial conjunction (PC) p-value proposed by Benjamini and Heller (Biometrics,
+      2008), which summarizes individual base p-values obtained from multiple similar
+      studies, can gauge whether a signal of interest is replicable. However, when
+      a large set of features are examined by these studies (such as comparable genomewide
+      association studies conducted by different labs), testing for their replicated
+      signals simultaneously can pose a very underpowered problem, due to both the
+      multiplicity correction required and the inherent limitations of PC p-values.
+      This power deficiency is particularly severe when replication is demanded for
+      all studies, the most natural benchmark a practitioner performing meta-analyses
+      may request. \r\n\r\nWe propose ParFilter, a procedure that combines the ideas
+      of filtering and covariate-adaptiveness to power up large-scale testing for
+      replicated signals as described above. It validly reduces the multiplicity burden
+      by partitioning the studies into smaller groups and borrowing between-group
+      information to filter out unpromising features. Moreover, harnessing side information
+      offered by available covariates, it trains hypothesis weights to encourage rejections
+      of features more likely to exhibit replicated signals. We prove its finite-sample
+      false discovery rate control under standard assumptions on the dependence of
+      the base p-values across features. In simulations as well as a real case study
+      on autoimmunity based on RNA-Seq data obtained from thymic cells, the ParFilter
+      has demonstrated competitive performance against other existing methods for
+      such replicability analyses.\r\n"
+    talk_3: A semi-supervised framework for diverse multiple hypothesis testing scenarios
+    talk_3_speakers:
+    - "Jack Freestone \U0001F464"
+    - William S. Noble
+    - Uri Keich
+    talk_3_orgs: Macquarie University
+    talk_3_abstract: Standard multiple testing procedures are designed to report a
+      list of discoveries, or suspected false null hypotheses, given the hypotheses'
+      p-values or test scores. Recently there has been a growing interest in enhancing
+      such procedures by combining additional information with the primary p-value
+      or score. In line with this idea, we develop RESET (REScoring via Estimating
+      and Training), which uses a unique data-splitting protocol that subsequently
+      allows any semi-supervised learning approach to factor in the available side
+      information while maintaining finite sample error rate control. Our practical
+      implementation, RESET Ensemble, selects from an ensemble of classification algorithms
+      so that it is compatible with a range of multiple testing scenarios without
+      the need for the user to select the appropriate one. We apply RESET to both
+      p-value and competition based multiple testing problems and show that RESET
+      is (1) power-wise competitive, (2) fast compared to most tools and (3) able
+      to uniquely achieve finite sample false discovery rate or false discovery exceedance
+      control, depending on the user's preference.
     par_id: 1
     par_total: 2
 
@@ -1970,10 +2497,87 @@ Friday:
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Theatrette"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: 'Genstat Markdown: Reproducible Research with Genstat'
+    talk_1_speakers:
+    - "James M. Curran \U0001F464"
+    - Yuxiao Wang
+    - Simon Urbanek
+    - David Baird
+    talk_1_orgs: University of Auckland
+    talk_1_abstract: "** This talk should not be accepted unless you are desperate
+      :-) ** \r\n\r\nReproducible research ensures that scientific findings can be
+      independently verified by others using the same data and methods. Markdown plays
+      a key role in supporting reproducibility by allowing researchers to combine
+      code, results, and narrative text in a clear, lightweight format. Tools like
+      R Markdown or Jupyter Notebooks use Markdown to embed executable code alongside
+      explanations and outputs, making it easy to document workflows, share analyses,
+      and regenerate results consistently across different environments.\r\n\r\nGenstat
+      is a statistical software package designed for data analysis, particularly in
+      biometrical research and applications. Many users know it through its user-friendly
+      interface. However, it also It offers a powerful scripting language.\r\n\r\nIn
+      this talk I will describe a collaborative project between students and staff
+      at the University of Auckland and VSNi Ltd, that allows Genstat to be used in
+      conjunction with R Markdown to provide flexible reproducible research capability
+      to the Genstat user community."
+    talk_2: 'The 4S method for the longitudinal analysis of multidimensional questionnaires:
+      application to Parkinson’s disease progression from patient perception'
+    talk_2_speakers:
+    - "Tiphaine Saulnier \U0001F464"
+    - Cecile Proust-Lima
+    - Daniel J. Myall
+    - Toni L. Pitcher
+    - Leslie Livingston
+    - Rachel Nolan
+    - Sophie Grenfell
+    - John C. Dalrymple-Alford
+    - Alexandra Foubert-Samier
+    - Wassilios G. Meissner
+    - Tim J. Anderson
+    - Campbell J. Le Heron
+    talk_2_orgs: New Zealand Brain Research Institute, Christchurch, New Zealand and
+      Institute of Neurodegenerative Diseases (IMN), University of Bordeaux, Bordeaux,
+      France
+    talk_2_abstract: "**Introduction** In health research, questionnaires are widely
+      used to assess clinical states or quality of life (QoL). Longitudinal analysis
+      of these tools offers valuable insights into disease progression. However, this
+      raises multiple challenges, such as handling repeated ordinal responses, capturing
+      the multidimensional traits underlying all the items, and accounting for informative
+      dropout due to death during follow-up.\r\nIn this work, we present the 4S method
+      – a comprehensive strategy developed to address these challenges, and illustrate
+      it describing health-related QoL (Hr-QoL) changes in Parkinson’s disease (PD).\r\n\r\n**Methods**
+      The 4S method comprises four successive steps:\r\n(*1 – structuring*) identify
+      questionnaire dimensions through factor analyses;\r\n(*2 – sequencing*) describe
+      each dimension progression and associated predictors with a joint latent process
+      model combining an item-response mixed model and a proportional hazard for death
+      risk;\r\n(*3 – staging*) compare progression across dimension continuums by
+      projecting clinical stages;\r\n(*4 – selecting*) highlight stage-specific most
+      informative items based on Fisher information.\r\n\r\n**Application** We analyzed
+      longitudinal data from the New Zealand Parkinson Progression Programme (NZP$^3$),
+      following over 400 PD patients for up to 16 years. Hr-QoL was measured via the
+      PDQ-39 questionnaire, covering motor and non-motor spheres. Five dimensions
+      were identified: mobility, daily activities, psycho-social, stigma, and cognition/communication/bodily
+      discomfort. All, except stigma, showed progressive decline, with patterns notably
+      varying by sex and onset age. Items related to walking, dexterity, anxiety,
+      and communication appeared as particularly sensitive during PD stages, offering
+      guidance to enhance patient-centered care.\r\n\r\n**Conclusion** The 4S method
+      is a comprehensive statistical strategy suited to analyze repeatedly-collected
+      questionnaires in health studies."
+    talk_3: '`heritable` An R package for heritability calculations for plant breeding
+      trials'
+    talk_3_speakers:
+    - "Fonti Kar \U0001F464"
+    - Emi Tanaka
+    talk_3_orgs: Australian National University
+    talk_3_abstract: Understanding how much biological variation is heritable - or
+      passed down from one generation to next - is central to plant breeding. Heritability
+      is a useful indictor to assess the genetic gain of desirable traits such as
+      yield or disease resistance in crop trials. We created `heritable`, an R package
+      to streamline the calculation of heritability from `asreml` and `lme4` mixed
+      model outputs in a user-friendly manner. The package provides up to six different
+      types of heritability measures and helper functions to compare between these.
+      Our goal is to support decision makers by providing an intuitive, open and reproducible
+      workflow in calculating heritability in R.
     par_id: 2
     par_total: 2
 
@@ -1984,18 +2588,41 @@ Friday:
     end: "11:15"
     speaker: ""
     location: "Gallery"
-    abstract: "Light refreshments and beverages."
-    description: "Take a break and enjoy some tea or coffee while networking with peers."
+    description: "Light refreshments and beverages. Take a break and enjoy some tea or coffee while networking with peers."
 
-  - name: "Keynote 5"
+  - name: "Keynote: Optimizing Research Impact Through Interdisciplinary and Collaborative Research"
     id: "keynote-5"
     type: "talk"
     start: "11:15"
     end: "12:00"
-    speaker: "TBA"
+    speakers: "Charmaine B. Dean \U0001F464"
+    speaker_imgs: "keynote/charmaine-dean/charmaine.jpg"
+    speaker_orgs: University of Waterloo
     location: "Arc Cinema"
-    abstract: "TBA"
-    description: "TBA"
+    abstract: Interdisciplinary collaborative research is a key component of
+      data science and for some of us, plays an important part of our roles as statisticians.
+      It is not unusual that we become accustomed to vertical thinking whereby we
+      use existing tools and methods in our own specialty to problem solve, losing
+      sight of the larger interdisciplinary context of data science, and the context
+      of the scientific challenge. The Government of Canada - Science and Technology
+      branch has identified several priority research challenge topics that involve
+      cross-disciplinary work. Although statistical tools and analytics are identified
+      in these research challenge priority areas, additionally, the development of
+      fundamental transformative and enabling technological tools specifically for
+      statistical methods and analytics to support research and societal advancement
+      is also seen as a priority. This talk shares insights about the challenges and
+      opportunities for statistics in interdisciplinary research. Specifically, monitoring
+      viral signals in wastewater and assessing forest fire risk are given as complex,
+      case studies that use a collaborative and interdisciplinary approach to solve
+      difficult problems. This approach will demonstrate the significant benefits
+      for not only optimizing research impact but for training students to become
+      horizontal problem solvers across a wide range of research methods which will
+      benefit them in navigating complex problems and in the development of appropriate
+      tools for their analysis.
+    biography: |
+      **Dr. Charmaine Dean** (Ph.D., University of Waterloo) is Vice-President, Research and International at the University of Waterloo. In this role, she provides strategic leadership in the areas of research and innovation, commercialization, and internationalization. She is also responsible for building strategic alliances and partnerships with other academic institutions, governments, businesses, and industries at the regional, national, federal, and international levels.
+
+      Several key collaboration portfolios are managed by her office, including the university-level Centres and Institutes and several major industrial partnerships spanning various units in the university. She has drawn a focus to ethics and social impact related to technology developments through various initiatives and is a key driver for equity and diversity in the context of research and internationalization. Prior to joining the University of Waterloo, Dr. Dean served as the Dean of Science at Western University from 2011 to 2017. She also played a major role in establishing the Faculty of Health Sciences at Simon Fraser University, as the Associate Dean of that Faculty, and was the founding Chair of the Department of Statistics and Actuarial Science at Simon Fraser University. Dr. Dean has been awarded numerous honours for her work including Fellowships with the Institute of Mathematical Statistics, the Fields Institute, the American Statistical Association, and the American Association for the Advancement of Science. In 2023, she was awarded the Statistical Society of Canada Gold Medal. In 2024, she was bestowed the rank of Chevalier in the prestigious Ordre des Palmes académiques by the French government for her work advancing research connections between Canada and France. Additionally, Dr. Dean has held several editorships and served in numerous leadership roles internationally and nationally, related to equity and inclusion, statistics and data science, research, and computing infrastructure. In Canada, she served as President of the Statistical Society of Canada and serves on several Boards of Directors. She is currently Chair of Council for NSERC (the Natural Sciences and Engineering Research Council of Canada).
 
   - name: "Closing Ceremony"
     id: "closing"
@@ -2004,8 +2631,7 @@ Friday:
     end: "12:45"
     speaker: "Organizing Committee"
     location: "Arc Cinema"
-    abstract: "Wrap-up and acknowledgements."
-    description: "Thanks to participants, sponsors, and staff. Final remarks and farewell."
+    description: "Wrap-up and acknowledgements. Thanks to participants, sponsors, and staff. Final remarks and farewell."
 
 
   - name: "Lunch"
@@ -2015,6 +2641,5 @@ Friday:
     end: "13:45"
     speaker: ""
     location: "Dining Hall"
-    abstract: "Farewell lunch."
-    description: "Join peers one last time over lunch."
+    description: "Farewell lunch. Join peers one last time over lunch."
 
