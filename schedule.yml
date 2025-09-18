@@ -162,10 +162,77 @@ Tuesday:
     type: "talk"
     start: "10:00"
     end: "10:45"
-    speaker: "TBA"
     location: "Theatrette"
-    abstract: "TBA"
-    description: "TBA"
+    talk_1: Estimating abundance in small populations using pedigree reconstruction
+    talk_1_speakers:
+    - "Sarah Croft \U0001F464"
+    - Jamie Sanderlin
+    - Michael Black
+    - Richard Barker
+    - Matthew Schofield
+    talk_1_orgs: University of Otago
+    talk_1_abstract: "Accurate measures of abundance are essential for successful
+      monitoring of animal populations,\r\nand for assessing the efficacy of conservation
+      interventions. In previous work, genotypic information\r\nhas been incorporated
+      into Mark-Recapture models to enable the identification of individuals, as well\r\nas
+      determination of kinship between observed individuals in Close-Kin Mark-Recapture
+      (CKMR)\r\nmodels. Generally, CKMR models make large sample assumptions limiting
+      their application to\r\nmany endangered and at-risk species.\r\nWe have developed
+      Bayesian methodology to estimate population abundance and dynamics for\r\nsmall,
+      isolated populations using pedigree reconstruction. The true underlying pedigree
+      completely\r\ndescribes the abundance and population structure over time, however
+      the true relationships between\r\nindividuals in wild populations are rarely
+      known. Given a set of observed genotypes, along with\r\nsupplementary data,
+      our methodology is able to successfully reconstruct the pedigree without the\r\nneed
+      for large sample assumptions. Prior knowledge of the mating structure and reproductive\r\ndynamics
+      of the population can also be incorporated in the model. In this talk I will
+      present\r\nour pedigree reconstruction approach for population estimation using
+      dead recovery data, and will\r\ndiscuss the challenges associated with the full
+      pedigree approach."
+    talk_2: Accounting for heterogeneous detection rates when inferring eradication
+      of an invasive species
+    talk_2_speakers:
+    - "Sean A. Martin \U0001F464"
+    - Leah South
+    - Zachary T. Carter
+    - Michael Bode
+    talk_2_orgs: QUT School of Mathematics/SAEF
+    talk_2_abstract: "Eradication of invasive species from islands is an expensive
+      but often crucial activity for maintaining the ecosystems of these islands.
+      A key challenge in limiting the costs of an eradication campaign is knowing
+      the size of the remaining population of invasive animals; this information informs
+      both ongoing resource planning and when to end a campaign. Campaign progress
+      is measured by the decline in detections of the target species. However, detection
+      of a population is imperfect and highly variable, obscuring the true rate of
+      decline. As a result, uncertainty arises when detections cease - have all individuals
+      truly been eradicated, or do some remain undetected? Statistical models have
+      been developed to infer eradication success based on a record of detections
+      (sighting records), however, most models ignore natural heterogeneity in detectability.
+      \r\nOur work examines the influence of variance in detection rates on the false
+      positive and false negative error rates of hypothetical eradication campaigns
+      and relates this to overall costs of island conservation. We use a combination
+      of Bayesian likelihood and likelihood-free models to overcome simultaneous inference
+      limits on abundance and detectability within this highly stochastic study system."
+    talk_3: Zero-inflated Tweedie distribution for abundance of rare ecological species
+    talk_3_speakers: "Nokuthaba Sibanda \U0001F464"
+    talk_3_orgs: Victoria University of Wellington
+    talk_3_abstract: "Abundance data for rare species can be extremely zero-inflated,
+      where percentage of zeros can be over 90%. This poses a challenge even for the
+      standard Tweedie model which naturally allows for a probability mass at zero
+      with continuous non-negative values. We investigate use of a zero-inflated Tweedie
+      distribution when modelling non-negative continuous abundance values with zeros
+      for rare species. Despite their significance, research on zero-inflated models
+      has predominantly focused on count models such as zero-inflated Poisson or negative
+      binomial regressions, with only recent studies exploring zero-inflated Tweedie
+      models in insurance claims (Zhou, Qian, and Yang 2022; Gu2024; So and Valdez
+      2024; So and Deng 2025).\r\n\r\nThe zero-inflated Tweedie model uses a mixture
+      model approach that integrates a Tweedie model with a binary model to distinguish
+      between excess zeros - those resulting from an independent process, and true
+      zeros those resulting from the Tweedie model itself. We use a Bayesian approach
+      to estimate the model parameters. We model means of the Tweedie model using
+      a log-link function with covariates and unobserved random effects. The spatial
+      association between observations is accounted for using a conditionally auto-regressive
+      prior."
     par_id: 2
     par_total: 2
 
