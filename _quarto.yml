@@ -3,10 +3,6 @@ project:
 
 website:
   title: "#BIBC2025"
-  announcement:
-    type: primary
-    position: below-navbar
-    icon: info-circle
   page-footer: |
      Sponsored by<br><br>
      <table style="width:100%!important;">
