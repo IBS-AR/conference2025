@@ -9,12 +9,13 @@ format:
 ```{r}
 #| include: false
 library(tidyverse)
-sessions <- readRDS(here::here("book/data/sessions.rds")) |>
-  arrange(day, order, room) |> 
+sessions <- read_csv(here::here("book/data/sessions.csv")) |>
+  mutate(time = case_when(str_length(time) == 2 ~ str_c(time, ".00"),
+                          str_length(time) == 4 & str_sub(time, 2, 2) != ":" ~ str_c(time, "0"),
+                          .default = time)) |> 
+  arrange(day, order, room, talk_order) |> 
   mutate(title = str_remove_all(title, fixed("\r\n"))) |> 
-  mutate(content = str_c("<b>", title, "</b><br><i>", paste(first, last), "</i>", sep = "")) |> 
-  mutate(suborder = 1:n(),
-         .by = c(day, order, room))
+  mutate(content = str_c("<b>", title, "</b><br><i>", paste(first, last), "</i>", sep = "")) 
 days <- c("Mon", "Tue", "Wed", "Thu", "Fri")
 options(knitr.kable.NA = '') 
 ```
@@ -23,15 +24,20 @@ options(knitr.kable.NA = '')
 #| echo: false
 #| output: asis
 sessions |> 
-  select(day, content, order, suborder, room) |> 
+  select(day, content, talk_order, room, time) |> 
+  mutate(room = case_match(room,
+                           "A" ~ "Arc Cinema",
+                           "B" ~ "Theatre")) |> 
   pivot_wider(names_from = room, values_from = content) |> 
   #mutate(day = days[day]) |> 
-  rename(session = order) |> 
-  select(-suborder) |> 
+  select(-talk_order) |> 
   nest_by(day) |> 
   pwalk(function(day, data) {
     cat("## ", days[day[1]], "\n")
-    knitr::kable(data, format = "html", escape = FALSE) |> 
+    data |> 
+      mutate(time = ifelse(duplicated(time), "", time)) |> 
+      knitr::kable(format = "html", escape = FALSE,
+                   align = "rll") |> 
       kableExtra::kable_styling(bootstrap_options = "striped") |> 
       cat()
   })
