@@ -1,6 +1,6 @@
 library(tidyverse)
 
-schedule <- readRDS("book/data/sessions.rds") |> select(first, last, org, coauthors, title, abstract, type, orgc, name2, org2, orgc2, day, order, room)
+schedule <- read_csv("book/data/sessions.csv") |> select(first, last, org, coauthors, title, abstract, type, orgc, name2, org2, orgc2, day, order, room)
 total_list <- list()
 for (day_num in 2:5) {
   today <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")[day_num]
