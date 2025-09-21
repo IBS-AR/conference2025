@@ -62,6 +62,7 @@ Tuesday:
   - name: "Keynote: On Finding Good Experiments"
     id: "keynote-1"
     type: "talk"
+    detail_type: "keynote"
     start: "09:00"
     end: "10:00"
     speakers: "Cheng Soon Ong \U0001F464"
@@ -448,7 +449,7 @@ Tuesday:
       designs. We also show that speed is significantly faster compared to alternative
       software."
     talk_4: Running Human Subject Experiments via Online Crowdsourcing
-    talk_4_speakers: "Patrick (Weihao) Li \U0001F464"
+    talk_4_speakers: "Patrick Li \U0001F464"
     talk_4_orgs: Australian National University
     talk_4_abstract: Crowdsourcing platforms such as Amazon Mechanical Turk and Prolific
       provide scalable and accessible tools for running online human subject experiments.
@@ -472,6 +473,7 @@ Tuesday:
   - name: "Invited Session: A Cluster of Modern Clustering Methods for Biometrics"
     id: "invited-1"
     type: "talk"
+    detail_type: "invited session"
     start: "13:45"
     end: "15:00"
     location: "Arc Cinema"
@@ -730,7 +732,7 @@ Tuesday:
     type: "talk"
     start: "15:30"
     end: "16:45"
-    location: "Theaterette"
+    location: "Theatrette"
     talk_1: 'Enhancing Fraud Detection in Banking through Random Survival Forests:
       Addressing Data Imbalance and Model Transparency'
     talk_1_speakers:
@@ -1156,6 +1158,7 @@ Wednesday:
   - name: "Keynote: Uses of gnm for Generalized (Non)linear Modelling"
     id: "keynote-2"
     type: "talk"
+    detail_type: "keynote"
     start: "09:00"
     end: "10:00"
     speaker_imgs: "keynote/heather-turner/headshot_500x500.jpg"
@@ -1333,6 +1336,7 @@ Wednesday:
   - name: "Invited Session: Statistics for Biosecurity Surveillance"
     id: "invited-2"
     type: "talk"
+    detail_type: "invited session"
     start: "11:15"
     end: "12:45"
     Organiser and Chair: "A/Prof Robert Clark"
@@ -1530,6 +1534,7 @@ Thursday:
   - name: "Keynote: Modularizing Biometric Models Facilitates Multistage Computing"
     id: "keynote-3"
     type: "talk"
+    detail_type: "keynote"
     start: "09:00"
     end: "10:00"
     speakers: "Mevin B. Hooten \U0001F464"
@@ -1955,6 +1960,7 @@ Thursday:
   - name: "Invited Session: Methods and Practice in Agricultural Analytics"
     id: "invited-3"
     type: "talk"
+    detail_type: "invited session"
     start: "13:45"
     end: "15:00"
     location: "Arc Cinema"
@@ -2250,7 +2256,7 @@ Thursday:
     type: "talk"
     start: "15:30"
     end: "16:45"
-    location: "Theaterette"
+    location: "Theatrette"
     talk_1: Extending diagnostic validity meta-analysis to several diagnostic guidelines
     talk_1_speakers:
     - "Alain C. Vandal \U0001F464"
@@ -2385,6 +2391,7 @@ Friday:
   - name: "Keynote: Saddlepoint approximations for likelihoods"
     id: "keynote-4"
     type: "talk"
+    detail_type: "keynote"
     start: "09:00"
     end: "10:00"
     speakers: ["Jesse Goodman \U0001F464", Godrick Oketch, Rachel Fewster, Alice Hankin, Sixiang Shan, George Fan]
@@ -2599,6 +2606,7 @@ Friday:
   - name: "Keynote: Optimizing Research Impact Through Interdisciplinary and Collaborative Research"
     id: "keynote-5"
     type: "talk"
+    detail_type: "keynote"
     start: "11:15"
     end: "12:00"
     speakers: "Charmaine B. Dean \U0001F464"
