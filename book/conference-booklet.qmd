@@ -169,39 +169,117 @@ ACT Branch
 
 # Schedule
 
-\pagestyle{empty}
+## Tuesday, 25 November 
 
-\begin{tikzpicture}
+```{r message=FALSE}
+schedule <- yaml::read_yaml(here::here("schedule.yml"))
 
-\draw [draw=black] (0.0,0.0) rectangle (15.0,20.0);
+library(huxtable)
 
-\def\fin{\fpeval{\Dh-1}};
-\foreach \i in {1,...,\fin}{
-\def\y{\fpeval{\i*\dh}} ;
-\def\heure{\fpeval{(\hf-\i)}};
-\def\x{\fpeval{\d/2.0}}
-\node at (\x,\y)  {\heure: 00};
-\draw[dashed](\d, \y)--(\D, \y);
-};
+dat <- map_df(names(schedule), function(day) {
+  i <- 0
+  tb <- map_df(schedule[[day]], function(event) {
+    i <<- i + 1
+    time <- glue::glue("{event$start}-{event$end}")
+    type <- ifelse(is.null(event$detail_type), event$type, event$detail_type)
+    location <- event$location
+    if (!is.null(event$talk_1)) {
+      talk_numbers <- names(event)[grepl("^talk_\\d$", names(event))]
+      titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
+      speakers <- map(talk_numbers, \(talk_number) grep("\U0001F464", event[[glue::glue("{talk_number}_speakers")]], value = TRUE))
+    } else {
+      titles <- event$name
+      speakers <- list(grep("\U0001F464", event$speakers, value = TRUE))
+    }
+    
+    tb <- tibble(time = time,
+                 type = type,
+                 location = location,
+                 titles = titles,
+                 speakers = speakers,
+                 session = i)
+  })
+  
+  tb$day <- day
+  tb$session <- glue::glue("{tb$day}-{tb$session}-{tb$location}")
+  tb
+}) |>
+  mutate(speakers = map_chr(speakers, \(x) paste(gsub("\U0001F464", "", x), collapse = " and "))) |>
+  mutate(titles = gsub("\\n", "", titles)) |>
+  mutate(titles = gsub("\\r", "", titles)) |>
+  group_by(day) |>
+  mutate(start_of_session = session != lag(session)) |>
+  ungroup() |>
+  mutate(start_of_session = ifelse(is.na(start_of_session), TRUE, start_of_session)) |>
+  group_by(session) |>
+  mutate(num_of_talks = n()) |>
+  ungroup() |>
+  mutate(type = tools::toTitleCase(type))
 
-\foreach \j [count=\i] in \Days{
-\def\y{\fpeval{\H-0.5*\h}};
-\def\x{\fpeval{2*\d + (\i - 1) * \dd - 0.05}};
-\node at (\x , \y)  {\j};
-};
+dat_tue <- dat |>
+  filter(day == "Tuesday")
 
-\event[Registration][][1][8.30][0.30][Foyer];
-\event[Registration][][2][8.30][0.30][Foyer];
-\event[Registration][][3][8.30][0.30][Foyer];
-\event[Registration][][4][8.30][0.30][Foyer];
-\event[Registration][][5][8.30][0.30][Foyer];
+ht <- dat_tue |>
+  hux(add_colnames = FALSE)
 
-\event[Workshop][][1][9.00][8][];
+tbl_tue <- ht |>
+  set_all_borders() |>
+  set_bold(everywhere, col = "speakers") |>
+  set_rowspan(row = which(ht$start_of_session), col = 1:3, ht$num_of_talks[which(ht$start_of_session)]) |>
+  split_down(5) |>
+  _[[1]] |>
+  set_escape_contents(row = everywhere, col = 4, value = FALSE) |>
+  set_width(1) |>
+  set_col_width(c(0.2, 0.1, 0.12, 0.4, 0.18)) |>
+  set_font_size(everywhere, everywhere, 10) |>
+  set_colspan(row = dat_tue$type %in% c("General", "Social"), col = 4, 2) |>
+  set_background_color(row = dat_tue$type %in% c("General", "Social"), col = 1:4, "grey80") |>
+  set_background_color(row = dat_tue$type %in% c("Keynote", "Invited Session"), col = 2, "grey50")
+  
+
+split_tbl <- tbl_tue |>
+  split_across(which(tbl_tue$title == "Lunch" | grepl("autoDML", tbl_tue$title)))
+
+split_tbl[[1]]
+split_tbl[[2]]
+split_tbl[[3]]
+```
 
 
-\end{tikzpicture}
 
-\pagestyle{fancy}
+<!-- \pagestyle{empty} -->
+
+<!-- \begin{tikzpicture} -->
+
+<!-- \draw [draw=black] (0.0,0.0) rectangle (15.0,20.0); -->
+
+<!-- \def\fin{\fpeval{\Dh-1}}; -->
+<!-- \foreach \i in {1,...,\fin}{ -->
+<!-- \def\y{\fpeval{\i*\dh}} ; -->
+<!-- \def\heure{\fpeval{(\hf-\i)}}; -->
+<!-- \def\x{\fpeval{\d/2.0}} -->
+<!-- \node at (\x,\y)  {\heure: 00}; -->
+<!-- \draw[dashed](\d, \y)--(\D, \y); -->
+<!-- }; -->
+
+<!-- \foreach \j [count=\i] in \Days{ -->
+<!-- \def\y{\fpeval{\H-0.5*\h}}; -->
+<!-- \def\x{\fpeval{2*\d + (\i - 1) * \dd - 0.05}}; -->
+<!-- \node at (\x , \y)  {\j}; -->
+<!-- }; -->
+
+<!-- \event[Registration][][1][8.30][0.30][Foyer]; -->
+<!-- \event[Registration][][2][8.30][0.30][Foyer]; -->
+<!-- \event[Registration][][3][8.30][0.30][Foyer]; -->
+<!-- \event[Registration][][4][8.30][0.30][Foyer]; -->
+<!-- \event[Registration][][5][8.30][0.30][Foyer]; -->
+
+<!-- \event[Workshop][][1][9.00][8][]; -->
+
+
+<!-- \end{tikzpicture} -->
+
+<!-- \pagestyle{fancy} -->
 
 
 ```{r}
