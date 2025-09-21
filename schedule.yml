@@ -1671,36 +1671,14 @@ Thursday:
       rates for the drug and the adverse reaction remain stable. We evaluate the properties
       and performance of the proposed method through both real-world data analysis
       and simulation studies, demonstrating its effectiveness for signal detection.
-    talk_2: Pooled testing with penalized regression models
+    talk_2: Handling Missingness in Prevalence Estimates from National Surveys
     talk_2_speakers:
-    - "Christopher Bilder \U0001F464"
-    - Pranta Das
-    - Joshua Tebbs
-    - Christopher McMahan
-    talk_2_orgs: University of Nebraska-Lincoln, Department of Statistics
-    talk_2_abstract: Pooled testing (also known as group testing) is a widely used
-      procedure to test individuals for infectious diseases. Rather than testing each
-      specimen separately, multiple specimens are pooled together and tested as one.
-      The pool test outcome, along with further tests as needed, are used to determine
-      which individuals are positive or negative for an infectious pathogen. The COVID-19
-      pandemic especially highlighted the importance of pooled testing, with laboratories
-      adopting it worldwide to increase their testing capacity. Pooled testing traditionally
-      relies on observing the positive/negative test outcomes alone. However, during
-      the pandemic, new pooled testing algorithms were developed that utilize the
-      viral load information from a pool test. These new algorithms use penalized
-      regression models to predict the viral load of each individual, which lead to
-      individual positive/negative predictions. The purpose of our presentation is
-      to provide a comparison of these new algorithms relative to standard ones. Both
-      gains and losses are quantified by applying algorithms under fair comparison
-      settings.
-    talk_3: Handling Missingness in Prevalence Estimates from National Surveys
-    talk_3_speakers:
     - "Oyelola Adegboye \U0001F464"
     - Li Siyu
     - Tomoki Fujii
     - Denis HY Leung
-    talk_3_orgs: Menzies School of Health Research
-    talk_3_abstract: Population-based surveys, such as the Demographic and Health
+    talk_2_orgs: Menzies School of Health Research
+    talk_2_abstract: Population-based surveys, such as the Demographic and Health
       Surveys (DHS), are pivotal for estimating the prevalence of important diseases,
       particularly in low-resource settings. However, missing data, such as person
       non-response, particularly refusals, poses a serious challenge, potentially
@@ -1720,6 +1698,28 @@ Thursday:
       testing knowledge, can significantly distort HIV estimates. Integrating multiple
       data sources and using methodologically transparent adjustment techniques are
       critical for robust HIV surveillance in low-resource settings.
+    talk_3: Pooled testing with penalized regression models
+    talk_3_speakers:
+    - "Christopher Bilder \U0001F464"
+    - Pranta Das
+    - Joshua Tebbs
+    - Christopher McMahan
+    talk_3_orgs: University of Nebraska-Lincoln, Department of Statistics
+    talk_3_abstract: Pooled testing (also known as group testing) is a widely used
+      procedure to test individuals for infectious diseases. Rather than testing each
+      specimen separately, multiple specimens are pooled together and tested as one.
+      The pool test outcome, along with further tests as needed, are used to determine
+      which individuals are positive or negative for an infectious pathogen. The COVID-19
+      pandemic especially highlighted the importance of pooled testing, with laboratories
+      adopting it worldwide to increase their testing capacity. Pooled testing traditionally
+      relies on observing the positive/negative test outcomes alone. However, during
+      the pandemic, new pooled testing algorithms were developed that utilize the
+      viral load information from a pool test. These new algorithms use penalized
+      regression models to predict the viral load of each individual, which lead to
+      individual positive/negative predictions. The purpose of our presentation is
+      to provide a comparison of these new algorithms relative to standard ones. Both
+      gains and losses are quantified by applying algorithms under fair comparison
+      settings.
     par_id: 2
     par_total: 2
 
