@@ -629,7 +629,7 @@ tags$script(paste0("const eventData = {\n",
       // ==== Generic fields ====
       const excludeKeys = new Set([
         'name', 'time', 'id',
-        'type', 'speakers', 'speaker_imgs', 'speaker_orgs',
+        'type', 'detail_type', 'speakers', 'speaker_imgs', 'speaker_orgs',
         'par_id', 'par_total'
       ]);
     
