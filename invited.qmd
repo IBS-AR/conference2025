@@ -35,7 +35,7 @@ In this presentation we will derive and demonstrate the use of the survival-base
 ::: {.column .text-col-title width="100%"}
 **Dr Mahdi Parsa** and **Dr Belinda Barnes**  
 *Department of Agriculture, Fisheries and Forestry*  
-"Surveillance for counterfactual scenarios of invasive species - why it’s useful and a convenient way to do it"
+"Optimal allocation of resources between control and surveillance for complex eradication scenarios"
 :::
 
 ::: {.callout-note collapse="true" icon=false .text-col-abstract border-left="none"}
