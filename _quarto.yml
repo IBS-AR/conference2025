@@ -29,6 +29,8 @@ website:
       - text: Program
         menu:
           - href: schedule.qmd
+          - href: book/sessions.qmd
+            text: Schedule (flat version)
           - href: keynote.qmd
           - href: invited.qmd
           - href: workshop.qmd

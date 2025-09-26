@@ -1,10 +1,15 @@
 ---
-title: Draft Schedule for BIBC2025
+title: Draft Schedule
 date: today
 format:
   html:
     page-layout: full
 ---
+
+
+Or see the interactive version [here](/schedule.html). 
+
+Please note that this is a draft program and is subject to change.
 
 ```{r}
 #| include: false

@@ -419,6 +419,8 @@ div.toggle-talk.callout.callout-note {
 
 Please note that this is a draft program and is subject to change. 
 
+Click on a block to see the full speaker list, then click on the title of the talk to see the corresponding abstract.
+
 ```{r, results = 'asis', echo = FALSE}
 library(htmltools)
 
