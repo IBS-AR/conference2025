@@ -213,7 +213,10 @@ load_schedule <- function() {
     mutate(num_of_talks = n()) |>
     ungroup() |>
     mutate(type = tools::toTitleCase(type)) |>
-    mutate(speakers = ifelse(speakers == "", titles, speakers))
+    mutate(speakers = ifelse(speakers == "", titles, speakers)) |>
+    mutate(location = ifelse(location == "Emailed to participants", 
+                             "Location emailed to participants", 
+                             location))
 }
 
 schedule_dat <- load_schedule()
@@ -232,7 +235,7 @@ day_to_hux <- function(day_dat, across_idx = c()) {
     _[[1]] |>
     set_escape_contents(row = everywhere, col = 5, value = FALSE) |>
     set_width(1) |>
-    set_col_width(c(0.2, 0.12, 0.12, 0.18, 0.38)) |>
+    set_col_width(c(0.15, 0.12, 0.15, 0.18, 0.4)) |>
     set_font_size(everywhere, everywhere, 10) |>
     set_colspan(row = day_dat$type %in% c("General", "Social"), col = 4, 2) |>
     set_background_color(row = day_dat$type %in% c("General", "Social"), col = 1:4, "grey80") |>
@@ -256,7 +259,10 @@ library(huxtable)
 dat_mon <- schedule_dat |>
   filter(day == "Monday")
 
-day_to_hux(dat_mon)
+day_to_hux(dat_mon) |>
+  set_rowspan(row = 2, col = 3, 1) |>
+  set_rowspan(row = 1, col = 3, 5) |>
+  set_colspan(row = 1, col = 4, 2)
 ```
 
 ## Tuesday, 25 November 
