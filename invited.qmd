@@ -33,7 +33,7 @@ In this presentation we will derive and demonstrate the use of the survival-base
 :::
 
 ::: {.column .text-col-title width="100%"}
-**Dr Mahdi Parsa** and **Dr Belinda Barnes**  
+**Dr Mahdi Parsa** 
 *Department of Agriculture, Fisheries and Forestry*  
 "Optimal allocation of resources between control and surveillance for complex eradication scenarios"
 :::
