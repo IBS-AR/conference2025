@@ -169,117 +169,150 @@ ACT Branch
 
 # Schedule
 
+
+```{r message=FALSE}
+load_schedule <- function() {
+  schedule <- yaml::read_yaml(here::here("schedule.yml"))
+  
+  map_df(names(schedule), function(day) {
+    i <- 0
+    tb <- map_df(schedule[[day]], function(event) {
+      i <<- i + 1
+      time <- glue::glue("{event$start}-{event$end}")
+      type <- ifelse(is.null(event$detail_type), event$type, event$detail_type)
+      location <- event$location
+      if (!is.null(event$talk_1)) {
+        talk_numbers <- names(event)[grepl("^talk_\\d$", names(event))]
+        titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
+        speakers <- map(talk_numbers, \(talk_number) grep("\U0001F464", event[[glue::glue("{talk_number}_speakers")]], value = TRUE))
+      } else {
+        titles <- event$name
+        speakers <- list(grep("\U0001F464", event$speakers, value = TRUE))
+      }
+      
+      tb <- tibble(time = time,
+                   type = type,
+                   location = location,
+                   speakers = speakers,
+                   titles = titles,
+                   session = i)
+    })
+    
+    tb$day <- day
+    tb$session <- glue::glue("{tb$day}-{tb$session}-{tb$location}")
+    tb
+  }) |>
+    mutate(speakers = map_chr(speakers, \(x) paste(gsub("\U0001F464", "", x), collapse = " and "))) |>
+    mutate(titles = gsub("\\n", "", titles)) |>
+    mutate(titles = gsub("\\r", "", titles)) |>
+    group_by(day) |>
+    mutate(start_of_session = session != lag(session)) |>
+    ungroup() |>
+    mutate(start_of_session = ifelse(is.na(start_of_session), TRUE, start_of_session)) |>
+    group_by(session) |>
+    mutate(num_of_talks = n()) |>
+    ungroup() |>
+    mutate(type = tools::toTitleCase(type)) |>
+    mutate(speakers = ifelse(speakers == "", titles, speakers)) |>
+    mutate(location = ifelse(location == "Emailed to participants", 
+                             "Location emailed to participants", 
+                             location))
+}
+
+schedule_dat <- load_schedule()
+```
+
+```{r}
+day_to_hux <- function(day_dat, across_idx = c()) {
+  ht <- day_dat |>
+    hux(add_colnames = FALSE)
+
+  tbl <- ht |>
+    set_all_borders() |>
+    set_bold(row = !day_dat$type %in% c("General", "Social"), col = "speakers") |>
+    set_rowspan(row = which(ht$start_of_session), col = 1:3, ht$num_of_talks[which(ht$start_of_session)]) |>
+    split_down(5) |>
+    _[[1]] |>
+    set_escape_contents(row = everywhere, col = 5, value = FALSE) |>
+    set_width(1) |>
+    set_col_width(c(0.15, 0.12, 0.15, 0.18, 0.4)) |>
+    set_font_size(everywhere, everywhere, 10) |>
+    set_colspan(row = day_dat$type %in% c("General", "Social"), col = 4, 2) |>
+    set_background_color(row = day_dat$type %in% c("General", "Social"), col = 1:4, "grey80") |>
+    set_background_color(row = day_dat$type %in% c("Keynote", "Invited Session"), col = 2, "grey60") |>
+    set_latex_float("H")
+  
+  if (length(across_idx) > 0) {
+    tbl |>
+    split_across(across_idx)
+  } else {
+    tbl
+  }
+}
+```
+
+## Monday, 24 November 
+
+```{r message=FALSE}
+library(huxtable)
+
+dat_mon <- schedule_dat |>
+  filter(day == "Monday")
+
+day_to_hux(dat_mon) |>
+  set_rowspan(row = 2, col = 3, 1) |>
+  set_rowspan(row = 1, col = 3, 5) |>
+  set_colspan(row = 1, col = 4, 2)
+```
+
 ## Tuesday, 25 November 
 
 ```{r message=FALSE}
-schedule <- yaml::read_yaml(here::here("schedule.yml"))
-
-library(huxtable)
-
-dat <- map_df(names(schedule), function(day) {
-  i <- 0
-  tb <- map_df(schedule[[day]], function(event) {
-    i <<- i + 1
-    time <- glue::glue("{event$start}-{event$end}")
-    type <- ifelse(is.null(event$detail_type), event$type, event$detail_type)
-    location <- event$location
-    if (!is.null(event$talk_1)) {
-      talk_numbers <- names(event)[grepl("^talk_\\d$", names(event))]
-      titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
-      speakers <- map(talk_numbers, \(talk_number) grep("\U0001F464", event[[glue::glue("{talk_number}_speakers")]], value = TRUE))
-    } else {
-      titles <- event$name
-      speakers <- list(grep("\U0001F464", event$speakers, value = TRUE))
-    }
-    
-    tb <- tibble(time = time,
-                 type = type,
-                 location = location,
-                 titles = titles,
-                 speakers = speakers,
-                 session = i)
-  })
-  
-  tb$day <- day
-  tb$session <- glue::glue("{tb$day}-{tb$session}-{tb$location}")
-  tb
-}) |>
-  mutate(speakers = map_chr(speakers, \(x) paste(gsub("\U0001F464", "", x), collapse = " and "))) |>
-  mutate(titles = gsub("\\n", "", titles)) |>
-  mutate(titles = gsub("\\r", "", titles)) |>
-  group_by(day) |>
-  mutate(start_of_session = session != lag(session)) |>
-  ungroup() |>
-  mutate(start_of_session = ifelse(is.na(start_of_session), TRUE, start_of_session)) |>
-  group_by(session) |>
-  mutate(num_of_talks = n()) |>
-  ungroup() |>
-  mutate(type = tools::toTitleCase(type))
-
-dat_tue <- dat |>
+dat_tue <- schedule_dat |>
   filter(day == "Tuesday")
 
-ht <- dat_tue |>
-  hux(add_colnames = FALSE)
+split_tbl <- day_to_hux(dat_tue, which(grepl("StableMate", dat_tue$titles) | grepl("Species", dat_tue$titles) | grepl("autoDML", dat_tue$titles)))
 
-tbl_tue <- ht |>
-  set_all_borders() |>
-  set_bold(everywhere, col = "speakers") |>
-  set_rowspan(row = which(ht$start_of_session), col = 1:3, ht$num_of_talks[which(ht$start_of_session)]) |>
-  split_down(5) |>
-  _[[1]] |>
-  set_escape_contents(row = everywhere, col = 4, value = FALSE) |>
-  set_width(1) |>
-  set_col_width(c(0.2, 0.1, 0.12, 0.4, 0.18)) |>
-  set_font_size(everywhere, everywhere, 10) |>
-  set_colspan(row = dat_tue$type %in% c("General", "Social"), col = 4, 2) |>
-  set_background_color(row = dat_tue$type %in% c("General", "Social"), col = 1:4, "grey80") |>
-  set_background_color(row = dat_tue$type %in% c("Keynote", "Invited Session"), col = 2, "grey50")
-  
+split_tbl[[1]]
+split_tbl[[2]]
+split_tbl[[3]]
+split_tbl[[4]]
+```
 
-split_tbl <- tbl_tue |>
-  split_across(which(tbl_tue$title == "Lunch" | grepl("autoDML", tbl_tue$title)))
+
+## Wednesday, 26 November 
+
+```{r message=FALSE}
+dat_wed <- schedule_dat |>
+  filter(day == "Wednesday")
+
+split_tbl <- day_to_hux(dat_wed, which(grepl("Optimal sampling", dat_wed$titles)))
+
+split_tbl[[1]]
+split_tbl[[2]]
+```
+
+## Thursday, 27 November 
+
+```{r message=FALSE}
+dat_thu <- schedule_dat |>
+  filter(day == "Thursday")
+
+split_tbl <- day_to_hux(dat_thu, which(grepl("Morning Tea", dat_thu$titles) | grepl("Spatio-Temporal", dat_thu$titles)))
 
 split_tbl[[1]]
 split_tbl[[2]]
 split_tbl[[3]]
 ```
 
+## Friday, 28 November 
 
+```{r message=FALSE}
+dat_fri <- schedule_dat |>
+  filter(day == "Friday")
 
-<!-- \pagestyle{empty} -->
-
-<!-- \begin{tikzpicture} -->
-
-<!-- \draw [draw=black] (0.0,0.0) rectangle (15.0,20.0); -->
-
-<!-- \def\fin{\fpeval{\Dh-1}}; -->
-<!-- \foreach \i in {1,...,\fin}{ -->
-<!-- \def\y{\fpeval{\i*\dh}} ; -->
-<!-- \def\heure{\fpeval{(\hf-\i)}}; -->
-<!-- \def\x{\fpeval{\d/2.0}} -->
-<!-- \node at (\x,\y)  {\heure: 00}; -->
-<!-- \draw[dashed](\d, \y)--(\D, \y); -->
-<!-- }; -->
-
-<!-- \foreach \j [count=\i] in \Days{ -->
-<!-- \def\y{\fpeval{\H-0.5*\h}}; -->
-<!-- \def\x{\fpeval{2*\d + (\i - 1) * \dd - 0.05}}; -->
-<!-- \node at (\x , \y)  {\j}; -->
-<!-- }; -->
-
-<!-- \event[Registration][][1][8.30][0.30][Foyer]; -->
-<!-- \event[Registration][][2][8.30][0.30][Foyer]; -->
-<!-- \event[Registration][][3][8.30][0.30][Foyer]; -->
-<!-- \event[Registration][][4][8.30][0.30][Foyer]; -->
-<!-- \event[Registration][][5][8.30][0.30][Foyer]; -->
-
-<!-- \event[Workshop][][1][9.00][8][]; -->
-
-
-<!-- \end{tikzpicture} -->
-
-<!-- \pagestyle{fancy} -->
+day_to_hux(dat_fri)
+```
 
 
 ```{r}
