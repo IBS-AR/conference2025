@@ -351,6 +351,7 @@ keynote |>
 ```{r}
 #| output: asis
 invited |> 
+  filter(paste0(first, last) != "Andrew P. Robinson") |> 
   arrange(last) |> 
   display_abstract()
 ```
