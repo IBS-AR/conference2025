@@ -1,43 +1,7 @@
 
-
 \begin{titlepage}
-$if(front-cover-image)$
-\This$if(front-cover-location)$$front-cover-location$$else$UL$endif$CornerWallPaper{$if(front-cover-size)$$front-cover-size$$else$0.5$endif$}{$front-cover-image$}
-$endif$
-
-\centering
-\vspace{4\baselineskip}
-{\bfseries\fontsize{50}{50}\selectfont $title$ \par}
-\vspace{3\baselineskip}
-{\Large $subtitle$ \par}
-\includegraphics[height=20mm]{$logo$}\\
-{\large\textsc{$author$} \par}
-\vspace{2\baselineskip}
-{\large Sponsored by}\\[5mm]
-\centering
-$if(platinum-sponsors)$
-Platinum\\[3mm]
-$for(platinum-sponsors)$
-\includegraphics[height=10mm]{$it$}
-$endfor$
-\par
-$endif$
-$if(gold-sponsors)$
-Gold\\[3mm]
-$for(gold-sponsors)$
-\includegraphics[height=10mm]{$it$}
-$endfor$
-\par
-$endif$
-$if(supporters)$
-Supporter\\[3mm]
-$for(supporters)$
-\includegraphics[height=10mm]{$it$}
-$endfor$
-\par
-$endif$
-
+\includepdf{$front-cover-image$}
 \end{titlepage}
 
-\newpage 
+\newpage
 

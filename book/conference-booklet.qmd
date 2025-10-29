@@ -21,15 +21,11 @@ format:
     template-partials: 
       - assets/before-body.tex
       - assets/after-body.tex
-    front-cover-image: assets/front-cover.png
-    front-cover-location: "UL"
-    front-cover-size: 1.1
-    back-cover-image: assets/back-cover.png
-    back-cover-location: "UL"
-    back-cover-size: 1.1
+    front-cover-image: assets/front-cover.pdf
+    back-cover-image: assets/back-cover.pdf
     include-in-header:
         - assets/header.tex
-        - assets/draft.tex
+        #- assets/draft.tex
     include-after-body: 
       text: |
         \printindex
@@ -76,7 +72,7 @@ The Australasian Region Biometrics conference is a biannual conference sponsored
 
 \vfill 
 
-_Conference booklet compiled by Emi Tanaka_  
+ 
 _Last updated: `r format(Sys.time())`_
 
 
@@ -152,7 +148,7 @@ We gratefully acknowledge our sponsors for their generous support, which has mad
 \vfill
 
 
-{\Large Supporters}
+{\Large Supporter}
 
 \includegraphics[width=50mm]{`r rmarkdown::metadata[["supporters"]][1]`}
 
