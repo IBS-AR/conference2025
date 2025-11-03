@@ -21,12 +21,6 @@ Monday:
       - Building: Haydon-Allen Building, Australian National University
       - Room: Emailed to participants
       - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#analysing-complex-survey-and-subsample-data-with-r)
-    "Lost in Translation: Speaking Statistician in a Multi-Lingual World": |
-      - Speakers: **Peter Humburg** and **Eve Slavich**
-      - Building: National Film and Sound Archive of Australia
-      - Room: Emailed to participants
-      - Details: [workshop website](https://biometricsociety.org.au/conference2025/workshop.html#lost-in-translation-speaking-statistician-in-a-multi-lingual-world)
-      - Note: This is a half-day workshop (13:30 - 17:00)
     "Deep Learning and Computer Vision in R: A Practical Introduction": |
       - Speakers: **Patrick (Weihao) Li**
       - Building: Haydon-Allen Building, Australian National University
@@ -36,35 +30,42 @@ Monday:
   - name: "Conference Registration"
     id: "registration-mon-2"
     type: "general"
-    start: "17:00"
+    start: "17:30"
     end: "18:00"
-    location: "TBA"
+    location: "Ovolo Nishi"
     description: "Conference registration and badge pickup. Drop in to collect your materials and meet fellow attendees."
 
   - name: "Welcome Reception"
     id: "welcome-reception"
     type: "social"
     start: "18:00"
-    end: "19:00"
+    end: "20:30"
     organizer: "Host Committee"
-    location: "Garden Terrace"
+    location: "Ovolo Nishi"
     description: "Opening reception with drinks and light refreshments. Join fellow delegates for a relaxed evening to network and celebrate the opening of the conference."
 
 Tuesday:
   - name: "Conference Registration"
     id: "registration-tue"
     type: "general"
-    start: "08:30"
-    end: "09:00"
+    start: "08:15"
+    end: "08:45"
     location: "Foyer"
     description: "Morning registration and info desk. Final registration opportunity and general assistance available."
-
-  - name: "Keynote: On Finding Good Experiments"
+  - name: "Opening remarks and housekeeping"
+    id: "open-tue"
+    type: "general"
+    start: "08:45"
+    end: "09:05"
+    location: "Arc Cinema"
+    description: ""
+  - name: "On Finding Good Experiments"
     id: "keynote-1"
     type: "talk"
+    chair: "Chris Brien"
     detail_type: "keynote"
-    start: "09:00"
-    end: "10:00"
+    start: "09:05"
+    end: "9:55"
     speakers: "Cheng Soon Ong \U0001F464"
     speaker_imgs: "keynote/cheng-soon-ong/chengpic-2023-small.jpg"
     speaker_orgs: "CSIRO and ANU"
@@ -75,8 +76,9 @@ Tuesday:
   - name: "Session 1A"
     id: "session-1a"
     type: "talk"
+    chair: "Garth Tarr"
     start: "10:00"
-    end: "10:45"
+    end: "11:00"
     location: "Arc Cinema"
     talk_1: Data-Adaptive Automatic Threshold Calibration for Stability Selection
     talk_1_speakers:
@@ -161,8 +163,9 @@ Tuesday:
   - name: "Session 1B"
     id: "session-1b"
     type: "talk"
+    chair: "Scott Foster"
     start: "10:00"
-    end: "10:45"
+    end: "11:00"
     location: "Theatrette"
     talk_1: Estimating abundance in small populations using pedigree reconstruction
     talk_1_speakers:
@@ -240,16 +243,17 @@ Tuesday:
   - name: "Morning Tea"
     id: "morning-tea-tue"
     type: "social"
-    start: "10:45"
-    end: "11:15"
+    start: "11:00"
+    end: "11:30"
     location: "Gallery"
     description: "Light refreshments and beverages. Take a break and enjoy some tea or coffee while networking with peers."
 
   - name: "Session 2A"
     id: "session-2a"
+    chair: "Alan Welsh"
     type: "talk"
-    start: "11:15"
-    end: "12:45"
+    start: "11:30"
+    end: "12:50"
     location: "Arc Cinema"
     talk_1: Extending Spatial Capture-Recapture with the Hawkes Process
     talk_1_speakers:
@@ -354,8 +358,9 @@ Tuesday:
   - name: "Session 2B"
     id: "session-2b"
     type: "talk"
-    start: "11:15"
-    end: "12:45"
+    chair: "James Curran"
+    start: "11:30"
+    end: "12:50"
     location: "Theatrette"
     par_id: 2
     par_total: 2
@@ -382,10 +387,9 @@ Tuesday:
       on this work, we estimate leakage through a grouped sampling scheme and show
       how accounting for leakage can alter sampling strategies and improve risk management
       decisions.
-    talk_2: Koala Distirbution and Abundance
+    talk_2: Koala Distribution and Abundance
     talk_2_speakers:
     - "Scott D. Foster \U0001F464"
-    - Scott D. Foster
     - Wen-Hsi Yang
     - Peter Caley
     - John McEvoy
@@ -425,7 +429,7 @@ Tuesday:
     talk_3_speakers:
     - "Sam Rogers \U0001F464"
     - Wasin Pipattungsakul
-    - Julian Taylor
+    - Julian Taylor (TBA)
     talk_3_orgs: University of Adelaide
     talk_3_abstract: "Agricultural field trials are typically designed using robust
       statistical randomisation, and best practice agricultural field trials also
@@ -466,16 +470,17 @@ Tuesday:
   - name: "Lunch"
     id: "lunch-tue"
     type: "social"
-    start: "12:45"
-    end: "13:45"
+    start: "12:50"
+    end: "13:50"
     location: "Gallery"
 
   - name: "Invited Session: A Cluster of Modern Clustering Methods for Biometrics"
+    chair: "Francis Hui"
     id: "invited-1"
     type: "talk"
     detail_type: "invited session"
-    start: "13:45"
-    end: "15:00"
+    start: "13:50"
+    end: "15:20"
     location: "Arc Cinema"
     Organiser and Chair: "A/Prof Francis Hui"
     par_id: 1
@@ -537,9 +542,10 @@ Tuesday:
 
   - name: "Session 3"
     id: "session-3"
+    chair: "Ruth Butler"
     type: "talk"
-    start: "13:45"
-    end: "15:00"
+    start: "13:50"
+    end: "15:10"
     location: "Theatrette"
     par_id: 2
     par_total: 2
@@ -640,16 +646,17 @@ Tuesday:
   - name: "Afternoon Tea"
     id: "afternoon-tea-tue"
     type: "social"
-    start: "15:00"
-    end: "15:30"
+    start: "15:20"
+    end: "15:50"
     location: "Gallery"
     description: "Afternoon refreshments. Light snacks and drinks served."
 
   - name: "Session 4A"
     id: "session-4a"
     type: "talk"
-    start: "15:30"
-    end: "16:45"
+    chair: "Zhanglong Cao"
+    start: "15:50"
+    end: "16:50"
     location: "Arc Cinema"
     talk_1: 'Nested-factorial treatment models: types, their uses and examples'
     talk_1_speakers: "Chris Brien \U0001F464"
@@ -730,8 +737,9 @@ Tuesday:
   - name: "Session 4B"
     id: "session-4b"
     type: "talk"
-    start: "15:30"
-    end: "16:45"
+    chair: "Graham Hepworth"
+    start: "15:50"
+    end: "16:50"
     location: "Theatrette"
     talk_1: 'Enhancing Fraud Detection in Banking through Random Survival Forests:
       Addressing Data Imbalance and Model Transparency'
@@ -1151,16 +1159,23 @@ Wednesday:
     id: "registration-wed"
     type: "general"
     start: "08:30"
-    end: "09:00"
+    end: "08:50"
     location: "Foyer"
     description: "Morning registration and help desk. Assistance for late arrivals and info services."
-
-  - name: "Keynote: Uses of gnm for Generalized (Non)linear Modelling"
+  - name: "Housekeeping"
+    id: "open-wed"
+    type: "general"
+    start: "08:50"
+    end: "08:55"
+    location: "Arc Cinema"
+    description: ""
+  - name: "Uses of gnm for Generalized (Non)linear Modelling"
     id: "keynote-2"
     type: "talk"
     detail_type: "keynote"
-    start: "09:00"
-    end: "10:00"
+    chair: "Thomas Lumley"
+    start: "08:55"
+    end: "9:45"
     speaker_imgs: "keynote/heather-turner/headshot_500x500.jpg"
     speakers: "Heather L. Turner \U0001F464"
     speaker_orgs: "University of Warwick"
@@ -1178,8 +1193,9 @@ Wednesday:
   - name: "Session 5A"
     id: "session-5a"
     type: "talk"
-    start: "10:00"
-    end: "10:45"
+    chair: "David Warton (TBA)"
+    start: "09:50"
+    end: "10:50"
     location: "Arc Cinema"
     talk_1: Scalable finite mixture of regression models for clustering species responses
       in ecology
@@ -1245,9 +1261,10 @@ Wednesday:
 
   - name: "Session 5B"
     id: "session-5b"
+    chair: "Sam Rogers"
     type: "talk"
-    start: "10:00"
-    end: "10:45"
+    start: "09:50"
+    end: "10:50"
     location: "Theatrette"
     talk_1: Using a linear mixed model based wavelet transform to model non-smooth
       trends arising from designed experiments
@@ -1326,8 +1343,8 @@ Wednesday:
   - name: "Morning Tea"
     id: "morning-tea-wed"
     type: "social"
-    start: "10:45"
-    end: "11:15"
+    start: "10:50"
+    end: "11:20"
     speaker: ""
     location: "Gallery"
     abstract: "Light refreshments and beverages."
@@ -1337,54 +1354,20 @@ Wednesday:
     id: "invited-2"
     type: "talk"
     detail_type: "invited session"
-    start: "11:15"
-    end: "12:45"
+    start: "11:20"
+    end: "12:50"
+    chair: "Robert Clark"
     Organiser and Chair: "A/Prof Robert Clark"
     location: "Arc Cinema"
     par_id: 1
     par_total: 2
-    talk_1: Surveillance for counterfactual scenarios of invasive species - why it's
-      useful and a convenient  way to do it.
-    talk_1_speakers:
-    - "Andrew P. Robinson \U0001F464"
-    - John Kean
-    - Melissa Welsh
-    - Kuo-Szu Chiang
-    talk_1_orgs: The University of Melbourne
-    talk_1_abstract: "The impact of invasive species is affected by a range of factors,
-      many of which can be anticipated in advance – for example, the prevalence of
-      host material, climate suitability, the size of affected agricultural resources,
-      and so on. One factor that cannot be anticipated in advance is the size of the
-      incursion at the time of its detection. Unfortunately, the impact of an incursion
-      is tightly tied to its maturity at detection, ranging from a single seed, for
-      example, to a 50,000 hectare infestation of plants. \n\nWe propose a simple
-      probability model for the detection of an invasive species that can either capture
-      or integrate out the consequent uncertainty of the maturity of the incursion.
-      We represent the relationship between surveillance and the detection of the
-      organism using survival analysis: the detection of the incursion is analogous
-      to the survival event; it is a binary occurrence that happens at some point
-      in time, and once it has happened it does not happen again.\n\nUnder such a
-      model, we can connect the distribution of the size of the infestation at the
-      time to detection to the probability of detecting the incursion given that it
-      has not already been detected, namely, the hazard function. For example, a popular
-      model for the detection of an incursion of size x with number of traps t and
-      probability of detecting a single pest $p$ is:\n\n$h(x,t,p) = 1 - (1 - p)^{tx}$
-      \n\nAlgebra leads us to a size-at-detection pdf.  Other corrections are also
-      applied as needed. The outcome is a pdf that is a function of process parameters,
-      enabling straightforward assessment of different surveillance choices. Parameter
-      estimates for the distribution can be derived from first principles, field experiments,
-      or expert elicitation.\n\nIn this presentation we will derive and demonstrate
-      the use of the survival-based incursion size at detection pdf and discuss its
-      implications and challenges."
-    talk_2: Optimal allocation of resources between control and surveillance for complex
+    talk_1: Optimal allocation of resources between control and surveillance for complex
       eradication scenarios
-    talk_2_speakers:
+    talk_1_speakers:
     - "Mahdi Parsa \U0001F464"
-    - "Belinda Parsa \U0001F464"
-    talk_2_orgs:
+    talk_1_orgs:
     - Department of Agriculture, Fisheries and Forestry
-    - Department of Agriculture, Fisheries and Forestry
-    talk_2_abstract: |-
+    talk_1_abstract: |-
       Effective eradication of invasive species over large areas requires strategic
       allocation of resources between control measures and surveillance activities. This study
       presents an analytical Bayesian framework that integrates stochastic modelling and explicit
@@ -1393,22 +1376,22 @@ Wednesday:
       information (EVPI), the framework identifies conditions under which investment into control
       or surveillance becomes worthwhile. Findings show that strategies which hedge against
       uncertainty can markedly improve the robustness of eradication outcomes with only marginal increases in expected costs. This approach offers practical tools for designing more cost-effective and reliable eradication programs and for prioritising data collection to reduce uncertainty where it has the greatest impact.
-    talk_3: Inferring the rate of undetected contamination using random effects modelling
+    talk_2: Inferring the rate of undetected contamination using random effects modelling
       of biosecurity screening histories
-    talk_3_speakers:
+    talk_2_speakers:
     - "Sumonkanti Das \U0001F464"
-    - "Robert Das \U0001F464"
-    talk_3_orgs: Australian National University
-    talk_3_abstract: |-
+    - "Robert Clark \U0001F464"
+    talk_2_orgs: Australian National University
+    talk_2_abstract: |-
       Group testing plays a vital role in biosecurity operations worldwide, particularly in minimising the risk of introducing exotic pests, contaminants, and pathogens through imported agricultural products. A common screening strategy involves pooling items from consignments and testing each group for contamination presence, with consignments typically rejected if any group tests positive. Although screening designs often target a high probability of detection assuming a fixed minimum prevalence, analysing the historical results of these tests to infer the extent of contamination in non-rejected consignments (referred to as leakage) is less common.
 
       This study advances censored beta-binomial (BB) models to address contamination risk in frozen seafood imports into Australia, incorporating imperfect tests. Motivated by the characteristics of our case study, we develop a new class of BB models that impose a minimum positive consignment propensity threshold, capturing scenarios where contamination is either absent or exceeds a known minimum level. To fit these models, we propose a Metropolis-Hastings (MH) algorithm conditioned on prior distributions for sensitivity and specificity, allowing efficient estimation of quantities related to contamination levels. We analyse historical testing data under multiple scenarios using the proposed MH algorithm, yielding novel insights into both contamination risk and leakage.
 
       Finally, we use model-based simulations to communicate risk levels, providing key insights into potential undetected contamination.
-    talk_4: 'Optimal sampling in border biosecurity: Application to skip-lot sampling'
-    talk_4_speakers: "Raphael Trouve \U0001F464"
-    talk_4_orgs: The University of Melbourne
-    talk_4_abstract: |-
+    talk_3: 'Optimal sampling in border biosecurity: Application to skip-lot sampling'
+    talk_3_speakers: "Raphael Trouve \U0001F464"
+    talk_3_orgs: The University of Melbourne
+    talk_3_abstract: |-
       Border biosecurity faces mounting pressure from increasing global trade, requiring cost-effective inspection strategies to reduce the risk of importing pest and diseases. Current international standards recommend inspecting all incoming consignments (full census) with fixed sample sizes (e.g., 600 units) for high-risk pathways, but this may be overkill for lower-risk pathways with established compliance records. When should agencies use skip-lot sampling (SLS, sometimes called continuous sampling plan), which adaptively reduces inspections based on recent compliance history, over full census inspection?
 
       We developed a propagule pressure equation for SLS in overdispersed pathways and used Lagrange multipliers to derive a solution. Results show the choice depends on pathway overdispersion, sampling costs, and budget constraints. Optimal sample sizes are typically smaller than current recommendations, with better returns from inspecting a larger proportion of consignments rather than larger samples per consignment. This framework provides biosecurity agencies with data-driven guidance for implementing adaptive sampling strategies.
@@ -1416,8 +1399,9 @@ Wednesday:
   - name: "Session 6"
     id: "session-6"
     type: "talk"
-    start: "11:15"
-    end: "12:45"
+    start: "11:20"
+    end: "12:40"
+    chair: "Linh Nghiem"
     location: "Theatrette"
     par_id: 2
     par_total: 2
@@ -1509,34 +1493,41 @@ Wednesday:
   - name: "Lunch"
     id: "lunch-wed"
     type: "social"
-    start: "12:45"
-    end: "13:45"
+    start: "12:50"
+    end: "13:50"
     location: "Gallery"
 
   - name: "Social Activities"
     id: "social-wed"
     type: "social"
-    start: "13:45"
+    start: "13:00"
     end: "17:00"
     speaker: "Organizing Committee"
-    location: "Outdoor Grounds"
-    description: "Networking games and tours. Fun and informal activities for relaxing and networking."
+    location: " "
+    description: " "
 
 Thursday:
   - name: "Conference Registration"
     id: "registration-thu"
     type: "general"
     start: "08:30"
-    end: "09:00"
+    end: "08:50"
     location: "Foyer"
     description: "Morning registration and info desk. Final registration opportunity and general assistance available."
-
-  - name: "Keynote: Modularizing Biometric Models Facilitates Multistage Computing"
+  - name: "Housekeeping"
+    id: "open-thu"
+    type: "general"
+    start: "08:50"
+    end: "08:55"
+    location: "Arc Cinema"
+    description: ""
+  - name: "Modularizing Biometric Models Facilitates Multistage Computing"
     id: "keynote-3"
     type: "talk"
     detail_type: "keynote"
-    start: "09:00"
-    end: "10:00"
+    chair: "Warren Muller"
+    start: "08:55"
+    end: "09:45"
     speakers: "Mevin B. Hooten \U0001F464"
     speaker_imgs: "keynote/mevin-hooten/Hooten_photo.jpg"
     speaker_orgs: "The University of Texas at Austin"
@@ -1565,8 +1556,9 @@ Thursday:
   - name: "Session 7A"
     id: "session-7a"
     type: "talk"
-    start: "10:00"
-    end: "10:45"
+    chair: "Vanessa Cave"
+    start: "09:50"
+    end: "10:50"
     location: "Arc Cinema"
     talk_1: Visualize your fitted non-linear dimension reduction model in the high-dimensional
       data space
@@ -1650,9 +1642,10 @@ Thursday:
 
   - name: "Session 7B"
     id: "session-7b"
+    chair: "Alice Richardson"
     type: "talk"
-    start: "10:00"
-    end: "10:45"
+    start: "09:50"
+    end: "10:50"
     location: "Theatrette"
     talk_1: Reporting Odds Ratios under Fluctuating Reporting Rates in Spontaneous
       Reporting Systems
@@ -1731,8 +1724,8 @@ Thursday:
   - name: "Morning Tea"
     id: "morning-tea-thu"
     type: "social"
-    start: "10:45"
-    end: "11:15"
+    start: "10:50"
+    end: "11:20"
     speaker: ""
     location: "Gallery"
     description: "Light refreshments and beverages. Take a break and enjoy some tea or coffee while networking with peers."
@@ -1740,9 +1733,10 @@ Thursday:
   - name: "Session 8A"
     id: "session-8a"
     type: "talk"
-    start: "11:15"
-    end: "12:45"
+    start: "11:20"
+    end: "12:40"
     location: "Arc Cinema"
+    chair: "Matthew Schofield"
     par_id: 1
     par_total: 2
     talk_1: 'Integrated Species Distribution Models: A Single-Index Approach'
@@ -1843,8 +1837,9 @@ Thursday:
   - name: "Session 8B"
     id: "session-8b"
     type: "talk"
-    start: "11:15"
-    end: "12:45"
+    chair: "Chris Triggs"
+    start: "11:20"
+    end: "12:40"
     location: "Theatrette"
     par_id: 2
     par_total: 2
@@ -1942,8 +1937,8 @@ Thursday:
   - name: "Lunch"
     id: "lunch-thu"
     type: "social"
-    start: "12:45"
-    end: "13:45"
+    start: "12:40"
+    end: "13:40"
     location: "Gallery"
     par_id: 1
     par_total: 2
@@ -1951,18 +1946,19 @@ Thursday:
   - name: "AGM"
     id: "agm"
     type: "general"
-    start: "12:45"
-    end: "13:45"
-    location: "Gallery"
+    start: "13:00"
+    end: "13:30"
+    location: "Theattre"
     par_id: 2
     par_total: 2
 
   - name: "Invited Session: Methods and Practice in Agricultural Analytics"
     id: "invited-3"
     type: "talk"
+    chair: "Emi Tanaka"
     detail_type: "invited session"
-    start: "13:45"
-    end: "15:00"
+    start: "13:40"
+    end: "15:10"
     location: "Arc Cinema"
     Organiser and Chair: Dr Emi Tanaka
     par_id: 1
@@ -2047,8 +2043,9 @@ Thursday:
   - name: "Session 9"
     id: "session-9"
     type: "talk"
-    start: "13:45"
+    start: "13:40"
     end: "15:00"
+    chair: "Sam Mason (TBA)"
     location: "Theatrette"
     par_id: 2
     par_total: 2
@@ -2154,16 +2151,17 @@ Thursday:
   - name: "Afternoon Tea"
     id: "afternoon-tea-thu"
     type: "social"
-    start: "15:00"
-    end: "15:30"
+    start: "15:10"
+    end: "15:40"
     location: "Gallery"
     description: "Afternoon refreshments. Light snacks and drinks served."
 
   - name: "Session 10A"
+    chair: "Julian Taylor"
     id: "session-10a"
     type: "talk"
-    start: "15:30"
-    end: "16:45"
+    start: "15:40"
+    end: "16:40"
     location: "Arc Cinema"
     talk_1: The *equalto* covariance structure for meta-analysis using the `glmmTMB`
       R package
@@ -2254,8 +2252,9 @@ Thursday:
   - name: "Session 10B"
     id: "session-10b"
     type: "talk"
-    start: "15:30"
-    end: "16:45"
+    chair: "Oyelola Adegboye"
+    start: "15:40"
+    end: "17:00"
     location: "Theatrette"
     talk_1: Extending diagnostic validity meta-analysis to several diagnostic guidelines
     talk_1_speakers:
@@ -2374,8 +2373,8 @@ Thursday:
   - name: "Conference Dinner"
     id: "dinner"
     type: "social"
-    start: "18:00"
-    end: "20:00"
+    start: "18:30"
+    end: "22:00"
     location: "Banquet Hall"
     description: "Celebratory closing dinner. Enjoy an evening of fine dining, speeches, and socializing."
 
@@ -2383,21 +2382,28 @@ Friday:
   - name: "Conference Registration"
     id: "registration-fri"
     type: "general"
-    start: "08:30"
+    start: "08:40"
     end: "09:00"
     location: "Foyer"
     description: "Morning registration and info desk. Final registration opportunity and general assistance available."
-
-  - name: "Keynote: Saddlepoint approximations for likelihoods"
+  - name: "Housekeeping"
+    id: "open-fri"
+    type: "general"
+    start: "09:00"
+    end: "09:05"
+    location: "Arc Cinema"
+    description: ""
+  - name: "Saddlepoint approximations for likelihoods"
     id: "keynote-4"
     type: "talk"
     detail_type: "keynote"
-    start: "09:00"
-    end: "10:00"
+    start: "09:05"
+    end: "09:55"
     speakers: ["Jesse Goodman \U0001F464", Godrick Oketch, Rachel Fewster, Alice Hankin, Sixiang Shan, George Fan]
     speaker_imgs: ["keynote/jesse-goodman/jesse-goodman.jpeg"]
     speaker_orgs: [University of Auckland, University of Auckland, University of Auckland]
     location: "Arc Cinema"
+    chair: "Louise McMillan (TBA)"
     abstract: Classically, the saddlepoint approximation has been used as a
       systematic method for converting a known generating function into an approximation
       for an unknown density function. More recently, it has been used instead as
@@ -2422,8 +2428,9 @@ Friday:
     id: "session-11a"
     type: "talk"
     start: "10:00"
-    end: "10:45"
+    end: "11:00"
     location: "Arc Cinema"
+    chair: "Yidi Deng"
     talk_1: False Discovery Rate Controlled Robust Variable Selection under Cellwise
       Contamination
     talk_1_speakers:
@@ -2508,8 +2515,9 @@ Friday:
   - name: "Session 11B"
     id: "session-11b"
     type: "talk"
+    chair: "David Baird"
     start: "10:00"
-    end: "10:45"
+    end: "11:00"
     location: "Theatrette"
     talk_1: 'Genstat Markdown: Reproducible Research with Genstat'
     talk_1_speakers:
@@ -2597,18 +2605,19 @@ Friday:
   - name: "Morning Tea"
     id: "morning-tea-fri"
     type: "social"
-    start: "10:45"
-    end: "11:15"
+    start: "11:00"
+    end: "11:30"
     speaker: ""
     location: "Gallery"
     description: "Light refreshments and beverages. Take a break and enjoy some tea or coffee while networking with peers."
 
-  - name: "Keynote: Optimizing Research Impact Through Interdisciplinary and Collaborative Research"
+  - name: "Optimizing Research Impact Through Interdisciplinary and Collaborative Research"
+    chair: "James Curran"
     id: "keynote-5"
     type: "talk"
     detail_type: "keynote"
-    start: "11:15"
-    end: "12:00"
+    start: "11:30"
+    end: "12:20"
     speakers: "Charmaine B. Dean \U0001F464"
     speaker_imgs: "keynote/charmaine-dean/charmaine.jpg"
     speaker_orgs: University of Waterloo
@@ -2641,8 +2650,8 @@ Friday:
   - name: "Closing Ceremony"
     id: "closing"
     type: "general"
-    start: "12:00"
-    end: "12:45"
+    start: "12:20"
+    end: "12:30"
     speaker: "Organizing Committee"
     location: "Arc Cinema"
     description: "Wrap-up and acknowledgements. Thanks to participants, sponsors, and staff. Final remarks and farewell."
@@ -2651,9 +2660,9 @@ Friday:
   - name: "Lunch"
     id: "lunch-fri"
     type: "social"
-    start: "12:45"
-    end: "13:45"
+    start: "12:30"
+    end: "13:30"
     speaker: ""
-    location: "Dining Hall"
+    location: "Outdoor"
     description: "Farewell lunch. Join peers one last time over lunch."
 
