@@ -201,22 +201,7 @@ Tuesday:
     - Zachary T. Carter
     - Michael Bode
     talk_2_orgs: QUT School of Mathematics/SAEF
-    talk_2_abstract: "Eradication of invasive species from islands is an expensive
-      but often crucial activity for maintaining the ecosystems of these islands.
-      A key challenge in limiting the costs of an eradication campaign is knowing
-      the size of the remaining population of invasive animals; this information informs
-      both ongoing resource planning and when to end a campaign. Campaign progress
-      is measured by the decline in detections of the target species. However, detection
-      of a population is imperfect and highly variable, obscuring the true rate of
-      decline. As a result, uncertainty arises when detections cease - have all individuals
-      truly been eradicated, or do some remain undetected? Statistical models have
-      been developed to infer eradication success based on a record of detections
-      (sighting records), however, most models ignore natural heterogeneity in detectability.
-      \r\nOur work examines the influence of variance in detection rates on the false
-      positive and false negative error rates of hypothetical eradication campaigns
-      and relates this to overall costs of island conservation. We use a combination
-      of Bayesian likelihood and likelihood-free models to overcome simultaneous inference
-      limits on abundance and detectability within this highly stochastic study system."
+    talk_2_abstract: "Invasive species eradications are central to protecting island biodiversity, yet accurately declaring when eradication has occurred remains difficult. Detection is both imperfect and variable, leading to significant uncertainty in the state of eradication once detections of the target population cease. Contemporary eradication inference models account for imperfect detection, however, and critically, they ignore natural variation in rates of detection between individuals and across time and space. Although capture-mark-recapture studies have shown that ignoring individual variation in detection leads certain models to biased estimates of population parameters (e.g. population size), few such examinations have been applied to eradication contexts. In this presentation, I will highlight how costly it is to assume homogeneous detection during eradication campaigns and describe how we have incorporated variable detection rates into an eradication inference model using an ABC-SMC framework. I will elaborate on the problems that arose due to the inherent and significant stochasticity of the system, how we overcame them, and future work required to make this model applicable to case studies."
     talk_3: Zero-inflated Tweedie distribution for abundance of rare ecological species
     talk_3_speakers: "Nokuthaba Sibanda \U0001F464"
     talk_3_orgs: Victoria University of Wellington
