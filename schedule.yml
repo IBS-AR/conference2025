@@ -3,7 +3,7 @@ Monday:
     id: "registration-mon-1"
     type: "workshop"
     start: "08:30"
-    end: "9:00"
+    end: "09:00"
     location: "Emailed to participants"
 
   - name: "Workshop"
@@ -65,7 +65,7 @@ Tuesday:
     chair: "Chris Brien"
     detail_type: "keynote"
     start: "09:05"
-    end: "9:55"
+    end: "09:55"
     speakers: "Cheng Soon Ong \U0001F464"
     speaker_imgs: "keynote/cheng-soon-ong/chengpic-2023-small.jpg"
     speaker_orgs: "CSIRO and ANU"
@@ -429,7 +429,7 @@ Tuesday:
     talk_3_speakers:
     - "Sam Rogers \U0001F464"
     - Wasin Pipattungsakul
-    - Julian Taylor (TBA)
+    - Julian Taylor
     talk_3_orgs: University of Adelaide
     talk_3_abstract: "Agricultural field trials are typically designed using robust
       statistical randomisation, and best practice agricultural field trials also
@@ -1175,7 +1175,7 @@ Wednesday:
     detail_type: "keynote"
     chair: "Thomas Lumley"
     start: "08:55"
-    end: "9:45"
+    end: "09:45"
     speaker_imgs: "keynote/heather-turner/headshot_500x500.jpg"
     speakers: "Heather L. Turner \U0001F464"
     speaker_orgs: "University of Warwick"
@@ -2157,7 +2157,7 @@ Thursday:
     description: "Afternoon refreshments. Light snacks and drinks served."
 
   - name: "Session 10A"
-    chair: "Julian Taylor"
+    chair: "Julian Taylor (TBA)"
     id: "session-10a"
     type: "talk"
     start: "15:40"
