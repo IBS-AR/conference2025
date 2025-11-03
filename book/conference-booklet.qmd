@@ -25,13 +25,15 @@ format:
     back-cover-image: assets/back-cover.pdf
     include-in-header:
         - assets/header.tex
-        #- assets/draft.tex
+        - assets/draft.tex
     include-after-body: 
       text: |
         \printindex
 #keep-tex: true
 execute:
   echo: false
+  freeze: false
+  cache: false
 filters:
    - latex-environment
 environments: [minipage]
@@ -50,6 +52,8 @@ The [International Biometric Society (IBS)](https://www.biometricsociety.org/) i
 The IBS is organised into geographically-defined regions, each with at least 50 members. [The Australasian Region (IBS-AR)](https://biometricsociety.org.au/) is one of over 30 regions under the IBS umbrella. It provides to members of the IBS who reside in Australia, New Zealand and nearby countries a local focus and support for biometrics undertaken in this region.
 
 The Australasian Region Biometrics conference is a biannual conference sponsored by the IBS-AR. The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
+
+\Large Society website: [biometricsociety.org.au](https://biometricsociety.org.au/)
 
 \Large Conference website: [biometricsociety.org.au/conference2025](https://biometricsociety.org.au/conference2025)
 
@@ -133,6 +137,8 @@ We gratefully acknowledge our sponsors for their generous support, which has mad
 
 {\Large Platinum  }
 
+
+
 \includegraphics[width=50mm]{`r rmarkdown::metadata[["platinum-sponsors"]]`}  
 
 
@@ -176,7 +182,8 @@ load_schedule <- function() {
       i <<- i + 1
       time <- glue::glue("{event$start}-{event$end}")
       type <- ifelse(is.null(event$detail_type), event$type, event$detail_type)
-      location <- event$location
+      if(is.null(event$chair)) location <- event$location
+      if(!is.null(event$chair)) location <- paste0(event$location, "\n\nChair:\n", event$chair, "")
       if (!is.null(event$talk_1)) {
         talk_numbers <- names(event)[grepl("^talk_\\d$", names(event))]
         titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
@@ -211,7 +218,7 @@ load_schedule <- function() {
     mutate(type = tools::toTitleCase(type)) |>
     mutate(speakers = ifelse(speakers == "", titles, speakers)) |>
     mutate(location = ifelse(location == "Emailed to participants", 
-                             "Location emailed to participants", 
+                             "Haydon Allen", 
                              location))
 }
 
@@ -231,12 +238,13 @@ day_to_hux <- function(day_dat, across_idx = c()) {
     _[[1]] |>
     set_escape_contents(row = everywhere, col = 5, value = FALSE) |>
     set_width(1) |>
-    set_col_width(c(0.15, 0.12, 0.15, 0.18, 0.4)) |>
+    set_col_width(c(0.15, 0.12, 0.18, 0.18, 0.35)) |>
     set_font_size(everywhere, everywhere, 10) |>
     set_colspan(row = day_dat$type %in% c("General", "Social"), col = 4, 2) |>
-    set_background_color(row = day_dat$type %in% c("General", "Social"), col = 1:4, "grey80") |>
-    set_background_color(row = day_dat$type %in% c("Keynote", "Invited Session"), col = 2, "grey60") |>
-    set_latex_float("H")
+    set_background_color(row = day_dat$type %in% c("General", "Social"), col = 1:4, "#91B8F9") |>
+    set_background_color(row = day_dat$type %in% c("Poster"), col = 1:5, "#91B8F9") |>
+    set_background_color(row = day_dat$type %in% c("Keynote", "Invited Session"), col = 2, "#4071F6") |>
+    set_latex_float("H") 
   
   if (length(across_idx) > 0) {
     tbl |>
@@ -257,8 +265,10 @@ dat_mon <- schedule_dat |>
 
 day_to_hux(dat_mon) |>
   set_rowspan(row = 2, col = 3, 1) |>
-  set_rowspan(row = 1, col = 3, 4) |>
-  set_colspan(row = 1, col = 4, 2)
+  set_rowspan(row = 1, col = 3, 2) |> 
+  set_rowspan(row = 3, col = 3, 2) |>
+  set_colspan(row = 1, col = 4, 2) |>
+  set_colspan(row = 2, col = 4, 2) 
 ```
 
 ## Tuesday, 25 November 
