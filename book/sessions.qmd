@@ -1,51 +1,97 @@
 ---
-title: Draft Schedule
+title: Schedule
 date: today
+execute:
+  echo: false
 format:
   html:
     page-layout: full
 ---
 
 
-Or see the interactive version [here](/schedule.html). 
-
 Please note that this is a draft program and is subject to change.
+
+
 
 ```{r}
 #| include: false
 library(tidyverse)
-sessions <- read_csv(here::here("book/data/sessions.csv")) |>
-  mutate(time = case_when(str_length(time) == 2 ~ str_c(time, ".00"),
-                          str_length(time) == 4 & str_sub(time, 2, 2) != ":" ~ str_c(time, "0"),
-                          .default = time)) |> 
-  arrange(day, order, room, talk_order) |> 
-  mutate(title = str_remove_all(title, fixed("\r\n"))) |> 
-  mutate(content = str_c("<b>", title, "</b><br><i>", paste(first, last), "</i>", sep = "")) 
-days <- c("Mon", "Tue", "Wed", "Thu", "Fri")
-options(knitr.kable.NA = '') 
+library(kableExtra)
+options(knitr.kable.NA = '')
+sessions <- readRDS(here::here("book/data/sessions.rds")) |> 
+  filter(day != "Monday") |> 
+  mutate(order = 1:n(), .by = session) |> 
+  mutate(room2 = case_when(room != "Theatrette" ~ "Arc Cinema",
+                           TRUE ~ "Theatrette")) |> 
+  mutate(start = str_extract(time, "^[0-9]+:[0-9]+")) |> 
+  mutate(content = case_when(type %in% c("General", "Social") ~ titles,
+                             TRUE ~ str_c("<b>", titles, "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", abstract,"</details>")))  |> 
+  select(-location, -start_of_session, -num_of_talks, -abstract,
+         -titles, -speakers, -time) 
+table_day_maker <- function(data) {
+  chair <- data |> 
+    filter(!is.na(chair) & !duplicated(chair)) |>
+    mutate(chair = str_c("<i>Chair: ", chair, "</i>")) |> 
+    pivot_wider(id_cols = start, names_from = room2, values_from = chair) |> 
+    mutate(order = 0)
+  
+  schedule <- data |> 
+    pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 
+    bind_rows(chair) |> 
+    arrange(start, order) |> 
+    select(-order) |> 
+    mutate(start = ifelse(duplicated(start), "", start)) 
+  
+  schedule |> 
+    kbl(escape = FALSE, 
+        col.names = c("Start", "Arc Cinema", "Theatrette")) |> 
+    kable_styling() |> 
+    column_spec(1, width = "10%!important") |> 
+    column_spec(2, width = "45%!important") |> 
+    column_spec(3, width = "45%!important") |> 
+    row_spec(which(schedule$start != ""), background = "#FFDB58") |> 
+    row_spec(which(str_detect(schedule$`Arc Cinema`, ".+Chair.+")), background = "#91B8F9")
+}
 ```
+
+
+
+
+## Tuesday
 
 ```{r}
-#| echo: false
-#| output: asis
 sessions |> 
-  select(day, content, talk_order, room, time) |> 
-  mutate(room = case_match(room,
-                           "A" ~ "Arc Cinema",
-                           "B" ~ "Theatre")) |> 
-  pivot_wider(names_from = room, values_from = content) |> 
-  #mutate(day = days[day]) |> 
-  select(-talk_order) |> 
-  nest_by(day) |> 
-  pwalk(function(day, data) {
-    cat("## ", days[day[1]], "\n")
-    data |> 
-      mutate(time = ifelse(duplicated(time), "", time)) |> 
-      knitr::kable(format = "html", escape = FALSE,
-                   align = "rll") |> 
-      kableExtra::kable_styling(bootstrap_options = "striped") |> 
-      cat()
-  })
-  
+  filter(day == "Tuesday",
+         type != "Poster") |> 
+  table_day_maker()
 ```
 
+\newpage
+
+## Wednesday
+
+```{r}
+sessions |> 
+  filter(day == "Wednesday") |> 
+  table_day_maker()
+```
+
+\newpage
+
+## Thursday
+
+```{r}
+sessions |> 
+  filter(day == "Thursday") |> 
+  table_day_maker()
+```
+
+\newpage
+
+## Friday
+
+```{r}
+sessions |> 
+  filter(day == "Friday") |> 
+  table_day_maker()
+```
