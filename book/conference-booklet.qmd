@@ -182,23 +182,35 @@ load_schedule <- function() {
       i <<- i + 1
       time <- glue::glue("{event$start}-{event$end}")
       type <- ifelse(is.null(event$detail_type), event$type, event$detail_type)
-      if(is.null(event$chair)) location <- event$location
-      if(!is.null(event$chair)) location <- paste0(event$location, "\n\nChair:\n", event$chair, "")
+      room <- event$location
+      if(is.null(event$chair)) {
+        location <- event$location
+        chair <- NA
+      }
+      if(!is.null(event$chair)) {
+        location <- paste0(event$location, "\n\nChair:\n", event$chair, "")
+        chair <- event$chair
+      }
       if (!is.null(event$talk_1)) {
         talk_numbers <- names(event)[grepl("^talk_\\d$", names(event))]
         titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
         speakers <- map(talk_numbers, \(talk_number) grep("\U0001F464", event[[glue::glue("{talk_number}_speakers")]], value = TRUE))
+        abstract <- map_chr(talk_numbers, \(talk_number) event[[glue::glue("{talk_number}_abstract")]])
       } else {
         titles <- event$name
         speakers <- list(grep("\U0001F464", event$speakers, value = TRUE))
+        abstract <- event$abstract
       }
       
       tb <- tibble(time = time,
                    type = type,
                    location = location,
+                   room = room,
+                   chair = chair,
                    speakers = speakers,
                    titles = titles,
-                   session = i)
+                   session = i,
+                   abstract = abstract)
     })
     
     tb$day <- day
@@ -223,6 +235,7 @@ load_schedule <- function() {
 }
 
 schedule_dat <- load_schedule()
+saveRDS(schedule_dat, here::here("book/data/sessions.rds"))
 ```
 
 ```{r}
