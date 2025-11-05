@@ -1178,7 +1178,7 @@ Wednesday:
   - name: "Session 5A"
     id: "session-5a"
     type: "talk"
-    chair: "David Warton (TBA)"
+    chair: "David Warton"
     start: "09:50"
     end: "10:50"
     location: "Arc Cinema"
@@ -2030,7 +2030,7 @@ Thursday:
     type: "talk"
     start: "13:40"
     end: "15:00"
-    chair: "Sam Mason (TBA)"
+    chair: "Sam Mason"
     location: "Theatrette"
     par_id: 2
     par_total: 2
@@ -2142,7 +2142,7 @@ Thursday:
     description: "Afternoon refreshments. Light snacks and drinks served."
 
   - name: "Session 10A"
-    chair: "Julian Taylor (TBA)"
+    chair: "Julian Taylor"
     id: "session-10a"
     type: "talk"
     start: "15:40"
@@ -2388,7 +2388,7 @@ Friday:
     speaker_imgs: ["keynote/jesse-goodman/jesse-goodman.jpeg"]
     speaker_orgs: [University of Auckland, University of Auckland, University of Auckland]
     location: "Arc Cinema"
-    chair: "Louise McMillan (TBA)"
+    chair: "Louise McMillan"
     abstract: Classically, the saddlepoint approximation has been used as a
       systematic method for converting a known generating function into an approximation
       for an unknown density function. More recently, it has been used instead as
