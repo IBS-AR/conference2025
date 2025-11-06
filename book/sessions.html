@@ -75,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -210,13 +239,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
+    <div class="quarto-title column-page-right">
       <h1 class="title">Schedule</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-body">
+  <div class="quarto-title-meta column-page-right">
 
       
       <div>
@@ -242,28 +271,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#tuesday" id="toc-tuesday" class="nav-link active" data-scroll-target="#tuesday">Tuesday</a></li>
-  <li><a href="#wednesday" id="toc-wednesday" class="nav-link" data-scroll-target="#wednesday">Wednesday</a></li>
-  <li><a href="#thursday" id="toc-thursday" class="nav-link" data-scroll-target="#thursday">Thursday</a></li>
-  <li><a href="#friday" id="toc-friday" class="nav-link" data-scroll-target="#friday">Friday</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/IBS-AR/conference2025/edit/main/book/sessions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/IBS-AR/conference2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
 
 
 
 
 
 <p>Please note that this is a draft program and is subject to change.</p>
-<section id="tuesday" class="level2">
-<h2 class="anchored" data-anchor-id="tuesday">Tuesday</h2>
+<p>For the conference booklet, see <a href="../book/conference-booklet.pdf">here</a>.</p>
+<p>For the schedule print out, see <a href="../book/schedule-print.pdf">here</a>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Tuesday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Tuesday Poster Session</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Wednesday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Thursday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Friday</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small">
@@ -292,7 +316,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">09:05</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Chris Brien</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Keynote</strong> -- <em>Chair: Chris Brien</em></td>
 <td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"></td>
 </tr>
 <tr class="even">
@@ -308,8 +332,8 @@ One of the key choices we have as scientists is to design informative experiment
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">10:00</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Garth Tarr</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Scott Foster</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 1A</strong> -- <em>Chair: Garth Tarr</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 1B</strong> -- <em>Chair: Scott Foster</em></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -369,8 +393,8 @@ Abundance data for rare species can be extremely zero-inflated, where percentage
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">11:30</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Alan Welsh</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: James Curran</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 2A</strong> -- <em>Chair: Alan Welsh</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 2B</strong> -- <em>Chair: James Curran</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -447,8 +471,8 @@ Crowdsourcing platforms such as Amazon Mechanical Turk and Prolific provide scal
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">13:50</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Francis Hui</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Ruth Butler</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Invited Session: A Cluster of Modern Clustering Methods for Biometrics</strong> -- <em>Chair: Francis Hui</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 3B</strong> -- <em>Chair: Ruth Butler</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -519,8 +543,8 @@ Effective statistical consulting in agriculture depends not just on technical ex
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">15:50</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Zhanglong Cao</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Graham Hepworth</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 4A</strong> -- <em>Chair: Zhanglong Cao</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 4B</strong> -- <em>Chair: Graham Hepworth</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -577,10 +601,133 @@ The estimation of average treatment effect (ATE) is a central goal of observatio
 </table>
 </div>
 </div>
-<div style="page-break-after: always;"></div>
-</section>
-<section id="wednesday" class="level2">
-<h2 class="anchored" data-anchor-id="wednesday">Wednesday</h2>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li>Location: Gallery</li>
+<li>Time: 17:00-19:00</li>
+</ul>
+<ol>
+<li>
+<b>Using atmospheric transport models to predict species incursions in northern Australia</b> by <i>Zhenhua (Iris) Hao Dr </i>
+<details>
+<summary>
+Abstract
+</summary>
+Predicting the arrival of invasive species is critical for strengthening biosecurity, particularly in regions like northern Australia that are vulnerable to aerial incursions. This ongoing study compares atmospheric modelling with detection patterns from long-term field surveillance to evaluate how different models can be integrated to increase confidence in identifying likely source regions, arrival pathways and periods of elevated risk. We apply three complementary models: HYSPLIT (Hybrid Single-Particle Lagrangian Integrated Trajectory), FLEXPART (FLEXible PARTicle dispersion model), and Lagrangian Coherent Structures (LCS). These models range in complexity - from simulating basic wind trajectories to identifying hidden transport patterns within the atmosphere. A rich empirical foundation is provided by two decades of fruit fly trapping data collected through the Northern Australia Quarantine Strategy (NAQS) in the Torres Strait. By identifying likely incursion windows for Oriental Fruit Fly (Bactrocera dorsalis) arrivals from Papua New Guinea, we evaluate and compare model performance and gain insights into potential dispersal mechanisms. While model implementation and case analysis are still underway, preliminary results suggest that combining outputs from different models improves the detection and interpretation of likely incursion events. Future work will focus on integrating these model outputs with additional environmental and biological datasets to produce dynamic risk maps. These maps aim to support NAQS surveillance planning and resource prioritisation. This framework can also be extended to other high-risk species to enhance predictive capacity and improve biosecurity strategies for Australia’s north.
+</details>
+</li>
+<li>
+<b>Visualisation of multinomial multilevel time-series modelling with application to current smoking status</b> by <i>Alice Richardson </i>
+<details>
+<summary>
+Abstract
+</summary>
+<p>In Australia, tobacco smoking has declined overall over the last 25 years, yet substantial disparities exist across age, sex and state. In this talk we will present the results of multilevel multinomial time series modelling to estimate trends in smoking status (current, former and never) across small domains defined by seven age groups, two genders, and eight states and territories from 2001–2022.</p>
+<p>The model is developed using ex-smokers as the reference category, as their proportion remains relatively stable over time. Statistically significant random intercepts and random slopes for linear time trends are identified at the state-age-sex level. The spatio-temporal extension of the multinomial multilevel logistic model yields detailed estimates, helping to uncover disparities in the trends of smoking decline. Temporal random effects at the state-sex and age-sex levels also substantially contribute to achieving numerically consistent trend estimates.</p>
+Visualisations of these models are especially important for conveying results in a compelling manner to health researchers and policy makers and program implementation teams. We will discuss the process of arriving at our visualisations using R for this particular application.
+</details>
+</li>
+<li>
+<b>Paired Comparison with Cyclic Dominance: An Extension of the Bradley–Terry Model</b> by <i>Yuki Ohno </i>
+<details>
+<summary>
+Abstract
+</summary>
+<p>The Bradley–Terry model has become a cornerstone for analyzing paired-comparison data, providing a principled approach to estimating “strength” parameters without imposing a latent, continuous ordering on teams, treatments, or evaluators. Its transitivity constraint—each pairwise preference must be consistent with a global ranking—yields excellent performance in many applications, including sports analytics, psychometric scaling, and clinical preference studies. However, empirical datasets sometimes exhibit cyclic dominance, rendering the classical model inadequate and leading to systematic misfit.</p>
+Real-world data often display cyclic patterns, resembling a “rock-paper-scissors” dynamic, which can violate the transitivity constraint typically expected in such analyses. To address this issue, we first review important applications of the Bradley-Terry model and highlight instances where non-transitive outcomes occur. Next, we introduce a minimal extension of the model that preserves the original likelihood but adds a single “cycle-strength” parameter. This parameter is designed to capture uniform three-way dominance among any trio of outcomes. When the cycle-strength parameter is set to zero, the model reverts to the classical Bradley-Terry framework. Importantly, we demonstrate that our cycle strength corresponds precisely to the quasi-asymmetry measure proposed by Tahata et al.&nbsp;(2004), establishing a clear quantitative relationship between model fit and deviations from transitivity.
+</details>
+</li>
+<li>
+<b>Cleaning Text Data with Large Language Models</b> by <i>Jiajia Li </i>
+<details>
+<summary>
+Abstract
+</summary>
+<p>Data cleaning – particularly the standardisation and feature extraction from unstructured text – is a time-consuming and often manual process in data science workflows. Traditional methods, such as approximate string matching, lack semantic understanding and still require inefficient, manual corrections. We leverage the transformative potential of large language models (LLMs) to automate these tedious tasks and significantly accelerate data preparation.</p>
+We introduce the <code>emend</code> R package, which leverages LLMs to perform various data cleaning tasks, including matching categorical variables, reordering ordinal variables, translating languages, and standardising dates and addresses. The package integrates with local LLMs via Ollama as well as cloud-based APIs via the R package ellmer, offering multiple options for using LLMs from different providers. A comprehensive simulation study evaluated emend’s core functionality across 13 LLMs and a baseline string-matching method on real-world datasets of country names, institutional affiliations, and species names. Results demonstrate high accuracy for LLM-based methods in general text standardisation, with GPT-4o-mini and GPT-4o excelling on country names and affiliations, respectively. The <code>emend</code> package streamlines data cleaning in R, reducing the need for extensive manual corrections for data analysts. This work highlights LLMs as powerful tools for increasing efficiency of cleaning text data.
+</details>
+</li>
+<li>
+<b>ggincerta: An R Package for Uncertainty Visualisation with a Layered Grammar of Graphics</b> by <i>Xueqi Ma </i>
+<details>
+<summary>
+Abstract
+</summary>
+<p>Uncertainty is inherent in all estimates derived from data. However, when visualising these estimates on spatial maps, uncertainty is often overlooked, leading to decision-making based solely on point estimates. The <code>Vizumap</code> R package addresses this gap by integrating both estimates and their uncertainties in areal data, offering four types of visualisations: bivariate choropleth maps, pixel maps, glyph maps, and exceedance probability maps.</p>
+Building upon <code>Vizumap</code>, we introduce the <code>ggincerta</code> R package, a ground-up reimplementation that recreates all of <code>Vizumap</code>’s visualisations, but also provides enhanced functionality, within the layered grammar of graphics framework provided by <code>ggplot2</code>. By leveraging <code>ggplot2</code>, <code>ggincerta</code> seamlessly integrates uncertainty visualisation into users’ existing workflows, employing familiar syntax and conventions. This approach not only enhances accessibility for those already comfortable with <code>ggplot2</code>, but also exemplifies how existing systems can be extended to new purposes, rather than developing separate, ad-hoc solutions that require learning additional languages or interfaces.
+</details>
+</li>
+<li>
+<b>The “Theory of Sampling” (ToS) - have statisticians missed the boat?</b> by <i>Damian Collins </i>
+<details>
+<summary>
+Abstract
+</summary>
+<p>The “Theory of Sampling” (ToS) framework originated with chemical engineer Pierre Gy over 50 years ago. It essentially deals with the sampling of materials, particularly soils, composts,and minerals. It enjoys a strong advocacy amongst chemical engineers, geologists and similar professionals. The ToS instructs practitioners to stop and think about the sampling procedure. It encourages them to consider all the sources of variation in the material they wish to sample rather than just choosing to take the most convenient sample such as a “grab sample” from the surface. However, one of its strongest advocates argues that, in order to save on analysis costs, only one “correct” composite sample is necessary. This single sample, deemed to be “representative” of the entire material, is all that is required to characterise a material (Esbenson (2017)). Composting sampling guidelines around the world use the ToS to justify this practice of single sampling. For example, it has currently been recommended in the AS4454 review in Australia (https://www.as4454review.com.au/). However, with only one sample analysed, contributions to measurement uncertainty from either the sampling or analysis processes, cannot be assessed. It is concerning that despite the apparent sophistication of ToS methodology and the breadth of its advocacy network, it perpetuates the scientifically unsound idea of a “representative sample.” .Even the name, “Theory of Sampling”, is a misnomer, suggesting an even broader application than just the sampling of materials. We review the ToS and consider implications to statistical practise and adoption.</p>
+Esbenson, K.H. (2017). Sampling: Theory and Practice. Alchemist 85 pages 3–6. https://www.lbma.org.uk/alchemist/issue-85/sampling-theory-and-practice
+</details>
+</li>
+<li>
+<b>Evaluating Diagnostic Performance via Bayesian <span class="math inline">\(F_1\)</span> Score Estimation without a Gold Standard</b> by <i>Jun Tamura </i>
+<details>
+<summary>
+Abstract
+</summary>
+In clinical medicine, diseases are often diagnosed with high accuracy based on characteristic signs and symptoms. However, the gold standard tests used to confirm diagnoses are frequently invasive, expensive, or impractical for population-level screening. This highlights the importance of developing and validating simple, non-invasive screening tests. Diagnostic performance is typically evaluated using metrics such as accuracy, sensitivity (Se), specificity (Sp), positive predictive value (PPV), and negative predictive value (NPV). However, when disease prevalence is low or class imbalance exists, accuracy and Sp may not adequately reflect test performance. <span class="math inline">\(F_1\)</span> score, which considers both Se and PPV, has been widely adopted in such settings as a balanced measure of diagnostic ability. A limitation of the <span class="math inline">\(F_1\)</span> score is its reliance on the true disease status defined by a gold standard. In some fields, however, the disease mechanism may be unclear or the definition of clinical signs ambiguous, making it difficult to define a reliable gold standard. This presents challenges for evaluating diagnostic accuracy using conventional methods. To address this issue, we propose a Bayesian framework that enables estimation of the <span class="math inline">\(F_1\)</span> score without directly observing gold standard outcomes. The approach uses latent class analysis to estimate unobserved disease status and offers a promising method for assessing test performance in settings where the gold standard is unavailable or uncertain
+</details>
+</li>
+<li>
+<b>Evaluating Remote Monitoring in Automated Peritoneal Dialysis: A Difference-in-Differences Analysis</b> by <i>Annie Conway </i>
+<details>
+<summary>
+Abstract
+</summary>
+<p>During a cholera outbreak in 1850s London, physician John Snow famously traced the source of the outbreak to contaminated water supply. In what could be deemed a “natural experiment”, he compared cholera mortality rates between areas served by different water companies before and after one company relocated its water intake, using an early form of the method <em>difference-in-differences</em> (DiD).</p>
+<p>Recently, DiD has gained renewed popularity in health and epidemiological sciences for testing the effectiveness of technological or policy interventions. However, real-world applications can have complexities such as staggered roll-out of the intervention and heterogeneity between treated units. Additionally, these often involve count outcomes that violate the linear model assumptions underlying existing DiD methods.</p>
+<p>In this project I consider the impact of a new technology for automated peritoneal dialysis (APD) that allows patients to be remotely monitored by clinicians as they complete dialysis at home. This new APD cycler was rolled out gradually in PD centres across Australia and New Zealand between 2017 and 2023. Using data from the ANZDATA registry, I assess remote monitoring’s impact across PD centres, counting the number of deaths, peritonitis infections and technique failures, comparing before and after the roll-out and between treated and untreated centres.</p>
+This analysis employs various DiD methods to overcome the challenges of staggered adoption and heterogeneous effects, to provide an evaluation of remote monitoring’s impact on critical patient outcomes.
+</details>
+</li>
+<li>
+<b>Judgement Post-Stratification for Covariate Adjustment in Pairwise Comparisons in Block Designs</b> by <i>Sam Rogers </i>
+<details>
+<summary>
+Abstract
+</summary>
+The randomised complete block design (RCBD) remains one of the most widely used experimental designs in agronomy, agriculture, and controlled-environment research. In this study, we introduce a novel post-experimental method, judgement post-stratification, for improving the efficiency of pairwise treatment comparisons using plot-level covariate information. The method operates within the RCBD framework to focus on generalised designs with multiple replications of treatments within blocks. Using simulations based on uniformity trials, we show that when plots can be consistently ranked according to an expected outcome, independent of treatment assignment, this ranking can be used post-hoc to enhance the precision of estimated treatment differences. This approach offers a practical and flexible tool for incorporating auxiliary information into the analysis of block designs without compromising the integrity of the original randomisation.
+</details>
+</li>
+<li>
+<b>Bayesian inference for sparse Gaussian copula graphical model</b> by <i>Tomotaka Momozaki </i>
+<details>
+<summary>
+Abstract
+</summary>
+We consider Bayesian inference for sparse dependence structures among variables in multivariate mixed data, which consists of both continuous and discrete variables. Traditional graphical modeling approaches often struggle with mixed-type data, as they typically focus on either purely continuous or purely discrete settings. This limitation becomes particularly problematic in high-dimensional scenarios where identifying relevant variable relationships is crucial for interpretability and prediction accuracy. This study proposes a novel Bayesian approach that combines Gaussian copula graphical models with advanced shrinkage priors, including horseshoe priors and double exponential priors. The Gaussian copula framework enables unified modeling of mixed-type variables by transforming them to a common latent Gaussian scale, while shrinkage priors facilitate automatic variable selection by adaptively shrinking irrelevant dependencies toward zero. This combination addresses both the mixed-data challenge and the high-dimensionality issue simultaneously. We develop an efficient posterior sampling algorithm that maintains the positive definiteness of correlation matrices by employing a block Gibbs sampler with hit-and-run algorithm. Our approach utilizes rank information to handle mixed-type data within the copula framework, enabling unified treatment of continuous and discrete variables. The proposed method is particularly valuable for analyzing complex datasets in genomics, economics, and social sciences, where variables of different types naturally co-occur. We present comprehensive evaluation of our method’s effectiveness through extensive simulation studies comparing with existing approaches and real data analysis demonstrating practical applicability.
+</details>
+</li>
+<li>
+<b>Visualization for departures from symmetry with the power-divergence-type measure in square contingency tables</b> by <i>Wataru Urasaki </i>
+<details>
+<summary>
+Abstract
+</summary>
+When the row and column variables consist of the same category in a two-way contingency table, it is called a square contingency table. Such tables often have an association structure concentrated along the main diagonal, making the analysis of symmetric relationships and transitions important. Various models and measures have been proposed to analyze these structures to understand the changes between two variables’ behavior at two-time points or cohorts. This is necessary for a detailed investigation of individual categories and their interrelationships, such as shifts in brand preferences. We propose a novel correspondence analysis (CA) framework to evaluate departures from symmetry in square contingency tables with nominal scales, using a power-divergence-type measure. This approach ensures that well-known divergences can also be visualized and, regardless of the divergence used, the CA plot consists of two principal axes with equal contribution rates. Our visualization method enables the magnitude of each category’s departure from symmetry to be assessed by its deviation from the origin, while asymmetric relationships between category pairs can be interpreted through corresponding triangle areas. Importantly, the scaling of the departures from symmetry provided by the measure is independent of sample size, allowing for meaningful comparisons and unification of results across different tables. This standardization supports broader applicability in empirical studies. We also present some considerations from the results of the analysis with actual data. Our framework thus offers an effective tool for studying structural shifts in categorical data.
+</details>
+</li>
+<li>
+<b>Performance of Factor Analytic Mixed Models and Plackett–Luce Models for Genotype Ranking in Multi-Environment Trials</b> by <i>Jiazhe Lin </i>
+<details>
+<summary>
+Abstract
+</summary>
+Multi-environment trials are central to plant breeding, providing evaluations of genotype performance across locations and time to capture environmental variability. The resulting data are often heterogeneous and unbalanced, motivating the use of advanced statistical models. The Factor Analytic Linear Mixed Model (FALMM) has become a benchmark approach, offering a parsimonious decomposition of genotype and genotype-by-environment effects and supporting inference on average genotype performance. Alternatively, the Plackett-Luce Model (PLM), originally developed in psychology, allows aggregation of environment-specific rankings into a global ranking that reflects overall genotype performance. We propose a two-stage framework that integrates FALMM and PLM, and through extensive simulation, evaluate conditions under which each method provides optimal inference.
+</details>
+</li>
+</ol>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small">
@@ -609,7 +756,7 @@ The estimation of average treatment effect (ATE) is a central goal of observatio
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">08:55</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Thomas Lumley</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Keynote</strong> -- <em>Chair: Thomas Lumley</em></td>
 <td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"></td>
 </tr>
 <tr class="even">
@@ -625,8 +772,8 @@ The R package {gnm} was designed as a unified interface to fit Generalized Nonli
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">09:50</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: David Warton</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Sam Rogers</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 5A</strong> -- <em>Chair: David Warton</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 5B</strong> -- <em>Chair: Sam Rogers</em></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -686,8 +833,8 @@ Accurate assessment of crop development and disease severity is essential for in
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">11:20</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Robert Clark</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Linh Nghiem</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Invited Session: Statistics for Biosecurity Surveillance</strong> -- <em>Chair: Robert Clark</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 6B</strong> -- <em>Chair: Linh Nghiem</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -770,10 +917,8 @@ Kukush et al. (2004) discussed the bias of the naive estimator for the regressio
 </table>
 </div>
 </div>
-<div style="page-break-after: always;"></div>
-</section>
-<section id="thursday" class="level2">
-<h2 class="anchored" data-anchor-id="thursday">Thursday</h2>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small">
@@ -802,7 +947,7 @@ Kukush et al. (2004) discussed the bias of the naive estimator for the regressio
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">08:55</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Warren Muller</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Invited Session: Statistics for Biosecurity Surveillance</strong> -- <em>Chair: Warren Muller</em></td>
 <td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"></td>
 </tr>
 <tr class="even">
@@ -818,8 +963,8 @@ Bayesian modeling has become invaluable in biometrics. It allows us to formally 
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">09:50</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Vanessa Cave</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Alice Richardson</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 7A</strong> -- <em>Chair: Vanessa Cave</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 7B</strong> -- <em>Chair: Alice Richardson</em></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -879,8 +1024,8 @@ Pooled testing (also known as group testing) is a widely used procedure to test 
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">11:20</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Matthew Schofield</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Chris Triggs</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 8A</strong> -- <em>Chair: Matthew Schofield</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 8B</strong> -- <em>Chair: Chris Triggs</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -962,8 +1107,8 @@ Modeling directional time series data such as wind or ocean current direction pr
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">13:40</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Emi Tanaka</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Sam Mason</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Invited Session: Methods and Practice in Agricultural Analytics</strong> -- <em>Chair: Emi Tanaka</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 9B</strong> -- <em>Chair: Sam Mason</em></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -1034,8 +1179,8 @@ Detecting species response to climate change is a critical concern in ecology re
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">15:40</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Julian Taylor</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Oyelola Adegboye</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 10A</strong> -- <em>Chair: Julian Taylor</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 10B</strong> -- <em>Chair: Oyelola Adegboye</em></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -1108,10 +1253,8 @@ Real-world clinical studies often present missing data challenges that leave the
 </table>
 </div>
 </div>
-<div style="page-break-after: always;"></div>
-</section>
-<section id="friday" class="level2">
-<h2 class="anchored" data-anchor-id="friday">Friday</h2>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small">
@@ -1140,7 +1283,7 @@ Real-world clinical studies often present missing data challenges that leave the
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">09:05</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Louise McMillan</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Keynote</strong> -- <em>Chair: Louise McMillan</em></td>
 <td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"></td>
 </tr>
 <tr class="even">
@@ -1156,8 +1299,8 @@ Classically, the saddlepoint approximation has been used as a systematic method 
 </tr>
 <tr class="odd">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">10:00</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: Yidi Deng</em></td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: David Baird</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 11A</strong> -- <em>Chair: Yidi Deng</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 11B</strong> -- <em>Chair: David Baird</em></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important;"></td>
@@ -1217,7 +1360,7 @@ Understanding how much biological variation is heritable - or passed down from o
 </tr>
 <tr class="even">
 <td style="text-align: left; width: 10%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">11:30</td>
-<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><em>Chair: James Curran</em></td>
+<td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Keynote</strong> -- <em>Chair: James Curran</em></td>
 <td style="text-align: left; width: 45%!important; background-color: rgba(255, 219, 88, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"></td>
 </tr>
 <tr class="odd">
@@ -1245,9 +1388,11 @@ Interdisciplinary collaborative research is a key component of data science and 
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1688,7 +1833,7 @@ SUPPORTER
 </tr>
 </tbody></table>
 <p><br><br> Biometrics in the Bush Capital <i class="fa-solid fa-landmark" aria-label="landmark"></i> Canberra, Australia</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/IBS-AR/conference2025/edit/main/book/sessions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/IBS-AR/conference2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/IBS-AR/conference2025/edit/main/book/sessions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/IBS-AR/conference2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
