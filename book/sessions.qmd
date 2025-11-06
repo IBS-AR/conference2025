@@ -11,6 +11,9 @@ format:
 
 Please note that this is a draft program and is subject to change.
 
+For the conference booklet, see [here](/book/conference-booklet.pdf).
+
+For the schedule print out, see [here](/book/schedule-print.pdf).
 
 
 ```{r}
@@ -28,12 +31,18 @@ sessions <- readRDS(here::here("book/data/sessions.rds")) |>
                              TRUE ~ str_c("<b>", titles, "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", abstract,"</details>")))  |> 
   select(-location, -start_of_session, -num_of_talks, -abstract,
          -titles, -speakers, -time) 
-table_day_maker <- function(data) {
+table_day_maker <- function(data, offset = 0, keynote = "0") {
   chair <- data |> 
     filter(!is.na(chair) & !duplicated(chair)) |>
     mutate(chair = str_c("<i>Chair: ", chair, "</i>")) |> 
     pivot_wider(id_cols = start, names_from = room2, values_from = chair) |> 
-    mutate(order = 0)
+    mutate(order = 0) |> 
+    mutate(`Arc Cinema` = str_c("<b>Session ", 1:n() - 1 + offset, "A</b> -- ", `Arc Cinema`),
+           Theatrette = str_c("<b>Session ", 1:n() - 1  + offset, "B</b> -- ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 6A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote"))
   
   schedule <- data |> 
     pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 
@@ -55,7 +64,7 @@ table_day_maker <- function(data) {
 ```
 
 
-
+::: {.panel-tabset}
 
 ## Tuesday
 
@@ -63,35 +72,52 @@ table_day_maker <- function(data) {
 sessions |> 
   filter(day == "Tuesday",
          type != "Poster") |> 
-  table_day_maker()
+  table_day_maker(offset = 0)
 ```
 
-\newpage
+## Tuesday Poster Session
+
+- Location: Gallery
+- Time: 17:00-19:00
+
+```{r}
+#| output: asis
+posters <- sessions |> 
+  filter(day == "Tuesday",
+         type == "Poster") |> 
+  pull(content) 
+
+cat("<ol>")
+str_c("<li>", posters, "</li>\n\n") |> 
+  cat()
+cat("</ol>")
+```
+
 
 ## Wednesday
 
 ```{r}
 sessions |> 
   filter(day == "Wednesday") |> 
-  table_day_maker()
+  table_day_maker(offset = 4, keynote = 4)
 ```
 
-\newpage
 
 ## Thursday
 
 ```{r}
 sessions |> 
   filter(day == "Thursday") |> 
-  table_day_maker()
+  table_day_maker(offset = 6, keynote = 6)
 ```
 
-\newpage
 
 ## Friday
 
 ```{r}
 sessions |> 
   filter(day == "Friday") |> 
-  table_day_maker()
+  table_day_maker(offset = 10, keynote = "10|12")
 ```
+
+:::
