@@ -118,7 +118,6 @@ sessions |>
   table_day_maker(offset = 6, keynote = 6)
 ```
 
-\newpage
 
 ## Friday
 
