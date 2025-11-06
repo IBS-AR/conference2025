@@ -1491,6 +1491,13 @@ Wednesday:
     location: " "
     description: " "
 
+  - name: "Young (at heart) Biometrician Social Event"
+    id: "dinner-wed"
+    type: "social"
+    start: "18.30"
+    end: "20.30"
+    location: " "
+
 Thursday:
   - name: "Conference Registration"
     id: "registration-thu"

@@ -234,8 +234,10 @@ load_schedule <- function() {
                              location))
 }
 
-schedule_dat <- load_schedule()
-saveRDS(schedule_dat, here::here("book/data/sessions.rds"))
+data <- load_schedule()
+saveRDS(data, here::here("book/data/sessions.rds"))
+schedule_dat <- data |> 
+  select(-room, -chair)
 ```
 
 ```{r}
@@ -273,7 +275,7 @@ day_to_hux <- function(day_dat, across_idx = c()) {
 ```{r message=FALSE}
 library(huxtable)
 
-dat_mon <- schedule_dat |>
+dat_mon <- schedule_dat |> 
   filter(day == "Monday")
 
 day_to_hux(dat_mon) |>
