@@ -9,9 +9,9 @@ format:
          \geometry{
            a4paper,
            total={170mm,257mm},
-           left=20mm,
+           left=15mm,
            top=20mm,
-           right=20mm,
+           right=15mm,
            bottom=20mm
           }
          \usepackage{fancyhdr}
@@ -36,12 +36,18 @@ sessions <- readRDS(here::here("book/data/sessions.rds")) |>
                              TRUE ~ str_c("\\textbf{", titles, "} by \\textit{", speakers, "}")))  |> 
   select(-location, -start_of_session, -num_of_talks, -abstract,
          -titles, -speakers, -time) 
-table_day_maker <- function(data) {
+table_day_maker <- function(data, offset = 0) {
   chair <- data |> 
     filter(!is.na(chair) & !duplicated(chair)) |>
     mutate(chair = str_c("\\textit{Chair: ", chair, "}")) |> 
     pivot_wider(id_cols = start, names_from = room2, values_from = chair) |> 
-    mutate(order = 0)
+    mutate(order = 0) |> 
+    mutate(`Arc Cinema` = str_c("\\textbf{Session ", 1:n() + offset, "A} -- ", `Arc Cinema`),
+           Theatrette = str_c("\\textbf{Session ", 1:n()  + offset, "B} -- ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 8A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 12A", "Invited Session: Methods and Practice in Agricultural Analytics")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session (1|6|9|14|16)A", "Keynote"))
   
   schedule <- data |> 
     pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 
@@ -75,12 +81,31 @@ sessions |>
 
 \newpage
 
+## Tuesday Poster Session
+
+- Location: Gallery
+- Time: 17:00-19:00
+
+```{r}
+#| output: asis
+posters <- sessions |> 
+  filter(day == "Tuesday",
+         type == "Poster") |> 
+  pull(content) 
+
+str_c("1. ", posters, "\n\n") |> 
+  cat()
+```
+
+
+
 ## Wednesday
 
 ```{r}
 sessions |> 
   filter(day == "Wednesday") |> 
-  table_day_maker()
+  #slice(-n()) |> # remove Young stats event
+  table_day_maker(offset = 5)
 ```
 
 \newpage
@@ -90,7 +115,7 @@ sessions |>
 ```{r}
 sessions |> 
   filter(day == "Thursday") |> 
-  table_day_maker()
+  table_day_maker(offset = 8)
 ```
 
 \newpage
@@ -100,5 +125,5 @@ sessions |>
 ```{r}
 sessions |> 
   filter(day == "Friday") |> 
-  table_day_maker()
+  table_day_maker(offset = 13)
 ```

@@ -192,7 +192,7 @@ load_schedule <- function() {
         chair <- event$chair
       }
       if (!is.null(event$talk_1)) {
-        talk_numbers <- names(event)[grepl("^talk_\\d$", names(event))]
+        talk_numbers <- names(event)[grepl("^talk_\\d+$", names(event))]
         titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
         speakers <- map(talk_numbers, \(talk_number) grep("\U0001F464", event[[glue::glue("{talk_number}_speakers")]], value = TRUE))
         abstract <- map_chr(talk_numbers, \(talk_number) event[[glue::glue("{talk_number}_abstract")]])
@@ -339,19 +339,19 @@ day_to_hux(dat_fri)
 ```{r}
 display_abstract <- function(data) {
   data |> 
-    select(first, last, org, coauthors, title, abstract) |> 
-    pwalk(function(first, last, org, coauthors, title, abstract) {
+    select(first, last, org, coauthors, titles, abstract.x) |> 
+    pwalk(function(first, last, org, coauthors, titles, abstract.x) {
        #cat("\\smallskip\n")
        #cat("::: {.minipage arguments='\\textwidth'}\n\n")
        #cat("\\nopagebreak\n\n")
-       cat(str_c("### ", title, "\n\n"))
+       cat(str_c("### ", titles, "\n\n"))
        cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
        cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
        if(!is.na(coauthors)) cat(str_c("*Co-authors: ", coauthors, "*\n\n"))
        #cat("\\vspace{1.2em}\n\n")
        cat("\\setlength{\\parskip}{0.5em}\n\n")
        #cat("\\setlength{\\parindent}{1em}\n\n\\noindent ")
-       cat(abstract, "\n\n")
+       cat(abstract.x, "\n\n")
        #cat(":::\n\n")
      }) 
 }
@@ -361,57 +361,126 @@ display_abstract <- function(data) {
 
 ```{r}
 #| output: asis
-keynote |> 
-  arrange(last) |> 
+schedule_dat |> 
+  mutate(speakers = str_trim(speakers)) |> 
+  right_join(mutate(keynote, speakers = str_c(first, " ", last)), by = "speakers") |> 
   display_abstract()
 ```
 
 
 # Invited talks
 
+## A Cluster of Modern Clustering Methods for Biometrics
+
+```{r}
+invited_talks <- schedule_dat |> 
+  mutate(speakers = str_squish(speakers)) |> 
+  right_join(invited |> 
+               mutate(
+                 name2 = case_when(name2 == "Belinda Parsa" ~ NA,
+                                   name2 == "Robert Das" ~ "Robert Clark",
+                                   TRUE ~ name2),
+                 add = ifelse(is.na(name2), "", str_c(" and ", name2)),
+                 speakers = str_c(first, " ", last, add)), 
+             by = "speakers") |> 
+  filter(paste(first, last) != "Andrew P. Robinson") 
+```
+
 ```{r}
 #| output: asis
-invited |> 
-  filter(paste0(first, last) != "Andrew P. Robinson") |> 
-  arrange(last) |> 
+invited_talks |> 
+  slice(1:3) |> 
   display_abstract()
 ```
 
+## Statistics for Biosecurity Surveillance
+
+
+```{r}
+#| output: asis
+invited_talks |> 
+  slice(4:6) |> 
+  display_abstract()
+```
+
+## Methods and Practice in Agricultural Analytics
+
+```{r}
+#| output: asis
+invited_talks |> 
+  slice(7:9) |> 
+  display_abstract()
+```
 
 # Contributed talks
 
 
-
 ```{r}
-#| output: asis
-contributed |> 
- arrange(last) |> 
- filter(type == "talk") |> 
- #slice(1:30) |> 
- display_abstract()
+ctrbd_talks <- schedule_dat |> 
+  mutate(speakers = str_squish(speakers)) |> 
+  right_join(contributed |> 
+               mutate(
+                 speakers = str_squish(str_c(first, " ", last))) |> 
+               filter(type == "talk"), 
+             by = "speakers") 
 ```
+
 
 
 ## Tuesday
 
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Tuesday") |> 
+  display_abstract()
+```
+
 ## Wednesday
-
-
-## Thursday
-
-
-## Friday
-
-
-# Posters
 
 ```{r}
 #| output: asis
-contributed |> 
- arrange(last) |> 
- filter(type == "poster") |> 
+ctrbd_talks |> 
+  filter(day == "Wednesday") |> 
+  display_abstract()
+```
+
+## Thursday
+
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Thursday") |> 
+  display_abstract()
+```
+
+## Friday
+
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Friday") |> 
+  display_abstract()
+```
+
+# Posters
+
+
+```{r}
+#| output: asis
+schedule_dat |> 
+  mutate(speakers = str_squish(speakers)) |> 
+  filter(type == "Poster") |> 
+  right_join(contributed |> 
+               mutate(
+                 speakers = str_squish(str_c(first, " ", last))) |> 
+               filter(type == "poster"), 
+             by = "speakers")  |> 
+  filter(!speakers %in% c("George Manapat")) |> 
  display_abstract()
 ```
+
+
 
 # Code of Conduct
 

@@ -1046,24 +1046,6 @@ Tuesday:
       of estimated treatment differences. This approach offers a practical and flexible
       tool for incorporating auxiliary information into the analysis of block designs
       without compromising the integrity of the original randomisation.
-    talk_10: Small Area Estimation of Fertility Rate in the Philippines using DHS
-      and Census Data
-    talk_10_speakers: "George Manapat \U0001F464"
-    talk_10_orgs: University of the Philippines Diliman
-    talk_10_abstract: Accurate and timely estimation of fertility indicators at subnational
-      levels is essential for effective health planning, especially in countries with
-      geographically diverse populations and uneven data availability. In the Philippines,
-      while national and regional fertility rates are routinely measured through national
-      surveys such as the Demographic and Health Survey (DHS), local-level estimates,
-      e.g., at the provincial level, remain sparse and unreliable due to limited sample
-      sizes. Using the data from the 2022 Philippine DHS and auxiliary covariates
-      from the 2020 Census of Population and Housing, small area estimates of fertility
-      rate at the provincial level are obtained using a Bayesian hierarchical model
-      accounting for spatial correlation. Preliminary findings show substantial differences
-      in fertility rates between provinces. Some areas, especially in more remote
-      or underserved regions, have much higher fertility than the national average.
-      The results underscore the necessity for area-specific health programs and policies
-      to address the unique demographic challenges of each locality.
     talk_11: Bayesian inference for sparse Gaussian copula graphical model
     talk_11_speakers: "Tomotaka Momozaki \U0001F464"
     talk_11_orgs: Tokyo University of Science
@@ -1494,8 +1476,8 @@ Wednesday:
   - name: "Young (at heart) Biometrician Social Event"
     id: "dinner-wed"
     type: "social"
-    start: "18.30"
-    end: "20.30"
+    start: "18:30"
+    end: "20:30"
     location: " "
 
 Thursday:
@@ -2643,7 +2625,7 @@ Friday:
     id: "closing"
     type: "general"
     start: "12:20"
-    end: "12:30"
+    end: "12:40"
     speaker: "Organizing Committee"
     location: "Arc Cinema"
     description: "Wrap-up and acknowledgements. Thanks to participants, sponsors, and staff. Final remarks and farewell."
@@ -2652,7 +2634,7 @@ Friday:
   - name: "Lunch"
     id: "lunch-fri"
     type: "social"
-    start: "12:30"
+    start: "12:40"
     end: "13:30"
     speaker: ""
     location: "Outdoor"
