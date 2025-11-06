@@ -2,13 +2,6 @@
 title: Sponsorship
 ---
 
-If you would like to sponsor the conference, please contact <conference@biometricsociety.org.au> or go below for more informaton.
-
-<div class="button-wrapper-cta">
-  <a class="button-cta cta-button" href="	https://membership.biometricsociety.org.au/event-6161571 ">Sponsorship Information</a>
-</div>
-
-
 We gratefully acknowledge our sponsors for their generous support, which has made this conference possible.  
 
 
