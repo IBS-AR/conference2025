@@ -256,7 +256,8 @@ load_schedule <- function() {
 data <- load_schedule()
 saveRDS(data, here::here("book/data/sessions.rds"))
 schedule_dat <- data |> 
-  select(-room, -chair)
+  select(-room, -chair) |> 
+  mutate(titles = map_chr(titles, ~markdown::mark(.x, format = "latex")))
 ```
 
 ```{r}
@@ -311,7 +312,7 @@ day_to_hux(dat_mon) |>
 dat_tue <- schedule_dat |>
   filter(day == "Tuesday")
 
-split_tbl <- day_to_hux(dat_tue, which(grepl("StableMate", dat_tue$titles) | grepl("Species", dat_tue$titles) | grepl("autoDML", dat_tue$titles)))
+split_tbl <- day_to_hux(dat_tue, which(grepl("Zero-inflated", dat_tue$titles) | grepl("Better Conversations", dat_tue$titles) | grepl("autoDML", dat_tue$titles)))
 
 split_tbl[[1]]
 split_tbl[[2]]
@@ -338,7 +339,7 @@ split_tbl[[2]]
 dat_thu <- schedule_dat |>
   filter(day == "Thursday")
 
-split_tbl <- day_to_hux(dat_thu, which(grepl("Morning Tea", dat_thu$titles) | grepl("Spatio-Temporal", dat_thu$titles)))
+split_tbl <- day_to_hux(dat_thu, which(grepl("Fitting integrated", dat_thu$titles) | grepl("Spatio-Temporal", dat_thu$titles)))
 
 split_tbl[[1]]
 split_tbl[[2]]
@@ -371,7 +372,7 @@ display_abstract <- function(data, duration = 50, cospeaker = FALSE) {
              as_datetime(),
            start = start +  dminutes((order - 1) * duration),
            end = start + dminutes(duration),
-           time = str_c(format(start, "%H:%M"), "-", format(end, "%H:%M"))) |> 
+           time = str_c(format(start, "%H:%M"), "--", format(end, "%H:%M"))) |> 
     select(first, last, org, coauthors, titles, abstract.x, first2, last2, org2, time, day, location) |> 
     pwalk(function(first, last, org, coauthors, titles, abstract.x, first2, last2, org2, time, day, location) {
        #cat("\\smallskip\n")
@@ -407,6 +408,8 @@ display_abstract <- function(data, duration = 50, cospeaker = FALSE) {
 
 # Keynote talks
 
+Please note that the times are indicative and may have some small variation.
+
 ```{r}
 #| output: asis
 schedule_dat |> 
@@ -417,6 +420,8 @@ schedule_dat |>
 
 
 # Invited talks
+
+Please note that the times are indicative and may have some small variation.
 
 ## A Cluster of Modern Clustering Methods for Biometrics
 
@@ -458,6 +463,8 @@ invited_talks |>
 ```
 
 # Contributed talks
+
+Please note that the times are indicative and may have some small variation.
 
 
 ```{r}
