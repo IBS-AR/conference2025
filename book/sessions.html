@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -89,7 +88,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -116,8 +115,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../logo-ibs-ar.svg" alt="" class="navbar-logo light-content">
-    <img src="../logo-ibs-ar.svg" alt="" class="navbar-logo dark-content">
+    <img src="../logo-ibs-ar.svg" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">#BIBC2025</span>
@@ -264,8 +262,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../logo-ibs-ar.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../logo-ibs-ar.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../logo-ibs-ar.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
 </nav>
@@ -285,12 +282,12 @@ window.Quarto = {
 <p>For the conference booklet, see <a href="../book/conference-booklet.pdf">here</a>.</p>
 <p>For the schedule print out, see <a href="../book/schedule-print.pdf">here</a>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Tuesday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Poster</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Wednesday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Thursday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Friday</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Tuesday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Poster</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Wednesday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Thursday</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Friday</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -750,7 +747,7 @@ Abstract
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -955,7 +952,7 @@ Kukush et al.&nbsp;(2004) discussed the bias of the naive estimator for the regr
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1144,11 +1141,16 @@ Furthermore, by utilizing a von Mises distribution whose mean direction depends 
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;"></td>
 </tr>
 <tr class="even">
+<td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">12:50</td>
+<td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;"></td>
+<td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">AGM</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">13:40</td>
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Invited Session: Methods and Practice in Agricultural Analytics</strong> — <em>Chair: Emi Tanaka</em></td>
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 9B</strong> — <em>Chair: Sam Mason</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>Evaluating the impact of trait measurement error on genetic analysis of computer vision-based phenotypes</strong> by <em>Gota Morota</em>
 <details>
@@ -1167,7 +1169,7 @@ Scientists at Manaaki Whenua – Landcare Research have been studying the impact
 Temporal trends in abundance were analysed and compared using linear mixed models with smoothing splines. The findings suggest that mice can have severe impacts on native biodiversity, particularly invertebrates, posing a significant threat to ecological recovery efforts in fenced ecosanctuaries.
 </details></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>Predication of Daily Weight Gain with Cattle Behaviour and Daily Activity Using Triaxial Accelerometer Data</strong> by <em>Shuwen Hu</em>
 <details>
@@ -1186,7 +1188,7 @@ The dataset was augmented with weather, geospatial and ecological information, a
 There was a small, positive association found between noisy miner abundance and all-species diversity – a surprising result. A stronger negative association was found for some species groupings. For many species groups, diversity tended to decrease with increasing distance from the nearest native vegetation feature, and with increasing wind speed. The work provided several statistical and computational challenges.
 </details></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>Fishing for Heritability in the Gill Microbiome: Why Statisticians Should get out into the field</strong> by <em>Elle Saber</em>
 <details>
@@ -1205,7 +1207,7 @@ We developed a novel phenological modelling approach using a Bayesian hierarchic
 This framework successfully quantifies species-specific climate sensitivities while accounting for phylogenetic constraints. Expected effect of time-lagged temperature and rainfall effects vary significantly across Köppen climate zones and species. Species vulnerability patterns could help identify taxa which could be potentially at higher risk under projected climate scenarios. This modular Bayesian approach demonstrates the research potential of natural history collections for continental-scale ecological inference, providing a statistical template for global phenological studies addressing critical climate change impacts.
 </details></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>Spatio-Temporal Species Distribution Modelling</strong> by <em>Sam Mason</em>
@@ -1218,17 +1220,17 @@ Recent advances in data acquisition technology have made it easier to obtain a w
 By using dynamic predictors and anomalies from their mean values in spatio-temporal species distribution models we see if we can detect species response to climate change and if this yields better predictive performance than current practice. Interestingly, we have not found appreciable spatio-temporal signal, in contrast to expectations and other work which used naïve approaches to analysis.
 </details></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">15:10</td>
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">Afternoon Tea</td>
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important; background-color: rgba(145, 184, 249, 255) !important;">15:40</td>
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 10A</strong> — <em>Chair: Julian Taylor</em></td>
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important; background-color: rgba(145, 184, 249, 255) !important;"><strong>Session 10B</strong> — <em>Chair: Oyelola Adegboye</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>The <em>equalto</em> covariance structure for meta-analysis using the <code>glmmTMB</code> R package</strong> by <em>Coralie C. Williams</em>
 <details>
@@ -1245,7 +1247,7 @@ Abstract
 Optimal management of acute biliary disease should include an assessment for possible choledocholithiasis (stones in the bile duct). Various diagnostic guidelines have been developed by expert bodies for this purpose, but uncertainties remain about their performance in wider practice. We carried out a meta-analysis to compare three of these guidelines. Each guideline yields a score, for which different thresholds are considered in terms of sensitivity and specificity. Of 1,892 records, thirty-one studies were identified for this meta-analysis. All studies focused on one or more of three international guidelines, namely the ASGE guidelines from 2010, the revised ASGE guidelines from 2019 and the ESGE guidelines from 2019. Each study reported on the diagnostic validity of one or more of these guidelines at one or more score cutpoint. The analysis was carried out using the <em>diagmeta</em> R package [Rücker G, Steinhauser S, Kolampally S, Schwarzer G (2022)]. Their approach allows the meta-analytical estimation of the area under the receiver operating curve, a quantity that summarises the performance of a diagnostic tool. The approach consists in fitting transformed values of sensitivity and specificity at various cutpoints, which can differ between studies, accounting for study heterogeneity using linear mixed effects modelling. While the <em>diagmeta</em> approach applies to the meta-analysis of a single diagnostic procedure, we show how its framework can be extended to jointly and severally test for performance similarity between guidelines. We also show how it can be extended to identify outlier studies, for the purpose of carrying out sensitivity analyses.
 </details></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>Simulation-based Inference about Variance Components</strong> by <em>Farwa Saleem</em>
 <details>
@@ -1265,7 +1267,7 @@ Methods: We used a self-controlled case series (SCCS) design and identified GBS 
 Results: We identified 2086 GBS cases (4329 vaccine doses) from EDS and 410 cases were chart-reviewed (12% with LOC 1-2). We observed an association between Vaxzevria/Covishield vaccine and GBS among LOC 1-2 cases within 42 days post-exposure (RI 3.10, 95%CI 1.12-8.62). No increased risk of GBS was observed with mRNA and other vaccines. Among 489 EDS -identified cases post-infection, significant risk was found between SARS-CoV-2 and GBS (RI 3.35, 95%CI 1.83-6.11). The SCCS method is an efficient approach to collect minimal data for IPD meta-analysis. Full results using different SCCS models will be discussed.
 </details></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>A Proportional Random Effect Block Bootstrap for Highly Unbalanced Clustered Data</strong> by <em>Zhi Yang Tho</em>
 <details>
@@ -1282,7 +1284,7 @@ Abstract
 In New Zealand, 7% of deaths are related to respiratory diseases, with Pacific people at higher risk. Our work investigates the causal effects of early-life risks and resilience factors on early-adulthood lung function amongst Pacific Islands Families Study (PIFS) cohort members (n=1,398). 466 from the cohort participated in the respiratory study. Primary outcome was forced expiratory volume in 1 second (FEV1) z-score at age 18 years. FEV1 and healthy lung function (HLF), defined as the z-score being larger than -1.64, were secondary outcomes. A previous study had evaluated the effects of early-life nutrition factors on the respiratory health of Pacific youth. The results suggested a positive impact of consuming more fruit and vegetables during childhood on respiratory health later in life. The follow-up study will continue to explore the effects of factors from relevant domains based on the PIFS cohort, where a new integrated model will be applied. A simulation will be conducted to determine this model.
 </details></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><strong>A missing data detective story – how I navigated through a perfect storm of drop-out’s, COVID and informative missingness.</strong> by <em>Eve Slavich</em>
@@ -1295,11 +1297,6 @@ While missing data complications can severely challenge study validity, thoughtf
 References: Young, R et al, 2025, Outcomes for obstetric anal sphincter injuries and anal incontinence following introduction of a perineal bundle, Continence, Volume 14<br>
 Keywords: Missing data analysis, informative missingness, multiple imputation, statistical consulting, statistical practice
 </details></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">15:50</td>
-<td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;"></td>
-<td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">AGM</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; background-color: rgba(216, 225, 233, 255) !important;">18:30</td>
@@ -1314,7 +1311,7 @@ Keywords: Missing data analysis, informative missingness, multiple imputation, s
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1509,14 +1506,13 @@ Interdisciplinary collaborative research is a key component of data science and 
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
