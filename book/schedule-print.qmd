@@ -33,7 +33,7 @@ sessions <- readRDS(here::here("book/data/sessions.rds")) |>
                            TRUE ~ "Theatrette")) |> 
   mutate(start = str_extract(time, "^[0-9]+:[0-9]+")) |> 
   mutate(content = case_when(type %in% c("General", "Social") ~ titles,
-                             TRUE ~ str_c("\\textbf{", titles, "} by \\textit{", speakers, "}")))  |> 
+                             TRUE ~ str_c("\\textbf{", map_chr(titles, ~markdown::mark(.x, format = "latex")), "} by \\textit{", speakers, "}")))  |> 
   select(-location, -start_of_session, -num_of_talks, -abstract,
          -titles, -speakers, -time) 
 table_day_maker <- function(data, offset = 0, keynote = "0") {

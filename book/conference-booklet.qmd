@@ -57,6 +57,7 @@ The Australasian Region Biometrics conference is a biannual conference sponsored
 
 \Large Conference website: [biometricsociety.org.au/conference2025](https://biometricsociety.org.au/conference2025)
 
+
 \normalsize
 
 ## IBS-AR Council
@@ -73,6 +74,11 @@ The Australasian Region Biometrics conference is a biannual conference sponsored
 - **Samuel Muller** (Macquarie University) as IBS Council Member
 - **Kevin Murray** (University of Western Australia) as IBS Council Member
 - **Chris Triggs** (University of Auckland) as IBS Executive Board
+
+
+\Large Find us on **bluesky**: [@biometricsociety.org.au](https://bsky.app/profile/biometricsociety.org.au)
+
+\normalsize
 
 \vfill 
 
@@ -119,7 +125,13 @@ _Last updated: `r format(Sys.time())`_
 #| message: false
 library(tidyverse)
 contributed <- readRDS("data/contributed.rds")
-invited <- readRDS("data/invited.rds")
+invited <- readRDS("data/invited.rds") |> 
+  mutate(name2 = case_when(name2 == "Robert Das" ~ "Robert Clark",
+                           TRUE ~ NA)) |> 
+  mutate(first2 = ifelse(name2 == "Robert Clark",
+                         "Robert", NA),
+         last2 = ifelse(name2 == "Robert Clark",
+                         "Clark", NA))
 keynote <- readRDS("data/keynote.rds")
 ```
 
@@ -337,19 +349,37 @@ day_to_hux(dat_fri)
 
 
 ```{r}
-display_abstract <- function(data) {
+display_abstract <- function(data, cospeaker = FALSE) {
+  if(!cospeaker) {
+    data$name2 <- NA
+    data$org2 <- NA
+    data$first2 <- NA
+    data$last2 <- NA
+  }
   data |> 
-    select(first, last, org, coauthors, titles, abstract.x) |> 
-    pwalk(function(first, last, org, coauthors, titles, abstract.x) {
+    select(first, last, org, coauthors, titles, abstract.x, first2, last2, org2) |> 
+    pwalk(function(first, last, org, coauthors, titles, abstract.x, first2, last2, org2) {
        #cat("\\smallskip\n")
        #cat("::: {.minipage arguments='\\textwidth'}\n\n")
        #cat("\\nopagebreak\n\n")
        cat(str_c("### ", titles, "\n\n"))
-       cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
-       cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
+       if(!cospeaker) {
+         cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
+         cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
+       } else {
+         cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
+         cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*"))
+         if(is.na(first2)) {
+           cat("\n\n")
+         } else {
+           cat(str_c(" and *", first2, " ", last2, "*\\index{", last2, ", ", first2, "} "))
+           cat(str_c("*(", str_replace_all(org2, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
+         }
+       }
+       
        if(!is.na(coauthors)) cat(str_c("*Co-authors: ", coauthors, "*\n\n"))
        #cat("\\vspace{1.2em}\n\n")
-       cat("\\setlength{\\parskip}{0.5em}\n\n")
+       cat("\\setlength{\\parskip}{0.4em}\n\n")
        #cat("\\setlength{\\parindent}{1em}\n\n\\noindent ")
        cat(abstract.x, "\n\n")
        #cat(":::\n\n")
@@ -377,9 +407,6 @@ invited_talks <- schedule_dat |>
   mutate(speakers = str_squish(speakers)) |> 
   right_join(invited |> 
                mutate(
-                 name2 = case_when(name2 == "Belinda Parsa" ~ NA,
-                                   name2 == "Robert Das" ~ "Robert Clark",
-                                   TRUE ~ name2),
                  add = ifelse(is.na(name2), "", str_c(" and ", name2)),
                  speakers = str_c(first, " ", last, add)), 
              by = "speakers") |> 
@@ -400,7 +427,7 @@ invited_talks |>
 #| output: asis
 invited_talks |> 
   slice(4:6) |> 
-  display_abstract()
+  display_abstract(cospeaker = TRUE)
 ```
 
 ## Methods and Practice in Agricultural Analytics
