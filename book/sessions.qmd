@@ -28,7 +28,9 @@ sessions <- readRDS(here::here("book/data/sessions.rds")) |>
                            TRUE ~ "Theatrette")) |> 
   mutate(start = str_extract(time, "^[0-9]+:[0-9]+")) |> 
   mutate(content = case_when(type %in% c("General", "Social") ~ titles,
-                             TRUE ~ str_c("<b>", titles, "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", abstract,"</details>")))  |> 
+                             TRUE ~ str_c("<b>", map_chr(titles, quarto::tbl_qmd_span), "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", map_chr(abstract, quarto::tbl_qmd_span), "</details>")))  |> 
+  # mutate(content = case_when(type %in% c("General", "Social") ~ titles,
+  #                            TRUE ~ str_c("<b>", map_chr(titles, ~{markdown::mark(.x, format = "html") |> str_remove_all("</?p>")}), "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", map_chr(abstract, ~{markdown::mark(.x, format = "html") |> str_replace_all(fixed("\\("), "$") |> str_replace_all(fixed("\\)"), "$")}), "</details>")))  |> 
   select(-location, -start_of_session, -num_of_talks, -abstract,
          -titles, -speakers, -time) 
 table_day_maker <- function(data, offset = 0, keynote = "0") {
@@ -37,8 +39,8 @@ table_day_maker <- function(data, offset = 0, keynote = "0") {
     mutate(chair = str_c("<i>Chair: ", chair, "</i>")) |> 
     pivot_wider(id_cols = start, names_from = room2, values_from = chair) |> 
     mutate(order = 0) |> 
-    mutate(`Arc Cinema` = str_c("<b>Session ", 1:n() - 1 + offset, "A</b> -- ", `Arc Cinema`),
-           Theatrette = str_c("<b>Session ", 1:n() - 1  + offset, "B</b> -- ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_c("<b>Session ", 1:n() - 1 + offset, "A</b> &mdash; ", `Arc Cinema`),
+           Theatrette = str_c("<b>Session ", 1:n() - 1  + offset, "B</b> &mdash; ", Theatrette)) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 6A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics")) |> 
@@ -53,12 +55,14 @@ table_day_maker <- function(data, offset = 0, keynote = "0") {
   
   schedule |> 
     kbl(escape = FALSE, 
+        format = "html", 
+        #table.attr = "quarto-disable-processing=true",
         col.names = c("Start", "Arc Cinema", "Theatrette")) |> 
     kable_styling() |> 
-    column_spec(1, width = "10%!important") |> 
-    column_spec(2, width = "45%!important") |> 
-    column_spec(3, width = "45%!important") |> 
-    row_spec(which(schedule$start != ""), background = "#FFDB58") |> 
+    #column_spec(1, width = "10%!important") |> 
+    #column_spec(2, width = "45%!important") |> 
+    #column_spec(3, width = "45%!important") |> 
+    row_spec(which(schedule$start != ""), background = "#D8E1E9") |> 
     row_spec(which(str_detect(schedule$`Arc Cinema`, ".+Chair.+")), background = "#91B8F9")
 }
 ```
@@ -75,10 +79,10 @@ sessions |>
   table_day_maker(offset = 0)
 ```
 
-## Tuesday Poster Session
+## Poster
 
 - Location: Gallery
-- Time: 17:00-19:00
+- Time: Tue 17:00-19:00
 
 ```{r}
 #| output: asis

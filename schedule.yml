@@ -1999,7 +1999,7 @@ Thursday:
       get out into the field'
     talk_3_speakers: "Elle Saber \U0001F464"
     talk_3_orgs: Australian National University
-    talk_3_abstract: Host‐associated microbiomes are increasingly recognised as integral
+    talk_3_abstract: Host-associated microbiomes are increasingly recognised as integral
       to health, yet the extent to which host genetics shapes these communities remains
       unclear. While heritable components of gut and skin microbiomes have been documented
       in several vertebrates, evidence for the gill microbiome of fish is scarce.
@@ -2498,8 +2498,7 @@ Friday:
     - Simon Urbanek
     - David Baird
     talk_1_orgs: University of Auckland
-    talk_1_abstract: "** This talk should not be accepted unless you are desperate
-      :-) ** \r\n\r\nReproducible research ensures that scientific findings can be
+    talk_1_abstract: "Reproducible research ensures that scientific findings can be
       independently verified by others using the same data and methods. Markdown plays
       a key role in supporting reproducibility by allowing researchers to combine
       code, results, and narrative text in a clear, lightweight format. Tools like

@@ -124,8 +124,15 @@ _Last updated: `r format(Sys.time())`_
 ```{r}
 #| message: false
 library(tidyverse)
-contributed <- readRDS("data/contributed.rds")
+contributed <- readRDS("data/contributed.rds") |> 
+  mutate(coauthors = case_when(first == "Yidi" ~ "Jiadong Mao, Jarny Choi, Kim-Anh Lê Cao",
+                               first == "Tiphaine" ~ "Cécile Proust-Lima, Daniel J. Myall, Toni L. Pitcher, Leslie Livingston, Rachel Nolan, Sophie Grenfell, John C. Dalrymple-Alford, Alexandra Foubert-Samier, Wassilios G. Meissner, Tim J. Anderson and Campbell J. Le Heron",
+                               TRUE ~ coauthors))
 invited <- readRDS("data/invited.rds") |> 
+  mutate(coauthors = case_when(str_detect(name2, "Belinda") ~ "Belinda Barnes",
+                               str_detect(name2, "Antonio") ~ str_c("Antonio Reverter, ", coauthors),
+                               str_detect(name2, "Scott") ~ str_c("Scott Foster, ", coauthors),
+                               TRUE ~ coauthors)) |> 
   mutate(name2 = case_when(name2 == "Robert Das" ~ "Robert Clark",
                            TRUE ~ NA)) |> 
   mutate(first2 = ifelse(name2 == "Robert Clark",
@@ -349,7 +356,7 @@ day_to_hux(dat_fri)
 
 
 ```{r}
-display_abstract <- function(data, cospeaker = FALSE) {
+display_abstract <- function(data, duration = 50, cospeaker = FALSE) {
   if(!cospeaker) {
     data$name2 <- NA
     data$org2 <- NA
@@ -357,8 +364,16 @@ display_abstract <- function(data, cospeaker = FALSE) {
     data$last2 <- NA
   }
   data |> 
-    select(first, last, org, coauthors, titles, abstract.x, first2, last2, org2) |> 
-    pwalk(function(first, last, org, coauthors, titles, abstract.x, first2, last2, org2) {
+    mutate(order = 1:n(), .by = c(time, location, day)) |> 
+    mutate(start = time |> 
+             str_extract("^[0-9]+:[0-9]+") |> 
+             hm() |> 
+             as_datetime(),
+           start = start +  dminutes((order - 1) * duration),
+           end = start + dminutes(duration),
+           time = str_c(format(start, "%H:%M"), "-", format(end, "%H:%M"))) |> 
+    select(first, last, org, coauthors, titles, abstract.x, first2, last2, org2, time, day, location) |> 
+    pwalk(function(first, last, org, coauthors, titles, abstract.x, first2, last2, org2, time, day, location) {
        #cat("\\smallskip\n")
        #cat("::: {.minipage arguments='\\textwidth'}\n\n")
        #cat("\\nopagebreak\n\n")
@@ -378,6 +393,9 @@ display_abstract <- function(data, cospeaker = FALSE) {
        }
        
        if(!is.na(coauthors)) cat(str_c("*Co-authors: ", coauthors, "*\n\n"))
+       if(duration > 0) {
+         cat(glue::glue("**_{day} ~{time} at  {str_remove(location, '\\n\\nChair:.*\\n.+')}_**\n\n"))
+       }
        #cat("\\vspace{1.2em}\n\n")
        cat("\\setlength{\\parskip}{0.4em}\n\n")
        #cat("\\setlength{\\parindent}{1em}\n\n\\noindent ")
@@ -417,7 +435,7 @@ invited_talks <- schedule_dat |>
 #| output: asis
 invited_talks |> 
   slice(1:3) |> 
-  display_abstract()
+  display_abstract(duration = 30)
 ```
 
 ## Statistics for Biosecurity Surveillance
@@ -427,7 +445,7 @@ invited_talks |>
 #| output: asis
 invited_talks |> 
   slice(4:6) |> 
-  display_abstract(cospeaker = TRUE)
+  display_abstract(cospeaker = TRUE, duration = 30)
 ```
 
 ## Methods and Practice in Agricultural Analytics
@@ -436,7 +454,7 @@ invited_talks |>
 #| output: asis
 invited_talks |> 
   slice(7:9) |> 
-  display_abstract()
+  display_abstract(duration = 30)
 ```
 
 # Contributed talks
@@ -460,7 +478,7 @@ ctrbd_talks <- schedule_dat |>
 #| output: asis
 ctrbd_talks |> 
   filter(day == "Tuesday") |> 
-  display_abstract()
+  display_abstract(duration = 20)
 ```
 
 ## Wednesday
@@ -469,7 +487,7 @@ ctrbd_talks |>
 #| output: asis
 ctrbd_talks |> 
   filter(day == "Wednesday") |> 
-  display_abstract()
+  display_abstract(duration = 20)
 ```
 
 ## Thursday
@@ -478,7 +496,7 @@ ctrbd_talks |>
 #| output: asis
 ctrbd_talks |> 
   filter(day == "Thursday") |> 
-  display_abstract()
+  display_abstract(duration = 20)
 ```
 
 ## Friday
@@ -487,7 +505,7 @@ ctrbd_talks |>
 #| output: asis
 ctrbd_talks |> 
   filter(day == "Friday") |> 
-  display_abstract()
+  display_abstract(duration = 20)
 ```
 
 # Posters
@@ -504,7 +522,7 @@ schedule_dat |>
                filter(type == "poster"), 
              by = "speakers")  |> 
   filter(!speakers %in% c("George Manapat")) |> 
- display_abstract()
+ display_abstract(duration = 0)
 ```
 
 
