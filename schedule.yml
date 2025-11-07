@@ -503,11 +503,10 @@ Tuesday:
     talk_3: Species archetype models for presence-only data
     talk_3_speakers:
     - "Skipton N.C. Woolley \U0001F464"
-    - "Scott Woolley \U0001F464"
+    - Scott Foster
     - David Warton
     - Piers Dunstan
     talk_3_orgs:
-    - CSIRO
     - CSIRO
     talk_3_abstract: Joint species distribution modelling is a recently emerged and
       potentially powerful statistical method for analysing biodiversity data. Despite
@@ -1920,9 +1919,9 @@ Thursday:
   - name: "AGM"
     id: "agm"
     type: "general"
-    start: "13:00"
+    start: "15:50"
     end: "13:30"
-    location: "Theattre"
+    location: "Theatrette"
     par_id: 2
     par_total: 2
 
@@ -1968,14 +1967,13 @@ Thursday:
       Using Triaxial Accelerometer Data
     talk_2_speakers:
     - "Shuwen Hu \U0001F464"
-    - "Antonio Hu \U0001F464"
+    - Antonio Reverter
     - Reza Arablouei
     - Greg Bishop-Hurley
     - Neil Bagnall
     - Aaron Ingham
     talk_2_orgs:
     - RMIT
-    - CSIRO
     talk_2_abstract: Live body weight gain is an important measurement of animal performance.
       In this study, we predict the cattle's daily weight gain from five core cattle
       behaviours and a measure of total daily activity based on accelerometer data.
@@ -2566,7 +2564,7 @@ Friday:
     talk_3_orgs: Australian National University
     talk_3_abstract: Understanding how much biological variation is heritable - or
       passed down from one generation to next - is central to plant breeding. Heritability
-      is a useful indictor to assess the genetic gain of desirable traits such as
+      is a useful indicator to assess the genetic gain of desirable traits such as
       yield or disease resistance in crop trials. We created `heritable`, an R package
       to streamline the calculation of heritability from `asreml` and `lme4` mixed
       model outputs in a user-friendly manner. The package provides up to six different
