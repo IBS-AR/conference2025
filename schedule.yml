@@ -1919,7 +1919,7 @@ Thursday:
   - name: "AGM"
     id: "agm"
     type: "general"
-    start: "15:50"
+    start: "12:50"
     end: "13:30"
     location: "Theatrette"
     par_id: 2
