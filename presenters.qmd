@@ -30,7 +30,7 @@ title: Instruction for Presenters
 - Please **rename your filename** before uploading so that it is prefixed with "S" followed by your session id and speaker order. E.g. if you are the third speaker in Session 1A, then your filename should be "S1A3.pdf" (if PDF). If you have multiple files, you may append with some unique name to differentiate between your files. 
 - To find the **session id** for your talk, see the conference program [here](https://biometricsociety.org.au/conference2025/book/sessions.html).
 - If you do not want to give us permission to make your slides available on the conference website, please append your filename with "DONOTUPLOAD" (all capital). 
-- When you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.
+- When you upload your files, you will be asked to enter your name and email. Your filenames will be automatically be appended with your name and a timestamp.
 
 :::
 
@@ -48,7 +48,7 @@ title: Instruction for Presenters
   - [Statistics for Biosecurity Surveillance](https://www.dropbox.com/request/JFQhCZaOS2ivQqaDMPuj)
   - [Methods and Practice in Agricultural Analytics](https://www.dropbox.com/request/7IFvmAE8Zt3RYwcn57FR)
 - If you do not want to give us permission to make your slides available on the conference website, please rename your file to contain "DONOTUPLOAD" (all capital). 
-- When you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.
+- When you upload your files, you will be asked to enter your name and email. Your filenames will be automatically be appended with your name and a timestamp.
 
 :::
 
@@ -66,7 +66,7 @@ title: Instruction for Presenters
 
 - Upload your files for [**keynote talk here**](https://www.dropbox.com/request/Ps07TJFbDhIIKuJASVsd).
 - If you do not want to give us permission to make your slides available on the conference website, please rename your file to contain "DONOTUPLOAD" (all capital). 
-- When you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.
+- When you upload your files, you will be asked to enter your name and email. Your filenames will be automatically be appended with your name and a timestamp.
 
 :::
 
