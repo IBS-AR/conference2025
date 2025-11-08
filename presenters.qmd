@@ -3,6 +3,7 @@ title: Instruction for Presenters
 ---
 
 - Please adhere to the time limit to ensure we get through the program on time.
+- Please upload your talk before your session. 
 - See instructions below for uploading your files based on your category.
 - If you want to replace a previously uploaded material, simply just follow the same instructions as before.
 - Please note that we intend to make the slides and posters available on this conference website, unless you explicitly deny us permission. Please see instruction on how to deny us permission. If you change your mind afterwards, you can simply email the conference organisers any time to remove your files from the website -- we will respect your wishes.
@@ -11,7 +12,7 @@ title: Instruction for Presenters
 
 - We strongly recommend that your slides have a **16:9 aspect ratio**.
 - A laptop with the most up-to-date version of PowerPoint on Microsoft 365 will be available.
-- If you wish to use your own laptop, please confirm with the AV team in advance and arrive early for setup.
+- If you wish to use your own laptop, please confirm with the AV team in advance and arrive early for setup. Please still upload your talks as a backup even if you are presenting from your laptop.
 - If your presentation includes embedded video or audio content, please supply these files separately (in addition to the presentation) as a back-up option.
 - Your slides should be either **PowerPoint** (.pptx), **PDF** format or **HTML** format. If you have a HTML slide, please upload as a zip folder with all files needed to load the slide, or provide a text file with the URL link to the slide (former preferred).
 
