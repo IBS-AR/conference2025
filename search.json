@@ -70,11 +70,130 @@
     "text": "Self-guided tours\nIf none of the organised tours suit you, you are most welcomed to self-organise yourself or with others your own tour. Canberra has many great attractions, including:\n\nAustralian War Memorial\nAustralian National Botanic Gardens\nMount Ainslie Lookout\nMusuem of Australian Democracy at Old Parliament House\nNational Arboretum\nNational Gallery of Australia\nNational Library of Australia\nNational Museum of Australia\nNational Portrait Gallery\nNational Zoo & Aquarium\nParliament House\nQuestacon"
   },
   {
-    "objectID": "updates.html",
-    "href": "updates.html",
-    "title": "Updates",
+    "objectID": "presenters.html",
+    "href": "presenters.html",
+    "title": "Instruction for Presenters",
     "section": "",
-    "text": "2025-07-14\n\n\n\nAbstract submission extended by one week\n\nLast chance! The abstract submission has been extended by one week and is due now on 21st July 2025 5PM AEST. Those who have already submitted their abstract will get an individual email confirmation and an opportunity to revise their abstract until the new deadline.\n\n\n\n\n2025-06-29\n\n\n\nWorkshops\n\nPre-conference workshops are now open for registration:\n\n\nGeneralized Nonlinear Models in R by Heather Turner\n\n\nAnalysing Complex Survey and Subsample Data (with R) by Thomas Lumley\n\n\nLost in Translation: Speaking Statistician in a Multi-Lingual World by Peter Humburg and Eve Slavich\n\n\nDeep Learning and Computer Vision in R: A Practical Introduction by Patrick (Weihao) Li\n\n\n\nSee more details here. As places are limited, please register early to secure your spot.\n\n\n\n\n\n2025-04-14\n\n\n\n Open for abstract submissions\n\nWe are pleased to invite submissions for abstracts for the Biometrics in the Bush Capital, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences.  Key themes and topics We welcome abstracts addressing, but not limited to, the following areas:\n\nAgricultural Statistics\n\n\nBayesian Statistics\n\n\nData Science and Artificial Intelligence\n\n\nDesign or Surveys\n\n\nDemographic or Population Modelling\n\n\nEcological or Environmental Statistics\n\n\nGeneralised Linear Mixed Modelling\n\n\nMachine Learning or Deep Learning\n\n\nMedical or Health Statistics\n\n\nMultivariate Statistics\n\n\nSpatial/Temporal Modelling\n\n\nStatistical Consulting/Workflow/Practice\n\n\nStatistical Genetics/Omics/Bioinformatics\n\n Submission guidelines\n\nAbstracts should be a maximum of 250 words written in English presented either as a talk or a poster.  Submit your abstract here by 14th July 2025. For questions or further information, please contact conference@biometricsociety.org.au.\n\n\n\n\n\n2025-02-24\n\n\n\n Call for invited sessions and lunchtime discussions\n\nThe organising committee invites expression of interest for invited sessions and lunchtime discussion topics to be held during the conference. Invited sessions aim to bring together experts to discuss emerging trends, present cutting-edge research, and engage in meaningful discussions on specialised topics that will be of interest to the biometrics community, over a 90 minute period. Lunchtime discussions, over the 60 minute lunchtime break, are an opportunity to discuss in parallel forums issues or topics of common interest to attendees, e.g. what skills are needed by modern biometricians, how should we interact with the machine learning and artificial intelligence community, best practices for statistical consulting, emerging research topics and so on.\n\n\n\nNo matching items"
+    "text": "Please adhere to the time limit to ensure we get through the program on time.\nSee instructions below for uploading your files based on your category.\nIf you want to replace a previously uploaded material, simply just follow the same instructions as before.\nPlease note that we intend to make the slides and posters available on this conference website, unless you explicitly deny us permission. Please see instruction on how deny us permission. If you change your mind afterwards, you can simply email the conference organisers any time to remove your files from the website – we will respect your wishes."
+  },
+  {
+    "objectID": "presenters.html#slides",
+    "href": "presenters.html#slides",
+    "title": "Instruction for Presenters",
+    "section": "Slides",
+    "text": "Slides\n\nWe strongly recommend that your slides have a 16:9 aspect ratio.\nA laptop with the most up-to-date version of PowerPoint on Microsoft 365 will be available.\nIf you wish to use your own laptop, please confirm with the AV team in advance and arrive early for setup.\nIf your presentation includes embedded video or audio content, please supply these files separately (in addition to the presentation) as a back-up option.\nYour slides should be either PowerPoint (.pptx), PDF format or HTML format. If you have a HTML slide, please upload as a zip folder with all files needed to load the slide, or provide a text file with the URL link to the slide (former preferred).\n\n\nContributed speakers\n\nEach speakers has 20 minutes for presentation including Q&A and changeover time. Aim the talk to be 15-17 minutes.\nThe session chair should signal at 14 minutes and then at 17 minutes. At the last signal, the speaker should stop or wrap up quickly.\n\n\n\n\n\n\n\nUploading Materials\n\n\n\n\nPlease upload files for your contributed talk here.\nPlease rename your filename before uploading so that it is prefixed with “S” followed by your session id and speaker order. E.g. if you are the third speaker in Session 1A, then your filename should be “S1A3.pdf” (if PDF). If you have multiple files, you may append with some unique name to differentiate between your files.\nTo find the session id for your talk, see the conference program here.\nIf you do not want to give us permission to make your slides available on the conference website, please append your filename with “DONOTUPLOAD” (all capital).\nWhen you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.\n\n\n\n\n\nInvited speakers\n\nInvited sessions are a total of 90 minutes and are entirely left to the discretion of the invited session organiser. Please contact your session organiser for instructions.\n\n\n\n\n\n\n\nUploading Materials\n\n\n\n\nIf you are in the invited session, please upload your files based on your session below:\n\nA Cluster of Modern Clustering Methods for Biometrics\nStatistics for Biosecurity Surveillance\nMethods and Practice in Agricultural Analytics\n\nIf you do not want to give us permission to make your slides available on the conference website, please rename your file to contain “DONOTUPLOAD” (all capital).\nWhen you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.\n\n\n\n\n\nKeynote speakers\n\nThe chair will introduce the keynote speaker.\nThe talk is expected to be about 40 minutes with 5-10 minutes of Q&A.\nThe chair should signal at 35 minutes and then at 40 minutes. At the last signal, the speaker should stop or wrap up quickly.\n\n\n\n\n\n\n\nUploading Materials\n\n\n\n\nUpload your files for keynote talk here.\nIf you do not want to give us permission to make your slides available on the conference website, please rename your file to contain “DONOTUPLOAD” (all capital).\nWhen you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp."
+  },
+  {
+    "objectID": "presenters.html#poster-presenters",
+    "href": "presenters.html#poster-presenters",
+    "title": "Instruction for Presenters",
+    "section": "Poster presenters",
+    "text": "Poster presenters\n\nPoster session is on Tue 25th Nov 2025 5-7PM at the Gallery.\nThe dimension of the poster board is 2100mm H x 1000mm W.\nWe recommend A0 portrait orientation 1189mm H x 841mm W.\nMount your poster before Tue 25th Nov 2025 5PM (Gallery access available from Tue 25th Nov 2025 9AM).\nRemove it before Friday 28th Nov 12PM.\nVelcro will be provided at the registration desk.\nBe available at your poster during the poster session to engage with attendees.\nYou will be given the opportunity to give a lightening talk (aim for approximately 1 minute) with a microphone by your poster during the poster session.\n\n\n\n\n\n\n\nUploading Materials\n\n\n\nBy uploading your posters here, you are granting us permission to make your poster available on the website. This gives you opportunity for more exposure for your work. If you do not wish to give permission, you do not need to upload your files."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Contact",
+    "section": "",
+    "text": "For enquiries, please send emails to  conference@biometricsociety.org.au."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Biometrics in the Bush Capital",
+    "section": "",
+    "text": "The Australasian Region Biometrics conference is a biennial conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.\nPre-conference workshops are now open for registration:\nSee more details here. As places are limited, please register early to secure your spot.\nFor past updates, see here."
+  },
+  {
+    "objectID": "index.html#important-dates",
+    "href": "index.html#important-dates",
+    "title": "Biometrics in the Bush Capital",
+    "section": " Important dates",
+    "text": "Important dates\n\n\n\nDate\n \n\n\n\n\nFeb 28\nInvited session proposals: email conference@biometricsociety.org.au\n\n\nApr 14\nOpen for abstract submission\n\n\nJun 1\nOpen for registration\n\n\nJul 21\nClosing date for abstract submission\n\n\nAug 15\nInform acceptance of the abstract\n\n\nSep 8\nClose for early bird registration\n\n\nAug 1 Oct 1\nLunchtime discussion proposals: email conference@biometricsociety.org.au (extended by two months)\n\n\nNov 23\nOceaniaR Hackathon co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.\n\n\nNov 24\nWorkshop\n\n\nNov 24-28\nConference"
+  },
+  {
+    "objectID": "index.html#registering-for-updates",
+    "href": "index.html#registering-for-updates",
+    "title": "Biometrics in the Bush Capital",
+    "section": " Registering for updates",
+    "text": "Registering for updates\n\nLoading…"
+  },
+  {
+    "objectID": "dates.html",
+    "href": "dates.html",
+    "title": "Important dates",
+    "section": "",
+    "text": "Date\n \n\n\n\n\nFeb 28\nInvited session proposals: email conference@biometricsociety.org.au\n\n\nApr 14\nOpen for abstract submission\n\n\nJun 1\nOpen for registration\n\n\nJul 21\nClosing date for abstract submission\n\n\nAug 15\nInform acceptance of the abstract\n\n\nSep 8\nClose for early bird registration\n\n\nAug 1 Oct 1\nLunchtime discussion proposals: email conference@biometricsociety.org.au (extended by two months)\n\n\nNov 23\nOceaniaR Hackathon co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.\n\n\nNov 24\nWorkshop\n\n\nNov 24-28\nConference"
+  },
+  {
+    "objectID": "workshop.html",
+    "href": "workshop.html",
+    "title": "Workshop",
+    "section": "",
+    "text": "The workshop is limited in space so please register early to secure your spot."
+  },
+  {
+    "objectID": "workshop.html#registration",
+    "href": "workshop.html#registration",
+    "title": "Workshop",
+    "section": "",
+    "text": "The workshop is limited in space so please register early to secure your spot."
+  },
+  {
+    "objectID": "workshop.html#workshops",
+    "href": "workshop.html#workshops",
+    "title": "Workshop",
+    "section": "Workshops",
+    "text": "Workshops\nPlease click on Details to see more details about the workshop.\n\nGeneralized Nonlinear Models in R\nBy Heather Turner\n\nRegister\n\n\n\nDate and Time: 24th November 2025, 9AM-5PM\nLocation: Haydon-Allen Building, Australian National University\n\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs.\n\nRequirements\nParticipants should\n\nbring a laptop with R installed, along with the gnm, logmult and vcdExtra packages.\nhave basic R knowledge (e.g. you have used R to load data, create simple visualisations, perform basic analyses and write simple functions or more specifically, you are familiar with concepts in Cookbook for R by Winston Chang)\nknow basic statistics (e.g. simple linear regression, hypothesis testing, basic summary statistics and plots)\n\n\n\nDesirable\nFamiliarity with:\n\ngeneralized linear models and/or\nnonlinear least squares models\n\nwould be beneficial but not essential.\n\n\nBiography\nHeather is an Associate Professor and EPSRC Research Software Engineering Fellow in the Statistics Department at the University of Warwick, UK. She has over 20 years of experience in the development of statistical code and software, gained through positions in academia, industry, and as a freelance consultant. In research, she has developed a portfolio of R packages for statistical modelling and collaborated on applications in sports, social science and agriculture. In her work with industry, she has specialised in applications in pharmaceutical R&D, with companies including Pfizer, Johnson & Johnson and Roche. Heather is active in community management and engagement among R users and developers. She is on the board of the R Foundation and chairs the R Contribution Working Group (fostering the community of contributors to the R project) and the R Forwards taskforce (widening the participation of under-represented groups in the R community)."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "The International Biometrics Society Australasian Region (IBS-AR) is dedicated to providing a welcoming and harassment-free experience for everyone. We do not tolerate unprofessional or inappropriate conduct, which includes discrimination and harassment, sexual or otherwise. Conference participants should always work towards maintaining an environment free of harassment and discrimination. At the discretion of the IBS-AR conference organisers and/or IBS-AR council, any participants violating these rules may be asked to leave the conference, without any fee refund.\nParticipants agree to:\n\nBe considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of fellow attendees at all times.\nRefrain from demeaning, discriminatory, or harassing behaviour and speech.\nAlert a member of the IBS-AR council or conference organisers if they notice a dangerous situation, someone in distress, or violation of this code of conduct.\n\nHarassment is demeaning or threatening behaviour directed at an individual or a group of people. Harassment includes, but is not limited to,\n\nOffensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, person’s lifestyle choices and practices, physical appearance, age, race, religion (or lack thereof) or beliefs;\nUnwelcome sexual attention and behaviour including inappropriate sexual propositions; unnecessary touching; verbal or written comments or physical actions of a sexual nature; sexually degrading words used to describe an individual; a display of sexually suggestive objects or pictures; or sexually explicit jokes; and\nThreatening behaviour including bullying, threat of violence, deliberate intimidation, stalking or incitement of violence. Reporting\n\nIf you are being harassed by a member/guest/participant of/at the IBS-AR Conference, or notice that someone else is being harassed, or have any other concerns, please contact the designated conference allies in the organising team. If the person who is harassing you is one of the allies, they will recuse themselves from handling your incident and will not be given any information without your explicit consent. We will respond as promptly as we can."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "For enquiries, please send emails to  conference@biometricsociety.org.au."
+  },
+  {
+    "objectID": "venue.html",
+    "href": "venue.html",
+    "title": "Conference venue",
+    "section": "",
+    "text": "The conference venue is located at the National Film and Sound Archive (NFSA), situated in the heart of Canberra on McCoy Circuit, Acton, between Lake Burley Griffin and The Australian National University\nSee here for how to get to the NFSA in Canberra.\nThe registration desk, located near the Mccoy Circuit entrance, will be open 30 minutes before the first talk from Tuesday 24th Nov to Friday 28th Nov. \n\nThe talks will be at Arc Cinema and Theatrette, located on the right side from the Mccoy Circuit entrance.\nThe posters will be displayed in the Gallery located on the left side from the Mccoy Circuit entrance."
+  },
+  {
+    "objectID": "abstract.html",
+    "href": "abstract.html",
+    "title": "Call for abstracts",
+    "section": "",
+    "text": "Note\n\n\n\nThe abstract submission has now closed.\nWe are pleased to invite submissions for abstracts for the Biometrics in the Bush Capital, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences."
+  },
+  {
+    "objectID": "abstract.html#key-themes-and-topics",
+    "href": "abstract.html#key-themes-and-topics",
+    "title": "Call for abstracts",
+    "section": "Key themes and topics",
+    "text": "Key themes and topics\nWe welcome abstracts addressing, but not limited to, the following areas:\n\nAgricultural Statistics\nBayesian Statistics\nData Science and Artificial Intelligence\nDesign or Surveys\nDemographic or Population Modelling\nEcological or Environmental Statistics\nGeneralised Linear Mixed Modelling\nMachine Learning or Deep Learning\nMedical or Health Statistics\nMultivariate Statistics\nSpatial/Temporal Modelling\nStatistical Consulting/Workflow/Practice\nStatistical Genetics/Omics/Bioinformatics"
+  },
+  {
+    "objectID": "abstract.html#submission-guidelines",
+    "href": "abstract.html#submission-guidelines",
+    "title": "Call for abstracts",
+    "section": "Submission guidelines",
+    "text": "Submission guidelines\nAbstracts should be a maximum of 250 words written in English presented either as a talk or a poster. Abstract submission is due by 14th July 2025.\n\nSubmit Abstract\n\nFor questions or further information, please contact conference@biometricsociety.org.au."
+  },
+  {
+    "objectID": "travel.html",
+    "href": "travel.html",
+    "title": "Travel",
+    "section": "",
+    "text": "By flight, Canberra is:\n\nless than an hour from Sydney,\nabout one hour from Melbourne,\nless than two hours from Adelaide and Brisbane,\nabout four hours from Perth, and\nabout five hours from Auckland.\n\nCanberra Airport is less than 10 minutes from the CBD.\nConnect to the city via rental car, public bus, taxi or with a rideshare operator (e.g. Uber).\nPublic transport accepts Mastercard or Visa (physical card or digital card stored on your smart phone or watch), MyWay+ pass or card, or printed ticket purchased online or machine.\nIf coming from Sydney, it is recommended that you catch a bus to Canberra (about 3.5 hours) that departs from Central Station and Sydney airport to Canberra CBD. Bus companies include Murrays and Greyhound.\nThe conference venue, National Film and Sound Archive of Australia (NFSA), is located close to CBD.\nSee accommodation options here."
   },
   {
     "objectID": "sponsorship.html",
@@ -105,109 +224,11 @@
     "text": "Supporter\n\n\n\n\nACT Branch"
   },
   {
-    "objectID": "travel.html",
-    "href": "travel.html",
-    "title": "Travel",
+    "objectID": "updates.html",
+    "href": "updates.html",
+    "title": "Updates",
     "section": "",
-    "text": "By flight, Canberra is:\n\nless than an hour from Sydney,\nabout one hour from Melbourne,\nless than two hours from Adelaide and Brisbane,\nabout four hours from Perth, and\nabout five hours from Auckland.\n\nCanberra Airport is less than 10 minutes from the CBD.\nConnect to the city via rental car, public bus, taxi or with a rideshare operator (e.g. Uber).\nPublic transport accepts Mastercard or Visa (physical card or digital card stored on your smart phone or watch), MyWay+ pass or card, or printed ticket purchased online or machine.\nIf coming from Sydney, it is recommended that you catch a bus to Canberra (about 3.5 hours) that departs from Central Station and Sydney airport to Canberra CBD. Bus companies include Murrays and Greyhound.\nThe conference venue, National Film and Sound Archive of Australia (NFSA), is located close to CBD.\nSee accommodation options here."
-  },
-  {
-    "objectID": "abstract.html",
-    "href": "abstract.html",
-    "title": "Call for abstracts",
-    "section": "",
-    "text": "Note\n\n\n\nThe abstract submission has now closed.\nWe are pleased to invite submissions for abstracts for the Biometrics in the Bush Capital, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences."
-  },
-  {
-    "objectID": "abstract.html#key-themes-and-topics",
-    "href": "abstract.html#key-themes-and-topics",
-    "title": "Call for abstracts",
-    "section": "Key themes and topics",
-    "text": "Key themes and topics\nWe welcome abstracts addressing, but not limited to, the following areas:\n\nAgricultural Statistics\nBayesian Statistics\nData Science and Artificial Intelligence\nDesign or Surveys\nDemographic or Population Modelling\nEcological or Environmental Statistics\nGeneralised Linear Mixed Modelling\nMachine Learning or Deep Learning\nMedical or Health Statistics\nMultivariate Statistics\nSpatial/Temporal Modelling\nStatistical Consulting/Workflow/Practice\nStatistical Genetics/Omics/Bioinformatics"
-  },
-  {
-    "objectID": "abstract.html#submission-guidelines",
-    "href": "abstract.html#submission-guidelines",
-    "title": "Call for abstracts",
-    "section": "Submission guidelines",
-    "text": "Submission guidelines\nAbstracts should be a maximum of 250 words written in English presented either as a talk or a poster. Abstract submission is due by 14th July 2025.\n\nSubmit Abstract\n\nFor questions or further information, please contact conference@biometricsociety.org.au."
-  },
-  {
-    "objectID": "venue.html",
-    "href": "venue.html",
-    "title": "Conference venue",
-    "section": "",
-    "text": "The conference venue is located at the National Film and Sound Archive (NFSA), situated in the heart of Canberra on McCoy Circuit, Acton, between Lake Burley Griffin and The Australian National University\nSee here for how to get to the NFSA in Canberra.\nThe registration desk, located near the Mccoy Circuit entrance, will be open 30 minutes before the first talk from Tuesday 24th Nov to Friday 28th Nov. \n\nThe talks will be at Arc Cinema and Theatrette, located on the right side from the Mccoy Circuit entrance.\nThe posters will be displayed in the Gallery located on the left side from the Mccoy Circuit entrance."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "For enquiries, please send emails to  conference@biometricsociety.org.au."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "The International Biometrics Society Australasian Region (IBS-AR) is dedicated to providing a welcoming and harassment-free experience for everyone. We do not tolerate unprofessional or inappropriate conduct, which includes discrimination and harassment, sexual or otherwise. Conference participants should always work towards maintaining an environment free of harassment and discrimination. At the discretion of the IBS-AR conference organisers and/or IBS-AR council, any participants violating these rules may be asked to leave the conference, without any fee refund.\nParticipants agree to:\n\nBe considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of fellow attendees at all times.\nRefrain from demeaning, discriminatory, or harassing behaviour and speech.\nAlert a member of the IBS-AR council or conference organisers if they notice a dangerous situation, someone in distress, or violation of this code of conduct.\n\nHarassment is demeaning or threatening behaviour directed at an individual or a group of people. Harassment includes, but is not limited to,\n\nOffensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, person’s lifestyle choices and practices, physical appearance, age, race, religion (or lack thereof) or beliefs;\nUnwelcome sexual attention and behaviour including inappropriate sexual propositions; unnecessary touching; verbal or written comments or physical actions of a sexual nature; sexually degrading words used to describe an individual; a display of sexually suggestive objects or pictures; or sexually explicit jokes; and\nThreatening behaviour including bullying, threat of violence, deliberate intimidation, stalking or incitement of violence. Reporting\n\nIf you are being harassed by a member/guest/participant of/at the IBS-AR Conference, or notice that someone else is being harassed, or have any other concerns, please contact the designated conference allies in the organising team. If the person who is harassing you is one of the allies, they will recuse themselves from handling your incident and will not be given any information without your explicit consent. We will respond as promptly as we can."
-  },
-  {
-    "objectID": "workshop.html",
-    "href": "workshop.html",
-    "title": "Workshop",
-    "section": "",
-    "text": "The workshop is limited in space so please register early to secure your spot."
-  },
-  {
-    "objectID": "workshop.html#registration",
-    "href": "workshop.html#registration",
-    "title": "Workshop",
-    "section": "",
-    "text": "The workshop is limited in space so please register early to secure your spot."
-  },
-  {
-    "objectID": "workshop.html#workshops",
-    "href": "workshop.html#workshops",
-    "title": "Workshop",
-    "section": "Workshops",
-    "text": "Workshops\nPlease click on Details to see more details about the workshop.\n\nGeneralized Nonlinear Models in R\nBy Heather Turner\n\nRegister\n\n\n\nDate and Time: 24th November 2025, 9AM-5PM\nLocation: Haydon-Allen Building, Australian National University\n\nThe class of generalized linear models covers several methods commonly used in data analysis, including multiple linear regression, logistic regression, and log-linear models. But a linear predictor does not always capture the relationship we wish to model. Rather, a nonlinear predictor may provide a better description of the observed data, often with fewer and more interpretable parameters. This workshop introduces the wider class of generalized nonlinear models (GNMs) and their implementation via the R package gnm. The day will begin with a brief refresher of linear and generalized linear models. The extension to a nonlinear predictor will be motivated by the case of structured interaction models, such as Goodman’s Row-Column association model for contingency tables. The remainder of the day will be devoted to further applications, such as the UNIDIFF models for social mobility data, the Lee-Carter model for mortality data, and bespoke GNMs.\n\nRequirements\nParticipants should\n\nbring a laptop with R installed, along with the gnm, logmult and vcdExtra packages.\nhave basic R knowledge (e.g. you have used R to load data, create simple visualisations, perform basic analyses and write simple functions or more specifically, you are familiar with concepts in Cookbook for R by Winston Chang)\nknow basic statistics (e.g. simple linear regression, hypothesis testing, basic summary statistics and plots)\n\n\n\nDesirable\nFamiliarity with:\n\ngeneralized linear models and/or\nnonlinear least squares models\n\nwould be beneficial but not essential.\n\n\nBiography\nHeather is an Associate Professor and EPSRC Research Software Engineering Fellow in the Statistics Department at the University of Warwick, UK. She has over 20 years of experience in the development of statistical code and software, gained through positions in academia, industry, and as a freelance consultant. In research, she has developed a portfolio of R packages for statistical modelling and collaborated on applications in sports, social science and agriculture. In her work with industry, she has specialised in applications in pharmaceutical R&D, with companies including Pfizer, Johnson & Johnson and Roche. Heather is active in community management and engagement among R users and developers. She is on the board of the R Foundation and chairs the R Contribution Working Group (fostering the community of contributors to the R project) and the R Forwards taskforce (widening the participation of under-represented groups in the R community)."
-  },
-  {
-    "objectID": "dates.html",
-    "href": "dates.html",
-    "title": "Important dates",
-    "section": "",
-    "text": "Date\n \n\n\n\n\nFeb 28\nInvited session proposals: email conference@biometricsociety.org.au\n\n\nApr 14\nOpen for abstract submission\n\n\nJun 1\nOpen for registration\n\n\nJul 21\nClosing date for abstract submission\n\n\nAug 15\nInform acceptance of the abstract\n\n\nSep 8\nClose for early bird registration\n\n\nAug 1 Oct 1\nLunchtime discussion proposals: email conference@biometricsociety.org.au (extended by two months)\n\n\nNov 23\nOceaniaR Hackathon co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.\n\n\nNov 24\nWorkshop\n\n\nNov 24-28\nConference"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Biometrics in the Bush Capital",
-    "section": "",
-    "text": "The Australasian Region Biometrics conference is a biennial conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.\nPre-conference workshops are now open for registration:\nSee more details here. As places are limited, please register early to secure your spot.\nFor past updates, see here."
-  },
-  {
-    "objectID": "index.html#important-dates",
-    "href": "index.html#important-dates",
-    "title": "Biometrics in the Bush Capital",
-    "section": " Important dates",
-    "text": "Important dates\n\n\n\nDate\n \n\n\n\n\nFeb 28\nInvited session proposals: email conference@biometricsociety.org.au\n\n\nApr 14\nOpen for abstract submission\n\n\nJun 1\nOpen for registration\n\n\nJul 21\nClosing date for abstract submission\n\n\nAug 15\nInform acceptance of the abstract\n\n\nSep 8\nClose for early bird registration\n\n\nAug 1 Oct 1\nLunchtime discussion proposals: email conference@biometricsociety.org.au (extended by two months)\n\n\nNov 23\nOceaniaR Hackathon co-hosted with the Statistical Computing and Visualisation Section of the Statistical Society of Australia.\n\n\nNov 24\nWorkshop\n\n\nNov 24-28\nConference"
-  },
-  {
-    "objectID": "index.html#registering-for-updates",
-    "href": "index.html#registering-for-updates",
-    "title": "Biometrics in the Bush Capital",
-    "section": " Registering for updates",
-    "text": "Registering for updates\n\nLoading…"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Contact",
-    "section": "",
-    "text": "For enquiries, please send emails to  conference@biometricsociety.org.au."
+    "text": "2025-07-14\n\n\n\nAbstract submission extended by one week\n\nLast chance! The abstract submission has been extended by one week and is due now on 21st July 2025 5PM AEST. Those who have already submitted their abstract will get an individual email confirmation and an opportunity to revise their abstract until the new deadline.\n\n\n\n\n2025-06-29\n\n\n\nWorkshops\n\nPre-conference workshops are now open for registration:\n\n\nGeneralized Nonlinear Models in R by Heather Turner\n\n\nAnalysing Complex Survey and Subsample Data (with R) by Thomas Lumley\n\n\nLost in Translation: Speaking Statistician in a Multi-Lingual World by Peter Humburg and Eve Slavich\n\n\nDeep Learning and Computer Vision in R: A Practical Introduction by Patrick (Weihao) Li\n\n\n\nSee more details here. As places are limited, please register early to secure your spot.\n\n\n\n\n\n2025-04-14\n\n\n\n Open for abstract submissions\n\nWe are pleased to invite submissions for abstracts for the Biometrics in the Bush Capital, to be held on 24th-28th November 2025 at Canberra, Australia. The conference aims to bring together researchers, practitioners and educators to share ideas, current research findings, and emerging trends in the development and application of statistical and data science theory and methods to problems in biosciences.  Key themes and topics We welcome abstracts addressing, but not limited to, the following areas:\n\nAgricultural Statistics\n\n\nBayesian Statistics\n\n\nData Science and Artificial Intelligence\n\n\nDesign or Surveys\n\n\nDemographic or Population Modelling\n\n\nEcological or Environmental Statistics\n\n\nGeneralised Linear Mixed Modelling\n\n\nMachine Learning or Deep Learning\n\n\nMedical or Health Statistics\n\n\nMultivariate Statistics\n\n\nSpatial/Temporal Modelling\n\n\nStatistical Consulting/Workflow/Practice\n\n\nStatistical Genetics/Omics/Bioinformatics\n\n Submission guidelines\n\nAbstracts should be a maximum of 250 words written in English presented either as a talk or a poster.  Submit your abstract here by 14th July 2025. For questions or further information, please contact conference@biometricsociety.org.au.\n\n\n\n\n\n2025-02-24\n\n\n\n Call for invited sessions and lunchtime discussions\n\nThe organising committee invites expression of interest for invited sessions and lunchtime discussion topics to be held during the conference. Invited sessions aim to bring together experts to discuss emerging trends, present cutting-edge research, and engage in meaningful discussions on specialised topics that will be of interest to the biometrics community, over a 90 minute period. Lunchtime discussions, over the 60 minute lunchtime break, are an opportunity to discuss in parallel forums issues or topics of common interest to attendees, e.g. what skills are needed by modern biometricians, how should we interact with the machine learning and artificial intelligence community, best practices for statistical consulting, emerging research topics and so on.\n\n\n\nNo matching items"
   },
   {
     "objectID": "keynote.html",
