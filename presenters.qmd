@@ -1,0 +1,93 @@
+---
+title: Instruction for Presenters
+---
+
+- Please adhere to the time limit to ensure we get through the program on time.
+- See instructions below for uploading your files based on your category.
+- If you want to replace a previously uploaded material, simply just follow the same instructions as before.
+- Please note that we intend to make the slides and posters available on this conference website, unless you explicitly deny us permission. Please see instruction on how deny us permission. If you change your mind afterwards, you can simply email the conference organisers any time to remove your files from the website -- we will respect your wishes.
+
+## Slides
+
+- We strongly recommend that your slides have a **16:9 aspect ratio**.
+- A laptop with the most up-to-date version of PowerPoint on Microsoft 365 will be available.
+- If you wish to use your own laptop, please confirm with the AV team in advance and arrive early for setup.
+- If your presentation includes embedded video or audio content, please supply these files separately (in addition to the presentation) as a back-up option.
+- Your slides should be either **PowerPoint** (.pptx), **PDF** format or **HTML** format. If you have a HTML slide, please upload as a zip folder with all files needed to load the slide, or provide a text file with the URL link to the slide (former preferred).
+
+
+### Contributed speakers 
+
+- Each speakers has **20 minutes** for presentation _including Q&A and changeover time_. Aim the talk to be **15-17 minutes**.
+- The session chair should signal at **14 minutes** and then at **17 minutes**. At the last signal, the speaker should stop or wrap up quickly.
+
+::: callout-note
+
+## Uploading Materials
+
+- Please upload files for your [**contributed talk here**](https://www.dropbox.com/request/L6r1dPLu6vhFC7dmdwx5).
+- Please **rename your filename** before uploading so that it is prefixed with "S" followed by your session id and speaker order. E.g. if you are the third speaker in Session 1A, then your filename should be "S1A3.pdf" (if PDF). If you have multiple files, you may append with some unique name to differentiate between your files. 
+- To find the **session id** for your talk, see the conference program [here](https://biometricsociety.org.au/conference2025/book/sessions.html).
+- If you do not want to give us permission to make your slides available on the conference website, please append your filename with "DONOTUPLOAD" (all capital). 
+- When you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.
+
+:::
+
+
+### Invited speakers 
+
+- Invited sessions are a total of 90 minutes and are entirely left to the discretion of the invited session organiser. Please contact your session organiser for instructions.
+
+::: callout-note
+
+## Uploading Materials
+
+- If you are in the invited session, please upload your files based on your session below:
+  - [A Cluster of Modern Clustering Methods for Biometrics](https://www.dropbox.com/request/zahQC4H2Adf509UiNeiZ) 
+  - [Statistics for Biosecurity Surveillance](https://www.dropbox.com/request/JFQhCZaOS2ivQqaDMPuj)
+  - [Methods and Practice in Agricultural Analytics](https://www.dropbox.com/request/7IFvmAE8Zt3RYwcn57FR)
+- If you do not want to give us permission to make your slides available on the conference website, please rename your file to contain "DONOTUPLOAD" (all capital). 
+- When you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.
+
+:::
+
+
+
+### Keynote speakers 
+
+- The chair will introduce the keynote speaker.
+- The talk is expected to be about **40 minutes** with **5-10 minutes of Q&A**.
+- The chair should signal at **35 minutes** and then at **40 minutes**. At the last signal, the speaker should stop or wrap up quickly.
+
+::: callout-note
+
+## Uploading Materials
+
+- Upload your files for [**keynote talk here**](https://www.dropbox.com/request/Ps07TJFbDhIIKuJASVsd).
+- If you do not want to give us permission to make your slides available on the conference website, please rename your file to contain "DONOTUPLOAD" (all capital). 
+- When you upload your files, you will be asked to enter your name and email. Your files will be automatically be appended with your name and a timestamp.
+
+:::
+
+
+
+## Poster presenters
+
+- Poster session is on **Tue 25th Nov 2025 5-7PM at the Gallery**.
+- The dimension of the **poster board is 2100mm H x 1000mm W**.
+- We recommend A0 portrait orientation 1189mm H x 841mm W.
+- **Mount your poster before Tue 25th Nov 2025 5PM** (Gallery access available from Tue 25th Nov 2025 9AM).
+- Remove it before Friday 28th Nov 12PM.
+- Velcro will be provided at the registration desk.
+- Be available at your poster during the poster session to engage with attendees.
+- You will be given the opportunity to give a lightening talk (aim for approximately 1 minute) with a microphone by your poster during the poster session.
+
+
+::: callout-note
+
+## Uploading Materials
+
+By uploading your [**posters here**](https://www.dropbox.com/request/Q8c9apnsbQnRZrouiAyN), you are granting us permission to make your poster available on the website. This gives you opportunity for more exposure for your work. If you do not wish to give permission, you do not need to upload your files. 
+
+:::
+

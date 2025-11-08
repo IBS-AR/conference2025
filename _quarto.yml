@@ -42,6 +42,7 @@ website:
             text: Registration
           - href: travel.qmd
           - href: venue.qmd
+          - href: presenters.qmd
           - href: accommodation.qmd
           - href: sponsorship.qmd
           - href: coc.qmd
