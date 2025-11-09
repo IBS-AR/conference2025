@@ -24,14 +24,32 @@ date-format: iso
 The Australasian Region Biometrics conference is a biennial conference sponsored by the International Biometric Society (Australasian Region). The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
 
 
-<div class="button-wrapper-cta">
-  <a class="button-cta cta-button" href="https://membership.biometricsociety.org.au/event-6157046">Register for the conference</a>
-</div>
+## 🗝️ Key information
 
+
+- **Welcome Reception**<sup>*</sup>  will be held at Monster Salon, [Ovolo Nishi](https://maps.app.goo.gl/HNaS1NLnNfquPz6A7) from 5.30PM Mon.
+- **Conference**<sup>*</sup> will be held at the [National Film and Sound Archive](https://biometricsociety.org.au/conference2025/venue.html) from Tue to Fri.
+- **Young Biometrician Event** (only for those who expressed interest) will be held at [Kingpin Canberra](https://maps.app.goo.gl/DAqrzJyPrAU1LGWVA) from 6.30PM Wed.
+- **Conference Dinner**<sup>*</sup>  will be held at [Novotel Canberra](https://maps.app.goo.gl/vZxJaCVQ8NRFg3Uf8) from 6.30PM Thu.
+
+<sup>*</sup> Included in the full conference registration. Please note single-day registrants will require separate payment for the extra events.
+
+
+### 🗓 Program Overview
+
+The latest program details can be found [**here**](https://biometricsociety.org.au/conference2025/book/sessions.html). 
+
+### 🎤 Presenter Information (if applicable)
+Please find [**here**](https://biometricsociety.org.au/conference2025/presenters.html) for instructions for presenters, including posters.
+
+### 📞 Contact Information
+
+For any queries, please contact the organising committee at [conference@biometricsociety.org.au](mailto:conference@biometricsociety.org.au).
 
 
 ```{r}
 #| echo: false
+#| eval: false
 #| message: false
 #| warning: false
 #| results: asis
@@ -53,14 +71,6 @@ for(anews in news) {
 
 For past updates, see [**here**](/updates.html).
 
-<br>
-
-<div>
-<video width="100%" height="400" controls>
-  <source src="images/Canberra Means Business Events - 2023.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
 
 <br>
 
@@ -84,13 +94,6 @@ Follow [@biometricsociety.org.au on Bluesky](https://bsky.app/profile/biometrics
 
 <br>
 
-
-
-
-## <i class="fas fa-envelope"></i> Registering for updates
-
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfF71SnebOSsjxp1ZesWx5qVIORJI5zfdvg0Lu-DJVRKY8F8Q/viewform?embedded=true" width="640" height="554" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 
 
