@@ -7,6 +7,12 @@ title: Workshop
 
 The workshop is limited in space so please register early to secure your spot.
 
+::: callout-note
+
+Registration have now closed.
+
+:::
+
 
 ## Workshops
 
@@ -16,11 +22,6 @@ Please click on Details to see more details about the workshop.
 
 By **Heather Turner**
 
-::: button-wrapper-cta
-
-[Register](https://membership.biometricsociety.org.au/event-6207949){.button-cta .cta-button}
-
-:::
 
 <details>
 
@@ -57,12 +58,6 @@ Heather is an Associate Professor and EPSRC Research Software Engineering Fellow
 
 By **Thomas Lumley**
 
-
-::: button-wrapper-cta
-
-[Register](https://membership.biometricsociety.org.au/event-6244472){.button-cta .cta-button}
-
-:::
 
 
 
@@ -104,11 +99,6 @@ By **Peter Humburg** and **Eve Slavich**
 
 Note: this is a half-day workshop
 
-::: button-wrapper-cta
-
-[Register](https://membership.biometricsociety.org.au/event-6244474){.button-cta .cta-button}
-
-:::
 
 
 
@@ -135,11 +125,7 @@ Peter Humburg is a Biostatistician at UNSW Stats Central. He has over ten years 
 By **Patrick (Weihao) Li**
 
 
-::: button-wrapper-cta
 
-[Register](https://membership.biometricsociety.org.au/event-6245149){.button-cta .cta-button}
-
-:::
 
 <details>
 
