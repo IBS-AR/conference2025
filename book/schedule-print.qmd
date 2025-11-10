@@ -21,7 +21,7 @@ execute:
   echo: false
 ---
 
-Please note that the times are approximate and may not be guaranteed to run on time.
+Please note that the times are indicative and may have some small variations.
 
 ```{r}
 #| include: false

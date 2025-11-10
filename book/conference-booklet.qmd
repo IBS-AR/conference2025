@@ -312,7 +312,7 @@ day_to_hux(dat_mon) |>
 dat_tue <- schedule_dat |>
   filter(day == "Tuesday")
 
-split_tbl <- day_to_hux(dat_tue, which(grepl("Zero-inflated", dat_tue$titles) | grepl("Better Conversations", dat_tue$titles) | grepl("autoDML", dat_tue$titles)))
+split_tbl <- day_to_hux(dat_tue, which(grepl("StableMate", dat_tue$titles) | grepl("Species archetype", dat_tue$titles) | grepl("autoDML", dat_tue$titles)))
 
 split_tbl[[1]]
 split_tbl[[2]]
@@ -408,7 +408,7 @@ display_abstract <- function(data, duration = 50, cospeaker = FALSE) {
 
 # Keynote talks
 
-Please note that the times are indicative and may have some small variation.
+Please note that the times are indicative and may have some small variations.
 
 ```{r}
 #| output: asis
