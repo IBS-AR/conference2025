@@ -2165,38 +2165,14 @@ Thursday:
       supports more flexible modelling of meta-analytical data, expanding the R toolkit
       available for evidence synthesis. We showcase its applicability with illustrative
       examples in ecology and evolution.
-    talk_2: Simulation-based Inference about Variance Components
-    talk_2_speakers:
-    - "Farwa Saleem \U0001F464"
-    - David Warton
-    talk_2_orgs: School of Mathematics & Statistics, UNSW Sydney
-    talk_2_abstract: "Variance components in generalized linear mixed models (GLMMs)
-      are used to quantify random effects, for example, they can be used in ecological
-      studies to quantify the size of the effect of an environmental variable on species
-      composition. However, constructing accurate confidence intervals for these components
-      remains challenging with small samples or near-boundary estimates, where asymptotic
-      methods (e.g., profile likelihood, Wald intervals) do not perform well. To address
-      this, we propose a novel simulation-based framework using bootstrap test inversion
-      coupled with quantile regression. Our approach efficiently estimates confidence
-      limits by leveraging the continuous distribution of the estimator, eliminating
-      discretization steps inherent in conventional bootstrap procedures. This enhances
-      robustness in low-information scenarios while adapting to boundary constraints.
-      \r\nSimulation studies demonstrate that our method achieves superior coverage
-      accuracy compared to existing asymptotic and bootstrap alternatives under small-sample
-      conditions and near-boundary parameters. We show the application of the technique
-      to an ecological case study analysing response of species composition to environmental
-      gradients. This work delivers a flexible tool for more defensible inference
-      in applications demanding precise uncertainty quantification for random effects.
-      \r\n\r\nKeywords: Variance components, GLMM, bootstrap, quantile regression,
-      confidence intervals, ecological statistics."
-    talk_3: A Proportional Random Effect Block Bootstrap for Highly Unbalanced Clustered
+    talk_2: A Proportional Random Effect Block Bootstrap for Highly Unbalanced Clustered
       Data
-    talk_3_speakers:
+    talk_2_speakers:
     - "Zhi Yang Tho \U0001F464"
     - Alan H. Welsh
     - Raymond Chambers
-    talk_3_orgs: Australian National University
-    talk_3_abstract: Clustered data arise naturally in a wide range of scientific
+    talk_2_orgs: Australian National University
+    talk_2_abstract: Clustered data arise naturally in a wide range of scientific
       and applied research settings where units are grouped within cluster, and are
       commonly analyzed using linear mixed model to account for within-cluster correlations.
       This article focuses on the scenario in which cluster sizes might be highly
@@ -2218,25 +2194,15 @@ Thursday:
       on our proposed bootstraps are more adequate than those of random effect block
       bootstrap and that the employed ionization technology has a statistically significant
       effect in increasing the amount of rainfall.
-    par_id: 1
-    par_total: 2
-
-  - name: "Session 10B"
-    id: "session-10b"
-    type: "talk"
-    chair: "Oyelola Adegboye"
-    start: "15:40"
-    end: "17:00"
-    location: "Theatrette"
-    talk_1: Extending diagnostic validity meta-analysis to several diagnostic guidelines
-    talk_1_speakers:
+    talk_3: Extending diagnostic validity meta-analysis to several diagnostic guidelines
+    talk_3_speakers:
     - "Alain C. Vandal \U0001F464"
     - Henry C. K. Kwok
     - Fransiska R. M. Falconer
     - Andrew G. Hill
     - Andrew D. MacCormick
-    talk_1_orgs: The University of Auckland/Waipapa Taumata Rau
-    talk_1_abstract: Optimal management of acute biliary disease should include an
+    talk_3_orgs: The University of Auckland/Waipapa Taumata Rau
+    talk_3_abstract: Optimal management of acute biliary disease should include an
       assessment for possible choledocholithiasis (stones in the bile duct). Various
       diagnostic guidelines have been developed by expert bodies for this purpose,
       but uncertainties remain about their performance in wider practice. We carried
@@ -2258,9 +2224,19 @@ Thursday:
       severally test for performance similarity between guidelines. We also show how
       it can be extended to identify outlier studies, for the purpose of carrying
       out sensitivity analyses.
-    talk_2: 'Risk of Guillain-Barré Syndrome after COVID-19 vaccination and SARS-CoV-2
+    par_id: 1
+    par_total: 2
+
+  - name: "Session 10B"
+    id: "session-10b"
+    type: "talk"
+    chair: "Oyelola Adegboye"
+    start: "15:40"
+    end: "17:00"
+    location: "Theatrette"
+    talk_1: 'Risk of Guillain-Barré Syndrome after COVID-19 vaccination and SARS-CoV-2
       infection: A multinational self-controlled case series study'
-    talk_2_speakers:
+    talk_1_speakers:
     - "Han Lu \U0001F464"
     - Sharifa Nasreen
     - Yannan Jiang
@@ -2269,8 +2245,8 @@ Thursday:
     - Jim Buttery
     - Steve Black
     - Jeffrey Kwong
-    talk_2_orgs: University of Auckland
-    talk_2_abstract: "Introduction: \r\nThe Global Vaccine Data Network (GVDN) is
+    talk_1_orgs: University of Auckland
+    talk_1_abstract: "Introduction: \r\nThe Global Vaccine Data Network (GVDN) is
       a multinational collaboration established to conduct globally coordinated epidemiological
       studies on vaccine safety using health data. This study aimed to assess the
       risk of Guillain-Barré syndrome (GBS) within 42 days after exposure to any COVID-19
@@ -2293,11 +2269,11 @@ Thursday:
       SARS-CoV-2 and GBS (RI 3.35, 95%CI 1.83-6.11). The SCCS method is an efficient
       approach to collect minimal data for IPD meta-analysis. Full results using different
       SCCS models will be discussed."
-    talk_3: 'Childhood Risk and Resilience Factors for Pasifika Youth Respiratory
+    talk_2: 'Childhood Risk and Resilience Factors for Pasifika Youth Respiratory
       Health: Accounting for Attrition and Missingness'
-    talk_3_speakers: "Siwei Zhai \U0001F464"
-    talk_3_orgs: University of Auckland
-    talk_3_abstract: In New Zealand, 7% of deaths are related to respiratory diseases,
+    talk_2_speakers: "Siwei Zhai \U0001F464"
+    talk_2_orgs: University of Auckland
+    talk_2_abstract: In New Zealand, 7% of deaths are related to respiratory diseases,
       with Pacific people at higher risk. Our work investigates the causal effects
       of early-life risks and resilience factors on early-adulthood lung function
       amongst Pacific Islands Families Study (PIFS) cohort members (n=1,398). 466
@@ -2310,15 +2286,15 @@ Thursday:
       health later in life. The follow-up study will continue to explore the effects
       of factors from relevant domains based on the PIFS cohort, where a new integrated
       model will be applied. A simulation will be conducted to determine this model.
-    talk_4: A missing data detective story – how I navigated through a perfect storm
+    talk_3: A missing data detective story – how I navigated through a perfect storm
       of drop-out’s, COVID and informative missingness.
-    talk_4_speakers:
+    talk_3_speakers:
     - "Eve Slavich \U0001F464"
     - Rebecca Young
     - Anita Pfeiffer
     - Emmanuel Karantanis
-    talk_4_orgs: University of New South Wales
-    talk_4_abstract: "Real-world clinical studies often present missing data challenges
+    talk_3_orgs: University of New South Wales
+    talk_3_abstract: "Real-world clinical studies often present missing data challenges
       that leave the textbook educated scratching their heads. Through consulting,
       I become involved in [a study](https://doi.org/10.1016/j.cont.2025.101762) where
       multiple correlated missing data mechanisms created analytical challenges. \r\nFollowing

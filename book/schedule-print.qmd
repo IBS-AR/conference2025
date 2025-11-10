@@ -44,10 +44,10 @@ table_day_maker <- function(data, offset = 0, keynote = "0") {
     mutate(order = 0) |> 
     mutate(`Arc Cinema` = str_c("\\textbf{Session ", 1:n() - 1 + offset, "A} -- ", `Arc Cinema`),
            Theatrette = str_c("\\textbf{Session ", 1:n() - 1  + offset, "B} -- ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote")) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 6A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
-    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics")) |> 
-    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote"))
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics")) 
   
   schedule <- data |> 
     pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 

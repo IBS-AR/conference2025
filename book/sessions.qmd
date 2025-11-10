@@ -41,10 +41,10 @@ table_day_maker <- function(data, offset = 0, keynote = "0") {
     mutate(order = 0) |> 
     mutate(`Arc Cinema` = str_c("<b>Session ", 1:n() - 1 + offset, "A</b> &mdash; ", `Arc Cinema`),
            Theatrette = str_c("<b>Session ", 1:n() - 1  + offset, "B</b> &mdash; ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote")) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 6A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
     mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
-    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics")) |> 
-    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote"))
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics"))
   
   schedule <- data |> 
     pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 
@@ -62,7 +62,7 @@ table_day_maker <- function(data, offset = 0, keynote = "0") {
     #column_spec(1, width = "10%!important") |> 
     #column_spec(2, width = "45%!important") |> 
     #column_spec(3, width = "45%!important") |> 
-    row_spec(which(schedule$start != ""), background = "#D8E1E9") |> 
+    row_spec(which(schedule$start != ""), background = "#FFDB58") |> 
     row_spec(which(str_detect(schedule$`Arc Cinema`, ".+Chair.+")), background = "#91B8F9")
 }
 ```
