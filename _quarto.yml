@@ -38,8 +38,7 @@ website:
       - text: Participation
         menu:
           - href: abstract.qmd
-          - href: https://membership.biometricsociety.org.au/event-6157046
-            text: Registration
+          - href: registrations.qmd
           - href: travel.qmd
           - href: venue.qmd
           - href: presenters.qmd
