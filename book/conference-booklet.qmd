@@ -25,7 +25,7 @@ format:
     back-cover-image: assets/back-cover.pdf
     include-in-header:
         - assets/header.tex
-        - assets/draft.tex
+        #- assets/draft.tex
     include-after-body: 
       text: |
         \printindex
