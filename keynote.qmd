@@ -7,6 +7,7 @@ listing:
 format:
   html:
     css: keynote/people.css
+    page-layout: full
 ---
 
 

@@ -1,9 +1,14 @@
 ---
-title: Schedule
+title: Schedule (draft)
 knitr: true
 format:
   html:
     page-layout: custom
+include-in-header: 
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" rel="stylesheet">
 ---
 
 
@@ -15,7 +20,6 @@ format:
 }
 
 body {
-    <!-- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -->
     background-color: #f8fafc;
     padding: 20px;
     line-height: 1.4;
@@ -27,7 +31,7 @@ body {
 }
 
 .container {
-    min-width: 700px;
+    min-width: 1200px;
     max-width: 2000px;
     margin: 0 auto;
 }
@@ -35,7 +39,6 @@ body {
 h1 {
     color: #1f2937;
     margin-bottom: 30px;
-    font-size: 28px;
     font-weight: 700;
 }
 
@@ -49,7 +52,7 @@ h1 {
 
 .header {
     display: grid;
-    grid-template-columns: 40px repeat(5, 1fr);
+    grid-template-columns: 45px repeat(5, 1fr);
     border-bottom: 2px solid #e5e7eb;
     background: #f9fafb;
 }
@@ -60,6 +63,7 @@ h1 {
     text-align: center;
     border-right: 1px solid #e5e7eb;
     color: #374151;
+    font-size: 1.2rem;
 }
 
 .header-cell:last-child {
@@ -68,7 +72,7 @@ h1 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 40px repeat(5, 1fr);
+    grid-template-columns: 45px repeat(5, 1fr);
     position: relative;
 }
 
@@ -82,7 +86,7 @@ h1 {
     padding: 8px;
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #6b7280;
     font-weight: 500;
     border-bottom: 1px solid #f3f4f6;
@@ -98,7 +102,6 @@ h1 {
     border-right: none;
 }
 
-<!-- Change .grid-line height and .time-slot height together -->
 .grid-line {
     height: 120px;
     border-bottom: 1px solid #f3f4f6;
@@ -111,7 +114,6 @@ h1 {
     border-radius: 4px;
     padding: 8px;
     cursor: pointer;
-    font-size: 11px;
     font-weight: normal;
     color: black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -125,14 +127,14 @@ h1 {
 }
 
 .event-time {
-    font-size: 12px;
+    font-size: 0.8rem;
     opacity: 0.9;
     margin-bottom: 2px;
 }
 
 .event-name {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.2;
 }
 
@@ -183,8 +185,9 @@ h1 {
     background: white;
     border-radius: 12px;
     padding: 24px;
-    max-width: 500px;
+    max-width: 700px;
     width: 90%;
+    line-height: 1.5;
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -197,7 +200,7 @@ h1 {
 }
 
 .modal-name {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 8px;
@@ -205,25 +208,33 @@ h1 {
 
 .modal-time {
     color: #6b7280;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
 .modal-section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .modal-section-name {
     font-weight: 600;
     color: #374151;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 1.2rem;
+}
+
+.modal-section-name:first-letter {
+    text-transform: capitalize;
 }
 
 .modal-section-content {
     color: #4b5563;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.6;
+}
+
+.modal-section-content p {
+    margin-top: 10px;
 }
 
 .close-button {
@@ -232,14 +243,127 @@ h1 {
     right: 16px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #9ca3af;
     padding: 4px;
+    font-weight: bold;
+    border-radius: 50%;
 }
 
 .close-button:hover {
     color: #374151;
+}
+
+/* Collection wrapper gets the background, radius, padding, and gap */
+.profile-card-collection {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 12px;              /* spacing between cards */
+  background: #d6e5fba8;  /* moved from individual card */
+  padding: 10px;           /* moved from individual card */
+  border-radius: 8px;      /* moved from individual card */
+  margin-bottom: 12px;     /* spacing to other objects */
+}
+
+/* For multiple talks */
+.callout-title-container p{
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0rem;
+}
+
+/* For multiple talks */
+.callout-title-container hr{
+  margin: 0.8rem auto;
+  background-color: #aed9e0;
+  color: #aed9e0;
+  height: 2px;
+  opacity: 0.5;
+}
+
+/* For multiple talks */
+.callout-title-container .profile-card-collection {
+  background: white;
+  row-gap: 0.5rem;
+  margin-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+/* Individual cards become simple flex containers */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;              /* space between image and info */
+  margin: 0;               /* remove bottom margin */
+  background: none;        /* remove background */
+  padding: 0;              /* remove padding */
+  border-radius: 0;        /* remove radius */
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;          /* don't shrink */
+}
+
+/* Hide image completely if not provided */
+.profile-img[src=""] {
+  display: none;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* For multiple talks */
+.callout-title-container .profile-name {
+  font-weight: 600;
+}
+
+.profile-organization {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Hide org if empty */
+.profile-organization:empty {
+  display: none;
+}
+
+/* For multiple talks */
+.callout-title-container .profile-organization {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* For multiple talks */
+div.toggle-talk.callout.callout-note {
+  border-left-color: #aed9e0;
+  border-left-width: 6px;
+}
+
+/* For multiple talks */
+.talk-abstract p{
+    font-size: 1rem;
+}
+
+.talk-abstract hr{
+  margin: 0.8rem auto;
+  background-color: #aed9e0;
+  color: #aed9e0;
+  height: 2px;
+  opacity: 0.5;
 }
 
 .legend {
@@ -280,9 +404,22 @@ h1 {
     color: #4b5563;
     text-transform: capitalize;
 }
+
+
+
+.current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #1E90FF;
+  z-index: 1000; /* on top of events */
+}
 ```
 
 Please note that this is a draft program and is subject to change. 
+
+Click on a block to see the full speaker list, then click on the title of the talk to see the corresponding abstract.
 
 ```{r, results = 'asis', echo = FALSE}
 library(htmltools)
@@ -373,8 +510,8 @@ div(class = "scroll-wrapper",
             time_column(),
             events)
         ),
-    legend(types = c("general", "social", "keynote", "workshop"),
-           labels = c("General", "Social", "Talks", "Workshop"))
+    legend(types = c("general", "social", "keynote", "workshop", "poster"),
+           labels = c("General", "Social", "Talks", "Workshop", "Poster"))
     )
 )
 
@@ -404,8 +541,10 @@ modal()
 
 # Escape double quotes for JS
 escape_js <- function(x) {
-  x <- ifelse(is.null(x), "", x)
-  stringr::str_replace_all(x, '"', '\\\\"')  # escape only double quotes
+  if (is.null(x)) return("")
+  x <- stringr::str_replace_all(x, "\\\\", "\\\\\\\\") # escape slash
+  x <- stringr::str_replace_all(x, '"', '\\\\"')  # escape double quotes
+  stringr::str_replace_all(x, '`', '\\\\`')  # escape back ticks
 }
 
 # Flatten and transform
@@ -417,8 +556,10 @@ events <- purrr::imap_dfr(schedule, function(day_events, day_name) {
     e$end <- NULL
     e$time <- time_str
     
-    lapply(e, \(x) escape_js(x)) |>
-      tibble::as_tibble()
+    e <- lapply(e, escape_js) |>
+      tibble::enframe()
+    e$value <- lapply(e$value, \(x) x)
+    tidyr::pivot_wider(e, names_from = name, values_from = value)
   })
 })
 
@@ -426,9 +567,15 @@ events <- purrr::imap_dfr(schedule, function(day_events, day_name) {
 event_lines <- purrr::map_chr(events$id, function(event_id) {
   e <- events[events$id == event_id, ]
   result <- glue::glue("\"{event_id}\": {{\n")
+  
   for (i in 1:length(e)) {
-    result <- paste0(result, glue::glue("\"{names(e)[i]}\": \"{e[i]}\", \n"))
+    if (length(e[[i]][[1]]) == 0) next
+    
+    field_name <- names(e)[i]
+    field_content <- paste0("[", paste(glue::glue("`{e[[i]][[1]]}`"), collapse = ", "), "]")
+    result <- paste0(result, glue::glue("\"{field_name}\": {field_content}, \n"))
   }
+  
   result <- paste0(result, "}")
   return(result)
 })
@@ -445,48 +592,219 @@ tags$script(paste0("const eventData = {\n",
 <!-- Modify the modal section to fit your need -->
 <script>
     function openModal(eventId) {
-        const event = eventData[eventId];
-        if (!event) return;
+      const event = eventData[eventId];
+      if (!event) return;
     
-        document.getElementById('modal-name').textContent = event.name || '';
-        document.getElementById('modal-time').textContent = event.time || '';
+      // Set header fields
+      document.getElementById('modal-name').textContent = event.name || '';
+      document.getElementById('modal-time').textContent = event.time || '';
     
-        const modalBody = document.getElementById('modal-body');
-        modalBody.innerHTML = ''; // Clear previous content
+      const modalBody = document.getElementById('modal-body');
+      modalBody.innerHTML = ''; // Clear previous content
     
-        // Optional: fields you want to skip or already used at the top
-        const excludeKeys = new Set(['name', 'time', 'id', 'type', 'par_id', 'par_total']);
+      // ==== Speakers section ====
+      if (event.speakers) {
+        const speakerSection = document.createElement('div');
+        speakerSection.className = 'modal-section';
     
-        for (const key in event) {
-            if (!event[key] || excludeKeys.has(key)) continue;
+        let html = `
+          <div class="modal-section-name">Speakers</div>
+          <div class="modal-section-content">
+            <div class="profile-card-collection">`;
     
-            // Capitalize key for section name
-            const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
-    
-            const section = document.createElement('div');
-            section.className = 'modal-section';
-            section.innerHTML = `
-                <div class="modal-section-name">${sectionTitle}</div>
-                <div class="modal-section-content">${event[key]}</div>
-            `;
-            modalBody.appendChild(section);
+        for (let i = 0; i < event.speakers.length; i++) {
+          html += `
+            <div class="profile-card">
+              <img src="${event.speaker_imgs?.[i] || ''}" alt="Avatar" class="profile-img">
+              <div class="profile-info">
+                <div class="profile-name">${event.speakers[i]}</div>
+                <div class="profile-organization">${event.speaker_orgs?.[i] || ''}</div>
+              </div>
+            </div>`;
         }
     
-        document.getElementById('modal').style.display = 'flex';
+        html += `</div></div>`;
+        speakerSection.innerHTML = html;
+        modalBody.appendChild(speakerSection);
+      }
+    
+      // ==== Generic fields ====
+      const excludeKeys = new Set([
+        'name', 'time', 'id',
+        'type', 'detail_type', 'speakers', 'speaker_imgs', 'speaker_orgs',
+        'par_id', 'par_total'
+      ]);
+    
+      for (const key in event) {
+        if (!event[key] || excludeKeys.has(key) || /^talk_\d/.test(key)) continue;
+    
+        const sectionTitle = key.charAt(0).toUpperCase() + key.slice(1);
+    
+        const section = document.createElement('div');
+        section.className = 'modal-section';
+        section.innerHTML = `
+          <div class="modal-section-name">${sectionTitle}</div>
+          <div class="modal-section-content">${render(event[key][0])}</div>
+        `;
+        modalBody.appendChild(section);
+      }
+    
+      // ==== Talks ====
+      const talkKeys = Object.keys(event).filter(k => /^talk_\d+$/.test(k));
+      if (talkKeys.length > 0) {
+        // Wrap all talks in one section with title
+        const talksSection = document.createElement('div');
+        talksSection.className = 'modal-section';
+    
+        let talksHTML = `
+          <div class="modal-section-name">${event["type"]}s</div>
+          <div class="modal-section-content">`;
+    
+        for (const key of talkKeys) {
+          const i = key.match(/^talk_(\d+)$/)[1];
+          const talkTitle = event[key];
+          const talkSpeakers = event[`talk_${i}_speakers`] || [];
+          const talkOrgs = event[`talk_${i}_orgs`] || [];
+          const talkImgs = event[`talk_${i}_imgs`] || [];
+          const talkAbstract = event[`talk_${i}_abstract`]?.[0] || '';
+    
+          // Build speaker cards
+          let cardsHTML = '<div class="profile-card-collection">';
+          for (let j = 0; j < talkSpeakers.length; j++) {
+            cardsHTML += `
+              <div class="profile-card">
+                <img src="${talkImgs?.[j] || ''}" alt="Avatar" class="profile-img">
+                <div class="profile-info">
+                  <div class="profile-name">${talkSpeakers[j]}</div>
+                  <div class="profile-organization">${talkOrgs?.[j] || ''}</div>
+                </div>
+              </div>`;
+          }
+          cardsHTML += '</div>';
+    
+          // Add abstract if available
+          if (talkAbstract) {
+            talksHTML += `
+              <div class="toggle-talk callout callout-style-simple callout-note no-icon callout-titled" data-border-left="none">
+                <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target="#talk-${i}-abstract-body" aria-controls="talk-${i}-abstract-body" aria-expanded="false" aria-label="Toggle callout">
+                  <div class="callout-icon-container">
+                    <i class="callout-icon no-icon"></i>
+                  </div>
+                  <div class="callout-title-container flex-fill">
+                    <p>${render(talkTitle[0])}</p>
+                    <hr>
+                    ${cardsHTML}
+                  </div>
+                  <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end">
+                    <i class="callout-toggle"></i>
+                  </div>
+                </div>
+                <div id="talk-${i}-abstract-body" class="callout-collapse collapse">
+                  <div class="talk-abstract callout-body-container callout-body">
+                    <hr>
+                    ${render(talkAbstract)}
+                  </div>
+                </div>
+              </div>`;
+          } else {
+            // If no abstract, show title + speakers only
+            talksHTML += `
+              <div class="talk-entry">
+                <div class="talk-title"><p>${render(talkTitle[0])}</p></div>
+                ${cardsHTML}
+              </div>`;
+          }
+        }
+    
+        talksHTML += '</div>'; // close modal-section-content
+        talksSection.innerHTML = talksHTML;
+        modalBody.appendChild(talksSection);
+      }
+    
+      // Show modal
+      document.getElementById('modal').style.display = 'flex';
     }
-
-
+    
     function closeModal(event) {
-        if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
-            document.getElementById('modal').style.display = 'none';
-        }
+      if (!event || event.target.id === 'modal' || event.target.classList.contains('close-button')) {
+        document.getElementById('modal').style.display = 'none';
+      }
     }
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
+    
+    // Escape key closes modal
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
     });
 </script>
+
+<script>
+    // Simple math renderer
+    function renderMathInText(md) {
+      // Display math $$...$$
+      md = md.replace(/\$\$([\s\S]+?)\$\$/g, (_, expr) =>
+        katex.renderToString(expr, { displayMode: true })
+      );
+    
+      // Inline math $...$
+      md = md.replace(/\$([^\$]+?)\$/g, (_, expr) =>
+        katex.renderToString(expr, { displayMode: false })
+      );
+    
+      return md;
+    }
+    
+    function render(text) {
+      return marked.parse(renderMathInText(text));
+    }
+
+</script>
+
+<script>
+    function updateCurrentTimeLine() {
+      const grid = document.querySelector('.grid-container');
+      if (!grid) return;
+    
+      // Remove old lines
+      document.querySelectorAll('.current-time-line').forEach(l => l.remove());
+    
+      // Get current Canberra time
+      const now = new Date();
+      const canberraTime = new Intl.DateTimeFormat('en-AU', {
+        timeZone: 'Australia/Sydney',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false
+      }).formatToParts(now);
+    
+      let hours = 0, minutes = 0;
+      canberraTime.forEach(part => {
+        if (part.type === 'hour') hours = parseInt(part.value, 10);
+        if (part.type === 'minute') minutes = parseInt(part.value, 10);
+      });
+    
+      // Timeline parameters
+      const startHour = 8;       // 08:00
+      const totalSlots = 11;     // number of divisions
+      const endHour = 18.5;      // 18:30
+    
+      // Fraction along timeline including minutes
+      const slotFraction = ((hours + minutes/60) - startHour) / totalSlots;
+      const topPercent = slotFraction * 100;
+    
+      grid.querySelectorAll('.day-column').forEach(col => {
+        const line = document.createElement('div');
+        line.className = 'current-time-line';
+        line.style.top = `calc(${topPercent}%)`;
+        line.style.left = '0';
+        line.style.right = '0';
+        col.appendChild(line);
+      });
+    }
+    
+    // Update every minute
+    setInterval(updateCurrentTimeLine, 60 * 1000);
+    updateCurrentTimeLine();
+
+</script>
+
 ```

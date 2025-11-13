@@ -3,12 +3,6 @@ project:
 
 website:
   title: "#BIBC2025"
-  announcement:
-    dismissable: true
-    content: "Abstract submission is now closed. <br>[**Early-bird registration**](https://membership.biometricsociety.org.au/event-6157046) available until 1st September 2025."
-    type: primary
-    position: below-navbar
-    icon: info-circle
   page-footer: |
      Sponsored by<br><br>
      <table style="width:100%!important;">
@@ -34,7 +28,9 @@ website:
         text: Home
       - text: Program
         menu:
-          - href: schedule.qmd
+          #- href: schedule.qmd
+          - href: book/sessions.qmd
+            text: Schedule
           - href: keynote.qmd
           - href: invited.qmd
           - href: workshop.qmd
@@ -42,9 +38,10 @@ website:
       - text: Participation
         menu:
           - href: abstract.qmd
-          - href: https://membership.biometricsociety.org.au/event-6157046
-            text: Registration
+          - href: registrations.qmd
           - href: travel.qmd
+          - href: venue.qmd
+          - href: presenters.qmd
           - href: accommodation.qmd
           - href: sponsorship.qmd
           - href: coc.qmd

@@ -1,0 +1,143 @@
+---
+title: "#BIBC2025 Schedule"
+format: 
+  pdf:
+    include-in-header:
+      - text: | 
+         \usepackage{bera}
+         \usepackage{geometry}
+         \geometry{
+           a4paper,
+           total={170mm,257mm},
+           left=15mm,
+           top=20mm,
+           right=15mm,
+           bottom=20mm
+          }
+         \usepackage{fancyhdr}
+         \pagestyle{fancy}
+         \renewcommand{\arraystretch}{1.3}
+execute:
+  echo: false
+---
+
+Please note that the times are indicative and may have some small variations.
+
+```{r}
+#| include: false
+library(tidyverse)
+library(kableExtra)
+options(knitr.kable.NA = '')
+sessions <- readRDS(here::here("book/data/sessions.rds")) |> 
+  filter(day != "Monday") |> 
+  mutate(order = 1:n(), .by = session) |> 
+  mutate(room2 = case_when(room != "Theatrette" ~ "Arc Cinema",
+                           TRUE ~ "Theatrette")) |> 
+  mutate(start = str_extract(time, "^[0-9]+:[0-9]+"),
+         duration = case_when(type == "Invited Session" ~ 30,
+                              type == "Keynote" ~ 50,
+                              type == "Talk" ~ 20,
+                              TRUE ~ NA)) |> 
+  mutate(start_time = start |> 
+             hm() |> 
+             as_datetime(),
+           start_time = start_time +  dminutes((order - 1) * duration),
+           end_time = start_time + dminutes(duration),
+           time = str_c("(\\textasciitilde", format(start_time, "%H:%M"), "--", format(end_time, "%H:%M"), ")")) |> 
+  mutate(time = replace_na(time, "")) |> 
+  mutate(content = case_when(type %in% c("General", "Social") ~ titles,
+                             TRUE ~ str_c("\\textbf{", map_chr(titles, ~markdown::mark(.x, format = "latex")), "} by \\textit{", speakers, "} ", time)))  |> 
+  select(-location, -start_of_session, -num_of_talks, -abstract,
+         -titles, -speakers, -time, - start_time, -end_time) 
+
+table_day_maker <- function(data, offset = 0, keynote = "0") {
+  chair <- data |> 
+    filter(!is.na(chair) & !duplicated(chair)) |>
+    mutate(chair = str_c("\\textit{Chair: ", chair, "}")) |> 
+    pivot_wider(id_cols = start, names_from = room2, values_from = chair) |> 
+    mutate(order = 0) |> 
+    mutate(`Arc Cinema` = str_c("\\textbf{Session ", 1:n() - 1 + offset, "A} -- ", `Arc Cinema`),
+           Theatrette = str_c("\\textbf{Session ", 1:n() - 1  + offset, "B} -- ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 6A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics")) 
+  
+  schedule <- data |> 
+    pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 
+    bind_rows(chair) |> 
+    arrange(start, order) |> 
+    select(-order) |> 
+    mutate(start = ifelse(duplicated(start), "", start)) 
+  
+  schedule |> 
+    kbl(booktabs = TRUE, escape = FALSE, longtable = TRUE,
+        col.names = c("Start", "Arc Cinema", "Theatrette")) |> 
+    kable_styling(latex_options = c("repeat_header")) |> 
+    column_spec(2, width = "7cm") |> 
+    column_spec(3, width = "7cm") |> 
+    row_spec(which(schedule$start != ""), background = "#FFDB58") |> 
+    row_spec(which(str_detect(schedule$`Arc Cinema`, ".+Chair.+")), background = "#91B8F9")
+}
+```
+
+
+
+
+## Tuesday
+
+```{r}
+sessions |> 
+  filter(day == "Tuesday",
+         type != "Poster") |> 
+  table_day_maker(offset = 0)
+```
+
+
+
+## Tuesday Poster Session
+
+- Location: Gallery
+- Time: 17:00-19:00
+
+```{r}
+#| output: asis
+posters <- sessions |> 
+  filter(day == "Tuesday",
+         type == "Poster") |> 
+  pull(content) 
+
+str_c("1. ", posters, "\n\n") |> 
+  cat()
+```
+
+
+
+## Wednesday
+
+```{r}
+sessions |> 
+  filter(day == "Wednesday") |> 
+  #slice(-n()) |> # remove Young stats event
+  table_day_maker(offset = 4, keynote = 4)
+```
+
+\newpage
+
+## Thursday
+
+```{r}
+sessions |> 
+  filter(day == "Thursday") |> 
+  table_day_maker(offset = 6, keynote = 6)
+```
+
+\newpage
+
+## Friday
+
+```{r}
+sessions |> 
+  filter(day == "Friday") |> 
+  table_day_maker(offset = 10, keynote = "10|12")
+```

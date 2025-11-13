@@ -1,0 +1,556 @@
+---
+title: Biometrics in the Bush Capital
+subtitle: "24-28th November 2025"
+author: International Biometrics Society Australasian Region
+logo: assets/sponsors/logo.jpg
+output-file: "conference-booklet" 
+platinum-sponsors:
+  - assets/sponsors/ANU_Primary_Horizontal_GoldBlack.png
+gold-sponsors:
+  - assets/sponsors/GRDC_Logo_Primary_Default_transparency.png
+  - assets/sponsors/UoA-Logo-Primary-RGB-Large.png
+supporters:
+  - assets/sponsors/SSA_Logotype_MAIN USE.png
+format: 
+  pdf:
+    documentclass: scrreprt
+    mainfont: Avenir
+    sansfont: Arial Rounded MT Bold
+    toc: true
+    toc-depth: 2
+    template-partials: 
+      - assets/before-body.tex
+      - assets/after-body.tex
+    front-cover-image: assets/front-cover.pdf
+    back-cover-image: assets/back-cover.pdf
+    include-in-header:
+        - assets/header.tex
+        #- assets/draft.tex
+    include-after-body: 
+      text: |
+        \printindex
+#keep-tex: true
+execute:
+  echo: false
+  freeze: false
+  cache: false
+filters:
+   - latex-environment
+environments: [minipage]
+---
+
+# About 
+
+\begin{wrapfigure}{L}{2.5cm}
+\includegraphics[width=2.5cm]{`r rmarkdown::metadata$logo`}
+\end{wrapfigure}
+
+
+
+The [International Biometric Society (IBS)](https://www.biometricsociety.org/) is devoted to the development and application of statistical and mathematical theory and methods in the Biosciences, including agriculture, biomedical science and public health, ecology, environmental sciences, forestry, and allied disciplines. It welcomes as members statisticians, mathematicians, biological scientists, and others devoted to interdisciplinary efforts in advancing the collection and interpretation of information in the biosciences.
+
+The IBS is organised into geographically-defined regions, each with at least 50 members. [The Australasian Region (IBS-AR)](https://biometricsociety.org.au/) is one of over 30 regions under the IBS umbrella. It provides to members of the IBS who reside in Australia, New Zealand and nearby countries a local focus and support for biometrics undertaken in this region.
+
+The Australasian Region Biometrics conference is a biannual conference sponsored by the IBS-AR. The conference is a forum for biometricians, statisticians, and those interested in the development and application of statistical and mathematical theory and methods to problems in the biosciences. The conference is open to members and non-members of the Society.
+
+\Large Society website: [biometricsociety.org.au](https://biometricsociety.org.au/)
+
+\Large Conference website: [biometricsociety.org.au/conference2025](https://biometricsociety.org.au/conference2025)
+
+
+\normalsize
+
+## IBS-AR Council
+
+- **Alison Kelly** (University of Queensland) as President
+- **James Curran** (University of Auckland) as Vice-President
+- **Louise McMillan** (Victoria University of Wellington) as Secretary
+- **Ian Renner** (University of Newcastle) as Treasurer
+- **Sam Rogers** (University of Adelaide) as Membership Officer
+- **Emi Tanaka** (Australian National University) as Social Media Officer
+- **Warren Muller** (CSIRO) as Public Officer
+- **Charley Budgeon** (University of Western Australia) as Biometric Bulletin Correspondent
+- **Peter Green** (AgResearch Ltd) as Website manager
+- **Samuel Muller** (Macquarie University) as IBS Council Member
+- **Kevin Murray** (University of Western Australia) as IBS Council Member
+- **Chris Triggs** (University of Auckland) as IBS Executive Board
+
+
+\Large Find us on **bluesky**: [@biometricsociety.org.au](https://bsky.app/profile/biometricsociety.org.au)
+
+\normalsize
+
+\vfill 
+
+ 
+_Last updated: `r format(Sys.time())`_
+
+
+# Organisers
+
+
+## Local Organising Committee
+
+- **Emi Tanaka** (Australian National University) as Chair
+- **Alan Welsh** (Australian National University)
+- **Fonti Kar** (Australian National University)
+- **Joanne Thandrayen**
+- **Warren Muller** (CSIRO)
+- **Weihao (Patrick) Li** (Australian National University)
+- **Yidi Deng** (Australian National University)
+
+## Social Program Committee
+
+- **Quan Vu** (Australian National University) as Chair
+
+## Scientific and Program Committee
+
+- **David Warton** (UNSW Sydney) as Chair
+- **Carolyn Huston** (CSIRO)
+- **Emi Tanaka** (Australian National University)
+- **Jean Yang** (University of Sydney)
+- **Julian Taylor** (Adelaide University)
+- **Nicola Armstrong** (Curtin University)
+- **Thomas Lumley** (University of Auckland)
+
+
+## Conference Allies {#sec-allies}
+
+- **Fonti Kar** (Australian National University)
+- **Louise McMillan** (Victoria University of Wellington) 
+- **Scott Foster** (CSIRO)
+
+
+```{r}
+#| message: false
+library(tidyverse)
+contributed <- readRDS("data/contributed.rds") |> 
+  mutate(coauthors = case_when(first == "Yidi" ~ "Jiadong Mao, Jarny Choi, Kim-Anh Lê Cao",
+                               first == "Tiphaine" ~ "Cécile Proust-Lima, Daniel J. Myall, Toni L. Pitcher, Leslie Livingston, Rachel Nolan, Sophie Grenfell, John C. Dalrymple-Alford, Alexandra Foubert-Samier, Wassilios G. Meissner, Tim J. Anderson and Campbell J. Le Heron",
+                               TRUE ~ coauthors))
+invited <- readRDS("data/invited.rds") |> 
+  mutate(coauthors = case_when(str_detect(name2, "Belinda") ~ "Belinda Barnes",
+                               str_detect(name2, "Antonio") ~ str_c("Antonio Reverter, ", coauthors),
+                               str_detect(name2, "Scott") ~ str_c("Scott Foster, ", coauthors),
+                               TRUE ~ coauthors)) |> 
+  mutate(name2 = case_when(name2 == "Robert Das" ~ "Robert Clark",
+                           TRUE ~ NA)) |> 
+  mutate(first2 = ifelse(name2 == "Robert Clark",
+                         "Robert", NA),
+         last2 = ifelse(name2 == "Robert Clark",
+                         "Clark", NA))
+keynote <- readRDS("data/keynote.rds")
+```
+
+# Sponsors
+
+
+
+We gratefully acknowledge our sponsors for their generous support, which has made this conference possible.  
+
+
+\vfill
+
+```{=latex}
+\begin{center}
+
+{\Large Platinum  }
+
+
+
+\includegraphics[width=50mm]{`r rmarkdown::metadata[["platinum-sponsors"]]`}  
+
+
+\vfill
+  
+
+{\Large Gold}
+
+
+\includegraphics[width=50mm]{`r rmarkdown::metadata[["gold-sponsors"]][1]`}  \includegraphics[width=50mm]{`r rmarkdown::metadata[["gold-sponsors"]][2]`}  
+
+
+\vfill
+
+
+{\Large Supporter}
+
+\includegraphics[width=50mm]{`r rmarkdown::metadata[["supporters"]][1]`}
+
+ACT Branch
+
+\end{center}
+```
+
+
+
+
+
+
+
+# Schedule
+
+
+```{r message=FALSE}
+load_schedule <- function() {
+  schedule <- yaml::read_yaml(here::here("schedule.yml"))
+  
+  map_df(names(schedule), function(day) {
+    i <- 0
+    tb <- map_df(schedule[[day]], function(event) {
+      i <<- i + 1
+      time <- glue::glue("{event$start}-{event$end}")
+      type <- ifelse(is.null(event$detail_type), event$type, event$detail_type)
+      room <- event$location
+      if(is.null(event$chair)) {
+        location <- event$location
+        chair <- NA
+      }
+      if(!is.null(event$chair)) {
+        location <- paste0(event$location, "\n\nChair:\n", event$chair, "")
+        chair <- event$chair
+      }
+      if (!is.null(event$talk_1)) {
+        talk_numbers <- names(event)[grepl("^talk_\\d+$", names(event))]
+        titles <- map_chr(talk_numbers, \(talk_number) event[[talk_number]])
+        speakers <- map(talk_numbers, \(talk_number) grep("\U0001F464", event[[glue::glue("{talk_number}_speakers")]], value = TRUE))
+        abstract <- map_chr(talk_numbers, \(talk_number) event[[glue::glue("{talk_number}_abstract")]])
+      } else {
+        titles <- event$name
+        speakers <- list(grep("\U0001F464", event$speakers, value = TRUE))
+        abstract <- event$abstract
+      }
+      
+      tb <- tibble(time = time,
+                   type = type,
+                   location = location,
+                   room = room,
+                   chair = chair,
+                   speakers = speakers,
+                   titles = titles,
+                   session = i,
+                   abstract = abstract)
+    })
+    
+    tb$day <- day
+    tb$session <- glue::glue("{tb$day}-{tb$session}-{tb$location}")
+    tb
+  }) |>
+    mutate(speakers = map_chr(speakers, \(x) paste(gsub("\U0001F464", "", x), collapse = " and "))) |>
+    mutate(titles = gsub("\\n", "", titles)) |>
+    mutate(titles = gsub("\\r", "", titles)) |>
+    group_by(day) |>
+    mutate(start_of_session = session != lag(session)) |>
+    ungroup() |>
+    mutate(start_of_session = ifelse(is.na(start_of_session), TRUE, start_of_session)) |>
+    group_by(session) |>
+    mutate(num_of_talks = n()) |>
+    ungroup() |>
+    mutate(type = tools::toTitleCase(type)) |>
+    mutate(speakers = ifelse(speakers == "", titles, speakers)) |>
+    mutate(location = ifelse(location == "Emailed to participants", 
+                             "Haydon Allen", 
+                             location))
+}
+
+data <- load_schedule()
+saveRDS(data, here::here("book/data/sessions.rds"))
+schedule_dat <- data |> 
+  select(-room, -chair) |> 
+  mutate(titles = map_chr(titles, ~markdown::mark(.x, format = "latex")))
+```
+
+```{r}
+day_to_hux <- function(day_dat, across_idx = c()) {
+  ht <- day_dat |>
+    hux(add_colnames = FALSE)
+
+  tbl <- ht |>
+    set_all_borders() |>
+    set_bold(row = !day_dat$type %in% c("General", "Social"), col = "speakers") |>
+    set_rowspan(row = which(ht$start_of_session), col = 1:3, ht$num_of_talks[which(ht$start_of_session)]) |>
+    split_down(5) |>
+    _[[1]] |>
+    set_escape_contents(row = everywhere, col = 5, value = FALSE) |>
+    set_width(1) |>
+    set_col_width(c(0.15, 0.12, 0.18, 0.18, 0.35)) |>
+    set_font_size(everywhere, everywhere, 10) |>
+    set_colspan(row = day_dat$type %in% c("General", "Social"), col = 4, 2) |>
+    set_background_color(row = day_dat$type %in% c("General", "Social"), col = 1:4, "#91B8F9") |>
+    set_background_color(row = day_dat$type %in% c("Poster"), col = 1:5, "#91B8F9") |>
+    set_background_color(row = day_dat$type %in% c("Keynote", "Invited Session"), col = 2, "#4071F6") |>
+    set_latex_float("H") 
+  
+  if (length(across_idx) > 0) {
+    tbl |>
+    split_across(across_idx)
+  } else {
+    tbl
+  }
+}
+```
+
+## Monday, 24 November 
+
+```{r message=FALSE}
+library(huxtable)
+
+dat_mon <- schedule_dat |> 
+  filter(day == "Monday")
+
+day_to_hux(dat_mon) |>
+  set_rowspan(row = 2, col = 3, 1) |>
+  set_rowspan(row = 1, col = 3, 2) |> 
+  set_rowspan(row = 3, col = 3, 2) |>
+  set_colspan(row = 1, col = 4, 2) |>
+  set_colspan(row = 2, col = 4, 2) 
+```
+
+## Tuesday, 25 November 
+
+```{r message=FALSE}
+dat_tue <- schedule_dat |>
+  filter(day == "Tuesday")
+
+split_tbl <- day_to_hux(dat_tue, which(grepl("StableMate", dat_tue$titles) | grepl("Species archetype", dat_tue$titles) | grepl("autoDML", dat_tue$titles)))
+
+split_tbl[[1]]
+split_tbl[[2]]
+split_tbl[[3]]
+split_tbl[[4]]
+```
+
+
+## Wednesday, 26 November 
+
+```{r message=FALSE}
+dat_wed <- schedule_dat |>
+  filter(day == "Wednesday")
+
+split_tbl <- day_to_hux(dat_wed, which(grepl("Optimal sampling", dat_wed$titles)))
+
+split_tbl[[1]]
+split_tbl[[2]]
+```
+
+## Thursday, 27 November 
+
+```{r message=FALSE}
+dat_thu <- schedule_dat |>
+  filter(day == "Thursday")
+
+split_tbl <- day_to_hux(dat_thu, which(grepl("Fitting integrated", dat_thu$titles) | grepl("Spatio-Temporal", dat_thu$titles)))
+
+split_tbl[[1]]
+split_tbl[[2]]
+split_tbl[[3]]
+```
+
+## Friday, 28 November 
+
+```{r message=FALSE}
+dat_fri <- schedule_dat |>
+  filter(day == "Friday")
+
+day_to_hux(dat_fri)
+```
+
+
+```{r}
+display_abstract <- function(data, duration = 50, cospeaker = FALSE) {
+  if(!cospeaker) {
+    data$name2 <- NA
+    data$org2 <- NA
+    data$first2 <- NA
+    data$last2 <- NA
+  }
+  data |> 
+    mutate(order = 1:n(), .by = c(time, location, day)) |> 
+    mutate(start = time |> 
+             str_extract("^[0-9]+:[0-9]+") |> 
+             hm() |> 
+             as_datetime(),
+           start = start +  dminutes((order - 1) * duration),
+           end = start + dminutes(duration),
+           time = str_c(format(start, "%H:%M"), "--", format(end, "%H:%M"))) |> 
+    select(first, last, org, coauthors, titles, abstract.x, first2, last2, org2, time, day, location) |> 
+    pwalk(function(first, last, org, coauthors, titles, abstract.x, first2, last2, org2, time, day, location) {
+       #cat("\\smallskip\n")
+       #cat("::: {.minipage arguments='\\textwidth'}\n\n")
+       #cat("\\nopagebreak\n\n")
+       cat(str_c("### ", titles, "\n\n"))
+       if(!cospeaker) {
+         cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
+         cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
+       } else {
+         cat(str_c("*", first, " ", last, "*\\index{", last, ", ", first, "} "))
+         cat(str_c("*(", str_replace_all(org, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*"))
+         if(is.na(first2)) {
+           cat("\n\n")
+         } else {
+           cat(str_c(" and *", first2, " ", last2, "*\\index{", last2, ", ", first2, "} "))
+           cat(str_c("*(", str_replace_all(org2, fixed("|"), ", ") |> str_replace(fixed("&"), "and"), ")*\n\n"))
+         }
+       }
+       
+       if(!is.na(coauthors)) cat(str_c("*Co-authors: ", coauthors, "*\n\n"))
+       if(duration > 0) {
+         cat(glue::glue("**_{day} ~{time} at  {str_remove(location, '\\n\\nChair:.*\\n.+')}_**\n\n"))
+       }
+       #cat("\\vspace{1.2em}\n\n")
+       cat("\\setlength{\\parskip}{0.4em}\n\n")
+       #cat("\\setlength{\\parindent}{1em}\n\n\\noindent ")
+       cat(abstract.x, "\n\n")
+       #cat(":::\n\n")
+     }) 
+}
+```
+
+# Keynote talks
+
+Please note that the times are indicative and may have some small variations.
+
+```{r}
+#| output: asis
+schedule_dat |> 
+  mutate(speakers = str_trim(speakers)) |> 
+  right_join(mutate(keynote, speakers = str_c(first, " ", last)), by = "speakers") |> 
+  display_abstract()
+```
+
+
+# Invited talks
+
+Please note that the times are indicative and may have some small variation.
+
+## A Cluster of Modern Clustering Methods for Biometrics
+
+```{r}
+invited_talks <- schedule_dat |> 
+  mutate(speakers = str_squish(speakers)) |> 
+  right_join(invited |> 
+               mutate(
+                 add = ifelse(is.na(name2), "", str_c(" and ", name2)),
+                 speakers = str_c(first, " ", last, add)), 
+             by = "speakers") |> 
+  filter(paste(first, last) != "Andrew P. Robinson") 
+```
+
+```{r}
+#| output: asis
+invited_talks |> 
+  slice(1:3) |> 
+  display_abstract(duration = 30)
+```
+
+## Statistics for Biosecurity Surveillance
+
+
+```{r}
+#| output: asis
+invited_talks |> 
+  slice(4:6) |> 
+  display_abstract(cospeaker = TRUE, duration = 30)
+```
+
+## Methods and Practice in Agricultural Analytics
+
+```{r}
+#| output: asis
+invited_talks |> 
+  slice(7:9) |> 
+  display_abstract(duration = 30)
+```
+
+# Contributed talks
+
+Please note that the times are indicative and may have some small variation.
+
+
+```{r}
+ctrbd_talks <- schedule_dat |> 
+  mutate(speakers = str_squish(speakers)) |> 
+  right_join(contributed |> 
+               mutate(
+                 speakers = str_squish(str_c(first, " ", last))) |> 
+               filter(type == "talk"), 
+             by = "speakers") 
+```
+
+
+
+## Tuesday
+
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Tuesday") |> 
+  display_abstract(duration = 20)
+```
+
+## Wednesday
+
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Wednesday") |> 
+  display_abstract(duration = 20)
+```
+
+## Thursday
+
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Thursday") |> 
+  display_abstract(duration = 20)
+```
+
+## Friday
+
+```{r}
+#| output: asis
+ctrbd_talks |> 
+  filter(day == "Friday") |> 
+  display_abstract(duration = 20)
+```
+
+# Posters
+
+
+```{r}
+#| output: asis
+schedule_dat |> 
+  mutate(speakers = str_squish(speakers)) |> 
+  filter(type == "Poster") |> 
+  right_join(contributed |> 
+               mutate(
+                 speakers = str_squish(str_c(first, " ", last))) |> 
+               filter(type == "poster"), 
+             by = "speakers")  |> 
+  filter(!speakers %in% c("George Manapat")) |> 
+ display_abstract(duration = 0)
+```
+
+
+
+# Code of Conduct
+
+
+The International Biometrics Society Australasian Region (IBS-AR) is dedicated to providing a welcoming and harassment-free experience for everyone. We do not tolerate unprofessional or inappropriate conduct, which includes discrimination and harassment, sexual or otherwise. Conference participants should always work towards maintaining an environment free of harassment and discrimination. At the discretion of the IBS-AR conference organisers and/or IBS-AR council, any participants violating these rules may be asked to leave the conference, without any fee refund.
+
+Participants agree to:
+
+- Be considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of fellow attendees at all times.
+- Refrain from demeaning, discriminatory, or harassing behaviour and speech. 
+- Alert a member of the IBS-AR council or conference organisers if they notice a dangerous situation, someone in distress, or violation of this code of conduct.
+
+Harassment is demeaning or threatening behaviour directed at an individual or a group of people. Harassment includes, but is not limited to,
+
+- Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, person's lifestyle choices and practices, physical appearance, age, race, religion (or lack thereof) or beliefs;
+- Unwelcome sexual attention and behaviour including inappropriate sexual propositions; unnecessary touching; verbal or written comments or physical actions of a sexual nature; sexually degrading words used to describe an individual; a display of sexually suggestive objects or pictures; or sexually explicit jokes; and 
+- Threatening behaviour including bullying, threat of violence, deliberate intimidation, stalking or incitement of violence.
+Reporting
+
+
+If you are being harassed by a member/guest/participant of/at the IBS-AR Conference, or notice that someone else is being harassed, or have any other concerns, please contact the designated conference allies in the conference team. The current conference allies can be found on page 4. If the person who is harassing you is one of the conference allies, they will recuse themselves from handling your incident and will not be given any information without your explicit consent. We will respond as promptly as we can.

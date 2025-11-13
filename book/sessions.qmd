@@ -1,0 +1,127 @@
+---
+title: Schedule
+date: today
+execute:
+  echo: false
+format:
+  html:
+    page-layout: full
+---
+
+
+Please note that this is a draft program and is subject to change.
+
+For the conference booklet, see [here](/book/conference-booklet.pdf).
+
+For the schedule print out, see [here](/book/schedule-print.pdf).
+
+
+```{r}
+#| include: false
+library(tidyverse)
+library(kableExtra)
+options(knitr.kable.NA = '')
+sessions <- readRDS(here::here("book/data/sessions.rds")) |> 
+  filter(day != "Monday") |> 
+  mutate(order = 1:n(), .by = session) |> 
+  mutate(room2 = case_when(room != "Theatrette" ~ "Arc Cinema",
+                           TRUE ~ "Theatrette")) |> 
+  mutate(start = str_extract(time, "^[0-9]+:[0-9]+")) |> 
+  mutate(content = case_when(type %in% c("General", "Social") ~ titles,
+                             TRUE ~ str_c("<b>", map_chr(titles, quarto::tbl_qmd_span), "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", map_chr(abstract, quarto::tbl_qmd_span), "</details>")))  |> 
+  # mutate(content = case_when(type %in% c("General", "Social") ~ titles,
+  #                            TRUE ~ str_c("<b>", map_chr(titles, ~{markdown::mark(.x, format = "html") |> str_remove_all("</?p>")}), "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", map_chr(abstract, ~{markdown::mark(.x, format = "html") |> str_replace_all(fixed("\\("), "$") |> str_replace_all(fixed("\\)"), "$")}), "</details>")))  |> 
+  select(-location, -start_of_session, -num_of_talks, -abstract,
+         -titles, -speakers, -time) 
+table_day_maker <- function(data, offset = 0, keynote = "0") {
+  chair <- data |> 
+    filter(!is.na(chair) & !duplicated(chair)) |>
+    mutate(chair = str_c("<i>Chair: ", chair, "</i>")) |> 
+    pivot_wider(id_cols = start, names_from = room2, values_from = chair) |> 
+    mutate(order = 0) |> 
+    mutate(`Arc Cinema` = str_c("<b>Session ", 1:n() - 1 + offset, "A</b> &mdash; ", `Arc Cinema`),
+           Theatrette = str_c("<b>Session ", 1:n() - 1  + offset, "B</b> &mdash; ", Theatrette)) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, glue::glue("Session ({keynote})A"), "Keynote")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 6A", "Invited Session: Statistics for Biosecurity Surveillance")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 3A", "Invited Session: A Cluster of Modern Clustering Methods for Biometrics")) |> 
+    mutate(`Arc Cinema` = str_replace(`Arc Cinema`, "Session 9A", "Invited Session: Methods and Practice in Agricultural Analytics"))
+  
+  schedule <- data |> 
+    pivot_wider(id_cols = c(start, order), names_from = room2, values_from = content) |> 
+    bind_rows(chair) |> 
+    arrange(start, order) |> 
+    select(-order) |> 
+    mutate(start = ifelse(duplicated(start), "", start)) 
+  
+  schedule |> 
+    kbl(escape = FALSE, 
+        format = "html", 
+        #table.attr = "quarto-disable-processing=true",
+        col.names = c("Start", "Arc Cinema", "Theatrette")) |> 
+    kable_styling() |> 
+    #column_spec(1, width = "10%!important") |> 
+    #column_spec(2, width = "45%!important") |> 
+    #column_spec(3, width = "45%!important") |> 
+    row_spec(which(schedule$start != ""), background = "#FFDB58") |> 
+    row_spec(which(str_detect(schedule$`Arc Cinema`, ".+Chair.+")), background = "#91B8F9")
+}
+```
+
+
+::: {.panel-tabset}
+
+## Tuesday
+
+```{r}
+sessions |> 
+  filter(day == "Tuesday",
+         type != "Poster") |> 
+  table_day_maker(offset = 0)
+```
+
+## Poster
+
+- Location: Gallery
+- Time: Tue 17:00-19:00
+
+```{r}
+#| output: asis
+posters <- sessions |> 
+  filter(day == "Tuesday",
+         type == "Poster") |> 
+  pull(content) 
+
+cat("<ol>")
+str_c("<li>", posters, "</li>\n\n") |> 
+  cat()
+cat("</ol>")
+```
+
+
+## Wednesday
+
+```{r}
+sessions |> 
+  filter(day == "Wednesday") |> 
+  table_day_maker(offset = 4, keynote = 4)
+```
+
+
+## Thursday
+
+```{r}
+sessions |> 
+  filter(day == "Thursday") |> 
+  table_day_maker(offset = 6, keynote = 6)
+```
+
+
+## Friday
+
+```{r}
+sessions |> 
+  filter(day == "Friday") |> 
+  table_day_maker(offset = 10, keynote = "10|12")
+```
+
+:::

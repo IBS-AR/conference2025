@@ -1,0 +1,100 @@
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=25mm, bottom=25mm, right=20mm}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsc{\leftmark}}
+\lfoot{}
+\rfoot{Page \thepage\ of \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% \usepackage[extrabold]{raleway}
+% \usepackage{ebgaramond} % Serif font package: EB Garamond
+% \usepackage{titlesec}
+% \titleformat{\chapter}
+% [display]
+% {\ralewayextra\Huge\bfseries}
+% {\huge\chaptertitlename\space\thechapter}
+% {20pt}
+% {}
+
+% \titleformat{\section}{\ralewayextra\Large\bfseries}
+% \titleformat{\subsection}{\ralewayextra\large\bfseries}
+
+\usepackage{tikz}
+\usetikzlibrary{math,positioning,shadows.blur} % TikZ sublibraries
+\usepackage{xfp}
+\usepackage{ifthen}
+
+
+
+% Some colors
+\definecolor{Rouge}{HTML}{ffb3ba}
+\definecolor{Beige}{HTML}{ffdcb3}
+\definecolor{Jaune}{HTML}{ffffb3}
+\definecolor{Vert}{HTML}{b3ffb3}
+\definecolor{Bleu}{HTML}{b3ccff}
+\definecolor{Violet}{HTML}{dfb3ff}
+\definecolor{Rose}{HTML}{ffb3ff}
+
+% Parameters
+\def\NJ{5}	% Number of days (removes days in command Days is n)
+\def\hi{8}	% First hour of the day
+\def\hf{19}	% Last hour of the day
+\def\H{20.0}% Height of the timetable
+\def\D{15.0}% Width of the timetable
+\def\h{1.0}	% Height of the header row (days row)
+\def\d{1.5} % Width of the first column (times column)
+% Days of the timetable. Should contain only the ones displayed
+\newcommand\Days{\textbf{Mon}, \textbf{Tue}, \textbf{Wed}, \textbf{Thu}, \textbf{Fri}}
+% Constants
+\def\dd{\fpeval{(\D-\d) / \NJ}}	% Widht of the columns
+\def\Dh{\fpeval{\hf - \hi}}		% Total hours per days (Width of columns)
+\def\dh{\fpeval{(\H-\h) / \Dh}}	% Heigth of an hour (Heigth of rows)
+
+% Event command:
+% Input: Name1, Name2, Day, Strating time, Duration, Location, Color
+% Output: Draw box in TikZ
+\NewDocumentCommand{\event}{ O{Prénom} O{Nom} O{\D1} O{\hi} O{1} O{Lieu} O{Beige}}{
+% Transform sexagesimal in decimal
+\def\Hdebut{\fpeval{floor(#4)}};	% Starting hour (integer)
+\def\Mdebut{\fpeval{round((#4 - \Hdebut )*100)}};	% Starting minute (integer)
+\def\Debutdeci{\fpeval{\Hdebut + (#4 - \Hdebut ) / 0.6}};	% Starting time (rational)
+
+\def\Hduration{\fpeval{floor(#5)}};	% Duration  hour (integer)
+\def\Mduration{\fpeval{round((#5-\Hduration)*100)}};	% Duration minute (integer)
+\def\Durationdeci{\fpeval{\Hduration + ((#5-\Hduration) / 0.6)}};	% Duration (rational)
+
+\def\Findeci{\fpeval{\Debutdeci + \Durationdeci}}; % Ending time (rational)
+\def\Hfin{\fpeval{floor(\Findeci)}};	% Ending hour (integer)
+\def\Mfin{\fpeval{round((\Findeci - \Hfin)*60.0)}};	 % Ending minute (integer)
+
+\def\x{\fpeval{\d + ( #3 - 1 ) * \dd}};	% Columns position (start)
+\def\xx{\fpeval{\d + #3 * \dd}};		% Columns position (end)
+\def\yy{\fpeval{(\hf - \Debutdeci ) * \dh}};	% Row position (start)
+\def\y{\fpeval{\yy - \Durationdeci * \dh}};		% Row position (end)
+
+% Display double zero (i.e. 14:00 instead of 14:0 )
+\ifthenelse{\equal{\Mdebut}{0}}
+	{
+	\ifthenelse{\equal{\Mfin}{0}}
+    	{\filldraw [fill= #7, draw=black] (\x, \y) rectangle (\xx, \yy) node[pos=.5, text width=5cm, align=center] {\small\textbf{#1 #2} \linebreak \textit{#6}};}
+    	{\filldraw [fill= #7, draw=black] (\x, \y) rectangle (\xx, \yy) node[pos=.5, text width=5cm, align=center] {\small\textbf{#1 #2} \linebreak \textit{#6}};}
+    }
+    {
+    \ifthenelse{\equal{\Mfin}{0}}
+    	{\filldraw [fill= #7, draw=black] (\x, \y) rectangle (\xx, \yy) node[pos=.5, text width=5cm, align=center] {\small\textbf{#1 #2} \linebreak \textit{#6}};}
+    	{\filldraw [fill= #7, draw=black] (\x, \y) rectangle (\xx, \yy) node[pos=.5, text width=5cm, align=center] {\small\textbf{#1 #2} \linebreak \textit{#6}};}
+    }
+}
+
+\usepackage{pdfpages} % for the background image on title page -- replacement for above
+
+\usepackage{makeidx}
+\makeindex
+%\makeindex[columns=3]{idxlayout}
+
