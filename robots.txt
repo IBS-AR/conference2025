@@ -1,1 +1,1 @@
-Sitemap: https://IBS-AR.github.io/conference2025/sitemap.xml
+Sitemap: https://IBS-AR.github.io/biometrics-conference-2025/sitemap.xml
