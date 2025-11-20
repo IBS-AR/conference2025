@@ -62,7 +62,7 @@ Tuesday:
   - name: "On Finding Good Experiments"
     id: "keynote-1"
     type: "talk"
-    chair: "Chris Brien"
+    chair: "Alison Kelly"
     detail_type: "keynote"
     start: "09:05"
     end: "09:55"
@@ -1476,7 +1476,7 @@ Wednesday:
     id: "dinner-wed"
     type: "social"
     start: "18:30"
-    end: "20:30"
+    end: "22:30"
     location: " "
 
 Thursday:

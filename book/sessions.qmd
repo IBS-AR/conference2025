@@ -26,13 +26,26 @@ sessions <- readRDS(here::here("book/data/sessions.rds")) |>
   mutate(order = 1:n(), .by = session) |> 
   mutate(room2 = case_when(room != "Theatrette" ~ "Arc Cinema",
                            TRUE ~ "Theatrette")) |> 
-  mutate(start = str_extract(time, "^[0-9]+:[0-9]+")) |> 
+  mutate(start = str_extract(time, "^[0-9]+:[0-9]+"),
+         duration = case_when(type == "Invited Session" ~ 30,
+                              type == "Keynote" ~ 50,
+                              type == "Talk" ~ 20,
+                              TRUE ~ NA)) |> 
+  mutate(start_time = start |> 
+             hm() |> 
+             as_datetime(),
+           start_time = start_time +  dminutes((order - 1) * duration),
+           end_time = start_time + dminutes(duration),
+           time = str_c("(~", format(start_time, "%H:%M"), "-", format(end_time, "%H:%M"), ")")) |> 
+  mutate(time = replace_na(time, "")) |> 
   mutate(content = case_when(type %in% c("General", "Social") ~ titles,
-                             TRUE ~ str_c("<b>", map_chr(titles, quarto::tbl_qmd_span), "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", map_chr(abstract, quarto::tbl_qmd_span), "</details>")))  |> 
+                             str_trim(speakers) == "Chris Brien" ~ str_c("(CANCELLED) <b>", map_chr(titles, quarto::tbl_qmd_span), "</b> by <i>", speakers, "</i>", time, "<details><summary>Abstract</summary>", map_chr(abstract, quarto::tbl_qmd_span), "</details>"),
+                             TRUE ~ str_c("<b>", map_chr(titles, quarto::tbl_qmd_span), "</b> by <i>", speakers, "</i>", time, "<details><summary>Abstract</summary>", map_chr(abstract, quarto::tbl_qmd_span), "</details>")))  |> 
   # mutate(content = case_when(type %in% c("General", "Social") ~ titles,
   #                            TRUE ~ str_c("<b>", map_chr(titles, ~{markdown::mark(.x, format = "html") |> str_remove_all("</?p>")}), "</b> by <i>", speakers, "</i><details><summary>Abstract</summary>", map_chr(abstract, ~{markdown::mark(.x, format = "html") |> str_replace_all(fixed("\\("), "$") |> str_replace_all(fixed("\\)"), "$")}), "</details>")))  |> 
   select(-location, -start_of_session, -num_of_talks, -abstract,
          -titles, -speakers, -time) 
+
 table_day_maker <- function(data, offset = 0, keynote = "0") {
   chair <- data |> 
     filter(!is.na(chair) & !duplicated(chair)) |>

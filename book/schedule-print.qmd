@@ -46,6 +46,7 @@ sessions <- readRDS(here::here("book/data/sessions.rds")) |>
            time = str_c("(\\textasciitilde", format(start_time, "%H:%M"), "--", format(end_time, "%H:%M"), ")")) |> 
   mutate(time = replace_na(time, "")) |> 
   mutate(content = case_when(type %in% c("General", "Social") ~ titles,
+                             str_trim(speakers) == "Chris Brien" ~ str_c("(CANCELLED) \\textbf{", map_chr(titles, ~markdown::mark(.x, format = "latex")), "} by \\textit{", speakers, "} ", time),
                              TRUE ~ str_c("\\textbf{", map_chr(titles, ~markdown::mark(.x, format = "latex")), "} by \\textit{", speakers, "} ", time)))  |> 
   select(-location, -start_of_session, -num_of_talks, -abstract,
          -titles, -speakers, -time, - start_time, -end_time) 
