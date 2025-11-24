@@ -9,11 +9,16 @@ format:
 ---
 
 
-Please note that this is a draft program and is subject to change.
 
 For the conference booklet, see [here](/book/conference-booklet.pdf).
 
 For the schedule print out, see [here](/book/schedule-print.pdf).
+
+Please note that there were some changes to the program after it was printed:
+
+- ~~Alison Kelly~~ Emi Tanaka would be chairing the first keynote
+- The first talk in Session 4A is cancelled due to speaker unavailability. Consequently, Session 4A will start at 4.10pm. 
+
 
 
 ```{r}
