@@ -412,9 +412,9 @@ Tuesday:
       and do so with relevant measures of uncertainty. 
     talk_3: 'Speed: An R package for Spatially Efficient Experimental Designs'
     talk_3_speakers:
-    - "Sam Rogers \U0001F464"
+    - "Julian Taylor \U0001F464"
     - Wasin Pipattungsakul
-    - Julian Taylor
+    - Sam Rogers
     talk_3_orgs: University of Adelaide
     talk_3_abstract: "Agricultural field trials are typically designed using robust
       statistical randomisation, and best practice agricultural field trials also
@@ -1227,7 +1227,7 @@ Wednesday:
 
   - name: "Session 5B"
     id: "session-5b"
-    chair: "Sam Rogers"
+    chair: "Michael Mumford"
     type: "talk"
     start: "09:50"
     end: "10:50"
