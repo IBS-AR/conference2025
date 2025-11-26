@@ -118,7 +118,7 @@ cat("</ol>")
 ```
 
 
-## Wednesday {.active}
+## Wednesday
 
 ```{r}
 sessions |> 
@@ -127,7 +127,7 @@ sessions |>
 ```
 
 
-## Thursday
+## Thursday {.active}
 
 ```{r}
 sessions |> 
