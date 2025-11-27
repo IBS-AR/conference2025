@@ -21,6 +21,7 @@ Please note that there were some changes to the program after it was printed:
 - Julian Taylor replaces Sam Rogers in Session 2B.
 - The last talk in Session 5A is cancelled due to speaker unavailability.
 - Michael Mumford will be chairing Session 5B.
+- Arjun Sekhar will be chairing Session 10B.
 
 
 ```{r}
