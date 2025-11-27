@@ -128,7 +128,7 @@ sessions |>
 ```
 
 
-## Thursday {.active}
+## Thursday
 
 ```{r}
 sessions |> 
@@ -137,7 +137,7 @@ sessions |>
 ```
 
 
-## Friday
+## Friday {.active}
 
 ```{r}
 sessions |> 
