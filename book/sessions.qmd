@@ -24,6 +24,8 @@ Please note that there were some changes to the program after it was printed:
 - Arjun Sekhar will be chairing Session 10B.
 
 
+For the presenter materials, see [here](/slides/).
+
 ```{r}
 #| include: false
 library(tidyverse)

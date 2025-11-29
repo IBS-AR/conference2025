@@ -1,5 +1,11 @@
 project:
   type: website
+  resources:
+   - "/slides/Contributed"
+   - "book/conference-booklet.pdf"
+  render:
+   - "*.qmd"
+   - "!book/conference-booklet.qmd"
 
 website:
   title: "#BIBC2025"
@@ -34,6 +40,7 @@ website:
           - href: keynote.qmd
           - href: invited.qmd
           - href: workshop.qmd
+          - href: slides/index.qmd
       - social.qmd
       - text: Participation
         menu:
