@@ -41,6 +41,7 @@ website:
           - href: invited.qmd
           - href: workshop.qmd
           - href: slides/index.qmd
+          - href: photos/index.qmd
       - social.qmd
       - text: Participation
         menu:
