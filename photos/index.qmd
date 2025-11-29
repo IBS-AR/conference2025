@@ -1,0 +1,131 @@
+---
+title: Photos
+execute:
+  echo: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+```
+
+```{css}
+.grid-gallery {
+  columns: 5 200px;
+  column-gap: 0.5rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.grid-item {
+  width: 150px;
+  margin: 0 0.5rem 0.5rem 0;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+}
+img.grid-item {
+  width: 100%;
+  transition: all .25s ease-in-out;
+}
+img.grid-item:hover {
+  transform: scale(1.025);
+}
+```
+
+
+## Group Photos
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+fns <- fs::dir_ls("Group Photo/")
+walk(fns, function(pic) {
+  cat(str_glue("![]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
+
+## Monday
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+fns <- fs::dir_ls("Day 1 (Monday 24-11 Workshop)/")
+walk(fns, function(pic) {
+  cat(str_glue("![]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
+
+
+## Tuesday
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+#| eval: false
+fns <- fs::dir_ls("Day 2 (Tuesday 25-11)/")
+walk(fns, function(pic) {
+  cat(str_glue("![Photos by Can Li]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
+
+## Wednesday
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+#| eval: false
+
+fns <- fs::dir_ls("Day 3 (Wednesday 26-11)/")
+walk(fns, function(pic) {
+  cat(str_glue("![]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
+
+## Thursday
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+#| eval: false
+
+fns <- fs::dir_ls("Day 4 (Thursday 27-11)/")
+walk(fns, function(pic) {
+  cat(str_glue("![]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
+## Friday
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+#| eval: false
+fns <- fs::dir_ls("Day 5 (Friday 28-11)/")
+walk(fns, function(pic) {
+  cat(str_glue("![]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
+
