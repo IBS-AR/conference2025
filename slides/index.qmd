@@ -1,0 +1,111 @@
+---
+title: Presenter Materials
+execute: 
+  echo: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+```
+
+Below is the list of slides and posters from presenters with permission.
+
+
+## Keynote
+
+
+```{r}
+name2title <- function(type) {
+  readRDS(here::here("book/data/sessions.rds")) |> 
+    filter(type == .env$type) |> 
+    mutate(speakers = str_trim(speakers)) |> 
+    select(speakers, titles) |> 
+    deframe()
+} 
+
+name2time <- function(type) {
+  days <- c(Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5)
+  readRDS(here::here("book/data/sessions.rds")) |> 
+    filter(type == .env$type) |> 
+    mutate(speakers = str_trim(speakers),
+           time = str_c(days[day], time, location)) |> 
+    select(speakers, time) |> 
+    deframe()
+} 
+
+list_slides <- function(type, folder = type, modify = c()) {
+  fns <- fs::dir_ls(folder)
+  bsn <- basename(fns)
+  fns <- fns[str_detect(bsn, "^[^~]")]
+  if(any(fs::is_dir(fns))) {
+    fns[fs::is_dir(fns)] <- fs::dir_ls(fns[fs::is_dir(fns)], regexp = "[.]html$")
+  }
+  speakers <- str_extract(fns, ".+-(.+)[.](pdf|pptx|html)", group = 1)
+  dict_title <- name2title(type)
+  dict_time <- name2time(type)
+  if(any(names(dict_title) %in% names(modify))) {
+    ww <- which(names(dict_title) %in% names(modify))
+    names(dict_title)[ww] <- modify[names(dict_title)[ww]]
+    names(dict_time)[ww] <- modify[names(dict_time)[ww]]
+  }
+  tibble(file = paste0("/slides/", fns), 
+         speaker = speakers, 
+         title = unname(dict_title[speaker]),
+         time = unname(dict_time[speaker])) |> 
+  arrange(time) |> 
+  #arrange(speaker) |> 
+  select(file, speaker, title) |> 
+  pwalk(function(file, speaker, title) {
+    icon <- case_when(str_detect(file, "html$") ~ '<i class="fab fa-html5"></i>',
+                      str_detect(file, "pdf$") ~ '<i class="fas fa-file-pdf"></i>',
+                      str_detect(file, "pptx$") ~ '<i class="fas fa-file-powerpoint"></i>',
+                      TRUE ~ '<i class="fas fa-link"></i>')
+    cat(str_glue("- **{speaker}** \"{title}\" [{icon}]({file})\n\n"))
+  })
+}
+```
+
+
+```{r}
+#| output: asis
+
+list_slides("Keynote")
+```
+
+## Invited 
+
+```{r}
+#| output: asis
+list_slides("Invited Session", "Invited")
+```
+
+## Contributed
+
+
+```{r}
+#| output: asis
+list_slides("Talk", "Contributed", modify = c("A.A.P.N.M. Perera" = "Piumi Perera",
+                                              "David I. Warton" = "David Warton",
+                                              "Alec B. M. van Helsdingen" = "Alec van Helsdingen",
+                                              "Alysha M. De Livera" = "Alysha De Livera",
+                                              "Braden J. Thorne" = "Braden Thorne",
+                                              "Colleen H Hunt" = "Colleen Hunt",
+                                              "Christopher Bilder" = "Chris Bilder",
+                                              "Michael H. Mumford" = "Michael Mumford",
+                                              "Nelson J. Y. Chua" = "Nelson Chua",
+                                              "Julian Taylor" = "Sam Rogers",
+                                              "James M. Curran" = "James Curran",
+                                              "Sandra K. Tanz" = "Sandra Tanz",
+                                              "Scott D. Foster" = "Scott Foster",
+                                              "Sharon  G. Nielsen" = "Sharon Nielsen",
+                                              "Sean A. Martin" = "Sean Martin"))
+```
+
+
+## Posters
+
+```{r}
+#| output: asis
+list_slides("Poster")
+```

@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "cwilliams_BIBC2025.html#overview",
+    "href": "cwilliams_BIBC2025.html#overview",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": " Overview ",
+    "text": "Overview \n\n\n\nMotivation for meta-analysis\nModel approaches\nImplementations\nSimulation study\nIllustrative example"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#rapid-growth-of-scientific-research",
+    "href": "cwilliams_BIBC2025.html#rapid-growth-of-scientific-research",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Rapid growth of scientific research",
+    "text": "Rapid growth of scientific research\n\n\n\n\n\n\nDoubles every ~17 years (Bornmann et al., 2021)\n\n\n\n\nConflicting results across related studies\n\n\n\n\nHard to keep track of the overall body of evidence\n\n\n\n\nBornmann et al., 2021. https://doi.org/10.1057/s41599-021-00903-w\n\n\nThere is a lot of empirical research being published every year. A recent study found that, scientific output has been growing and doubles every 17 years. With that constant growth, it becomes very hard to keep track of the evidence and to see the bigger picture—especially when different studies report conflicting results or use different methods and measures."
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#conventional-meta-analysis-model",
+    "href": "cwilliams_BIBC2025.html#conventional-meta-analysis-model",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Conventional meta-analysis model",
+    "text": "Conventional meta-analysis model\n\n\n1. Derive effect-size estimates and sampling variances\ne.g. log-transformation or standardisation of raw data from each study\n\n\n\n2. Fit model \n\nLinear mixed model (LMM) with known sampling variances\n\\[ y_i = \\mu + u_i + e_i \\] \\[ e_i \\sim N(0, v_i)\\] \\[u_i \\sim N(0, \\tau^2) \\]\n\n\nFor each study \\(i\\):\n\n\\(y_i\\) is the observed effect size.\n\\(\\mu\\) is the overall mean effect size.\n\\(u_i\\) are study-level random effects.\n\\(e_i\\) are sampling errors with known variances \\(v_i\\).\n\n\n\n\n\nAlso called Normal-Normal model"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#another-approach",
+    "href": "cwilliams_BIBC2025.html#another-approach",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Another approach",
+    "text": "Another approach\n\nAnalyse raw data using a Generalized Linear Mixed Model (GLMM) framework.\n\n\n\n\nExample:\n\n\nBinary comparative outcomes (e.g. treatment success/failure)\n\n\n\n\\[ X_{ij} \\sim \\text{Binomial}(n_{ij}, p_{ij}) \\] \\[ \\operatorname{logit}(p_{ij}) = \\mu + u_i \\] \\[ u_i \\sim N(0, \\tau^2) \\]\n\n\nFor study \\(i\\) and group \\(j\\):\n\n\\(X_{ij}\\) is the number of events\n\n\\(n_{ij}\\) is the number of subjects\n\n\\(p_{ij}\\) is the event probability\n\n\n\n\n\nBinomial–Normal model."
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#two-broad-approaches",
+    "href": "cwilliams_BIBC2025.html#two-broad-approaches",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Two broad approaches",
+    "text": "Two broad approaches\n\n\n\n\n‘Two-stage’ approach \n\nConventional meta-analysis\n\nLMM framework\nSampling variances are known/estimated\n\n\n\n‘One-stage’ approach \n\nGLMM framework\n\nUses binary or count data from studies directly\n\n\n\n\nFirst stage: estimate the effect sizes and their sampling variances\nSecond stage: assume normality of the empirical effect sizes\nUses the raw data directly"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#meta-analysis-packages-in-r",
+    "href": "cwilliams_BIBC2025.html#meta-analysis-packages-in-r",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Meta-analysis packages in R",
+    "text": "Meta-analysis packages in R\n\nCurrently &gt; 180 packages on CRAN task view for meta-analysis\n\n\n\n\nmetafor (Viechbauer, 2010): comprehensive and flexible modelling\n\n\n\n\nmeta (Balduzzi et al., 2019): basic modelling and in user-friendly interface\n\n\n\nhttps://cran.r-project.org/web/views/MetaAnalysis.html"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#glmmtmb-r-package",
+    "href": "cwilliams_BIBC2025.html#glmmtmb-r-package",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "glmmTMB R package",
+    "text": "glmmTMB R package\n\nIncreasing community &gt; 50k downloads per month (as of 2025)\n\n\n\nEstimation using Template Model Builder (TMB) and Laplace approximation\n\n\n\n\nFlexible formula interface\n\n\n\n\nRange of distributional families\n\n\n\n\nDispersion and zero-inflation modelling\n\n\n\n\n➜ Currently we can fit one-stage GLMM meta-analysis models ✅\n\n\n➜ But lacks functionality for two-stage models ❌\n\n\nBrooks et al., 2019. https://doi.org/10.32614/RJ-2017-066"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#new-covariance-structure-equalto",
+    "href": "cwilliams_BIBC2025.html#new-covariance-structure-equalto",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "New covariance structure equalto",
+    "text": "New covariance structure equalto\n\nRandom-effect term to fix the sampling covariance structure:\n\n\nequalto(0 + id|g, V)\n\n\n\nThree components:\n\n\n\nid, effect size indices as a factor.\n\n\n\n\ng, grouping variable ➜ for meta-analysis we fix this to one level.\n\n\n\n\nV, user-supplied sampling variance–covariance matrix.\n\n\n\nhttps://github.com/coraliewilliams/glmmTMB/tree/equalto_covstruc"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#simulation-study",
+    "href": "cwilliams_BIBC2025.html#simulation-study",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Simulation study",
+    "text": "Simulation study\n\nBenchmark with rma.uni function from metafor package.\n\n\nAssuming random-effects model: \\[ y_i = \\mu + u_i + e_i, \\quad u_i \\sim N(0, \\tau^2) \\]\n\n\n\nStandardised mean difference (SMD)\n\nLog response ratio (lnRR)\n\nLog odds ratio (OR)\n\nLog incidence rate ratio (IRR)\n\n\n\n\n➜ Compare estimates of the overall mean \\(\\hat\\mu\\) and within study variance \\(\\hat\\tau^2\\)\n\n\nRegistration of study design: https://osf.io/bvnug"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#agreement-between-glmmtmb-and-metafor",
+    "href": "cwilliams_BIBC2025.html#agreement-between-glmmtmb-and-metafor",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Agreement between glmmTMB and metafor",
+    "text": "Agreement between glmmTMB and metafor"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#dataset",
+    "href": "cwilliams_BIBC2025.html#dataset",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Dataset",
+    "text": "Dataset\n\nAvailable via the metadat package (White et al., 2022): dat.lim2014\n\n\n\n\n\n  study             species     ri  ni      yi     vi id \n1     1 Sceloporus_virgatus  0.100  21  0.1003 0.0556  1 \n2     1 Sceloporus_virgatus -0.170  14 -0.1717 0.0909  2 \n3     1 Sceloporus_virgatus -0.070  21 -0.0701 0.0556  3 \n4     1 Sceloporus_virgatus -0.140  14 -0.1409 0.0909  4 \n5     2     Marmota_marmota -0.540  74 -0.6042 0.0141  5 \n6     3      Vipera_ursinii  0.487 105  0.5321 0.0098  6 \n\n\n\n\n\nri correlation coefficients\n\n\n\n\nni: sample sizes\n\n\n\n\nyi effect sizes estimates (Fisher’s z-transformed correlation coefficients)\n\n\n\n\nvi sampling variance estimates\n\n\n\nMultiple effect size observed per study. ➜ 170 effect sizes across 120 species and 125 studies.\n\n\nLim & al., 2014. https://doi.org/10.1111/evo.12446"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#phylogenetic-multilevel-meta-analysis",
+    "href": "cwilliams_BIBC2025.html#phylogenetic-multilevel-meta-analysis",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": " Phylogenetic multilevel meta-analysis ",
+    "text": "Phylogenetic multilevel meta-analysis \n\n\\[ y_{ijk} = \\mu + u_{i} + m_{ij} + s_k + p_k + e_{ij} \\]\n\n\nWhere:\n\n\\(y_{ijk}\\) is the observed effect size \\(j\\) from study \\(i\\) for species \\(k\\)\n\n\n\n\n\\(u_i\\) is the among-study effect and \\(m_{ij}\\) is within-study effect\n\n\n\n Two species-level random effects (Cinar et al., 2022): \n\n\n\n\\(s_k\\) independent species effect\n\n\n\n\n\\(p_k \\sim N(0, \\sigma^2_p A)\\) where \\(A\\) is the phylogenetic correlation matrix\n\n\n\n\n\\(e_{ij} \\sim N(0, V)\\) where \\(V\\) is the sampling error variance-covariance matrix."
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#section",
+    "href": "cwilliams_BIBC2025.html#section",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "",
+    "text": "Sampling error variance-covariance matrix \\(V\\):\n\n\n\nV &lt;- diag(dat$vi)\nround(V[1:5,1:5], 3)\n\n      [,1]  [,2]  [,3]  [,4]  [,5]\n[1,] 0.056 0.000 0.000 0.000 0.000\n[2,] 0.000 0.091 0.000 0.000 0.000\n[3,] 0.000 0.000 0.056 0.000 0.000\n[4,] 0.000 0.000 0.000 0.091 0.000\n[5,] 0.000 0.000 0.000 0.000 0.014\n\n\n\n\n\nPhylogenetic correlation matrix \\(A\\):\n\n\n\n\n                      Hogna_helluo Centruroides_vittatus Gambusia_holbrooki\nHogna_helluo             1.0000000             0.9915966                  0\nCentruroides_vittatus    0.9915966             1.0000000                  0\nGambusia_holbrooki       0.0000000             0.0000000                  1\n\n\n\n\n\n\n\nImages from https://www.phylopic.org/"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#fit-multilevel-model",
+    "href": "cwilliams_BIBC2025.html#fit-multilevel-model",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Fit multilevel model",
+    "text": "Fit multilevel model\n\n\nlibrary(glmmTMB)\nfit.tmb &lt;- glmmTMB(yi ~ 1 + (1|study) +\n                       (1 | species) + propto(0 + species.phy|g, A) +\n                       equalto(0 + id|g,V),\n                       data=dat,\n                       REML=TRUE) \n\n\n\n\n\nUse the propto covariance structure to specify phylogenetic random effect.\n\n\n\n\nUse the equalto covariance structure to specify sampling error structure.\n\n\n\n\nThe within-study variability \\(m_{ij}\\) is modelled as the residual variance."
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#model-output",
+    "href": "cwilliams_BIBC2025.html#model-output",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Model output",
+    "text": "Model output\n\nFixed effects estimates from conditional model:\n\n\n\nsummary(fit.tmb)$coefficients$cond\n\n              Estimate Std. Error   z value  Pr(&gt;|z|)\n(Intercept) -0.1563723  0.1277383 -1.224161 0.2208913\n\n\n\n\n\nRandom effect variance estimates:\n\n\n\nvc &lt;- VarCorr(fit.tmb)$cond\ns2.m &lt;- sigma(fit.tmb)^2 #m_ij var estimate\ndata.frame(\n  re = c(\"study\", \"ef\", \"species\", \"species.phy\"),\n  var.est = c(vc$study[1], s2.m, vc$species[1], vc$g[1])\n)\n\n           re      var.est\n1       study 1.387349e-01\n2          ef 9.255962e-03\n3     species 2.505568e-10\n4 species.phy 5.721480e-02"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#conclusions",
+    "href": "cwilliams_BIBC2025.html#conclusions",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Conclusions",
+    "text": "Conclusions\n\n\n\n\n\nequalto supports the two-stage meta-analysis approach in glmmTMB\n\n\n\n\nExpands the meta-analysis toolkit in R\n\n\n\n\nBroadens the modelling possibilities for meta-analysis users"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#next-steps",
+    "href": "cwilliams_BIBC2025.html#next-steps",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Next steps",
+    "text": "Next steps\n\n\n\nWorking to include equalto on glmmTMB main branch.\n\n\n\n\nPreparing tutorial paper\n\n\n\n\nCurrent branch: https://github.com/coraliewilliams/glmmTMB/tree/equalto_covstruc"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#thank-you",
+    "href": "cwilliams_BIBC2025.html#thank-you",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "Thank you",
+    "text": "Thank you\n\n\nSupervisors:\nShinichi Nakagawa\nDavid Warton\n\nMaeve McGillycuddy — glmmTMB\nMollie Brooks — glmmTMB\nBen Bolker — glmmTMB\nWolfgang Viechtbauer — metafor\nYefeng Yang\nAyumi Mizuno"
+  },
+  {
+    "objectID": "cwilliams_BIBC2025.html#references",
+    "href": "cwilliams_BIBC2025.html#references",
+    "title": "Fitting meta-analysis with the glmmTMB R package",
+    "section": "References",
+    "text": "References\n\nBalduzzi S, Rücker G, Schwarzer G (2019), How to perform a meta-analysis with R: a practical tutorial, Evidence-Based Mental Health; 22: 153-160.\nBornmann, L., Haunschild, R., & Mutz, R. (2021). Growth rates of modern science: A latent piecewise growth curve approach to model publication numbers from established and new literature databases. Humanities and Social Sciences Communications, 8(1), 224. https://doi.org/10.1057/s41599-021-00903-w\nBrooks, M. E., Kristensen, K., van Benthem, K. J., Magnusson, A., Berg, C. W., Nielsen, A., Skaug, H. J., Mächler, M., & Bolker, B. M. (2017). glmmTMB balances speed and flexibility among packages for zero-inflated generalized linear mixed modeling. R Journal, 9(2), 378–400. https://doi.org/10.32614/RJ-2017-066\nCinar, O., Nakagawa, S., & Viechtbauer, W. (2022). Phylogenetic multilevel meta-analysis: A simulation study on the importance of modelling the phylogeny. Methods in Ecology and Evolution, 13(2), 383–395. https://doi.org/10.1111/2041-210X.13760\nKristensen, K., & McGillycuddy, M. (2025). Covariance structures with glmmTMB. https://cran.r-project.org/web/packages/glmmTMB/vignettes/covstruct.html\nLim, J. N., Senior, A. M., & Nakagawa, S. (2014). Heterogeneity in individual quality and reproductive trade-offs within species. Evolution, 68(8), 2306–2318. https://doi.org/10.1111/evo.12446\nViechtbauer, W. (2010). Conducting Meta-Analyses in R with the metafor Package. Journal of Statistical Software, 36(3), 1-48. https://doi.org/10.18637/jss.v036.i03\nWhite T, Noble D, Senior A, Hamilton W, Viechtbauer W (2022). metadat: Meta-Analysis Datasets. R package version 1.2-0, https://CRAN.R-project.org/package=metadat."
+  }
+]

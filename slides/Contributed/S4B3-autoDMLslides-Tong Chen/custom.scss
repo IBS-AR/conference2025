@@ -1,0 +1,143 @@
+/*-- scss:rules --*/
+
+/* Import Yanone Kaffeesatz font */
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;400;700&display=swap');
+
+
+/* Background adjustments for the title slide */
+#title-slide {
+    data-background: "cover.png" !important;
+    /* Ensure background applies */
+    data-background-size: cover;
+    background-position: center;
+    text-align: center;
+    /* Ensure text is centered */
+    color: white;
+    /* Set text color */
+}
+
+#title-slide h1.title {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 60px;
+    font-weight: 600;
+    margin-block-start: 35px;
+    color: #00838F;
+    text-align: center;
+}
+
+#title-slide p.subtitle {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 45px;
+    font-weight: 600;
+    margin-block-start: 35px;
+    color: #00838F;
+    text-align: center;
+}
+
+.slide-number-delimiter {
+    color: black;
+}
+
+.slide-number-a {
+    color: black;
+}
+
+.slide-number-b {
+    color: black;
+}
+
+/* Customize the author name */
+#title-slide .quarto-title-author-name {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 35px;
+    /* Adjust author font size */
+    color: black;
+    /* Lighter text color */
+    font-weight: 400;
+    margin-block-start: 35px;
+}
+
+#title-slide .quarto-title-affiliation {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 35px;
+    /* Adjust author font size */
+    color: black;
+    /* Lighter text color */
+    font-weight: 400;
+    margin-block-start: 35px;
+}
+
+/* Customize the date */
+#title-slide .date {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 30px;
+    /* Adjust date font size */
+    color: black;
+    /* Change date color */
+    margin-block-start: 35px;
+    font-weight: 400;
+}
+
+
+/* Adjust title slide spacing */
+#title-slide {
+    padding-top: 120px;
+    /* Increase spacing from top */
+}
+
+/* Make the title slide full screen */
+.reveal #title-slide {
+    height: 100vh;
+    /* Full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.reveal .slide-background:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 27px;
+    /* Adjust banner height */
+    background-color: #00838F;
+    /* Teal color similar to the slide */
+}
+
+
+.reveal h2 {
+    font-size: 58px;
+    /* Adjust title size */
+    font-weight: 400;
+    font-family: 'Yanone Kaffeesatz';
+    color: #00838F;
+    /* Teal color */
+}
+
+
+/* custom.css */
+.reveal .slide-logo {
+    position: left;
+    /* Allows precise positioning */
+    left: 50px;
+    /* Distance from the left edge */
+    bottom: 40px;
+    /* Distance from the bottom edge */
+    height: 60px !important;
+    /* Increase the height to make the logo bigger */
+    width: auto;
+    max-height: 200px !important;
+    /* Maintain aspect ratio */
+}
+
+
+
+.reveal li {
+    font-size: 38px !important;
+    /* Adjust the size as needed */
+}
