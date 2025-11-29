@@ -1,0 +1,104 @@
+.rpack {
+  color: blue;
+  font-family: monospace;
+}
+
+.reveal .center {
+  text-align: center !important;
+}
+
+.reveal .center img {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+
+/* Global text size reduction */
+.reveal {
+  font-size: 28px;      /* default ~32px */
+}
+
+/* Reduce headings */
+.reveal h1 {
+  font-size: 1.6em;
+}
+
+.reveal h2 {
+  font-size: 1.3em;
+}
+
+.reveal h3 {
+  font-size: 1.1em;
+}
+
+/* Apply only to slides with class .looser */
+.reveal .looser ul li,
+.reveal .looser ol li,
+.reveal .looser p {
+  margin-bottom: 1.5em;
+}
+
+/* A container that uses 50% of the slide height */
+.spread50 {
+  height: 50% !important;
+  margin: auto 0 !important;   /* centers the block vertically */
+  display: flex !important;
+}
+
+/* Ensure the UL takes full vertical space inside */
+.spread50 > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Vertically center all content on slides */
+.reveal .slides section {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+}
+
+/* Strip borders/striping that html_vignette adds */
+table.GenTable,
+table.GenTable th,
+table.GenTable td {
+  border: none !important;
+  background: none !important;
+}
+
+
+/* Make the footer container flex instead of left-aligned inline */
+/* The outer footer wrapper from Quarto/reveal */
+.reveal .footer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.4em 0.8em;
+}
+
+/* Make the *paragraph* inside the footer the flex container */
+.reveal .footer > p {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  margin: 0;                 /* remove default p margin */
+}
+
+/* Left text */
+.footer-left {
+  font-size: 0.8em;
+}
+
+/* Date in the middle */
+.footer-date {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* Logo on the right */
+.footer-logo {
+  height: 40px;              /* tweak to taste */
+}

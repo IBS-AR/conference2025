@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="S5B3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="S5B3_files/libs/quarto-html/tabby.min.js"></script>
+<script src="S5B3_files/libs/quarto-html/popper.min.js"></script>
+<script src="S5B3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="S5B3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="S5B3_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="S5B3_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.33">
+
+  <meta name="author" content="Zhanglong Cao, Rose Megirian, Matthew Nguyen, Adam Sparks">
+  <title>Bayesian Ordinal Regression for Crop Development and Disease Assessment</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="S5B3_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="S5B3_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="S5B3_files/libs/revealjs/dist/theme/quarto-203901f360f2445cbff73c0e41ee8f13.css">
+  <link href="S5B3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="S5B3_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="S5B3_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="S5B3_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="S5B3_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="S5B3_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="logos/curtin-perth-campus.jpg" data-background-opacity="0.3" data-background-position="center" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title">Bayesian Ordinal Regression for Crop Development and Disease Assessment</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Zhanglong Cao, Rose Megirian, Matthew Nguyen, Adam Sparks 
+</div>
+        <p class="quarto-title-affiliation">
+            CBADA - CCDM &amp; EECMS, Curtin University
+          </p>
+    </div>
+</div>
+
+  <p class="date">26/11/2025</p>
+</section>
+<section>
+<section id="background" class="title-slide slide level1 section-title center">
+<h1>Background</h1>
+
+</section>
+<section id="experiments" class="slide level2">
+<h2>Experiments</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Objective: evaluating deep sowing of oats in WA production systems</strong></p>
+<ul>
+<li><p>Design: split-plot design at two sites</p></li>
+<li><p>Sowing depths at 30, 80 and 120 mm</p></li>
+<li><p>Variety-herbicide combinations: 10 levels</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fgi_layout.png" style="width:100.0%"></p>
+<figcaption>trial layout</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="growth-stage-data" class="slide level2">
+<h2>Growth stage data</h2>
+<ul>
+<li><p>The growth scale data is measured on an ordinal scale following the Zadoks growth scale measurement methods.</p></li>
+<li><p>Ten samples were taken from each plot <span style="color:red;">four weeks after sowing</span>.</p></li>
+</ul>
+</section>
+<section id="zadoks-growth-scale" class="slide level2 smaller">
+<h2>Zadoks growth scale</h2>
+<p>The Zadok’s growth scale is based on ten principal cereal growth stages (<span class="citation" data-cites="Zadoks1974">Zadoks, Chang, and Konzak (<a href="#/references" role="doc-biblioref" onclick="">1974</a>)</span>):</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>0 - Germination</p>
+<p>1 - Seeding growth</p>
+<p>2 - Tillering</p>
+<p>3 - Stem elongation</p>
+<p>4 - Booting</p>
+<p>5 - Awn emergence</p>
+<p>6 - Flowering (anthesis)</p>
+<p>7 - Milk development</p>
+<p>8 - Dough development</p>
+<p>9 - Ripening</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figures/Zadoks_growth_scale.jpg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="zadoks-growth-scale-1" class="slide level2 smaller">
+<h2>Zadoks growth scale</h2>
+<p>The Zadok’s growth scale is not chronological time points but a series of ordinal stages.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><em>0 - Germination</em></p>
+<p>00 - Dry seed</p>
+<p>01 - Start of water absorption</p>
+<p>03 - Seed fully swollen</p>
+<p>05 - First root emerged from seed</p>
+<p>07 - Coleoptile emerged from seed</p>
+<p>09 - First green leaf just at tip of coleoptile</p>
+</div><div class="column" style="width:30%;">
+<p><em>1 - Seedling growth</em></p>
+<p>10 - First leaf through coleoptile</p>
+<p>11 - First leaf emerged</p>
+<p>12 - Two leaves emerged</p>
+<p>13 - Three leaves emerged</p>
+<p>14 - Four leaves emerged</p>
+<p>15 - Five leaves emerged</p>
+<p>16 - Six leaves emerged</p>
+<p>17 - Seven leaves emerged</p>
+<p>18 - Eight leaves emerged</p>
+<p>19 - Nine or more leaves emerged</p>
+</div><div class="column" style="width:30%;">
+<p><em>2 - Tillering</em></p>
+<p>20 - Main stem only</p>
+<p>21 - Main stem and one tiller</p>
+<p>22 - Main stem and two tillers</p>
+<p>23 - Main stem and three tillers</p>
+<p>24 - Main stem and four tillers</p>
+<p>25 - Main stem and five tillers</p>
+<p>26 - Main stem and six tillers</p>
+<p>27 - Main stem and seven tillers</p>
+<p>28 - Main stem and eight tillers</p>
+<p>29 - Main stem and nine or more tillers</p>
+</div></div>
+</section>
+<section id="initial-data-exploration" class="slide level2 smaller">
+<h2>Initial data exploration</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/distribution_merredin.png" style="width:100.0%"></p>
+<figcaption>Growth stage distribution by depth - Merredin</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/distribution_wickepin.png" style="width:100.0%"></p>
+<figcaption>Growth stage distribution by depth - Wickepin</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="the-spatial-effect" class="slide level2 smaller">
+<h2>The spatial effect</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="S5B3_files/figure-revealjs/spatial-pattern-merredin-1.png" style="width:100.0%"></p>
+<figcaption>Spatial patterns - Merredin</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="S5B3_files/figure-revealjs/spatial-pattern-wickepin-1.png" style="width:100.0%"></p>
+<figcaption>Spatial patterns - Wickepin</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<ul>
+<li><p>Field trials have spatial gradients</p></li>
+<li><p>Better estimates → Better decisions</p></li>
+</ul>
+</section>
+<section id="modelling-challenge" class="slide level2 smaller">
+<h2>Modelling challenge</h2>
+<ol type="1">
+<li><p><strong>Ordinal (not continuous) response</strong></p></li>
+<li><p><strong>Hierarchical design (plots, sites)</strong></p>
+<ul>
+<li>Multiple plants per plot (pseudo-replication)</li>
+</ul></li>
+<li><p><strong>Complex interactions</strong></p>
+<ul>
+<li>Treatment effects differ by variety</li>
+<li>Effects differ by growth stage</li>
+</ul></li>
+<li><p><strong>Spatial correlation</strong></p>
+<ul>
+<li>Field gradients affect growth</li>
+</ul></li>
+<li><p><strong>Biological interpretability</strong></p>
+<ul>
+<li>Results must inform agronomic decisions</li>
+</ul></li>
+</ol>
+</section></section>
+<section>
+<section id="bayesian-approach" class="title-slide slide level1 center">
+<h1>Bayesian approach</h1>
+
+<img data-src="figures/newidea.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="rstan" class="slide level2">
+<h2><code>rstan</code></h2>
+<ul>
+<li><p>Powerful <code>brms</code> package for Bayesian multilevel models using <code>rstan</code> (<span class="citation" data-cites="rstanref">Stan Development Team (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span>, <span class="citation" data-cites="Burkner2017">Bürkner (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>).</p></li>
+<li><p>Flexibility: supports a wide range of distributions and link functions, incorporating personalised features, such as spatial effects.</p></li>
+<li><p>Advanced features: handles missing data, multilevel structures, and more.</p></li>
+<li><p>Visualisation: offers extensive plotting capabilities for model diagnostics and results.</p></li>
+</ul>
+</section>
+<section id="choosing-the-right-ordinal-model" class="slide level2 smaller">
+<h2>Choosing the right ordinal model</h2>
+
+<img data-src="figures/all_models.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><p>Source: <span class="citation" data-cites="burkner2019ordinal">Bürkner and Vuorre (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span></p>
+</section>
+<section id="why-sequential-model" class="slide level2 smaller">
+<h2>Why sequential model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Sequential model logic</strong></p>
+<p>Plant at stage <span class="math inline">\(k\)</span> asks: “Do I advance to <span class="math inline">\(k+1\)</span>?”</p>
+<p><span class="math display">\[P(\text{advance to } k+1 | \text{currently at } k)\]</span></p>
+<p><strong>For Z13 → Z21 transition:</strong></p>
+<p><em>“Does this plant develop its first tiller?”</em></p>
+<p><strong>Treatment effects = changes in advancement probability!</strong></p>
+<p>This directly answers: <em>“Does shallow sowing ACCELERATE development?”</em> ⏱️</p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><strong>Why not cumulative?</strong></p>
+<p>Cumulative models: <span class="math inline">\(P(Y \leq k)\)</span></p>
+<p><em>“Probability of being at or below stage k”</em></p>
+<p><strong>Problem:</strong> Doesn’t capture the <em>sequential progression</em> through development!</p>
+<ul>
+<li>Can’t isolate specific transitions</li>
+<li>Harder to interpret biologically</li>
+<li>Doesn’t match how plants actually develop</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="bayesian-hierarchical-model" class="slide level2 smaller">
+<h2>Bayesian hierarchical model</h2>
+<p><span class="math display">\[
+\begin{split}
+&amp;Y_i \in \{Z00, Z01, \ldots, Z24\} \\
+&amp;\eta_{k,i}
+  = \alpha_k
+   + \boldsymbol\beta_k^\top \mathbf{x}_i
+   + u_{\text{Plot}[i]}
+   + u_{\text{Depth}[i]|\text{Plot}[i]}
+   + f(\mathbf{s}_i) \\
+&amp;P(Y_i \geq k \mid Y_i \geq k-1)
+  = \text{logit}^{-1}(\eta_{k,i}) \\
+&amp;u_{\text{Plot}} \sim N(0, \sigma_p^2) \\
+&amp;u_{\text{Depth|Plot}} \sim N(0, \sigma_d^2) \\
+&amp;f \sim \text{GP}(\mathbf{0}, \Sigma_s) \quad \text{(optional)}.
+\end{split}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\alpha_k, \beta_k\)</span> are <strong>category-specific</strong> (vary by growth stage)</p></li>
+<li><p>Captures how sowing depth affects different developmental transitions differently</p></li>
+<li><p>Hierarchical structure accounts for plot and treatment effects</p></li>
+</ul>
+</section>
+<section id="bayesian-workflow" class="slide level2 smaller">
+<h2>Bayesian workflow</h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/bayesianworkflow.png" style="width:50.0%"></p>
+<figcaption>workflow</figcaption>
+</figure>
+</div>
+</center>
+<p>(source: <span class="citation" data-cites="gelman2020bayesian">Gelman et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>)</p>
+</section>
+<section id="no-u-turn-sampler-nuts" class="slide level2">
+<h2>No-U-Turn sampler (NUTS)</h2>
+<p>
+</p><center>
+<object data="https://elevanth.org/mcmcdemo2/applet.html#NaiveNUTS,standard" type="text/html" width="600" height="400">
+</object>
+</center>
+<p></p>
+<p>(source:<a href="https://github.com/chi-feng/mcmc-demo">https://github.com/chi-feng</a>)</p>
+</section>
+<section id="leave-one-out-loo-cross-validation" class="slide level2 smaller">
+<h2>Leave-one-out (LOO) cross validation</h2>
+<p>In Bayesian statistics, the expected <span class="math inline">\(\log\)</span> LOO predictive density (ELPD) is used to measure the predictive accuracy : <span class="math display">\[
+\mbox{elpd} = \sum_{i=1}^{n}\log p(y_i\mid y_{-i}),
+\]</span> where <span class="math inline">\(p(y_i \mid y_{-i}) = \int p(y_i \mid \theta)p(\theta \mid y_{-i})d\theta\)</span> is the LOO predictive density with the <span class="math inline">\(i\)</span>-th observation omitted from the data set (<span class="citation" data-cites="Vehtari2017Practical">Vehtari, Gelman, and Gabry (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>).</p>
+<p><span class="citation" data-cites="Burkner2021Efficient">Bürkner, Gabry, and Vehtari (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> proposed approximated LOO CV, which uses only a single model fit and calculating the pointwise <span class="math inline">\(\log\)</span> predictive density as a fast approximation to the exact LOO CV (<span class="citation" data-cites="cao2022bayesian">Cao et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>).</p>
+</section>
+<section class="slide level2">
+
+<center>
+<img data-src="figures/moments.jpg" style="width:80.0%">
+</center>
+</section></section>
+<section>
+<section id="results-merredin-data" class="title-slide slide level1 section-title center">
+<h1>Results: Merredin Data</h1>
+
+</section>
+<section id="model-comparison" class="slide level2 smaller">
+<h2>Model comparison</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="S5B3_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Winner: Sequential</strong> for Better ELPD + biologically interpretable!</p>
+</div><div class="column" style="width:50%;">
+<ol type="1">
+<li><strong>Cumulative</strong> (proportional odds)
+<ul>
+<li>Models: <span class="math inline">\(P(Y \leq k)\)</span></li>
+<li>Interpretation: “At or below stage <span class="math inline">\(k\)</span>”</li>
+</ul></li>
+<li><strong>Sequential</strong> (continuation ratio) ✅
+<ul>
+<li>Models: <span class="math inline">\(P(Y \leq k | Y \leq k-1)\)</span></li>
+<li>Interpretation: “Advance to next stage”</li>
+</ul></li>
+<li><strong>Adjacent-category</strong>
+<ul>
+<li>Models: <span class="math inline">\(P(Y = k \mid Y \in \{k, k+1\})\)</span></li>
+<li>Interpretation: “Adjacent stage ratios”</li>
+</ul></li>
+</ol>
+</div></div>
+</section>
+<section id="model-diagnostics" class="slide level2 smaller">
+<h2>Model diagnostics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="S5B3_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:90.0%"></p>
+<figcaption>Posterior predictive check</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="S5B3_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:90.0%"></p>
+<figcaption>Posterior predictive check</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p>Also refer to <span class="citation" data-cites="cao2022bayesian">Cao et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span> for detailed diagnostics.</p>
+</section>
+<section id="results" class="slide level2 smaller">
+<h2>Results</h2>
+
+<img data-src="S5B3_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:90.0%" class="r-stretch quarto-figure-center"><p class="caption">Variety-specific response by sowing depth (Merredin); ribbons show 95% credible intervals.</p></section>
+<section id="results-1" class="slide level2 smaller">
+<h2>Results</h2>
+
+<img data-src="S5B3_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><p><strong>What this shows:</strong></p>
+<ul>
+<li>Clear threshold between seed emerge (Z01) and leaf development (Z11). This explains why sowing depth affects it most strongly!</li>
+</ul>
+</section>
+<section id="site-consistency" class="slide level2 smaller">
+<h2>Site consistency</h2>
+
+<img data-src="S5B3_files/figure-revealjs/site-consistency-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Treatment effects comparison across Merredin and Wickepin</p></section>
+<section id="extension-disease-severity" class="slide level2 smaller">
+<h2>Extension: disease severity</h2>
+<p><strong>The same framework works for disease assessment!</strong></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Powdery mildew (0-9 scale)</p></li>
+<li><p>Fusarium head blight severity</p></li>
+<li><p>Leaf rust infection scores</p></li>
+<li><p>Root health ratings</p></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><strong>Why sequential model?</strong></p>
+<p>Disease progression is also sequential:</p>
+<p>Healthy -&gt; Mild -&gt; Moderate -&gt; Severe -&gt; Very Severe</p>
+<p><em>“Does treatment prevent advancement to next severity level?”</em></p>
+<p>Same logic as growth stages! 🌱→🦠</p>
+</div></div>
+</section>
+<section id="ai-integration" class="slide level2 smaller">
+<h2>AI integration</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Current workflow:</strong></p>
+<ol type="1">
+<li>Manual field assessment</li>
+<li>Record growth stage visually</li>
+<li>Enter data manually</li>
+<li>Analyse</li>
+<li>Generate recommendations</li>
+</ol>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li><p>Labour intensive</p></li>
+<li><p>Subjective scoring</p></li>
+<li><p>Limited temporal resolution</p></li>
+<li><p>Can’t scale to whole fields</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>2026 vision: automated system</strong></p>
+<ol type="1">
+<li><strong>Drone imagery</strong> of entire field (done!)</li>
+<li><strong>Computer vision</strong> classifies growth stage/diesea score (in progress)</li>
+<li><strong>Real-time</strong> Bayesian updating (in progress)</li>
+<li><strong>Automatic recommendations</strong> to farmer (plan)</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<p>✅ Continuous monitoring</p>
+<p>✅ Objective classification</p>
+<p>✅ Whole-field coverage</p>
+<p>✅ Early intervention possible</p>
+</div></div>
+</section>
+<section id="bayesian-advantages" class="slide level2 section-title">
+<h2>Bayesian advantages</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="first-time-buying">First time buying:</h3>
+<ul>
+<li><strong>Prior:</strong> “Nice houses cost ~$500k” (market knowledge)</li>
+<li><strong>Data:</strong> Visit 10 houses</li>
+<li><strong>Posterior:</strong> “Actually $550-600k” (updated belief)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="second-time-buying">Second time buying:</h3>
+<ul>
+<li><strong>Prior:</strong> $550-600k (your posterior becomes the prior!)</li>
+<li><strong>Data:</strong> Visit more houses<br>
+</li>
+<li><strong>Posterior:</strong> “Trending toward $650k” (continuously refined)</li>
+</ul>
+</div></div>
+</section>
+<section id="take-home-messages" class="slide level2 smaller">
+<h2>Take-Home Messages</h2>
+<ol type="1">
+<li><p><strong>Growth stages are ordinal</strong> - respect the structure! Don’t use linear models.</p></li>
+<li><p><strong>Sequential models match biology</strong> - plants progress through stages, model should too.</p></li>
+<li><p><strong>Bayesian inference answers real questions</strong> - not just p-values, actual probabilities.</p></li>
+<li><p><strong>Spatial correlation matters</strong> - field trials need spatial structure in models.</p></li>
+<li><p><strong>Framework is general</strong> - works for growth stages, disease severity, any other ordinal outcome.</p></li>
+<li><p><strong>Ready for precision agriculture</strong> - principled statistics + AI = future of agronomy.</p></li>
+</ol>
+</section>
+<section id="acknowledgments" class="slide level2 smaller">
+<h2>Acknowledgments</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>People:</strong></p>
+<ul>
+<li>Rose Megirian</li>
+<li>Matthew Nguyen<br>
+</li>
+<li>Professor Adam Sparks</li>
+<li>All Growers</li>
+<li><img data-src="figures/faces.png" style="width:70.0%"></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Funding &amp; Support:</strong> <img data-src="logos/logos.png" style="width:80.0%"></p>
+</div></div>
+<div class="fragment">
+<p><img data-src="logos/faces.png" style="width:80.0%"></p>
+</div>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Burkner2017" class="csl-entry" role="listitem">
+Bürkner, Paul-Christian. 2017. <span>“Brms: An r Package for Bayesian Multilevel Models Using Stan.”</span> <em>Journal of Statistical Software</em> 80 (1): 1–28. <a href="https://doi.org/10.18637/jss.v080.i01">https://doi.org/10.18637/jss.v080.i01</a>.
+</div>
+<div id="ref-Burkner2021Efficient" class="csl-entry" role="listitem">
+Bürkner, Paul-Christian, Jonah Gabry, and Aki Vehtari. 2021. <span>“Efficient Leave-One-Out Cross-Validation for <span>Bayesian</span> Non-Factorized Normal and <span>Student</span>-t Models.”</span> <em>Comput Stat</em> 36 (2): 1243–61. <a href="https://doi.org/10.1007/s00180-020-01045-4">https://doi.org/10.1007/s00180-020-01045-4</a>.
+</div>
+<div id="ref-burkner2019ordinal" class="csl-entry" role="listitem">
+Bürkner, Paul-Christian, and Matti Vuorre. 2019. <span>“Ordinal Regression Models in Psychology: A Tutorial.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 2 (1): 77–101.
+</div>
+<div id="ref-cao2022bayesian" class="csl-entry" role="listitem">
+Cao, Zhanglong, Katia Stefanova, Mark Gibberd, and Suman Rakshit. 2022. <span>“Bayesian Inference of Spatially Correlated Random Parameters for on-Farm Experiment.”</span> <em>Field Crops Research</em> 281: 108477.
+</div>
+<div id="ref-gelman2020bayesian" class="csl-entry" role="listitem">
+Gelman, Andrew, Aki Vehtari, Daniel Simpson, Charles C Margossian, Bob Carpenter, Yuling Yao, Lauren Kennedy, Jonah Gabry, Paul-Christian Bürkner, and Martin Modrák. 2020. <span>“Bayesian Workflow.”</span> <em>arXiv Preprint arXiv:2011.01808</em>.
+</div>
+<div id="ref-rstanref" class="csl-entry" role="listitem">
+Stan Development Team. 2025. <span>“<span>RStan</span>: The <span>R</span> Interface to <span>Stan</span>.”</span> <a href="https://mc-stan.org/">https://mc-stan.org/</a>.
+</div>
+<div id="ref-Vehtari2017Practical" class="csl-entry" role="listitem">
+Vehtari, Aki, Andrew Gelman, and Jonah Gabry. 2017. <span>“Practical <span>Bayesian</span> Model Evaluation Using Leave-One-Out Cross-Validation and <span>WAIC</span>.”</span> <em>Stat Comput</em> 27 (5): 1413–32. <a href="https://doi.org/10.1007/s11222-016-9696-4">https://doi.org/10.1007/s11222-016-9696-4</a>.
+</div>
+<div id="ref-Zadoks1974" class="csl-entry" role="listitem">
+Zadoks, J. C., T. T. Chang, and C. F. Konzak. 1974. <span>“A Decimal Code for the Growth Stages of Cereals.”</span> <em>Weed Research</em> 14 (6): 415–21. <a href="https://doi.org/10.1111/j.1365-3180.1974.tb01084.x">https://doi.org/10.1111/j.1365-3180.1974.tb01084.x</a>.
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="logos/curtin-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>IBS2025 Biometrics in the Bush Capital | Z. Cao et al.</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="S5B3_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="S5B3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="S5B3_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="S5B3_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
