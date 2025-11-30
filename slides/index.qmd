@@ -107,5 +107,10 @@ list_slides("Talk", "Contributed", modify = c("A.A.P.N.M. Perera" = "Piumi Perer
 
 ```{r}
 #| output: asis
-list_slides("Poster")
+#| eval: false
+# list_slides("Poster")
 ```
+
+- **Sam Rogers** "Judgement Post-Stratification for Covariate Adjustment in Pairwise Comparisons in Block Designs" [<i class="fas fa-file-pdf"></i>](/slides/Poster/IBS2025RogersOzturkKravchuk-Sam Rogers.pdf)
+- **Alice Richardson** "Visualisation of multinomial multilevel time-series modelling with application to current smoking status" [<i class="fas fa-file-pdf"></i>](/slides/Poster/Poster-Final-Final-Alice Richardson.pdf)
+- **Damian Collins** "The “Theory of Sampling” (ToS) - have statisticians missed the boat?" [<i class="fas fa-file-pdf"></i>](/slides/Poster/posterTOS251121-Damian Collins.pdf) [<i class="fas fa-book"></i>](/slides/Poster/posterRefs.pdf)
