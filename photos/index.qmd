@@ -131,3 +131,18 @@ walk(fns, function(pic) {
 :::
 
 
+## Community Shared
+
+
+::: grid-gallery
+
+```{r}
+#| output: asis
+fns <- fs::dir_ls("Community/Anne Harris/")
+walk(fns, function(pic) {
+  cat(str_glue("![Photo by Anne Harris]({{pic}}){.lightbox .grid-item loading='lazy' group='gallery'}\n\n", .open = "{{", .close = "}}"))
+})
+```
+
+:::
+
